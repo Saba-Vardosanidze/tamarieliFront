@@ -16,9 +16,9 @@ export const contactForm = async (
 ): Promise<boolean> => {
   try {
     const body = new URLSearchParams();
-    body.append('entry.297616346', formData.name);
-    body.append('entry.1583932013', formData.email);
-    body.append('entry.627014730', formData.message);
+    body.append('entry.459058498', formData.name);
+    body.append('entry.625579071', formData.email);
+    body.append('entry.562354251', formData.message);
 
     await fetch(baseURL, {
       method: 'POST',

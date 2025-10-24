@@ -5,9 +5,9 @@ import InfiniteSlider from '../primitives/Slider';
 
 const Landing = () => {
   return (
-    <div className="bg-white">
+    <div>
       <Header />
-      <div className="flex flex-col gap-[60px]">
+      <div className="flex flex-col gap-[90px]">
         <HeroSection />
         <InfiniteSlider title="პროექტები" direction="right" speed={70} />
         <Form />

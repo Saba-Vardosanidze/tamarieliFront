@@ -5,6 +5,7 @@ import { useMutation } from '@tanstack/react-query';
 import { contactForm } from 'feature/landing/api/landingApi';
 import { FormSchema, FormSchemaType } from 'feature/landing/schema/formSchema';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 
 const Form = () => {
   const {
@@ -16,15 +17,19 @@ const Form = () => {
   });
   const { mutate, isPending } = useMutation({
     mutationFn: contactForm,
-    onSuccess: () => {},
-    onError: () => {},
+    onSuccess: () => {
+      toast.success('მონაცემები წარმატებით გაიგზავნა!');
+    },
+    onError: () => {
+      toast.error('დაფიქსირდა შეცდომა!');
+    },
   });
   const submitForm = (data: FormSchemaType) => {
     mutate(data);
   };
   return (
-    <div className="flex flex-wrap justify-center items-center bg-[#E0E0E0] mx-auto mt-[60px] w-full min-h-[700px]">
-      <div className="flex flex-col gap-5 mx-auto w-full max-w-[1140px]">
+    <div className="flex flex-wrap justify-center items-center bg-[#E0E0E0] mx-auto w-full min-h-[700px]">
+      <div className="flex flex-col gap-5 mx-auto px-2.5 w-full max-w-[1140px]">
         <div>
           <h3 className="text-[#000000] text-[30px]">Want to get in touch?</h3>
           <h3 className="text-[#000000] text-[30px]">Drop me a line!</h3>
@@ -46,9 +51,7 @@ const Form = () => {
                 {...register('name')}
               />
               {errors.name && (
-                <p className="mt-1 text-red-500 text-sm">
-                  {errors.name.message}
-                </p>
+                <p className="text-red-500 text-sm">{errors.name.message}</p>
               )}
             </div>
             <div className="w-full max-w-[384px]">
@@ -60,27 +63,26 @@ const Form = () => {
                 {...register('email')}
               />
               {errors.email && (
-                <p className="mt-1 text-red-500 text-sm">
-                  {errors.email.message}
-                </p>
+                <p className="text-red-500 text-sm">{errors.email.message}</p>
               )}
             </div>
           </div>
-          <textarea
-            className="bg-white px-2 py-3 border border-[#aaa] outline-none w-full max-w-[792px] text-[#1a1b1f]"
-            placeholder="Enter your message"
-            {...register('message')}
-          />
+          <div>
+            <p className="text-[#000000]">Message</p>
+            <textarea
+              className="bg-white px-2 py-3 border border-[#aaa] outline-none w-full max-w-[792px] text-[#1a1b1f]"
+              placeholder="Enter your message"
+              {...register('message')}
+            />
+          </div>
           {errors.message && (
-            <p className="mt-1 text-red-500 text-sm">
-              {errors.message.message}
-            </p>
+            <p className="text-red-500 text-sm">{errors.message.message}</p>
           )}
           <button
             className="flex justify-center bg-[#000000] px-2 py-3 w-[109px] cursor-pointer"
             type="submit"
           >
-            {isPending ? 'გაგზავნე' : 'იგზავნება...'}
+            {isPending ? 'იგზავნება...' : 'გაგზავნე'}
           </button>
         </form>
       </div>

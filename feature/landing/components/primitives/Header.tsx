@@ -13,8 +13,8 @@ const Header = () => {
 
   return (
     <header className="flex flex-col justify-center items-center w-full">
-      <div className="z-[201] relative flex bg-[#E0E0E0] px-[20px] border-[lightgrey] border-b w-full">
-        <div className="flex justify-between py-[10px] w-full">
+      <div className="z-[201] relative flex bg-[#E0E0E0] px-5 border-[lightgrey] border-b w-full">
+        <div className="flex justify-between py-2.5 w-full">
           <Link href={'/'}>
             <Image
               src="/images/headerImages/png/siteLogoa.png"
