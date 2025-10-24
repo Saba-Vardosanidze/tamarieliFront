@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { QueryProvider } from 'feature/query/QueryProvider';
 import { Toaster } from 'react-hot-toast';
+import Footer from 'feature/landing/components/primitives/Footer';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -30,8 +31,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#F0F0F0]`}
       >
         <div>
-          <QueryProvider>{children}</QueryProvider>
-          <Toaster position="top-right" />
+          <div className="min-h-screen">
+            <QueryProvider>{children}</QueryProvider>
+            <Toaster position="top-right" />
+          </div>
+          <div className="flex flex-1">
+            <Footer />
+          </div>
         </div>
       </body>
     </html>
