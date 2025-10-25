@@ -4,6 +4,7 @@ import './globals.css';
 import { QueryProvider } from 'feature/query/QueryProvider';
 import { Toaster } from 'react-hot-toast';
 import Footer from 'feature/landing/components/primitives/Footer';
+import Header from 'feature/landing/components/primitives/Header';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -31,6 +32,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#F0F0F0]`}
       >
         <div>
+          <Header />
           <div className="min-h-screen">
             <QueryProvider>{children}</QueryProvider>
             <Toaster position="top-right" />

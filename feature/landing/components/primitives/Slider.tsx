@@ -114,22 +114,24 @@ const InfiniteSlider = ({
                     style={{ width: `${cardWidth}px` }}
                   >
                     <div className="group relative shadow-2xl rounded-xl h-[300px] overflow-hidden hover:scale-105 transition-transform cursor-pointer">
-                      <Image
-                        src={card.projectPicture}
-                        alt={card.projectName}
-                        fill
-                        className="object-center object-cover"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                      <div className="right-0 bottom-0 left-0 absolute p-6 text-white">
-                        <h3 className="mb-2 font-bold text-2xl">
-                          {card.projectName}
-                        </h3>
-                        <span className="inline-block bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs">
-                          {card.projectType}
-                        </span>
-                      </div>
+                      <Link href={`/projects/${card._id}`}>
+                        <Image
+                          src={card.projectPicture}
+                          alt={card.projectName}
+                          fill
+                          className="object-center object-cover"
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                        <div className="right-0 bottom-0 left-0 absolute p-6 text-white">
+                          <h3 className="mb-2 font-bold text-2xl">
+                            {card.projectName}
+                          </h3>
+                          <span className="inline-block bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs">
+                            {card.projectType}
+                          </span>
+                        </div>
+                      </Link>
                     </div>
                   </div>
                 );

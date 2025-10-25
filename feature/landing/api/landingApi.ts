@@ -11,6 +11,14 @@ export const ProjectApi = async () => {
   return res.json();
 };
 
+export const ProjectById = async (id: string) => {
+  const res = await fetch(`${baseUrl}/project/${id}`, {
+    cache: 'no-store',
+  });
+  if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+  return res.json();
+};
+
 export const contactForm = async (
   formData: FormSchemaType
 ): Promise<boolean> => {

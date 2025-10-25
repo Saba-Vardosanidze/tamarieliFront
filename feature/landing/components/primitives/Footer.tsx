@@ -8,7 +8,7 @@ import SocialIcons from './FooterSocmediaLinks';
 const Footer = () => {
   return (
     <footer className="flex flex-col justify-center md:justify-center items-center bg-[#E0E0E0] mx-auto mt-[90px] py-6 sm:py-8 md:py-10 lg:py-12 w-full">
-      <div className="flex lg:flex-row flex-col justify-between gap-8 lg:gap-0 px-4 sm:px-6 md:px-8 lg:px-10 w-full max-w-[1100px]">
+      <div className="flex lg:flex-row flex-col justify-between gap-8 lg:gap-0 px-4 sm:px-6 md:px-8 lg:px-10 w-full max-w-[1440px]">
         <div className="flex flex-col w-full lg:w-auto">
           {FooterItems.map((item, index) => (
             <FooterLinks

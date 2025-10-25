@@ -15,7 +15,7 @@ export type FooterItem = {
   instagram: string;
   youTube: string;
 };
-export type FooterLinksProps = Pick<FooterItem, "contactUs" | "links">;
+export type FooterLinksProps = Pick<FooterItem, 'contactUs' | 'links'>;
 export type SocialLink = {
   id: number;
   href: string;
@@ -27,4 +27,10 @@ export type SocialLink = {
 
 export type FooterDataProps = {
   socmediaLinks: SocialLink[];
+};
+
+export type ParamsProps = {
+  params: {
+    id: string;
+  };
 };
