@@ -1,7 +1,7 @@
-'use client';
-import { useState } from 'react';
-import Image from 'next/image';
-import { options } from 'feature/landing/data/landingData';
+"use client";
+import { useState } from "react";
+import Image from "next/image";
+import { options } from "feature/landing/data/landingData";
 
 export default function BurgerMenuLanguageOptions() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +9,7 @@ export default function BurgerMenuLanguageOptions() {
 
   return (
     <div className="relative">
-      <button
+      {/* <button
         className="flex justify-between items-center p-[10px] border border-[#00000066]"
         onClick={() => setIsOpen(!isOpen)}
       >
@@ -22,7 +22,7 @@ export default function BurgerMenuLanguageOptions() {
           />
           <p className="text-[#000000CC] text-[14px]">{selected.label}</p>
         </div>
-      </button>
+      </button> */}
 
       {isOpen && (
         <ul className="top-[50px] z-10 absolute flex flex-col justify-between gap-[10px] bg-[#E0E0E0] p-[10px] border border-[#00000066]">

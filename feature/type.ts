@@ -28,3 +28,7 @@ export type SocialLink = {
 export type FooterDataProps = {
   socmediaLinks: SocialLink[];
 };
+export type DropDpwnMenuProps = {
+  defaultValue?: string;
+  label?: string;
+};
