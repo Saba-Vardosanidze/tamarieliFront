@@ -31,11 +31,9 @@ const Form = () => {
     <div className="flex flex-wrap justify-center items-center bg-[#E0E0E0] mx-auto w-full min-h-[500px] lg:min-h-[700px]">
       <div className="flex flex-col gap-5 mx-auto px-4 sm:px-6 md:px-8 lg:px-10 w-full max-w-[1440px]">
         <div>
-          <h3 className="text-[#000000] text-[30px]">Want to get in touch?</h3>
-          <h3 className="text-[#000000] text-[30px]">Drop me a line!</h3>
-          <p className="text-[#1a1b1f]">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          </p>
+          <h3 className="text-[#000000] text-[30px]">შეტყობინება</h3>
+          <h3 className="text-[#000000] text-[30px]">ასოციაცია თამარიელი</h3>
+          <p className="text-[#1a1b1f]">შეგიძლიათ გამოგვიგზავნოთ შეტყობინება</p>
         </div>
         <form
           onSubmit={handleSubmit(submitForm)}
