@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { HeaderData } from 'feature/landing/data/landingData';
-import Image from 'next/image';
-import Link from 'next/link';
-import BurgerMenu from './BurgerMenu';
-import BurgerMenuIcon from './BurgermenuIcon';
-import { useState } from 'react';
-import BurgerMenuLanguageOptions from './BurgerMenuLanguageOptions';
+import { HeaderData } from "feature/landing/data/landingData";
+import Image from "next/image";
+import Link from "next/link";
+import BurgerMenu from "./BurgerMenu";
+import BurgerMenuIcon from "./BurgermenuIcon";
+import { useState } from "react";
+import BurgerMenuLanguageOptions from "./BurgerMenuLanguageOptions";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -16,7 +16,7 @@ const Header = () => {
       <header className="flex flex-col justify-center items-center w-full max-w-[1440px]">
         <div className="z-[201] relative flex bg-[#E0E0E0] px-5 border-[lightgrey] border-b w-full">
           <div className="flex justify-between py-2.5 w-full">
-            <Link href={'/'}>
+            <Link href={"/"}>
               <Image
                 src="/images/headerImages/png/siteLogoa.png"
                 alt="logo"
@@ -32,7 +32,7 @@ const Header = () => {
                     key={eachElement.id}
                     className="flex justify-center items-center gap-4"
                   >
-                    <Link href="/">
+                    <Link href={eachElement.href}>
                       <ul className="font-[600] text-[#1a1b1f] text-[14px] hover:text-[#606371] cursor-pointer">
                         {eachElement.title}
                       </ul>
