@@ -1,9 +1,8 @@
 'use client';
 
 import { useQuery } from '@tanstack/react-query';
-import { ProjectById } from 'feature/landing/api/landingApi';
+import { MiniProjectById } from 'feature/landing/api/landingApi';
 import Image from 'next/image';
-import Link from 'next/link';
 
 type Props = {
   id: string;
@@ -12,7 +11,7 @@ type Props = {
 export default function ProjectsDetail({ id }: Props) {
   const { data, isLoading, isError } = useQuery({
     queryKey: ['project', id],
-    queryFn: () => ProjectById(id),
+    queryFn: () => MiniProjectById(id),
   });
 
   if (isLoading)
@@ -72,61 +71,13 @@ export default function ProjectsDetail({ id }: Props) {
       <div className="mx-auto p-6 w-full max-w-[1200px]">
         <div className="flex flex-col gap-8 bg-white shadow-lg p-6 rounded-xl">
           <p className="font-black text-[24px] text-black">
-            Project Description
+            {data.projectName} Description
           </p>
           <p className="text-gray-800 text-lg leading-relaxed">
             {data.projectDescription}
           </p>
         </div>
       </div>
-
-      {data.miniProjects && data.miniProjects.length > 0 && (
-        <div className="mx-auto mt-10 p-6 w-full max-w-[1200px]">
-          <p className="mb-6 font-black text-[24px] text-black">
-            <span>{data.projectName} </span>Projects
-          </p>
-          <div className="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {data.miniProjects.map((mini: any) => (
-              <div
-                key={mini._id}
-                className="flex flex-col gap-4 bg-white shadow-lg p-4 rounded-xl"
-              >
-                <div className="relative rounded-lg w-full h-48 overflow-hidden">
-                  <Image
-                    src={mini.projectPicture}
-                    alt={mini.projectName}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <p className="font-bold text-black text-lg">
-                  {mini.projectName}
-                </p>
-                <p className="text-gray-700 text-sm">
-                  {mini.projectDescription.length > 200
-                    ? mini.projectDescription.slice(0, 200) + '...'
-                    : mini.projectDescription}
-                </p>
-                <div className="flex justify-between items-center">
-                  <span
-                    className={`self-start px-3 py-1 rounded-full font-semibold text-sm ${
-                      statusStyles[mini.projectType] || ''
-                    }`}
-                  >
-                    {mini.projectType}
-                  </span>
-                  <Link
-                    href={`/miniprojects/${mini._id}`}
-                    className="text-[14px] text-black cursor-pointer"
-                  >
-                    ნახე ვრცლად
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
     </div>
   );
 }

@@ -19,6 +19,14 @@ export const ProjectById = async (id: string) => {
   return res.json();
 };
 
+export const MiniProjectById = async (id: string) => {
+  const res = await fetch(`${baseUrl}/mini-project/${id}`, {
+    cache: 'no-store',
+  });
+  if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+  return res.json();
+};
+
 export const contactForm = async (
   formData: FormSchemaType
 ): Promise<boolean> => {
