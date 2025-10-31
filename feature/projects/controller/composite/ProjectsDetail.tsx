@@ -37,7 +37,7 @@ export default function ProjectsDetail({ id }: Props) {
           <div className="relative flex-shrink-0 rounded-lg w-full lg:w-1/2 h-[400px] overflow-hidden">
             <Image
               src={data.projectPicture}
-              alt={data.projectName}
+              alt={data.projectName['en']}
               fill
               className="object-cover"
             />
@@ -45,7 +45,9 @@ export default function ProjectsDetail({ id }: Props) {
           <div className="flex flex-col gap-6 w-full lg:w-1/2">
             <p className="font-medium text-[18px] text-gray-500">
               Project Name:{' '}
-              <span className="font-black text-black">{data.projectName}</span>
+              <span className="font-black text-black">
+                {data.projectName['en']}
+              </span>
             </p>
             <div className="flex items-center gap-3">
               <span className="font-medium text-gray-500">Status:</span>
@@ -75,7 +77,7 @@ export default function ProjectsDetail({ id }: Props) {
             Project Description
           </p>
           <p className="text-gray-800 text-lg leading-relaxed">
-            {data.projectDescription}
+            {data.projectDescription['en']}
           </p>
         </div>
       </div>
@@ -83,7 +85,7 @@ export default function ProjectsDetail({ id }: Props) {
       {data.miniProjects && data.miniProjects.length > 0 && (
         <div className="mx-auto mt-10 p-6 w-full max-w-[1200px]">
           <p className="mb-6 font-black text-[24px] text-black">
-            <span>{data.projectName} </span>Projects
+            <span>{data.projectName['en']} </span>Projects
           </p>
           <div className="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {data.miniProjects.map((mini: any) => (
@@ -94,18 +96,18 @@ export default function ProjectsDetail({ id }: Props) {
                 <div className="relative rounded-lg w-full h-48 overflow-hidden">
                   <Image
                     src={mini.projectPicture}
-                    alt={mini.projectName}
+                    alt={mini.projectName['en']}
                     fill
                     className="object-cover"
                   />
                 </div>
                 <p className="font-bold text-black text-lg">
-                  {mini.projectName}
+                  {mini.projectName['en']}
                 </p>
                 <p className="text-gray-700 text-sm">
                   {mini.projectDescription.length > 200
                     ? mini.projectDescription.slice(0, 200) + '...'
-                    : mini.projectDescription}
+                    : mini.projectDescription['en']}
                 </p>
                 <div className="flex justify-between items-center">
                   <span

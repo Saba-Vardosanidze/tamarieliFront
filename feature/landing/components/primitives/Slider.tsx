@@ -117,7 +117,7 @@ const InfiniteSlider = ({
                       <Link href={`/projects/${card._id}`}>
                         <Image
                           src={card.projectPicture}
-                          alt={card.projectName}
+                          alt={card.projectName['en']}
                           fill
                           className="object-center object-cover"
                           sizes="(max-width: 768px) 100vw, 50vw"
@@ -125,7 +125,7 @@ const InfiniteSlider = ({
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                         <div className="right-0 bottom-0 left-0 absolute p-6 text-white">
                           <h3 className="mb-2 font-bold text-2xl">
-                            {card.projectName}
+                            {card.projectName['en']}
                           </h3>
                           <span className="inline-block bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs">
                             {card.projectType}

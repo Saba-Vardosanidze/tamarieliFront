@@ -36,7 +36,7 @@ export default function ProjectsDetail({ id }: Props) {
           <div className="relative flex-shrink-0 rounded-lg w-full lg:w-1/2 h-[400px] overflow-hidden">
             <Image
               src={data.projectPicture}
-              alt={data.projectName}
+              alt={data.projectName['en']}
               fill
               className="object-cover"
             />
@@ -44,7 +44,9 @@ export default function ProjectsDetail({ id }: Props) {
           <div className="flex flex-col gap-6 w-full lg:w-1/2">
             <p className="font-medium text-[18px] text-gray-500">
               Project Name:{' '}
-              <span className="font-black text-black">{data.projectName}</span>
+              <span className="font-black text-black">
+                {data.projectName['en']}
+              </span>
             </p>
             <div className="flex items-center gap-3">
               <span className="font-medium text-gray-500">Status:</span>
@@ -71,10 +73,10 @@ export default function ProjectsDetail({ id }: Props) {
       <div className="mx-auto p-6 w-full max-w-[1200px]">
         <div className="flex flex-col gap-8 bg-white shadow-lg p-6 rounded-xl">
           <p className="font-black text-[24px] text-black">
-            {data.projectName} Description
+            {data.projectName['en']} Description
           </p>
           <p className="text-gray-800 text-lg leading-relaxed">
-            {data.projectDescription}
+            {data.projectDescription['en']}
           </p>
         </div>
       </div>
