@@ -1,15 +1,38 @@
 {
-  "HomePage": {
-    "title": "გამარჯობა სამყარო!",
-    "about": "გადადი ჩვენს შესახებ"
-  },
-  "AboutPage": {
-    "title": "ჩვენ შესახებ",
-    "description": "ეს არის ჩვენს შესახებ გვერდი"
-  },
   "HeroSection": {
     "welcomeText": "მოგესალმებათ ასოციაცია თამარიელი",
     "inspiration": "შთაგონება: თამარ მეფის ოქროს ხანა",
-    "identity": "ელი: იდენტობა,ფესვები"
+    "identity": "იდენტობა: ფესვები და მემკვიდრეობა"
+  },
+  "Header": {
+    "home": "მთავარი",
+    "about": "ჩვენ შესახებ",
+    "guide": "გაიდე"
+  },
+  "LanguageOptions": {
+    "georgian": "ქართული",
+    "english": "ინგლისური"
+  },
+  "Projects": {
+    "tamarieli": "თამარეული",
+    "ciblus": "ციბლუსი",
+    "earthoba": "ერზობა",
+    "thinkCreateInspire": "იფიქრე. შექმენი. შთააგმე"
+  },
+  "Portfolio": {
+    "project1": "პროექტი 1",
+    "project2": "პროექტი 2",
+    "project3": "პროექტი 3",
+    "project4": "პროექტი 4"
+  },
+  "Footer": {
+    "contactUs": "კონტაქტი",
+    "tel": "+33 7 52 75 56 63",
+    "mailto": "tamarielitamarieli@gmail.com",
+    "address": "1A Rue de Lattre de Tassigny, 67300 Schiltigheim",
+    "socials": {
+      "facebook": "ფეისბუქი",
+      "instagram": "ინსტაგრამი"
+    }
   }
 }

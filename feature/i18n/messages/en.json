@@ -1,7 +1,38 @@
 {
   "HeroSection": {
-    "welcomeText": "მოგესალმებათ ასოციაცია თამარიელი",
-    "inspiration": "შთაგონება: თამარ მეფის ოქროს ხანა",
-    "identity": "ელი: იდენტობა,ფესვები"
+    "welcomeText": "Welcome to Tamarieli Association",
+    "inspiration": "Inspiration: Queen Tamar’s Golden Age",
+    "identity": "Identity: Roots and Heritage"
+  },
+  "Header": {
+    "home": "Home",
+    "about": "About",
+    "guide": "Guide"
+  },
+  "LanguageOptions": {
+    "georgian": "Georgian",
+    "english": "English"
+  },
+  "Projects": {
+    "tamarieli": "Tamarieli",
+    "ciblus": "Ciblus",
+    "earthoba": "Earthoba",
+    "thinkCreateInspire": "Think. Create. Inspire"
+  },
+  "Portfolio": {
+    "project1": "Portfolio Project 1",
+    "project2": "Portfolio Project 2",
+    "project3": "Portfolio Project 3",
+    "project4": "Portfolio Project 4"
+  },
+  "Footer": {
+    "contactUs": "Contact",
+    "tel": "+33 7 52 75 56 63",
+    "mailto": "tamarielitamarieli@gmail.com",
+    "address": "1A Rue de Lattre de Tassigny, 67300 Schiltigheim",
+    "socials": {
+      "facebook": "Facebook",
+      "instagram": "Instagram"
+    }
   }
 }
