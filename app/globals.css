@@ -3,6 +3,13 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --aboutUs-gradient: #f1dccf;
+  background: #f1dccf;
+  background: linear-gradient(
+    181deg,
+    rgba(241, 220, 207, 1) 0%,
+    rgba(243, 235, 224, 0) 100%
+  );
 }
 
 @theme inline {
