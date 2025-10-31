@@ -11,7 +11,7 @@ export const HeaderData = [
   {
     id: "2",
     title: "About",
-    href: "/",
+    href: "/aboutUs",
   },
   {
     id: "3",

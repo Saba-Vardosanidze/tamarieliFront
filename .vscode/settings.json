@@ -1,0 +1,3 @@
+{
+  "i18n-ally.localesPaths": ["feature/i18n", "feature/i18n/messages"]
+}
