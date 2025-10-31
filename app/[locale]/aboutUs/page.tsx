@@ -1,4 +1,4 @@
-import AboutUs from "feature/aboutUs/components/composites/AboutUs";
+import AboutUs from 'feature/aboutUs/components/composites/AboutUs';
 
 const page = () => {
   return (

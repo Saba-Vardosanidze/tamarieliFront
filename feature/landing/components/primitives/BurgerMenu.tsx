@@ -5,7 +5,6 @@ import { BurgerMenuIconProps } from 'feature/type';
 import { AnimatePresence, motion } from 'motion/react';
 import Link from 'next/link';
 import { useEffect } from 'react';
-import BurgerMenuLanguageOptions from './BurgerMenuLanguageOptions';
 
 const BurgerMenu = ({ isOpen, setIsOpen }: BurgerMenuIconProps) => {
   useEffect(() => {
@@ -52,9 +51,6 @@ const BurgerMenu = ({ isOpen, setIsOpen }: BurgerMenuIconProps) => {
                   </Link>
                 </div>
               ))}
-              <div>
-                <BurgerMenuLanguageOptions />
-              </div>
             </div>
           </motion.div>
         )}

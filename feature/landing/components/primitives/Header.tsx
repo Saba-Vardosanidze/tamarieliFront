@@ -1,14 +1,12 @@
-"use client";
+'use client';
 
-import { HeaderData } from "feature/landing/data/landingData";
-import Image from "next/image";
-import Link from "next/link";
-import BurgerMenu from "./BurgerMenu";
-import BurgerMenuIcon from "./BurgermenuIcon";
-import { useState } from "react";
-import BurgerMenuLanguageOptions from "./BurgerMenuLanguageOptions";
-import LocaleSwitcher from "feature/i18n/components/LocaleSwitcher";
-import LocaleSwitcherSelect from "feature/i18n/components/LocaleSwitcherSelect";
+import { HeaderData } from 'feature/landing/data/landingData';
+import Image from 'next/image';
+import Link from 'next/link';
+import BurgerMenu from './BurgerMenu';
+import BurgerMenuIcon from './BurgermenuIcon';
+import { useState } from 'react';
+import LocaleSwitcherSelect from 'feature/i18n/components/LocaleSwitcherSelect';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -18,7 +16,7 @@ const Header = () => {
       <header className="flex flex-col justify-center items-center w-full max-w-[1440px]">
         <div className="z-[201] relative flex bg-[#E0E0E0] px-5 border-[lightgrey] border-b w-full">
           <div className="flex justify-between py-2.5 w-full">
-            <Link href={"/"}>
+            <Link href={'/'}>
               <Image
                 src="/images/headerImages/png/siteLogoa.png"
                 alt="logo"
@@ -41,9 +39,6 @@ const Header = () => {
                     </Link>
                   </div>
                 ))}
-                <div className="hidden lg:flex">
-                  <BurgerMenuLanguageOptions />
-                </div>
               </div>
               <LocaleSwitcherSelect />
             </div>
