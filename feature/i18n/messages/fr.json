@@ -25,6 +25,21 @@
     "project3": "Projet Portfolio 3",
     "project4": "Projet Portfolio 4"
   },
+  "Form": {
+    "sectionTitle": "Message",
+    "association": "Association Tamarieli",
+    "description": "Vous pouvez nous envoyer un message",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Entrez votre nom",
+    "emailLabel": "Adresse e-mail",
+    "emailPlaceholder": "Entrez votre e-mail",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Entrez votre message",
+    "submit": "Envoyer",
+    "submitting": "Envoi...",
+    "successToast": "Données envoyées avec succès !",
+    "errorToast": "Une erreur s'est produite !"
+  },
   "Footer": {
     "contactUs": "Contact",
     "tel": "+33 7 52 75 56 63",

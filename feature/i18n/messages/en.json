@@ -25,6 +25,21 @@
     "project3": "Portfolio Project 3",
     "project4": "Portfolio Project 4"
   },
+  "Form": {
+    "sectionTitle": "Message",
+    "association": "Tamarieli Association",
+    "description": "You can send us a message",
+    "nameLabel": "Name",
+    "namePlaceholder": "Enter your name",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "Enter your email",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Enter your message",
+    "submit": "Send",
+    "submitting": "Sending...",
+    "successToast": "Data sent successfully!",
+    "errorToast": "An error occurred!"
+  },
   "Footer": {
     "contactUs": "Contact",
     "tel": "+33 7 52 75 56 63",

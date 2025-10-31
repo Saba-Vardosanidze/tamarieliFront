@@ -25,6 +25,21 @@
     "project3": "პროექტი 3",
     "project4": "პროექტი 4"
   },
+  "Form": {
+    "sectionTitle": "შეტყობინება",
+    "association": "ასოციაცია თამარიელი",
+    "description": "შეგიძლიათ გამოგვიგზავნოთ შეტყობინება",
+    "nameLabel": "სახელი",
+    "namePlaceholder": "შეიყვანეთ თქვენი სახელი",
+    "emailLabel": "ელ.ფოსტა",
+    "emailPlaceholder": "შეიყვანეთ თქვენი ელ.ფოსტა",
+    "messageLabel": "შეტყობინება",
+    "messagePlaceholder": "შეიყვანეთ თქვენი შეტყობინება",
+    "submit": "გაგზავნე",
+    "submitting": "იგზავნება...",
+    "successToast": "მონაცემები წარმატებით გაიგზავნა!",
+    "errorToast": "დაფიქსირდა შეცდომა!"
+  },
   "Footer": {
     "contactUs": "კონტაქტი",
     "tel": "+33 7 52 75 56 63",
