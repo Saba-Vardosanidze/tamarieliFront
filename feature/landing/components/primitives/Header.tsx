@@ -7,6 +7,8 @@ import BurgerMenu from "./BurgerMenu";
 import BurgerMenuIcon from "./BurgermenuIcon";
 import { useState } from "react";
 import BurgerMenuLanguageOptions from "./BurgerMenuLanguageOptions";
+import LocaleSwitcher from "feature/i18n/components/LocaleSwitcher";
+import LocaleSwitcherSelect from "feature/i18n/components/LocaleSwitcherSelect";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -43,6 +45,7 @@ const Header = () => {
                   <BurgerMenuLanguageOptions />
                 </div>
               </div>
+              <LocaleSwitcherSelect />
             </div>
             <div className="lg:hidden flex items-center">
               <BurgerMenuIcon isOpen={isOpen} setIsOpen={setIsOpen} />
