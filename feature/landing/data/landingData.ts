@@ -97,7 +97,6 @@ export const FootData: FooterDataProps[] = [
 ];
 export const FooterItems = [
   {
-    contactUs: "კონტაქტი",
     links: [
       { tel: "+33 7 52 75 56 63" },
       { mailto: "tamarielitamarieli@gmail.com" },

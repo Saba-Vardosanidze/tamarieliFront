@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { FooterItems } from 'feature/landing/data/landingData';
-import Image from 'next/image';
-import FooterLinks from './FooterLinks';
-import SocialIcons from './FooterSocmediaLinks';
+import { FooterItems } from "feature/landing/data/landingData";
+import Image from "next/image";
+import FooterLinks from "./FooterLinks";
+import SocialIcons from "./FooterSocmediaLinks";
 
 const Footer = () => {
   return (
@@ -11,11 +11,7 @@ const Footer = () => {
       <div className="flex lg:flex-row flex-col justify-between gap-8 lg:gap-0 px-4 sm:px-6 md:px-8 lg:px-10 w-full max-w-[1440px]">
         <div className="flex flex-col w-full lg:w-auto">
           {FooterItems.map((item, index) => (
-            <FooterLinks
-              key={index}
-              contactUs={item.contactUs}
-              links={item.links}
-            />
+            <FooterLinks key={index} links={item.links} />
           ))}
           <SocialIcons />
         </div>

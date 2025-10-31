@@ -41,13 +41,6 @@
     "errorToast": "An error occurred!"
   },
   "Footer": {
-    "contactUs": "Contact",
-    "tel": "+33 7 52 75 56 63",
-    "mailto": "tamarielitamarieli@gmail.com",
-    "address": "1A Rue de Lattre de Tassigny, 67300 Schiltigheim",
-    "socials": {
-      "facebook": "Facebook",
-      "instagram": "Instagram"
-    }
+    "contactUs": "Contact"
   }
 }
