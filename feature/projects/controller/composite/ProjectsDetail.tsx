@@ -141,7 +141,7 @@ export default function ProjectsDetail({ id }: Props) {
                     {mini.projectType}
                   </span>
                   <Link
-                    href={`/miniprojects/${mini._id}`}
+                    href={`/locale/miniprojects/${mini._id}`}
                     className="text-[14px] text-black cursor-pointer"
                   >
                     ნახე ვრცლად

@@ -114,7 +114,7 @@ const InfiniteSlider = ({
                     style={{ width: `${cardWidth}px` }}
                   >
                     <div className="group relative shadow-2xl rounded-xl h-[300px] overflow-hidden hover:scale-105 transition-transform cursor-pointer">
-                      <Link href={`/projects/${card._id}`}>
+                      <Link href={`/locale/projects/${card._id}`}>
                         <Image
                           src={card.projectPicture}
                           alt={card.projectName['en']}

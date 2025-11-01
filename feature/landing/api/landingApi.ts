@@ -1,7 +1,7 @@
 import { FormSchemaType } from '../schema/formSchema';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_API_URL;
-const baseURL = process.env.NEXT_PUBLIC_REGISTRATION_GOOGLEFORM;
+const GoogleFormURL = process.env.NEXT_PUBLIC_REGISTRATION_GOOGLEFORM;
 
 export const ProjectApi = async () => {
   const res = await fetch(`${baseUrl}/project`, {
@@ -36,7 +36,7 @@ export const contactForm = async (
     body.append('entry.625579071', formData.email);
     body.append('entry.562354251', formData.message);
 
-    await fetch(baseURL, {
+    await fetch(GoogleFormURL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body,
@@ -48,4 +48,19 @@ export const contactForm = async (
     console.error('server error:', error);
     return false;
   }
+};
+export const BooksApi = async () => {
+  const res = await fetch(`${baseUrl}/books`, {
+    cache: 'no-store',
+  });
+  if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+  return res.json();
+};
+
+export const BookEnamsApi = async () => {
+  const res = await fetch(`${baseUrl}/books/enums`, {
+    cache: 'no-store',
+  });
+  if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+  return res.json();
 };
