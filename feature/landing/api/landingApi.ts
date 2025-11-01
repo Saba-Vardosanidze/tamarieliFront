@@ -11,8 +11,8 @@ export const ProjectApi = async () => {
   return res.json();
 };
 
-export const ProjectById = async (id: string) => {
-  const res = await fetch(`${baseUrl}/project/${id}`, {
+export const ProjectById = async (id: string, type: string) => {
+  const res = await fetch(`${baseUrl}/project/${id}?type=${type}`, {
     cache: 'no-store',
   });
   if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);

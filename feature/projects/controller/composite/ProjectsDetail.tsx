@@ -2,19 +2,29 @@
 
 import { useQuery } from '@tanstack/react-query';
 import { ProjectById } from 'feature/landing/api/landingApi';
+import { Buttons } from 'feature/projects/data/projectData';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 
 type Props = {
   id: string;
 };
 
 export default function ProjectsDetail({ id }: Props) {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+  const type = searchParams.get('type') || '';
   const { data, isLoading, isError } = useQuery({
-    queryKey: ['project', id],
-    queryFn: () => ProjectById(id),
+    queryKey: ['project', id, type],
+    queryFn: () => ProjectById(id, type),
   });
-
+  const handleTypeChange = (type: string) => {
+    const params = new URLSearchParams(searchParams.toString());
+    params.set('type', type);
+    router.push(`${pathname}?${params.toString()}`);
+  };
   if (isLoading)
     return (
       <p className="mt-10 text-gray-500 text-center">Loading project...</p>
@@ -84,9 +94,22 @@ export default function ProjectsDetail({ id }: Props) {
 
       {data.miniProjects && data.miniProjects.length > 0 && (
         <div className="mx-auto mt-10 p-6 w-full max-w-[1200px]">
-          <p className="mb-6 font-black text-[24px] text-black">
-            <span>{data.projectName['en']} </span>Projects
-          </p>
+          <div className="flex justify-between w-full">
+            <p className="mb-6 font-black text-[24px] text-black">
+              <span>{data.projectName['en']} </span>Projects
+            </p>
+            <div className="flex gap-[10px]">
+              {Buttons.map((button) => (
+                <button
+                  onClick={() => handleTypeChange(button.type)}
+                  className={`px-[10px] h-[40px] cursor-pointer rounded-[10px] text-[12px] ${button.class}`}
+                  key={button.id}
+                >
+                  {button.name}
+                </button>
+              ))}
+            </div>
+          </div>
           <div className="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {data.miniProjects.map((mini: any) => (
               <div
