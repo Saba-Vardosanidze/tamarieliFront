@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { BookEnamsApi } from 'feature/landing/api/landingApi';
-import { useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 interface BookEnumsData {
   genres: {
@@ -13,7 +14,23 @@ interface BookEnumsData {
   ageCategories: Record<string, string[]>;
 }
 
-const BookEnams = () => {
+interface BookEnamsProps {
+  onFilterChange: (filters: FilterParams) => void;
+}
+
+export interface FilterParams {
+  genre?: string;
+  subGenre?: string;
+  literaryMovement?: string;
+  themes?: string;
+  author?: string;
+  ageCategory?: string;
+}
+
+const BookEnams = ({ onFilterChange }: BookEnamsProps) => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
   const { data, isLoading, isError } = useQuery<BookEnumsData>({
     queryKey: ['booksEnams'],
     queryFn: BookEnamsApi,
@@ -27,6 +44,121 @@ const BookEnams = () => {
   const [selectedAgeCategory, setSelectedAgeCategory] = useState<string>('');
 
   const lang = 'ka';
+
+  useEffect(() => {
+    setSelectedGenre(searchParams.get('genre') || '');
+    setSelectedSubGenre(searchParams.get('subGenre') || '');
+    setSelectedMovement(searchParams.get('literaryMovement') || '');
+    setSelectedTheme(searchParams.get('themes') || '');
+    setSelectedAuthor(searchParams.get('author') || '');
+    setSelectedAgeCategory(searchParams.get('ageCategory') || '');
+  }, [searchParams]);
+
+  const updateFilters = (newFilters: FilterParams) => {
+    const params = new URLSearchParams();
+
+    Object.entries(newFilters).forEach(([key, value]) => {
+      if (value) {
+        params.set(key, value);
+      }
+    });
+
+    const queryString = params.toString();
+    router.push(queryString ? `?${queryString}` : window.location.pathname, {
+      scroll: false,
+    });
+
+    onFilterChange(newFilters);
+  };
+
+  const handleGenreChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    const value = e.target.value;
+    setSelectedGenre(value);
+    updateFilters({
+      genre: value,
+      subGenre: selectedSubGenre,
+      literaryMovement: selectedMovement,
+      themes: selectedTheme,
+      author: selectedAuthor,
+      ageCategory: selectedAgeCategory,
+    });
+  };
+
+  const handleSubGenreChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    const value = e.target.value;
+    setSelectedSubGenre(value);
+    updateFilters({
+      genre: selectedGenre,
+      subGenre: value,
+      literaryMovement: selectedMovement,
+      themes: selectedTheme,
+      author: selectedAuthor,
+      ageCategory: selectedAgeCategory,
+    });
+  };
+
+  const handleMovementChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    const value = e.target.value;
+    setSelectedMovement(value);
+    updateFilters({
+      genre: selectedGenre,
+      subGenre: selectedSubGenre,
+      literaryMovement: value,
+      themes: selectedTheme,
+      author: selectedAuthor,
+      ageCategory: selectedAgeCategory,
+    });
+  };
+
+  const handleThemeChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    const value = e.target.value;
+    setSelectedTheme(value);
+    updateFilters({
+      genre: selectedGenre,
+      subGenre: selectedSubGenre,
+      literaryMovement: selectedMovement,
+      themes: value,
+      author: selectedAuthor,
+      ageCategory: selectedAgeCategory,
+    });
+  };
+
+  const handleAuthorChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    const value = e.target.value;
+    setSelectedAuthor(value);
+    updateFilters({
+      genre: selectedGenre,
+      subGenre: selectedSubGenre,
+      literaryMovement: selectedMovement,
+      themes: selectedTheme,
+      author: value,
+      ageCategory: selectedAgeCategory,
+    });
+  };
+
+  const handleAgeCategoryChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    const value = e.target.value;
+    setSelectedAgeCategory(value);
+    updateFilters({
+      genre: selectedGenre,
+      subGenre: selectedSubGenre,
+      literaryMovement: selectedMovement,
+      themes: selectedTheme,
+      author: selectedAuthor,
+      ageCategory: value,
+    });
+  };
+
+  const handleClearFilters = () => {
+    setSelectedGenre('');
+    setSelectedSubGenre('');
+    setSelectedMovement('');
+    setSelectedTheme('');
+    setSelectedAuthor('');
+    setSelectedAgeCategory('');
+    router.push(window.location.pathname, { scroll: false });
+    onFilterChange({});
+  };
 
   if (isLoading)
     return (
@@ -67,6 +199,14 @@ const BookEnams = () => {
 
   if (!data) return null;
 
+  const hasActiveFilters =
+    selectedGenre ||
+    selectedSubGenre ||
+    selectedMovement ||
+    selectedTheme ||
+    selectedAuthor ||
+    selectedAgeCategory;
+
   return (
     <div className="relative space-y-5 bg-white shadow-md mx-auto p-6 rounded-[12px] w-full max-w-[400px] min-h-full">
       <h2 className="mb-4 font-semibold text-black text-2xl text-center">
@@ -76,38 +216,47 @@ const BookEnams = () => {
       {renderSelect(
         'ჟანრი',
         selectedGenre,
-        (e) => setSelectedGenre(e.target.value),
+        handleGenreChange,
         data.genres.main[lang]
       )}
       {renderSelect(
         'ქვეჟანრი',
         selectedSubGenre,
-        (e) => setSelectedSubGenre(e.target.value),
+        handleSubGenreChange,
         data.genres.sub[lang]
       )}
       {renderSelect(
         'მიმდინარეობა',
         selectedMovement,
-        (e) => setSelectedMovement(e.target.value),
+        handleMovementChange,
         data.literaryMovements[lang]
       )}
       {renderSelect(
         'თემა',
         selectedTheme,
-        (e) => setSelectedTheme(e.target.value),
+        handleThemeChange,
         data.themes[lang]
       )}
       {renderSelect(
         'ავტორი',
         selectedAuthor,
-        (e) => setSelectedAuthor(e.target.value),
+        handleAuthorChange,
         data.authors[lang]
       )}
       {renderSelect(
         'ასაკობრივი კატეგორია',
         selectedAgeCategory,
-        (e) => setSelectedAgeCategory(e.target.value),
+        handleAgeCategoryChange,
         data.ageCategories[lang]
+      )}
+
+      {hasActiveFilters && (
+        <button
+          onClick={handleClearFilters}
+          className="bg-red-500 hover:bg-red-600 shadow-sm hover:shadow-md px-4 py-3 rounded-xl w-full font-medium text-white transition-colors duration-200"
+        >
+          ფილტრის გასუფთავება
+        </button>
       )}
     </div>
   );

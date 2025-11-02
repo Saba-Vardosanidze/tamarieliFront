@@ -49,10 +49,37 @@ export const contactForm = async (
     return false;
   }
 };
-export const BooksApi = async () => {
-  const res = await fetch(`${baseUrl}/books`, {
+
+interface BookFilters {
+  genre?: string;
+  subGenre?: string;
+  literaryMovement?: string;
+  themes?: string;
+  author?: string;
+  ageCategory?: string;
+  lang?: string;
+}
+
+export const BooksApi = async (filters: BookFilters = {}) => {
+  const params = new URLSearchParams();
+
+  params.append('lang', filters.lang || 'ka');
+
+  if (filters.genre) params.append('genre', filters.genre);
+  if (filters.subGenre) params.append('subGenre', filters.subGenre);
+  if (filters.literaryMovement)
+    params.append('literaryMovement', filters.literaryMovement);
+  if (filters.themes) params.append('themes', filters.themes);
+  if (filters.author) params.append('author', filters.author);
+  if (filters.ageCategory) params.append('ageCategory', filters.ageCategory);
+
+  const queryString = params.toString();
+  const url = `${baseUrl}/books${queryString ? `?${queryString}` : ''}`;
+
+  const res = await fetch(url, {
     cache: 'no-store',
   });
+
   if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
   return res.json();
 };
