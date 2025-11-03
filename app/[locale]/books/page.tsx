@@ -1,4 +1,4 @@
-import Book from 'feature/books/components/composites/Book';
+import Book from 'features/books/components/composites/Book';
 
 const Books = () => {
   return (
