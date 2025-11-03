@@ -25,7 +25,7 @@ const Header = () => {
                 className="cursor-pointer"
               />
             </Link>
-            <div className="hidden lg:flex justify-between items-center min-h-[30px]">
+            <div className="hidden lg:flex justify-between items-center gap-4 min-h-[30px]">
               <div className="flex justify-center items-center gap-4">
                 {HeaderData.map((eachElement) => (
                   <div

@@ -1,5 +1,6 @@
 'use client';
 
+import LocaleSwitcher from '@features/i18n/components/LocaleSwitcher';
 import { HeaderData } from 'features/landing/data/landingData';
 import { BurgerMenuIconProps } from 'features/type';
 import { AnimatePresence, motion } from 'motion/react';
@@ -42,18 +43,21 @@ const BurgerMenu = ({ isOpen, setIsOpen }: BurgerMenuIconProps) => {
             transition={{ duration: 0.5 }}
           >
             <div className="flex flex-col justify-center gap-4">
-              {HeaderData.map((eachElement) => (
-                <div
-                  key={eachElement.id}
-                  className="flex justify-center items-center gap-4"
-                >
-                  <Link href={`/${locale || '/en'}/${eachElement.href}`}>
-                    <ul className="font-[600] text-[#1a1b1f] text-[14px] hover:text-[#606371] cursor-pointer">
-                      {eachElement.title}
-                    </ul>
-                  </Link>
-                </div>
-              ))}
+              <div className="flex flex-col justify-center gap-4">
+                {HeaderData.map((eachElement) => (
+                  <div
+                    key={eachElement.id}
+                    className="flex justify-center items-center gap-4"
+                  >
+                    <Link href={`/${locale || '/en'}/${eachElement.href}`}>
+                      <ul className="font-[600] text-[#1a1b1f] text-[14px] hover:text-[#606371] cursor-pointer">
+                        {eachElement.title}
+                      </ul>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+              <LocaleSwitcher />
             </div>
           </motion.div>
         )}
