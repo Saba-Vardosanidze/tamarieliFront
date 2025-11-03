@@ -11,10 +11,16 @@ import { useLocale } from 'next-intl';
 const AllBooks = () => {
   const locale = useLocale();
   const searchParams = useSearchParams();
-  const [filters, setFilters] = useState<FilterParams>({});
+  const [filters, setFilters] = useState<FilterParams>({
+    lang: locale || 'ka',
+  });
 
+  // URL პარამეტრებიდან ფილტრების წაკითხვა
   useEffect(() => {
-    const newFilters: FilterParams = {};
+    const newFilters: FilterParams = {
+      lang: locale || 'ka',
+    };
+
     if (searchParams.get('genre'))
       newFilters.genre = searchParams.get('genre')!;
     if (searchParams.get('subGenre'))
@@ -27,8 +33,17 @@ const AllBooks = () => {
       newFilters.author = searchParams.get('author')!;
     if (searchParams.get('ageCategory'))
       newFilters.ageCategory = searchParams.get('ageCategory')!;
+
     setFilters(newFilters);
-  }, [searchParams]);
+  }, [searchParams, locale]);
+
+  // ენის ცვლილებისას ფილტრების განახლება
+  useEffect(() => {
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      lang: locale || 'ka',
+    }));
+  }, [locale]);
 
   const { data, isLoading, isError } = useQuery({
     queryKey: ['book', filters],
@@ -36,7 +51,10 @@ const AllBooks = () => {
   });
 
   const handleFilterChange = (newFilters: FilterParams) => {
-    setFilters(newFilters);
+    setFilters({
+      ...newFilters,
+      lang: locale || 'ka',
+    });
   };
 
   if (isLoading)

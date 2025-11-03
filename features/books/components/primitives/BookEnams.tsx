@@ -26,6 +26,7 @@ export interface FilterParams {
   themes?: string;
   author?: string;
   ageCategory?: string;
+  lang?: string;
 }
 
 const BookEnams = ({ onFilterChange }: BookEnamsProps) => {
@@ -57,10 +58,38 @@ const BookEnams = ({ onFilterChange }: BookEnamsProps) => {
     setSelectedAgeCategory(searchParams.get('ageCategory') || '');
   }, [searchParams]);
 
+  // ენის ცვლილების დროს ფილტრების განახლება
+  useEffect(() => {
+    const currentFilters: FilterParams = {
+      genre: selectedGenre,
+      subGenre: selectedSubGenre,
+      literaryMovement: selectedMovement,
+      themes: selectedTheme,
+      author: selectedAuthor,
+      ageCategory: selectedAgeCategory,
+      lang: lang,
+    };
+
+    // მხოლოდ იმ შემთხვევაში, თუ რომელიმე ფილტრი არჩეულია
+    if (
+      selectedGenre ||
+      selectedSubGenre ||
+      selectedMovement ||
+      selectedTheme ||
+      selectedAuthor ||
+      selectedAgeCategory
+    ) {
+      onFilterChange(currentFilters);
+    }
+  }, [lang]);
+
   const updateFilters = (newFilters: FilterParams) => {
     const params = new URLSearchParams();
 
-    Object.entries(newFilters).forEach(([key, value]) => {
+    // ენის პარამეტრის დამატება
+    const filtersWithLang = { ...newFilters, lang };
+
+    Object.entries(filtersWithLang).forEach(([key, value]) => {
       if (value) {
         params.set(key, value);
       }
@@ -71,7 +100,7 @@ const BookEnams = ({ onFilterChange }: BookEnamsProps) => {
       scroll: false,
     });
 
-    onFilterChange(newFilters);
+    onFilterChange(filtersWithLang);
   };
 
   const handleGenreChange = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -160,7 +189,7 @@ const BookEnams = ({ onFilterChange }: BookEnamsProps) => {
     setSelectedAuthor('');
     setSelectedAgeCategory('');
     router.push(window.location.pathname, { scroll: false });
-    onFilterChange({});
+    onFilterChange({ lang });
   };
 
   const handleApplyFilters = () => {
