@@ -1,5 +1,5 @@
-import ProjectsDetail from 'feature/projects/controller/composite/ProjectsDetail';
-import { ParamsProps } from 'feature/type';
+import ProjectsDetail from 'features/projects/controller/composite/ProjectsDetail';
+import { ParamsProps } from 'features/type';
 
 export default async function Projects({ params }: ParamsProps) {
   const resolvedParams = await params;

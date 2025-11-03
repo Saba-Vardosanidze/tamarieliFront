@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
 };
 
 const withNextIntl = createNextIntlPlugin({
-  requestConfig: './feature/i18n/request.ts',
+  requestConfig: './features/i18n/request.ts',
 });
 
 export default withNextIntl(nextConfig);
