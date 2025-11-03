@@ -88,5 +88,19 @@
   "Header": {
     "home": "Accueil",
     "about": "À propos"
+  },
+
+  "ContactForm": {
+    "title1": "Message",
+    "title2": "Association Tamarieli",
+    "description": "Vous pouvez nous envoyer un message",
+    "name": "Nom",
+    "namePlaceholder": "Entrez votre nom",
+    "email": "Adresse e-mail",
+    "emailPlaceholder": "Entrez votre e-mail",
+    "message": "Message",
+    "messagePlaceholder": "Entrez votre message",
+    "submit": "Envoyer",
+    "submitting": "Envoi..."
   }
 }

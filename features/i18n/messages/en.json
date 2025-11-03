@@ -88,5 +88,19 @@
   "Header": {
     "home": "Home",
     "about": "About"
+  },
+
+  "ContactForm": {
+    "title1": "Message",
+    "title2": "Tamarieli Association",
+    "description": "You can send us a message",
+    "name": "Name",
+    "namePlaceholder": "Enter your name",
+    "email": "Email Address",
+    "emailPlaceholder": "Enter your email",
+    "message": "Message",
+    "messagePlaceholder": "Enter your message",
+    "submit": "Send",
+    "submitting": "Sending..."
   }
 }
