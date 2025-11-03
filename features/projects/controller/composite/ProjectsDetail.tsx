@@ -49,7 +49,7 @@ export default function ProjectsDetail({ id }: Props) {
           <div className="relative flex-shrink-0 rounded-lg w-full lg:w-1/2 h-[400px] overflow-hidden">
             <Image
               src={data.projectPicture}
-              alt={data.projectName['en']}
+              alt={data.projectName[locale || 'en']}
               fill
               className="object-cover"
             />
@@ -58,7 +58,7 @@ export default function ProjectsDetail({ id }: Props) {
             <p className="font-medium text-[18px] text-gray-500">
               Project Name:{' '}
               <span className="font-black text-black">
-                {data.projectName['en']}
+                {data.projectName[locale || 'en']}
               </span>
             </p>
             <div className="flex items-center gap-3">
@@ -89,7 +89,7 @@ export default function ProjectsDetail({ id }: Props) {
             Project Description
           </p>
           <p className="text-gray-800 text-lg leading-relaxed">
-            {data.projectDescription['en']}
+            {data.projectDescription[locale || 'en']}
           </p>
         </div>
       </div>
@@ -128,18 +128,18 @@ export default function ProjectsDetail({ id }: Props) {
                 <div className="relative rounded-lg w-full h-48 overflow-hidden">
                   <Image
                     src={mini.projectPicture}
-                    alt={mini.projectName['en']}
+                    alt={mini.projectName[locale || 'en']}
                     fill
                     className="object-cover"
                   />
                 </div>
                 <p className="font-bold text-black text-lg">
-                  {mini.projectName['en']}
+                  {mini.projectName[locale || 'en']}
                 </p>
                 <p className="text-gray-700 text-sm">
                   {mini.projectDescription.length > 200
                     ? mini.projectDescription.slice(0, 200) + '...'
-                    : mini.projectDescription['en']}
+                    : mini.projectDescription[locale || 'en']}
                 </p>
                 <div className="flex justify-between items-center">
                   <span
@@ -150,7 +150,7 @@ export default function ProjectsDetail({ id }: Props) {
                     {mini.projectType}
                   </span>
                   <Link
-                    href={`/locale/miniprojects/${mini._id}`}
+                    href={`/${locale}/miniprojects/${mini._id}`}
                     className="text-[14px] text-black cursor-pointer"
                   >
                     ნახე ვრცლად

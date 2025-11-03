@@ -6,8 +6,10 @@ import BookEnams, { FilterParams } from './BookEnams';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { useLocale } from 'next-intl';
 
 const AllBooks = () => {
+  const locale = useLocale();
   const searchParams = useSearchParams();
   const [filters, setFilters] = useState<FilterParams>({});
 
@@ -79,14 +81,14 @@ const AllBooks = () => {
                 >
                   <Image
                     src={book.coverImage}
-                    alt={book.title['ka']}
+                    alt={book.title[locale || 'en']}
                     width={208}
                     height={277}
                   />
                 </Link>
                 <div className="px-[5px] w-full">
                   <p className="font-medium text-[#36454F]">
-                    {book.title['ka']}
+                    {book.title[locale || 'en']}
                   </p>
                 </div>
               </div>

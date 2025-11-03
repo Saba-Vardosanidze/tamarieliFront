@@ -2,6 +2,7 @@
 
 import { useQuery } from '@tanstack/react-query';
 import { MiniProjectById } from 'features/landing/api/landingApi';
+import { useLocale } from 'next-intl';
 import Image from 'next/image';
 
 type Props = {
@@ -9,6 +10,7 @@ type Props = {
 };
 
 export default function ProjectsDetail({ id }: Props) {
+  const locale = useLocale();
   const { data, isLoading, isError } = useQuery({
     queryKey: ['project', id],
     queryFn: () => MiniProjectById(id),
@@ -36,7 +38,7 @@ export default function ProjectsDetail({ id }: Props) {
           <div className="relative flex-shrink-0 rounded-lg w-full lg:w-1/2 h-[400px] overflow-hidden">
             <Image
               src={data.projectPicture}
-              alt={data.projectName['en']}
+              alt={data.projectName[locale || 'en']}
               fill
               className="object-cover"
             />
@@ -45,7 +47,7 @@ export default function ProjectsDetail({ id }: Props) {
             <p className="font-medium text-[18px] text-gray-500">
               Project Name:{' '}
               <span className="font-black text-black">
-                {data.projectName['en']}
+                {data.projectName[locale || 'en']}
               </span>
             </p>
             <div className="flex items-center gap-3">
@@ -73,10 +75,10 @@ export default function ProjectsDetail({ id }: Props) {
       <div className="mx-auto p-6 w-full max-w-[1200px]">
         <div className="flex flex-col gap-8 bg-white shadow-lg p-6 rounded-xl">
           <p className="font-black text-[24px] text-black">
-            {data.projectName['en']} Description
+            {data.projectName[locale || 'en']} Description
           </p>
           <p className="text-gray-800 text-lg leading-relaxed">
-            {data.projectDescription['en']}
+            {data.projectDescription[locale || 'en']}
           </p>
         </div>
       </div>
