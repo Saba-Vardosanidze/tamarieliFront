@@ -3,6 +3,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { ProjectById } from 'feature/landing/api/landingApi';
 import { Buttons } from 'feature/projects/data/projectData';
+import { useLocale } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useSearchParams, useRouter } from 'next/navigation';
@@ -12,6 +13,7 @@ type Props = {
 };
 
 export default function ProjectsDetail({ id }: Props) {
+  const locale = useLocale();
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
@@ -35,9 +37,9 @@ export default function ProjectsDetail({ id }: Props) {
     );
 
   const statusStyles: Record<string, string> = {
-    'TO DO': 'bg-yellow-100 text-yellow-800 border border-yellow-400',
-    'IN PROGRESS': 'bg-blue-100 text-blue-800 border border-blue-400',
-    DONE: 'bg-green-100 text-green-800 border border-green-400',
+    TODO: 'bg-yellow-100 text-yellow-800 border-b border-yellow-400',
+    INPROGRESS: 'bg-blue-100 text-blue-800 border-b border-blue-400',
+    DONE: 'bg-green-100 text-green-800 border-b border-green-400',
   };
 
   return (
@@ -91,10 +93,9 @@ export default function ProjectsDetail({ id }: Props) {
           </p>
         </div>
       </div>
-
-      {data.miniProjects && data.miniProjects.length > 0 && (
-        <div className="mx-auto mt-10 p-6 w-full max-w-[1200px]">
-          <div className="flex justify-between w-full">
+      {data.miniProjects && (
+        <div className="space-y-[50px] mx-auto mt-10 p-6 w-full max-w-[1200px]">
+          <div className="flex lg:flex-row flex-col justify-between w-full">
             <p className="mb-6 font-black text-[24px] text-black">
               <span>{data.projectName['en']} </span>Projects
             </p>
@@ -108,6 +109,14 @@ export default function ProjectsDetail({ id }: Props) {
                   {button.name}
                 </button>
               ))}
+              {data._id === '6907ca01c09edc3785b3b528' && (
+                <Link
+                  href={`/${locale || 'en'}/books`}
+                  className="flex justify-center items-center bg-white px-[10px] border-black border-b rounded-[10px] h-[40px] text-[11px] text-black lg:text-[16px]"
+                >
+                  ციფრული ბიბლიოთეკა
+                </Link>
+              )}
             </div>
           </div>
           <div className="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">

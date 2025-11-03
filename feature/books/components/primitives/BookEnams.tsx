@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { BookEnamsApi } from 'feature/landing/api/landingApi';
 import { useState, ChangeEvent, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
+import { useLocale } from 'next-intl';
 
 interface BookEnumsData {
   genres: {
@@ -28,6 +29,7 @@ export interface FilterParams {
 }
 
 const BookEnams = ({ onFilterChange }: BookEnamsProps) => {
+  const locale = useLocale();
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -43,7 +45,7 @@ const BookEnams = ({ onFilterChange }: BookEnamsProps) => {
   const [selectedAuthor, setSelectedAuthor] = useState<string>('');
   const [selectedAgeCategory, setSelectedAgeCategory] = useState<string>('');
 
-  const lang = 'ka';
+  const lang = locale || 'en';
 
   useEffect(() => {
     setSelectedGenre(searchParams.get('genre') || '');

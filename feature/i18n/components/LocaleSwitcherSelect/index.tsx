@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { Locale, routing, usePathname, useRouter } from "feature/i18n/routing";
-import { useParams } from "next/navigation";
+import { Locale, routing, usePathname, useRouter } from 'feature/i18n/routing';
+import { useParams } from 'next/navigation';
 
 type Props = {
   defaultValue: string;
@@ -27,7 +27,7 @@ const LocaleSwitcherSelect = ({ defaultValue, label }: Props) => {
       defaultValue={defaultValue}
       onChange={onSelectChange}
       aria-label={label}
-      className="rounded border bg-transparent px-2 py-1 text-sm"
+      className="bg-transparent px-2 py-1 border rounded text-sm"
     >
       {routing.locales.map((locale) => (
         <option key={locale} value={locale}>

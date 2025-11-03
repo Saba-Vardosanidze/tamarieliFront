@@ -24,8 +24,8 @@ export default function ProjectsDetail({ id }: Props) {
     );
 
   const statusStyles: Record<string, string> = {
-    'TO DO': 'bg-yellow-100 text-yellow-800 border border-yellow-400',
-    'IN PROGRESS': 'bg-blue-100 text-blue-800 border border-blue-400',
+    TODO: 'bg-yellow-100 text-yellow-800 border border-yellow-400',
+    INPROGRESS: 'bg-blue-100 text-blue-800 border border-blue-400',
     DONE: 'bg-green-100 text-green-800 border border-green-400',
   };
 
