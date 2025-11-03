@@ -3,5 +3,90 @@
     "welcomeText": "Bienvenue à l'association Tamarieli",
     "inspiration": "Inspiration : l'âge d'or de la reine Tamar",
     "identity": "Identité : Racines et Héritage"
+  },
+  "BasicPrinciples": {
+    "title": "Principes de base",
+    "inclusivity": "Inclusivité : Accessibilité pour tous.",
+    "communication": "Communication : Partager les expériences, les connaissances et les perspectives.",
+    "interaction": "Interaction : Favoriser les processus créatifs personnels et collectifs.",
+    "culturalExchange": "Interaction culturelle fructueuse : Une collaboration créative qui renforce la compréhension entre les cultures."
+  },
+
+  "DigitalLibrary": {
+    "title": "Bibliothèque numérique 'Tamarieli'",
+    "subtitle": "Le visage mondial de la culture et de la littérature géorgiennes",
+    "point1": "La bibliothèque numérique 'Tamarieli' est créée pour préserver, protéger et rendre accessibles les trésors de la culture et de la littérature géorgiennes — dans un format numérique moderne.",
+    "point2": "Notre mission est que la parole géorgienne devienne un pont entre la Géorgie et le monde. Le projet vise à préserver la mémoire nationale, à promouvoir la littérature géorgienne à l'échelle mondiale, à créer des ressources éducatives et à renforcer la diplomatie culturelle.",
+    "point3": "La bibliothèque 'Tamarieli' sera un espace numérique ouvert et accueillant où lecteurs, chercheurs, étudiants et enseignants s’unissent autour d’un même objectif — préserver et diffuser le patrimoine culturel géorgien.",
+    "point4": "C’est un projet du peuple — un pont numérique entre le passé et l’avenir, fondé sur la confiance, la connaissance et les valeurs, où la parole géorgienne vit sans frontières."
+  },
+
+  "Foreword": {
+    "title": "Préface",
+    "point1": "L’association Tamarieli est fondée sur la promotion et la mise en valeur de l’art, de la littérature, de la danse géorgienne et d’autres activités créatives.",
+    "point2": "L’association Tamarieli considère la culture, l’art, la créativité et l’histoire comme des outils de communication et de création de liens culturels constructifs pour le développement de la société civile.",
+    "point3": "L’association crée un espace ouvert, inclusif et innovant où l’art traditionnel et moderne coexistent dans une relation interactive."
+  },
+
+  "InovateProjects": {
+    "title": "Projets innovants",
+    "support": "Recevez notre soutien",
+    "point1": "L'association Tamarieli attend vos projets innovants dans les domaines de la culture, de l'éducation et du développement numérique.",
+    "point2": "Les auteurs de projets auront la possibilité de collaborer avec l'association pour bénéficier d’un cofinancement, d’un mentorat et de la promotion de leur projet.",
+    "point3": "Notre objectif est de soutenir les initiatives qui promeuvent la culture, la littérature et le savoir géorgiens avec une vision moderne et innovante."
+  },
+  "Mission": {
+    "title": "Mission",
+    "point1": "Soutien professionnel de l’art et de la culture pour les artistes de tous âges.",
+    "point2": "Encourager la créativité et stimuler le processus créatif.",
+    "point3": "Promotion de la diversité culturelle et encouragement à la coopération culturelle constructive (relations ciblées, fructueuses et bénéfiques entre les cultures).",
+    "point4": "Création d’une plateforme de communication pour les activités interculturelles : expositions, festivals, performances.",
+    "point5": "Éducation : programmes d’échange, mentorat.",
+    "point6": "Conscience civique : brochures, campagnes.",
+    "point7": "Partenariats internationaux : UE, centres culturels, ONG."
+  },
+  "SocialResponsibility": {
+    "title": "Responsabilité sociale",
+    "point1": "Impliquer et intéresser les communautés locales à travers des activités créatives.",
+    "point2": "L’art comme outil d’expression personnelle, d’engagement social et d’intégration.",
+    "point3": "Un espace ouvert pour les citoyens européens et les partenaires internationaux.",
+    "point4": "Soutenir la diplomatie publique et les relations culturelles constructives."
+  },
+  "TamarieliDesc": {
+    "title": "Tamarieli",
+    "list": {
+      "inspiration": "Inspiration — L'âge d'or de la reine Tamar",
+      "identity": "'Eli' — Identité, Racines, Loyauté"
+    },
+    "paragraph": "L'association Tamarieli est une plateforme culturelle et artistique, combinant tradition, innovation et interaction culturelle constructive, renforçant la collaboration au niveau européen et international."
+  },
+  "Targets": {
+    "title": "Objectifs",
+    "point1": "Promouvoir la diversité culturelle à travers des événements, des expositions et des festivals.",
+    "point2": "Soutenir et mettre en valeur les jeunes et expérimentés artistes.",
+    "point3": "Promouvoir la danse et la musique traditionnelles parallèlement aux interprétations modernes.",
+    "point4": "Organiser des programmes éducatifs et des ateliers.",
+    "point5": "Développer les relations et collaborations culturelles internationales."
+  },
+  "EarthobaPlatform": {
+    "title": "La plateforme unifiée de la diaspora géorgienne “Earthoba”",
+    "point1": "Porter les intérêts nationaux sur la scène internationale",
+    "point2": "Action coordonnée pour atteindre un objectif commun",
+    "point3": "Légitimité internationale",
+    "point4": "Communication stratégique",
+    "mainDirectionsTitle": "Principales directions",
+    "direction1": "Protéger la souveraineté de la Géorgie",
+    "direction2": "Plaider pour la question des prisonniers politiques",
+    "direction3": "Élections libres et équitables",
+    "direction4": "Exiger des sanctions contre le régime",
+    "direction5": "Soutenir les médias libres et la société civile",
+    "direction6": "Partenariat avec l'Union européenne et les institutions démocratiques internationales",
+    "direction7": "Campagnes coordonnées, manifestations, pétitions, discussions en panel",
+    "valuesTitle": "Valeurs",
+    "valuesDescription": "Notre 'Earthoba' maintient constamment l'impartialité et l'indépendance. Elle agit en pratique et non seulement dans les accords formels."
+  },
+  "Header": {
+    "home": "Accueil",
+    "about": "À propos"
   }
 }
