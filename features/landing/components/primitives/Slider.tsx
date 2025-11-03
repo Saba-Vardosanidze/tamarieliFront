@@ -90,6 +90,12 @@ const InfiniteSlider = ({
     <div className="bg-[#E0E0E0E0] py-5">
       <div className="mx-auto px-4 py-8 w-full max-w-[1440px]">
         <div className="mx-auto max-w-7xl">
+          {title && (
+            <h2 className="mb-8 font-bold text-gray-800 text-3xl text-center">
+              {title}
+            </h2>
+          )}
+
           <div
             ref={containerRef}
             className="relative overflow-hidden"
