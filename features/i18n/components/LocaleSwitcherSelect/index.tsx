@@ -27,7 +27,7 @@ const LocaleSwitcherSelect = ({ defaultValue, label }: Props) => {
       defaultValue={defaultValue}
       onChange={onSelectChange}
       aria-label={label}
-      className="bg-transparent px-2 py-1 border rounded text-sm"
+      className="bg-transparent px-2 py-1 border rounded text-black text-sm"
     >
       {routing.locales.map((locale) => (
         <option key={locale} value={locale}>

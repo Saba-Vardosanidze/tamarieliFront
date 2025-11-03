@@ -11,12 +11,7 @@ export const HeaderData = [
   {
     id: '2',
     title: 'About',
-    href: '/aboutUs',
-  },
-  {
-    id: '3',
-    title: 'Guide',
-    href: '/',
+    href: `/aboutUs`,
   },
 ];
 export const options = [

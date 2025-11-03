@@ -54,7 +54,7 @@ const AllBooks = () => {
     );
 
   return (
-    <div className="flex py-[50px] w-full max-w-[1440px] h-full">
+    <div className="flex lg:flex-row flex-col py-[50px] w-full max-w-[1440px] h-full">
       <BookEnams onFilterChange={handleFilterChange} />
       <div className="flex flex-col gap-6 m-auto px-[15px] w-full max-w-[1140px]">
         <div className="text-gray-600 text-center">

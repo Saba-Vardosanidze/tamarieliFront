@@ -44,6 +44,7 @@ const BookEnams = ({ onFilterChange }: BookEnamsProps) => {
   const [selectedTheme, setSelectedTheme] = useState<string>('');
   const [selectedAuthor, setSelectedAuthor] = useState<string>('');
   const [selectedAgeCategory, setSelectedAgeCategory] = useState<string>('');
+  const [isFilterOpen, setIsFilterOpen] = useState<boolean>(false);
 
   const lang = locale || 'en';
 
@@ -162,6 +163,10 @@ const BookEnams = ({ onFilterChange }: BookEnamsProps) => {
     onFilterChange({});
   };
 
+  const handleApplyFilters = () => {
+    setIsFilterOpen(false);
+  };
+
   if (isLoading)
     return (
       <div className="flex justify-center items-center min-h-[200px] text-gray-500 animate-pulse">
@@ -209,58 +214,203 @@ const BookEnams = ({ onFilterChange }: BookEnamsProps) => {
     selectedAuthor ||
     selectedAgeCategory;
 
+  const activeFiltersCount = [
+    selectedGenre,
+    selectedSubGenre,
+    selectedMovement,
+    selectedTheme,
+    selectedAuthor,
+    selectedAgeCategory,
+  ].filter(Boolean).length;
+
   return (
-    <div className="relative space-y-5 bg-white shadow-md mx-auto p-6 rounded-[12px] w-full max-w-[400px] min-h-full">
-      <h2 className="mb-4 font-semibold text-black text-2xl text-center">
-        წიგნის ფილტრაცია
-      </h2>
-
-      {renderSelect(
-        'ჟანრი',
-        selectedGenre,
-        handleGenreChange,
-        data.genres.main[lang]
-      )}
-      {renderSelect(
-        'ქვეჟანრი',
-        selectedSubGenre,
-        handleSubGenreChange,
-        data.genres.sub[lang]
-      )}
-      {renderSelect(
-        'მიმდინარეობა',
-        selectedMovement,
-        handleMovementChange,
-        data.literaryMovements[lang]
-      )}
-      {renderSelect(
-        'თემა',
-        selectedTheme,
-        handleThemeChange,
-        data.themes[lang]
-      )}
-      {renderSelect(
-        'ავტორი',
-        selectedAuthor,
-        handleAuthorChange,
-        data.authors[lang]
-      )}
-      {renderSelect(
-        'ასაკობრივი კატეგორია',
-        selectedAgeCategory,
-        handleAgeCategoryChange,
-        data.ageCategories[lang]
-      )}
-
-      {hasActiveFilters && (
+    <>
+      <div className="lg:hidden mb-4">
         <button
-          onClick={handleClearFilters}
-          className="bg-red-500 hover:bg-red-600 shadow-sm hover:shadow-md px-4 py-3 rounded-xl w-full font-medium text-white transition-colors duration-200"
+          onClick={() => setIsFilterOpen(true)}
+          className="flex justify-center items-center gap-2 bg-indigo-600 hover:bg-indigo-700 shadow-md px-6 py-3 rounded-xl w-full font-medium text-white transition-colors duration-200"
         >
-          ფილტრის გასუფთავება
+          <svg
+            className="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"
+            />
+          </svg>
+          ფილტრაცია
+          {activeFiltersCount > 0 && (
+            <span className="bg-white px-2 py-0.5 rounded-full font-bold text-indigo-600 text-sm">
+              {activeFiltersCount}
+            </span>
+          )}
         </button>
+      </div>
+
+      {isFilterOpen && (
+        <div className="lg:hidden z-50 fixed inset-0">
+          <div className="bottom-0 absolute inset-x-0 bg-white shadow-2xl rounded-t-3xl max-h-[85vh] overflow-y-auto animate-slide-up">
+            <div className="top-0 z-10 sticky bg-white shadow-sm px-6 py-4 border-b">
+              <div className="flex justify-between items-center">
+                <h2 className="font-semibold text-gray-900 text-xl">
+                  წიგნის ფილტრაცია
+                </h2>
+                <button
+                  onClick={() => setIsFilterOpen(false)}
+                  className="text-gray-500 hover:text-gray-700 transition-colors"
+                >
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div className="space-y-4 p-6">
+              {renderSelect(
+                'ჟანრი',
+                selectedGenre,
+                handleGenreChange,
+                data.genres.main[lang]
+              )}
+              {renderSelect(
+                'ქვეჟანრი',
+                selectedSubGenre,
+                handleSubGenreChange,
+                data.genres.sub[lang]
+              )}
+              {renderSelect(
+                'მიმდინარეობა',
+                selectedMovement,
+                handleMovementChange,
+                data.literaryMovements[lang]
+              )}
+              {renderSelect(
+                'თემა',
+                selectedTheme,
+                handleThemeChange,
+                data.themes[lang]
+              )}
+              {renderSelect(
+                'ავტორი',
+                selectedAuthor,
+                handleAuthorChange,
+                data.authors[lang]
+              )}
+              {renderSelect(
+                'ასაკობრივი კატეგორია',
+                selectedAgeCategory,
+                handleAgeCategoryChange,
+                data.ageCategories[lang]
+              )}
+            </div>
+
+            <div className="bottom-0 z-10 sticky bg-white shadow-2xl px-6 py-4 border-t">
+              <div className="gap-3 grid grid-cols-2">
+                {hasActiveFilters && (
+                  <button
+                    onClick={handleClearFilters}
+                    className="hover:bg-gray-50 px-4 py-3 border-2 border-gray-300 rounded-xl font-medium text-gray-700 transition-colors duration-200"
+                  >
+                    გასუფთავება
+                  </button>
+                )}
+                <button
+                  onClick={handleApplyFilters}
+                  className={`bg-indigo-600 hover:bg-indigo-700 px-4 py-3 rounded-xl font-medium text-white transition-colors duration-200 ${
+                    !hasActiveFilters ? 'col-span-2' : ''
+                  }`}
+                >
+                  გამოყენება
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       )}
-    </div>
+
+      {/* დესკტოპ ვერსია */}
+      <div className="hidden lg:block relative space-y-5 bg-white shadow-md mx-auto p-6 rounded-[12px] w-full max-w-[400px] min-h-full">
+        <h2 className="mb-4 font-semibold text-black text-2xl text-center">
+          წიგნის ფილტრაცია
+        </h2>
+
+        {renderSelect(
+          'ჟანრი',
+          selectedGenre,
+          handleGenreChange,
+          data.genres.main[lang]
+        )}
+        {renderSelect(
+          'ქვეჟანრი',
+          selectedSubGenre,
+          handleSubGenreChange,
+          data.genres.sub[lang]
+        )}
+        {renderSelect(
+          'მიმდინარეობა',
+          selectedMovement,
+          handleMovementChange,
+          data.literaryMovements[lang]
+        )}
+        {renderSelect(
+          'თემა',
+          selectedTheme,
+          handleThemeChange,
+          data.themes[lang]
+        )}
+        {renderSelect(
+          'ავტორი',
+          selectedAuthor,
+          handleAuthorChange,
+          data.authors[lang]
+        )}
+        {renderSelect(
+          'ასაკობრივი კატეგორია',
+          selectedAgeCategory,
+          handleAgeCategoryChange,
+          data.ageCategories[lang]
+        )}
+
+        {hasActiveFilters && (
+          <button
+            onClick={handleClearFilters}
+            className="bg-red-500 hover:bg-red-600 shadow-sm hover:shadow-md px-4 py-3 rounded-xl w-full font-medium text-white transition-colors duration-200"
+          >
+            ფილტრის გასუფთავება
+          </button>
+        )}
+      </div>
+
+      <style jsx>{`
+        @keyframes slide-up {
+          from {
+            transform: translateY(100%);
+          }
+          to {
+            transform: translateY(0);
+          }
+        }
+        .animate-slide-up {
+          animation: slide-up 0.3s ease-out;
+        }
+      `}</style>
+    </>
   );
 };
 
