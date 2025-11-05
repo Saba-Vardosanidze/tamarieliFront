@@ -112,6 +112,7 @@
     "description": "Description",
     "todo": "To Do",
     "inprogress": "In Progress",
-    "done": "Done"
+    "done": "Done",
+    "views": "See more"
   }
 }
