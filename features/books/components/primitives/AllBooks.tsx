@@ -1,38 +1,39 @@
-'use client';
-import { useQuery } from '@tanstack/react-query';
-import { BooksApi } from 'features/landing/api/landingApi';
-import Image from 'next/image';
-import BookEnams, { FilterParams } from './BookEnams';
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import { useSearchParams } from 'next/navigation';
-import { useLocale } from 'next-intl';
+"use client";
+import { useQuery } from "@tanstack/react-query";
+import { BooksApi } from "features/landing/api/landingApi";
+import Image from "next/image";
+import BookEnams, { FilterParams } from "./BookEnams";
+import Link from "next/link";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
 
 const AllBooks = () => {
   const locale = useLocale();
+  const t = useTranslations("AllBooks");
   const searchParams = useSearchParams();
   const [filters, setFilters] = useState<FilterParams>({
-    lang: locale || 'ka',
+    lang: locale || "ka",
   });
 
   // URL პარამეტრებიდან ფილტრების წაკითხვა
   useEffect(() => {
     const newFilters: FilterParams = {
-      lang: locale || 'ka',
+      lang: locale || "ka",
     };
 
-    if (searchParams.get('genre'))
-      newFilters.genre = searchParams.get('genre')!;
-    if (searchParams.get('subGenre'))
-      newFilters.subGenre = searchParams.get('subGenre')!;
-    if (searchParams.get('literaryMovement'))
-      newFilters.literaryMovement = searchParams.get('literaryMovement')!;
-    if (searchParams.get('themes'))
-      newFilters.themes = searchParams.get('themes')!;
-    if (searchParams.get('author'))
-      newFilters.author = searchParams.get('author')!;
-    if (searchParams.get('ageCategory'))
-      newFilters.ageCategory = searchParams.get('ageCategory')!;
+    if (searchParams.get("genre"))
+      newFilters.genre = searchParams.get("genre")!;
+    if (searchParams.get("subGenre"))
+      newFilters.subGenre = searchParams.get("subGenre")!;
+    if (searchParams.get("literaryMovement"))
+      newFilters.literaryMovement = searchParams.get("literaryMovement")!;
+    if (searchParams.get("themes"))
+      newFilters.themes = searchParams.get("themes")!;
+    if (searchParams.get("author"))
+      newFilters.author = searchParams.get("author")!;
+    if (searchParams.get("ageCategory"))
+      newFilters.ageCategory = searchParams.get("ageCategory")!;
 
     setFilters(newFilters);
   }, [searchParams, locale]);
@@ -41,33 +42,33 @@ const AllBooks = () => {
   useEffect(() => {
     setFilters((prevFilters) => ({
       ...prevFilters,
-      lang: locale || 'ka',
+      lang: locale || "ka",
     }));
   }, [locale]);
 
   const { data, isLoading, isError } = useQuery({
-    queryKey: ['book', filters],
+    queryKey: ["book", filters],
     queryFn: () => BooksApi(filters),
   });
 
   const handleFilterChange = (newFilters: FilterParams) => {
     setFilters({
       ...newFilters,
-      lang: locale || 'ka',
+      lang: locale || "ka",
     });
   };
 
   if (isLoading)
     return (
       <div className="flex justify-center items-center min-h-[400px] text-gray-500 text-lg">
-        <div className="animate-pulse">იტვირთება წიგნები...</div>
+        <div className="animate-pulse">{t("loading")}</div>
       </div>
     );
 
   if (isError)
     return (
       <div className="flex justify-center items-center min-h-[400px] text-red-500 text-lg">
-        შეცდომა წიგნების ჩატვირთვისას
+        {t("error")}
       </div>
     );
 
@@ -76,10 +77,10 @@ const AllBooks = () => {
       <BookEnams onFilterChange={handleFilterChange} />
       <div className="flex flex-col gap-6 m-auto px-[15px] w-full max-w-[1140px]">
         <div className="text-gray-600 text-center">
-          ნაპოვნია{' '}
+          {" "}
           <span className="font-semibold text-indigo-600">
             {data.getAllBooks.length}
-          </span>{' '}
+          </span>{" "}
           წიგნი
         </div>
         {data.getAllBooks.length === 0 ? (
@@ -99,14 +100,14 @@ const AllBooks = () => {
                 >
                   <Image
                     src={book.coverImage}
-                    alt={book.title[locale || 'en']}
+                    alt={book.title[locale || "en"]}
                     width={208}
                     height={277}
                   />
                 </Link>
                 <div className="px-[5px] w-full">
                   <p className="font-medium text-[#36454F]">
-                    {book.title[locale || 'en']}
+                    {book.title[locale || "en"]}
                   </p>
                 </div>
               </div>

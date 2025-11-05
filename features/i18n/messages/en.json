@@ -132,5 +132,13 @@
     "clear": "Clear",
     "apply": "Apply",
     "clearFilter": "Clear filter"
+  },
+
+  "AllBooks": {
+    "loading": "Loading books...",
+    "error": "Error loading books",
+    "foundBooks": "Found  books",
+    "book": "Book",
+    "noBooks": "No books found with the selected filters"
   }
 }

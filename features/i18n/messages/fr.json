@@ -132,5 +132,12 @@
     "clear": "Effacer",
     "apply": "Appliquer",
     "clearFilter": "Effacer le filtre"
+  },
+  "AllBooks": {
+    "loading": "Chargement des livres...",
+    "error": "Erreur lors du chargement des livres",
+    "foundBooks": "{{count}} livres trouvés",
+    "book": "Livre",
+    "noBooks": "Aucun livre trouvé avec les filtres sélectionnés"
   }
 }
