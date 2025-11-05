@@ -110,9 +110,27 @@
     "status": "Status:",
     "projectCreator": "Project creator:",
     "description": "Description",
+    "project": "Project",
     "todo": "To Do",
     "inprogress": "In Progress",
     "done": "Done",
-    "views": "See more"
+    "views": "See more",
+    "digitalLibrary": "Digital Library"
+  },
+  "BookEnums": {
+    "loading": "Loading...",
+    "error": "Error loading data.",
+    "filter": "Filter",
+    "filterBooks": "Book Filter",
+    "choose": "Choose {{label}}...",
+    "genre": "Genre",
+    "subGenre": "Subgenre",
+    "movement": "Movement",
+    "theme": "Theme",
+    "author": "Author",
+    "ageCategory": "Age category",
+    "clear": "Clear",
+    "apply": "Apply",
+    "clearFilter": "Clear filter"
   }
 }

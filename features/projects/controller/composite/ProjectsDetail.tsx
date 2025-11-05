@@ -31,9 +31,7 @@ export default function ProjectsDetail({ id }: Props) {
   if (isLoading)
     return <p className="mt-10 text-gray-500 text-center">{t("loading")}</p>;
   if (isError)
-    return (
-      <p className="mt-10 text-red-500 text-center">Error loading project</p>
-    );
+    return <p className="mt-10 text-red-500 text-center">{t("error")}</p>;
 
   const statusStyles: Record<string, string> = {
     TODO: "bg-yellow-100 text-yellow-800 border-b border-yellow-400",
@@ -96,7 +94,8 @@ export default function ProjectsDetail({ id }: Props) {
         <div className="space-y-[50px] mx-auto mt-10 p-6 w-full max-w-[1200px]">
           <div className="flex lg:flex-row flex-col justify-between w-full">
             <p className="mb-6 font-black text-[24px] text-black">
-              <span>{data.projectName["en"]} </span>Projects
+              <span>{data.projectName["en"]} </span>
+              {t("project")}
             </p>
             <div className="flex gap-[10px]">
               {Buttons.map((button) => (
@@ -113,7 +112,7 @@ export default function ProjectsDetail({ id }: Props) {
                   href={`/${locale || "en"}/books`}
                   className="flex justify-center items-center bg-white px-[10px] border-black border-b rounded-[10px] h-[40px] text-[11px] text-black lg:text-[16px]"
                 >
-                  ციფრული ბიბლიოთეკა
+                  {t("digitalLibrary")}
                 </Link>
               )}
             </div>

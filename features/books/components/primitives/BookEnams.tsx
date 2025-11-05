@@ -1,8 +1,8 @@
-import { useQuery } from '@tanstack/react-query';
-import { BookEnamsApi } from 'features/landing/api/landingApi';
-import { useState, ChangeEvent, useEffect } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
-import { useLocale } from 'next-intl';
+import { useQuery } from "@tanstack/react-query";
+import { BookEnamsApi } from "features/landing/api/landingApi";
+import { useState, ChangeEvent, useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
 
 interface BookEnumsData {
   genres: {
@@ -31,31 +31,33 @@ export interface FilterParams {
 
 const BookEnams = ({ onFilterChange }: BookEnamsProps) => {
   const locale = useLocale();
+
   const router = useRouter();
   const searchParams = useSearchParams();
+  const t = useTranslations("BookEnums");
 
   const { data, isLoading, isError } = useQuery<BookEnumsData>({
-    queryKey: ['booksEnams'],
+    queryKey: ["booksEnams"],
     queryFn: BookEnamsApi,
   });
 
-  const [selectedGenre, setSelectedGenre] = useState<string>('');
-  const [selectedSubGenre, setSelectedSubGenre] = useState<string>('');
-  const [selectedMovement, setSelectedMovement] = useState<string>('');
-  const [selectedTheme, setSelectedTheme] = useState<string>('');
-  const [selectedAuthor, setSelectedAuthor] = useState<string>('');
-  const [selectedAgeCategory, setSelectedAgeCategory] = useState<string>('');
+  const [selectedGenre, setSelectedGenre] = useState<string>("");
+  const [selectedSubGenre, setSelectedSubGenre] = useState<string>("");
+  const [selectedMovement, setSelectedMovement] = useState<string>("");
+  const [selectedTheme, setSelectedTheme] = useState<string>("");
+  const [selectedAuthor, setSelectedAuthor] = useState<string>("");
+  const [selectedAgeCategory, setSelectedAgeCategory] = useState<string>("");
   const [isFilterOpen, setIsFilterOpen] = useState<boolean>(false);
 
-  const lang = locale || 'en';
+  const lang = locale || "en";
 
   useEffect(() => {
-    setSelectedGenre(searchParams.get('genre') || '');
-    setSelectedSubGenre(searchParams.get('subGenre') || '');
-    setSelectedMovement(searchParams.get('literaryMovement') || '');
-    setSelectedTheme(searchParams.get('themes') || '');
-    setSelectedAuthor(searchParams.get('author') || '');
-    setSelectedAgeCategory(searchParams.get('ageCategory') || '');
+    setSelectedGenre(searchParams.get("genre") || "");
+    setSelectedSubGenre(searchParams.get("subGenre") || "");
+    setSelectedMovement(searchParams.get("literaryMovement") || "");
+    setSelectedTheme(searchParams.get("themes") || "");
+    setSelectedAuthor(searchParams.get("author") || "");
+    setSelectedAgeCategory(searchParams.get("ageCategory") || "");
   }, [searchParams]);
 
   // ენის ცვლილების დროს ფილტრების განახლება
@@ -182,12 +184,12 @@ const BookEnams = ({ onFilterChange }: BookEnamsProps) => {
   };
 
   const handleClearFilters = () => {
-    setSelectedGenre('');
-    setSelectedSubGenre('');
-    setSelectedMovement('');
-    setSelectedTheme('');
-    setSelectedAuthor('');
-    setSelectedAgeCategory('');
+    setSelectedGenre("");
+    setSelectedSubGenre("");
+    setSelectedMovement("");
+    setSelectedTheme("");
+    setSelectedAuthor("");
+    setSelectedAgeCategory("");
     router.push(window.location.pathname, { scroll: false });
     onFilterChange({ lang });
   };
@@ -199,15 +201,13 @@ const BookEnams = ({ onFilterChange }: BookEnamsProps) => {
   if (isLoading)
     return (
       <div className="flex justify-center items-center min-h-[200px] text-gray-500 animate-pulse">
-        იტვირთება...
+        {t("loading")}
       </div>
     );
 
   if (isError)
     return (
-      <div className="font-medium text-red-500 text-center">
-        შეცდომა მონაცემების ჩატვირთვისას.
-      </div>
+      <div className="font-medium text-red-500 text-center">{t("error")}</div>
     );
 
   const renderSelect = (
@@ -287,7 +287,7 @@ const BookEnams = ({ onFilterChange }: BookEnamsProps) => {
             <div className="top-0 z-10 sticky bg-white shadow-sm px-6 py-4 border-b">
               <div className="flex justify-between items-center">
                 <h2 className="font-semibold text-gray-900 text-xl">
-                  წიგნის ფილტრაცია
+                  {t("filterBooks")}
                 </h2>
                 <button
                   onClick={() => setIsFilterOpen(false)}
@@ -312,37 +312,37 @@ const BookEnams = ({ onFilterChange }: BookEnamsProps) => {
 
             <div className="space-y-4 p-6">
               {renderSelect(
-                'ჟანრი',
+                "ჟანრი",
                 selectedGenre,
                 handleGenreChange,
                 data.genres.main[lang]
               )}
               {renderSelect(
-                'ქვეჟანრი',
+                "ქვეჟანრი",
                 selectedSubGenre,
                 handleSubGenreChange,
                 data.genres.sub[lang]
               )}
               {renderSelect(
-                'მიმდინარეობა',
+                "მიმდინარეობა",
                 selectedMovement,
                 handleMovementChange,
                 data.literaryMovements[lang]
               )}
               {renderSelect(
-                'თემა',
+                "თემა",
                 selectedTheme,
                 handleThemeChange,
                 data.themes[lang]
               )}
               {renderSelect(
-                'ავტორი',
+                "ავტორი",
                 selectedAuthor,
                 handleAuthorChange,
                 data.authors[lang]
               )}
               {renderSelect(
-                'ასაკობრივი კატეგორია',
+                "ასაკობრივი კატეგორია",
                 selectedAgeCategory,
                 handleAgeCategoryChange,
                 data.ageCategories[lang]
@@ -362,7 +362,7 @@ const BookEnams = ({ onFilterChange }: BookEnamsProps) => {
                 <button
                   onClick={handleApplyFilters}
                   className={`bg-indigo-600 hover:bg-indigo-700 px-4 py-3 rounded-xl font-medium text-white transition-colors duration-200 ${
-                    !hasActiveFilters ? 'col-span-2' : ''
+                    !hasActiveFilters ? "col-span-2" : ""
                   }`}
                 >
                   გამოყენება
@@ -380,37 +380,37 @@ const BookEnams = ({ onFilterChange }: BookEnamsProps) => {
         </h2>
 
         {renderSelect(
-          'ჟანრი',
+          "ჟანრი",
           selectedGenre,
           handleGenreChange,
           data.genres.main[lang]
         )}
         {renderSelect(
-          'ქვეჟანრი',
+          "ქვეჟანრი",
           selectedSubGenre,
           handleSubGenreChange,
           data.genres.sub[lang]
         )}
         {renderSelect(
-          'მიმდინარეობა',
+          "მიმდინარეობა",
           selectedMovement,
           handleMovementChange,
           data.literaryMovements[lang]
         )}
         {renderSelect(
-          'თემა',
+          "თემა",
           selectedTheme,
           handleThemeChange,
           data.themes[lang]
         )}
         {renderSelect(
-          'ავტორი',
+          "ავტორი",
           selectedAuthor,
           handleAuthorChange,
           data.authors[lang]
         )}
         {renderSelect(
-          'ასაკობრივი კატეგორია',
+          "ასაკობრივი კატეგორია",
           selectedAgeCategory,
           handleAgeCategoryChange,
           data.ageCategories[lang]

@@ -22,9 +22,7 @@ export default function ProjectsDetailClient({ id }: Props) {
     return <p className="mt-10 text-gray-500 text-center">{t("loading")}</p>;
 
   if (isError)
-    return (
-      <p className="mt-10 text-red-500 text-center">Error loading project</p>
-    );
+    return <p className="mt-10 text-red-500 text-center">{t("error")}</p>;
 
   const statusStyles: Record<string, string> = {
     TODO: "bg-yellow-100 text-yellow-800 border border-yellow-400",

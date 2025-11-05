@@ -110,9 +110,27 @@
     "status": "Statut:",
     "projectCreator": "Créateur du projet:",
     "description": "Description",
+    "project": "Projet",
     "todo": "À faire",
     "inprogress": "En cours",
     "done": "Terminé",
-    "views": "Voir plus"
+    "views": "Voir plus",
+    "digitalLibrary": "Bibliothèque numérique"
+  },
+  "BookEnums": {
+    "loading": "Chargement...",
+    "error": "Erreur lors du chargement des données.",
+    "filter": "Filtrer",
+    "filterBooks": "Filtrer les livres",
+    "choose": "Choisir {{label}}...",
+    "genre": "Genre",
+    "subGenre": "Sous-genre",
+    "movement": "Courant littéraire",
+    "theme": "Thème",
+    "author": "Auteur",
+    "ageCategory": "Catégorie d'âge",
+    "clear": "Effacer",
+    "apply": "Appliquer",
+    "clearFilter": "Effacer le filtre"
   }
 }
