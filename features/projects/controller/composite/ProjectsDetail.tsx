@@ -70,7 +70,7 @@ export default function ProjectsDetail({ id }: Props) {
             </div>
             <p className="font-medium text-[18px] text-gray-500">
               {t("projectCreator")}
-              {data.projectCreator.map((creator, i) => (
+              {data.projectCreator.map((creator: string, i: number) => (
                 <span key={i} className="mr-1 text-black">
                   {creator}
                 </span>
