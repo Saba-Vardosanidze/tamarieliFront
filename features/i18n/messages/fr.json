@@ -102,5 +102,16 @@
     "messagePlaceholder": "Entrez votre message",
     "submit": "Envoyer",
     "submitting": "Envoi..."
+  },
+  "ProjectsDetail": {
+    "loading": "Chargement du projet...",
+    "error": "Erreur lors du chargement du projet",
+    "projectName": "Nom du projet:",
+    "status": "Statut:",
+    "projectCreator": "Créateur du projet:",
+    "description": "Description",
+    "todo": "À faire",
+    "inprogress": "En cours",
+    "done": "Terminé"
   }
 }
