@@ -1,4 +1,5 @@
 import DigitalLibrary from "../primitives/DigitalLibrary";
+import EarthobaPlatform from "../primitives/EarthobaPlatform";
 import Foreword from "../primitives/Foreword";
 import InovateProjects from "../primitives/InovateProjects";
 import Mission from "../primitives/Mission";
@@ -19,6 +20,7 @@ const AboutUs = () => {
       <SocialResponsibility />
       <DigitalLibrary />
       <InovateProjects />
+      <EarthobaPlatform />
     </div>
   );
 };

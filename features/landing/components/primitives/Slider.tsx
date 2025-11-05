@@ -1,23 +1,23 @@
-'use client';
+"use client";
 
-import { motion, useMotionValue, useAnimationFrame } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useQuery } from '@tanstack/react-query';
-import { ProjectApi } from 'features/landing/api/landingApi';
-import { useLocale } from 'next-intl';
+import { motion, useMotionValue, useAnimationFrame } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { useQuery } from "@tanstack/react-query";
+import { ProjectApi } from "features/landing/api/landingApi";
+import { useLocale } from "next-intl";
 
 type InfiniteSliderProps = {
   title?: string;
-  direction?: 'left' | 'right';
+  direction?: "left" | "right";
   speed?: number;
   enableLinks?: boolean;
 };
 
 const InfiniteSlider = ({
   title,
-  direction = 'left',
+  direction = "left",
   speed = 50,
   enableLinks = false,
 }: InfiniteSliderProps) => {
@@ -27,7 +27,7 @@ const InfiniteSlider = ({
   const [isPaused, setIsPaused] = useState(false);
 
   const { data } = useQuery({
-    queryKey: ['project'],
+    queryKey: ["project"],
     queryFn: ProjectApi,
   });
 
@@ -46,8 +46,8 @@ const InfiniteSlider = ({
     };
 
     updateWidth();
-    window.addEventListener('resize', updateWidth);
-    return () => window.removeEventListener('resize', updateWidth);
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
   }, []);
 
   useAnimationFrame((t, delta) => {
@@ -56,7 +56,7 @@ const InfiniteSlider = ({
     const moveBy = (delta / 1000) * speed;
     let newX = x.get();
 
-    if (direction === 'left') {
+    if (direction === "left") {
       newX -= moveBy;
       if (newX <= -singleSetWidth) {
         newX = newX + singleSetWidth;
@@ -72,7 +72,7 @@ const InfiniteSlider = ({
   });
 
   useEffect(() => {
-    if (direction === 'right' && singleSetWidth > 0) {
+    if (direction === "right" && singleSetWidth > 0) {
       x.set(-singleSetWidth);
     }
   }, [direction, singleSetWidth, x]);
@@ -90,12 +90,6 @@ const InfiniteSlider = ({
     <div className="bg-[#E0E0E0E0] py-5">
       <div className="mx-auto px-4 py-8 w-full max-w-[1440px]">
         <div className="mx-auto max-w-7xl">
-          {title && (
-            <h2 className="mb-8 font-bold text-gray-800 text-3xl text-center">
-              {title}
-            </h2>
-          )}
-
           <div
             ref={containerRef}
             className="relative overflow-hidden"

@@ -3,5 +3,104 @@
     "welcomeText": "Welcome to the Tamarieli Association",
     "inspiration": "Inspiration: The Golden Age of Queen Tamar",
     "identity": "Identity: Roots and Heritage"
+  },
+  "BasicPrinciples": {
+    "title": "Basic Principles",
+    "inclusivity": "Inclusivity: Accessibility for all.",
+    "communication": "Communication: Sharing experiences, knowledge, and perspectives.",
+    "interaction": "Interaction: Encouraging personal and team-based creative processes.",
+    "culturalExchange": "Fruitful cultural interaction: Creative collaboration that strengthens understanding between cultures."
+  },
+  "DigitalLibrary": {
+    "title": "Digital Library 'Tamarieli'",
+    "subtitle": "The global face of Georgian culture and literature",
+    "point1": "The 'Tamarieli' Digital Library is being created to preserve, protect, and make accessible the treasures of Georgian culture and literature — in a modern digital format.",
+    "point2": "Our mission is for the Georgian word to become a bridge between Georgia and the world. The project aims to preserve national memory, promote Georgian literature globally, create educational resources, and strengthen cultural diplomacy.",
+    "point3": "The 'Tamarieli' Library will be an open and friendly digital space where readers, researchers, students, and teachers unite around one goal — to preserve and spread Georgian cultural heritage.",
+    "point4": "This is a people's project — a digital bridge between past and future, built on trust, knowledge, and values, where the Georgian word lives without borders."
+  },
+
+  "Foreword": {
+    "title": "Foreword",
+    "point1": "The Tamarieli Association is founded on the promotion and representation of art, literature, Georgian dance, and other creative activities.",
+    "point2": "The Tamarieli Association regards culture, art, creativity, and history as tools for communication and for building constructive cultural connections that foster civil society development.",
+    "point3": "The Association creates an open, inclusive, and innovative space where traditional and modern art coexist in an interactive relationship."
+  },
+
+  "InovateProjects": {
+    "title": "Innovative Projects",
+    "support": "Receive our support",
+    "point1": "The Tamarieli Association awaits your innovative projects in the fields of culture, education, and digital development.",
+    "point2": "Project authors will have the opportunity to collaborate with the Association to receive co-funding, mentorship, and project promotion.",
+    "point3": "Our goal is to support initiatives that promote Georgian culture, literature, and knowledge through a modern, innovative vision."
+  },
+  "Mission": {
+    "title": "Mission",
+    "point1": "Professional support for art and culture for artists of all ages.",
+    "point2": "Encouraging creativity and stimulating the creative process.",
+    "point3": "Promoting cultural diversity and fostering constructive cultural cooperation (targeted, fruitful, and socially beneficial relations between cultures).",
+    "point4": "Creating a communication platform for intercultural activities: exhibitions, festivals, performances.",
+    "point5": "Education: exchange programs, mentorship.",
+    "point6": "Civil awareness: brochures, campaigns.",
+    "point7": "International partnerships: EU, cultural centers, NGOs."
+  },
+  "SocialResponsibility": {
+    "title": "Social Responsibility",
+    "point1": "Engaging and involving local communities through creative activities.",
+    "point2": "Art as a tool for self-expression, social engagement, and integration.",
+    "point3": "An open space for European citizens and international partners.",
+    "point4": "Supporting public diplomacy and constructive cultural relations."
+  },
+  "TamarieliDesc": {
+    "title": "Tamarieli",
+    "list": {
+      "inspiration": "Inspiration — The Golden Age of Queen Tamar",
+      "identity": "'Eli' — Identity, Roots, Loyalty"
+    },
+    "paragraph": "The Tamarieli Association is a platform for culture and arts, combining tradition, innovation, and constructive cultural interaction, strengthening collaboration at European and international levels."
+  },
+  "Targets": {
+    "title": "Targets",
+    "point1": "Promoting cultural diversity through events, exhibitions, and festivals.",
+    "point2": "Supporting and showcasing young and experienced artists.",
+    "point3": "Promoting traditional dance and music alongside modern interpretations.",
+    "point4": "Organizing educational programs and workshops.",
+    "point5": "Developing international cultural relations and collaborations."
+  },
+
+  "EarthobaPlatform": {
+    "title": "The Unified Platform of the Georgian Diaspora “Earthoba”",
+    "point1": "Bringing National Interests to the International Arena",
+    "point2": "Coordinated Action to Achieve a Common Goal",
+    "point3": "International Legitimacy",
+    "point4": "Strategic Communication",
+    "mainDirectionsTitle": "Main directions",
+    "direction1": "Protecting Georgia's sovereignty",
+    "direction2": "Advocating for the issue of political prisoners",
+    "direction3": "Free and fair elections",
+    "direction4": "Demanding sanctions against the regime",
+    "direction5": "Supporting free media and civil society",
+    "direction6": "Partnership with the European Union and international democratic institutions",
+    "direction7": "Coordinated campaigns, rallies, petitions, panel discussions",
+    "valuesTitle": "Values",
+    "valuesDescription": "Our 'Earthoba' constantly maintains impartiality and independence. It acts in practice and not only in formal agreements."
+  },
+  "Header": {
+    "home": "Home",
+    "about": "About"
+  },
+
+  "ContactForm": {
+    "title1": "Message",
+    "title2": "Tamarieli Association",
+    "description": "You can send us a message",
+    "name": "Name",
+    "namePlaceholder": "Enter your name",
+    "email": "Email Address",
+    "emailPlaceholder": "Enter your email",
+    "message": "Message",
+    "messagePlaceholder": "Enter your message",
+    "submit": "Send",
+    "submitting": "Sending..."
   }
 }
