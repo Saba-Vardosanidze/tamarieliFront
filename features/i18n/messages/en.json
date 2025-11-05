@@ -122,7 +122,7 @@
     "error": "Error loading data.",
     "filter": "Filter",
     "filterBooks": "Book Filter",
-    "choose": "Choose {{label}}...",
+    "choose": "Choose ",
     "genre": "Genre",
     "subGenre": "Subgenre",
     "movement": "Movement",

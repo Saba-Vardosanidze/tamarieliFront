@@ -122,7 +122,7 @@
     "error": "Erreur lors du chargement des données.",
     "filter": "Filtrer",
     "filterBooks": "Filtrer les livres",
-    "choose": "Choisir {{label}}...",
+    "choose": "Choisir ",
     "genre": "Genre",
     "subGenre": "Sous-genre",
     "movement": "Courant littéraire",
