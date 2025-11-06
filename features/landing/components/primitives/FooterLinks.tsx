@@ -1,11 +1,11 @@
-import { FooterLinksProps } from 'features/type';
+import { FooterLinksProps } from "features/type";
 
 const FooterLinks = ({ contactUs, links }: FooterLinksProps) => {
   return (
     <div>
-      <p className="mb-6 sm:mb-8 lg:mb-[45px] font-medium text-[#000000] text-[20px] sm:text-[22px] lg:text-[26px]">
+      {/* <p className="mb-6 sm:mb-8 lg:mb-[45px] font-medium text-[#000000] text-[20px] sm:text-[22px] lg:text-[26px]">
         {contactUs}
-      </p>
+      </p> */}
       {links.map((link, id) => (
         <div
           key={id}

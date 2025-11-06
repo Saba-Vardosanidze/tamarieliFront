@@ -102,5 +102,43 @@
     "messagePlaceholder": "Enter your message",
     "submit": "Send",
     "submitting": "Sending..."
+  },
+  "ProjectsDetail": {
+    "loading": "Loading project...",
+    "error": "Error loading project",
+    "projectName": "Project Name:",
+    "status": "Status:",
+    "projectCreator": "Project creator:",
+    "description": "Description",
+    "project": "Project",
+    "todo": "To Do",
+    "inprogress": "In Progress",
+    "done": "Done",
+    "views": "See more",
+    "digitalLibrary": "Digital Library"
+  },
+  "BookEnums": {
+    "loading": "Loading...",
+    "error": "Error loading data.",
+    "filter": "Filter",
+    "filterBooks": "Book Filter",
+    "choose": "Choose ",
+    "genre": "Genre",
+    "subGenre": "Subgenre",
+    "movement": "Movement",
+    "theme": "Theme",
+    "author": "Author",
+    "ageCategory": "Age category",
+    "clear": "Clear",
+    "apply": "Apply",
+    "clearFilter": "Clear filter"
+  },
+
+  "AllBooks": {
+    "loading": "Loading books...",
+    "error": "Error loading books",
+    "foundBooks": "Found  books",
+    "book": "Book",
+    "noBooks": "No books found with the selected filters"
   }
 }

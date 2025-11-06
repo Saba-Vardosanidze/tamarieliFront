@@ -102,5 +102,42 @@
     "messagePlaceholder": "Entrez votre message",
     "submit": "Envoyer",
     "submitting": "Envoi..."
+  },
+  "ProjectsDetail": {
+    "loading": "Chargement du projet...",
+    "error": "Erreur lors du chargement du projet",
+    "projectName": "Nom du projet:",
+    "status": "Statut:",
+    "projectCreator": "Créateur du projet:",
+    "description": "Description",
+    "project": "Projet",
+    "todo": "À faire",
+    "inprogress": "En cours",
+    "done": "Terminé",
+    "views": "Voir plus",
+    "digitalLibrary": "Bibliothèque numérique"
+  },
+  "BookEnums": {
+    "loading": "Chargement...",
+    "error": "Erreur lors du chargement des données.",
+    "filter": "Filtrer",
+    "filterBooks": "Filtrer les livres",
+    "choose": "Choisir ",
+    "genre": "Genre",
+    "subGenre": "Sous-genre",
+    "movement": "Courant littéraire",
+    "theme": "Thème",
+    "author": "Auteur",
+    "ageCategory": "Catégorie d'âge",
+    "clear": "Effacer",
+    "apply": "Appliquer",
+    "clearFilter": "Effacer le filtre"
+  },
+  "AllBooks": {
+    "loading": "Chargement des livres...",
+    "error": "Erreur lors du chargement des livres",
+    "foundBooks": "{{count}} livres trouvés",
+    "book": "Livre",
+    "noBooks": "Aucun livre trouvé avec les filtres sélectionnés"
   }
 }
