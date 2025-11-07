@@ -62,11 +62,10 @@ export const metadata: Metadata = {
     images: ["/og-image.jpg"],
   },
   icons: {
-    icon: "/Images/headerImages/png/projectTamarieli.jpg",
-    shortcut: "/headerImages/png/logo.png",
-    apple: "/headerImages/png/logo.png",
+    icon: "/images/headerImages/png/siteLogoa.png",
+    shortcut: "/images/headerImages/png/projectTamarieli.jpg",
+    apple: "/images/headerImages/png/projectTamarieli.jpg",
   },
-  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
