@@ -8,6 +8,8 @@ import BurgerMenuIcon from "./BurgermenuIcon";
 import { useState } from "react";
 import LocaleSwitcher from "@features/i18n/components/LocaleSwitcher";
 import { useTranslations } from "next-intl";
+import SiteLogo from "../../../../public/Images/headerImages/png/siteLogo.png";
+
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -20,7 +22,7 @@ const Header = () => {
           <div className="flex justify-between py-2.5 w-full">
             <Link href={"/"}>
               <Image
-                src="/images/headerImages/png/siteLogoa.png"
+                src={SiteLogo}
                 alt="logo"
                 width={50}
                 height={50}
