@@ -29,7 +29,7 @@ const EarthobaPlatform = () => {
           />
         </div>
 
-        {/* MAIN CONTENT – Full width on mobile, centered */}
+   
         <div className="flex flex-col justify-center gap-6 sm:gap-7 text-center w-full py-[40px]">
           <h3 className="font-bold text-[#7B3F00] text-2xl sm:text-3xl lg:text-[32px] leading-tight">
             {t('title')}
