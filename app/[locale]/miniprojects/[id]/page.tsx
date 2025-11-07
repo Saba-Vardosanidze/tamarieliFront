@@ -1,7 +1,11 @@
 import MiniProject from 'features/miniProjects/controller/composite/MiniProject';
-import { ParamsProps } from 'features/type';
 
-export default async function Projects({ params }: ParamsProps) {
-  const resolvedParams = await params;
-  return <MiniProject id={resolvedParams.id} />;
+type MiniProjectPageParams = {
+  params: {
+    id: string;
+  };
+};
+
+export default function Projects({ params }: MiniProjectPageParams) {
+  return <MiniProject id={params.id} />;
 }
