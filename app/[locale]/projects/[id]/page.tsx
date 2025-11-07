@@ -1,4 +1,4 @@
-import ProjectsDetail from 'features/projects/controller/composite/ProjectsDetail';
+import ProjectsDetail from '@features/projects/controller/composite/ProjectsDetail';
 
 type ProjectPageParams = {
   params: {
