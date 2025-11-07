@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import tamarieli from '../../../../public/images/headerImages/png/tamarieli.png';
+import tamarieli from '../../../../public/Images/headerImages/png/tamarieli.png';
 
 const HeroSection = async () => {
   const t = await getTranslations('HeroSection');
@@ -7,7 +7,7 @@ const HeroSection = async () => {
   return (
     <div className="flex justify-center items-center bg-white w-full">
       <div
-        className="flex flex-col items-center gap-[40px] bg-no-repeat bg-center bg-cover m-auto w-full max-w-[1440px] min-h-[323px] lg:min-h-[804px]"
+        className="flex flex-col items-center gap-[40px] bg-cover bg-no-repeat bg-center m-auto w-full max-w-[1440px] min-h-[323px] lg:min-h-[804px]"
         style={{ backgroundImage: `url(${tamarieli.src})` }}
       >
         <div className="relative w-full max-w-[1440px] h-full">
