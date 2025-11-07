@@ -1,9 +1,10 @@
-import ProjectsDetail from 'features/projects/controller/composite/ProjectsDetail';
+import ProjectsDetail from '@features/projects/controller/composite/ProjectsDetail';
 
 type ProjectPageParams = {
-  params: { id: string };
+  params: Promise<{ id: string; locale: string }>;
 };
 
-export default function Projects({ params }: ProjectPageParams) {
-  return <ProjectsDetail id={params.id} />;
+export default async function Projects({ params }: ProjectPageParams) {
+  const { id } = await params;
+  return <ProjectsDetail id={id} />;
 }

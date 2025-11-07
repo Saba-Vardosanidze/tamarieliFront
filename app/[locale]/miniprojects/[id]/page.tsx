@@ -1,9 +1,10 @@
-import MiniProject from 'features/miniProjects/controller/composite/MiniProject';
+import MiniProject from '@features/miniProjects/controller/composite/MiniProject';
 
 type MiniProjectPageParams = {
-  params: { id: string };
+  params: Promise<{ id: string; locale: string }>;
 };
 
-export default function MiniProjects({ params }: MiniProjectPageParams) {
-  return <MiniProject id={params.id} />;
+export default async function MiniProjects({ params }: MiniProjectPageParams) {
+  const { id } = await params;
+  return <MiniProject id={id} />;
 }
