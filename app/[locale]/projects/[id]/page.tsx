@@ -1,9 +1,7 @@
-import ProjectsDetail from '@features/projects/controller/composite/ProjectsDetail';
+import ProjectsDetail from 'features/projects/controller/composite/ProjectsDetail';
 
 type ProjectPageParams = {
-  params: {
-    id: string;
-  };
+  params: { id: string };
 };
 
 export default function Projects({ params }: ProjectPageParams) {

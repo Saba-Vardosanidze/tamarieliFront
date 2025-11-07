@@ -1,9 +1,7 @@
-import MiniProject from '@features/miniProjects/controller/composite/MiniProject';
+import MiniProject from 'features/miniProjects/controller/composite/MiniProject';
 
 type MiniProjectPageParams = {
-  params: {
-    id: string;
-  };
+  params: { id: string };
 };
 
 export default function MiniProjects({ params }: MiniProjectPageParams) {
