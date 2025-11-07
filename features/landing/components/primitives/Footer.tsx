@@ -4,7 +4,7 @@ import { FooterItems } from 'features/landing/data/landingData';
 import Image from 'next/image';
 import FooterLinks from './FooterLinks';
 import SocialIcons from './FooterSocmediaLinks';
-import bgRemoved from '../../../../public/Images/headerImages/png/footerBgRemoved.png';
+import bgRemoved from '../../../../public/Images/headerImages/png/bgRemoved.png';
 import line from '../../../../public/Images/headerImages/svg/Line.svg';
 
 
