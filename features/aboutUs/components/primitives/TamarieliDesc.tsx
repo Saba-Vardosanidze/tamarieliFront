@@ -1,24 +1,25 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import { useTranslations } from "next-intl";
+import Image from 'next/image';
+import { useTranslations } from 'next-intl';
+import aboutUsSvg from '../../../../public/Images/headerImages/svg/aboutUsSvg.svg';
 
 const TamarieliDesc = () => {
-  const t = useTranslations("TamarieliDesc");
+  const t = useTranslations('TamarieliDesc');
 
   return (
-    <div className="flex justify-center py-[15px] w-full min-h-[700px] mx-auto">
-      <div className="max-w-[1440px] w-full flex justify-between">
-        <div className="min-h-[700px] flex flex-col justify-between">
+    <div className="flex justify-center mx-auto py-[15px] w-full min-h-[700px]">
+      <div className="flex justify-between w-full max-w-[1440px]">
+        <div className="flex flex-col justify-between min-h-[700px]">
           <Image
-            src="/images/headerImages/svg/aboutUsSvg.svg"
+            src={aboutUsSvg}
             width={300}
             height={300}
             alt="sfs"
             className="rotate-270"
           />
           <Image
-            src="/images/headerImages/svg/aboutUsSvg.svg"
+            src={aboutUsSvg}
             width={300}
             height={300}
             alt="sfs"
@@ -26,29 +27,29 @@ const TamarieliDesc = () => {
           />
         </div>
 
-        <div className="w-full flex flex-col items-center justify-center text-center mx-auto gap-7 px-4">
-          <h3 className="text-[32px] text-[#7B3F00] font-bold">{t("title")}</h3>
+        <div className="flex flex-col justify-center items-center gap-7 mx-auto px-4 w-full text-center">
+          <h3 className="font-bold text-[#7B3F00] text-[32px]">{t('title')}</h3>
 
-          <ul className="list-disc list-inside text-[28px] text-[#7B3F00]">
-            <li>{t("list.inspiration")}</li>
-            <li>{t("list.identity")}</li>
+          <ul className="text-[#7B3F00] text-[28px] list-disc list-inside">
+            <li>{t('list.inspiration')}</li>
+            <li>{t('list.identity')}</li>
           </ul>
 
-          <p className="max-w-[900px] text-[28px] text-[#7B3F00] mt-5 leading-normal">
-            {t("paragraph")}
+          <p className="mt-5 max-w-[900px] text-[#7B3F00] text-[28px] leading-normal">
+            {t('paragraph')}
           </p>
         </div>
 
-        <div className="min-h-[700px] flex flex-col justify-between">
+        <div className="flex flex-col justify-between min-h-[700px]">
           <Image
-            src="/images/headerImages/svg/aboutUsSvg.svg"
+            src={aboutUsSvg}
             width={300}
             height={200}
             alt="sfs"
             className="rotate-0"
           />
           <Image
-            src="/images/headerImages/svg/aboutUsSvg.svg"
+            src={aboutUsSvg}
             width={300}
             height={200}
             alt="sfs"
