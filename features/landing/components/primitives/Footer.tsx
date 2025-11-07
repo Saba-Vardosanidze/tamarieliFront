@@ -4,8 +4,8 @@ import { FooterItems } from 'features/landing/data/landingData';
 import Image from 'next/image';
 import FooterLinks from './FooterLinks';
 import SocialIcons from './FooterSocmediaLinks';
-import bgRemoved from '../../../../public/images/headerImages/png/bgremoved.png';
-import line from '../../../../public/images/headerImages/svg/line.svg';
+import bgRemoved from '../../../../public/Images/headerImages/png/footerBgRemoved.png';
+import line from '../../../../public/Images/headerImages/svg/Line.svg';
 
 
 const Footer = () => {
