@@ -4,7 +4,6 @@ import UnitedKingdomFlag from '../../../public/Images/headerImages/svg/United Ki
 import instagram from '../../../public/images/headerImages/svg/instagram.svg';
 import facebook from '../../../public/images/headerImages/svg/Facebook.svg';
 
-
 export const HeaderData = [
   {
     id: '1',
