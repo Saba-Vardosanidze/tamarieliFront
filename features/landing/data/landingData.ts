@@ -1,9 +1,8 @@
 import { FooterDataProps } from 'features/type';
 import georgiaFlag from '../../../public/Images/headerImages/svg/georgia-flag-icon.svg';
 import UnitedKingdomFlag from '../../../public/Images/headerImages/svg/United Kingdom.svg';
-import instagram from '../../../public/images/headerImages/svg/Instagram.svg';
-import facebook from '../../../public/images/headerImages/svg/Facebook.svg';
-
+import instagram from '../../../public/Images/headerImages/svg/Instagram.svg';
+import facebook from '../../../public/Images/headerImages/svg/Facebook.svg';
 export const HeaderData = [
   {
     id: '1',
