@@ -9,7 +9,7 @@ const BasicPrinciples = () => {
   return (
     <div className="flex justify-center px-4 sm:px-6 lg:px-0 py-10 w-full">
       <div className="flex lg:flex-row flex-col justify-between gap-10 w-full max-w-[1440px]">
-        {/* Left image column */}
+    
         <div className="flex lg:flex-col justify-between items-center lg:items-start gap-10 lg:gap-0 min-h-[400px] lg:min-h-[700px]">
           <Image
             src={aboutUsSvg}
@@ -27,7 +27,7 @@ const BasicPrinciples = () => {
           />
         </div>
 
-        {/* Center content */}
+
         <div className="flex flex-col flex-1 items-center lg:items-center gap-7 text-center lg:text-center">
           <h3 className="font-bold text-[#7B3F00] text-[28px] sm:text-[32px] md:text-[36px]">
             {t('title')}
@@ -41,7 +41,7 @@ const BasicPrinciples = () => {
           </ul>
         </div>
 
-        {/* Right image column */}
+  
         <div className="flex lg:flex-col justify-between items-center lg:items-end gap-10 lg:gap-0 min-h-[400px] lg:min-h-[700px]">
           <Image
             src={aboutUsSvg}

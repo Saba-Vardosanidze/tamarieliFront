@@ -8,35 +8,38 @@ const DigitalLibrary = () => {
 
   return (
     <div className="flex justify-center mx-auto w-full">
-      <div className="flex justify-between w-full max-w-[1440px]">
-        <div className="flex flex-col justify-between min-h-[700px]">
+      <div className="flex lg:flex-row flex-col justify-between items-center lg:items-stretch w-full max-w-[1440px] lg:px-0 md:px-6 px-4">
+        
+
+        <div className="lg:flex hidden flex-col justify-between lg:min-h-[700px]">
           <Image
             src={aboutUsSvg}
             width={300}
             height={300}
-            alt="about-us"
+            alt="Decorative element"
             className="rotate-270"
           />
           <Image
             src={aboutUsSvg}
             width={300}
             height={300}
-            alt="about-us"
+            alt="Decorative element"
             className="rotate-180"
           />
         </div>
 
-        <div className="flex flex-col justify-center items-center gap-7 mx-auto px-4 py-5 w-full text-center">
-          <div className="flex flex-col gap-3 w-full">
-            <h3 className="font-bold text-[#7B3F00] text-[32px]">
+
+        <div className="flex flex-col justify-center items-center lg:gap-7 md:gap-5 gap-4 mx-auto lg:px-4 md:px-3 px-2 lg:py-5 md:py-8 py-6 w-full text-center">
+          <div className="flex flex-col lg:gap-3 md:gap-2 gap-2 w-full">
+            <h3 className="font-bold text-[#7B3F00] lg:text-[32px] md:text-[28px] sm:text-[24px] text-[20px]">
               {t('title')}
             </h3>
-            <p className="font-[500] text-[#7B3F00] text-[28px]">
+            <p className="font-[500] text-[#7B3F00] lg:text-[28px] md:text-[24px] sm:text-[20px] text-[18px]">
               {t('subtitle')}
             </p>
           </div>
 
-          <ul className="flex flex-col gap-6 text-[#7B3F00] text-[24px]">
+          <ul className="flex flex-col lg:gap-6 md:gap-4 gap-3 text-[#7B3F00] lg:text-[24px] md:text-[20px] sm:text-[18px] text-[16px]">
             <li>{t('point1')}</li>
             <li>{t('point2')}</li>
             <li>{t('point3')}</li>
@@ -44,19 +47,20 @@ const DigitalLibrary = () => {
           </ul>
         </div>
 
-        <div className="flex flex-col justify-between min-h-[700px]">
+      
+        <div className="lg:flex hidden flex-col justify-between lg:min-h-[700px]">
           <Image
             src={aboutUsSvg}
             width={300}
             height={200}
-            alt="about-us"
+            alt="Decorative element"
             className="rotate-0"
           />
           <Image
             src={aboutUsSvg}
             width={300}
             height={200}
-            alt="about-us"
+            alt="Decorative element"
             className="rotate-90"
           />
         </div>
