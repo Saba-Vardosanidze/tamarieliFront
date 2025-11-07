@@ -4,6 +4,9 @@ import { FooterItems } from 'features/landing/data/landingData';
 import Image from 'next/image';
 import FooterLinks from './FooterLinks';
 import SocialIcons from './FooterSocmediaLinks';
+import bgRemoved from '../../../../public/images/headerImages/png/bgremoved.png';
+import line from '../../../../public/images/headerImages/svg/line.svg';
+
 
 const Footer = () => {
   return (
@@ -21,7 +24,7 @@ const Footer = () => {
         </div>
         <div className="flex lg:justify-end w-full lg:w-[522px] h-auto lg:h-[325px]">
           <Image
-            src="/images/headerImages/png/bgremoved.png"
+            src={bgRemoved}
             width={522}
             height={325}
             alt="footerImage"
@@ -32,7 +35,7 @@ const Footer = () => {
       <div className="flex flex-col items-center gap-4 mt-8 lg:mt-12 px-4 sm:px-6 md:px-8 lg:px-10 w-full">
         <div className="w-full max-w-[1440px]">
           <Image
-            src="/images/headerImages/svg/line.svg"
+            src={line}
             width={1220}
             height={1}
             alt="divider"
