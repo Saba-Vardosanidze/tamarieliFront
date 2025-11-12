@@ -4,13 +4,13 @@ import LocaleSwitcher from '@features/i18n/components/LocaleSwitcher';
 import { HeaderData } from 'features/landing/data/landingData';
 import { BurgerMenuIconProps } from 'features/type';
 import { AnimatePresence, motion } from 'motion/react';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useEffect } from 'react';
 
 const BurgerMenu = ({ isOpen, setIsOpen }: BurgerMenuIconProps) => {
   const locale = useLocale();
-
+  const t = useTranslations('Header');
   useEffect(() => {
     const onResize = () => {
       if (window.innerWidth >= 768) setIsOpen(false);
@@ -50,8 +50,11 @@ const BurgerMenu = ({ isOpen, setIsOpen }: BurgerMenuIconProps) => {
                     className="flex justify-center items-center gap-4"
                   >
                     <Link href={`/${locale || '/en'}/${eachElement.href}`}>
-                      <ul className="font-[600] text-[#1a1b1f] text-[14px] hover:text-[#606371] cursor-pointer">
-                        {eachElement.title}
+                      <ul
+                        onClick={() => setIsOpen(false)}
+                        className="font-[600] text-[#1a1b1f] text-[14px] hover:text-[#606371] cursor-pointer"
+                      >
+                        {t(eachElement.title.toLowerCase())}
                       </ul>
                     </Link>
                   </div>
