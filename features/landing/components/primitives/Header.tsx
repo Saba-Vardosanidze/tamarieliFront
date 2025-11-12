@@ -8,7 +8,7 @@ import BurgerMenuIcon from './BurgermenuIcon';
 import { useState } from 'react';
 import LocaleSwitcher from '@features/i18n/components/LocaleSwitcher';
 import { useLocale, useTranslations } from 'next-intl';
-import SiteLogo from '../../../../public/Images/headerImages/png/siteLogo.png';
+import SiteLogo from '../../../../public/Images/headerImages/png/siteLogoa.png';
 
 const Header = () => {
   const locale = useLocale();
