@@ -7,6 +7,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useSearchParams, useRouter } from 'next/navigation';
+import { FaFilePdf, FaFileWord } from 'react-icons/fa';
 
 type Props = {
   id: string;
@@ -88,6 +89,24 @@ export default function ProjectsDetail({ id }: Props) {
           <p className="text-gray-800 text-lg leading-relaxed">
             {data.projectDescription[locale || 'en']}
           </p>
+          <div className="flex flex-col gap-[20px]">
+            {data.pdfLink && (
+              <div className="flex items-center gap-[5px]">
+                <FaFilePdf className="text-blue-500" />
+                <Link href={data.pdfLink}>
+                  <p className="text-[11px] text-blue-500">show PDF</p>
+                </Link>
+              </div>
+            )}
+            {data.wordLink && (
+              <div className="flex gap-[10px]">
+                <FaFileWord className="text-blue-500" />
+                <Link href={data.wordLink}>
+                  <p className="text-[11px] text-blue-500">show WORD</p>
+                </Link>
+              </div>
+            )}
+          </div>
         </div>
       </div>
       {data.miniProjects && (
