@@ -38,6 +38,7 @@ export default function ProjectsDetail({ id }: Props) {
     TODO: 'bg-yellow-100 text-yellow-800 border-b border-yellow-400',
     INPROGRESS: 'bg-blue-100 text-blue-800 border-b border-blue-400',
     DONE: 'bg-green-100 text-green-800 border-b border-green-400',
+    ONGOING: 'bg-blue-100 text-blue-800 border-b border-blue-400',
   };
 
   return (
