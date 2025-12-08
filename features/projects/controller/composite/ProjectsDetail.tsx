@@ -7,7 +7,13 @@ import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useSearchParams, useRouter } from 'next/navigation';
-import { FaFilePdf, FaFileWord } from 'react-icons/fa';
+import {
+  FaFilePdf,
+  FaFileWord,
+  FaFacebook,
+  FaInstagram,
+  FaExternalLinkAlt,
+} from 'react-icons/fa';
 
 type Props = {
   id: string;
@@ -90,7 +96,7 @@ export default function ProjectsDetail({ id }: Props) {
           <p className="text-gray-800 text-lg leading-relaxed">
             {data.projectDescription[locale || 'en']}
           </p>
-          <div className="flex flex-col gap-[20px]">
+          <div className="flex flex-wrap gap-[20px] w-full">
             {data.pdfLink && (
               <div className="flex items-center gap-[5px]">
                 <FaFilePdf className="text-blue-500" />
@@ -107,10 +113,44 @@ export default function ProjectsDetail({ id }: Props) {
                 </Link>
               </div>
             )}
+            {data.fbLink && (
+              <div className="flex items-center gap-[10px]">
+                <FaFacebook className="text-blue-600" />
+                <Link href={data.fbLink} target="_blank">
+                  <p className="text-[11px] text-blue-600">
+                    Open Facebook Page
+                  </p>
+                </Link>
+              </div>
+            )}
+
+            {data.igLink && (
+              <div className="flex items-center gap-[10px]">
+                <FaInstagram className="text-pink-500" />
+                <Link href={data.igLink} target="_blank">
+                  <p className="text-[11px] text-pink-500">
+                    Open Instagram Page
+                  </p>
+                </Link>
+              </div>
+            )}
+
+            {data.partnerSiteLink && (
+              <div className="flex items-center gap-[10px]">
+                <FaExternalLinkAlt className="text-green-600" />
+                <Link href={data.partnerSiteLink} target="_blank">
+                  <p className="text-[11px] text-green-600">
+                    Open Partner Site
+                  </p>
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </div>
-      {data.miniProjects && (
+      {isLoading ? (
+        <p className="mt-10 text-gray-500 text-center">{t('loading')}</p>
+      ) : (
         <div className="space-y-[50px] mx-auto mt-10 p-6 w-full max-w-[1200px]">
           <div className="flex lg:flex-row flex-col justify-between w-full">
             <p className="mb-6 font-black text-[24px] text-black">
@@ -137,46 +177,59 @@ export default function ProjectsDetail({ id }: Props) {
               )}
             </div>
           </div>
-          <div className="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {data.miniProjects.map((mini: any) => (
-              <div
-                key={mini._id}
-                className="flex flex-col gap-4 bg-white shadow-lg p-4 rounded-xl"
-              >
-                <div className="relative rounded-lg w-full h-48 overflow-hidden">
-                  <Image
-                    src={mini.projectPicture}
-                    alt={mini.projectName[locale || 'en']}
-                    fill
-                    className="object-cover"
-                  />
+          {data.miniProjects.length > 0 ? (
+            <div className="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+              {data.miniProjects.map((mini: any) => (
+                <div
+                  key={mini._id}
+                  className="flex flex-col gap-4 bg-white shadow-lg p-4 rounded-xl"
+                >
+                  <div className="relative rounded-lg w-full h-48 overflow-hidden">
+                    <Image
+                      src={mini.projectPicture}
+                      alt={mini.projectName[locale || 'en']}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+
+                  <div className="flex flex-col justify-between min-h-[230px]">
+                    <div className="flex flex-col gap-[5px]">
+                      <p className="font-bold text-black text-md">
+                        {mini.projectName[locale || 'en']}
+                      </p>
+                      <p className="text-gray-700 text-sm">
+                        {(() => {
+                          const desc =
+                            mini.projectDescription[locale || 'en'] || '';
+                          return desc.length > 150
+                            ? desc.slice(0, 150) + '...'
+                            : desc;
+                        })()}
+                      </p>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span
+                        className={`self-start px-3 py-1 rounded-full font-semibold text-sm ${
+                          statusStyles[mini.projectType] || ''
+                        }`}
+                      >
+                        {mini.projectType}
+                      </span>
+                      <Link
+                        href={`/${locale}/miniprojects/${mini._id}`}
+                        className="text-[14px] text-black cursor-pointer"
+                      >
+                        {t('views')}
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-                <p className="font-bold text-black text-lg">
-                  {mini.projectName[locale || 'en']}
-                </p>
-                <p className="text-gray-700 text-sm">
-                  {mini.projectDescription.length > 200
-                    ? mini.projectDescription.slice(0, 200) + '...'
-                    : mini.projectDescription[locale || 'en']}
-                </p>
-                <div className="flex justify-between items-center">
-                  <span
-                    className={`self-start px-3 py-1 rounded-full font-semibold text-sm ${
-                      statusStyles[mini.projectType] || ''
-                    }`}
-                  >
-                    {mini.projectType}
-                  </span>
-                  <Link
-                    href={`/${locale}/miniprojects/${mini._id}`}
-                    className="text-[14px] text-black cursor-pointer"
-                  >
-                    {t('views')}
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <p className="mt-10 text-gray-500 text-center">No result</p>
+          )}
         </div>
       )}
     </div>

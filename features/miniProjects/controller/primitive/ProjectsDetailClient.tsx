@@ -5,7 +5,14 @@ import { MiniProjectById } from 'features/landing/api/landingApi';
 import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaFilePdf, FaFileWord } from 'react-icons/fa';
+import {
+  FaFilePdf,
+  FaFileWord,
+  FaFacebook,
+  FaInstagram,
+  FaExternalLinkAlt,
+} from 'react-icons/fa';
+
 type Props = {
   id: string;
 };
@@ -97,6 +104,38 @@ export default function ProjectsDetailClient({ id }: Props) {
                 <FaFileWord className="text-blue-500" />
                 <Link href={data.wordLink}>
                   <p className="text-[11px] text-blue-500">show WORD</p>
+                </Link>
+              </div>
+            )}
+            {data.fbLink && (
+              <div className="flex items-center gap-[10px]">
+                <FaFacebook className="text-blue-600" />
+                <Link href={data.fbLink} target="_blank">
+                  <p className="text-[11px] text-blue-600">
+                    Open Facebook Page
+                  </p>
+                </Link>
+              </div>
+            )}
+
+            {data.igLink && (
+              <div className="flex items-center gap-[10px]">
+                <FaInstagram className="text-pink-500" />
+                <Link href={data.igLink} target="_blank">
+                  <p className="text-[11px] text-pink-500">
+                    Open Instagram Page
+                  </p>
+                </Link>
+              </div>
+            )}
+
+            {data.partnerSiteLink && (
+              <div className="flex items-center gap-[10px]">
+                <FaExternalLinkAlt className="text-green-600" />
+                <Link href={data.partnerSiteLink} target="_blank">
+                  <p className="text-[11px] text-green-600">
+                    Open Partner Site
+                  </p>
                 </Link>
               </div>
             )}
