@@ -34,12 +34,11 @@ const InfiniteSlider = ({
   const projects = data || [];
   const sliderCards = [...projects, ...projects];
 
-  // Mobile-aware card width calculation
   const getCardsPerView = () => {
     if (typeof window === 'undefined') return 2;
-    if (window.innerWidth < 640) return 1; // Mobile: 1 card
-    if (window.innerWidth < 1024) return 2; // Tablet: 2 cards
-    return 2; // Desktop: 2 cards
+    if (window.innerWidth < 640) return 1;
+    if (window.innerWidth < 1024) return 2;
+    return 2;
   };
 
   const [cardsPerView, setCardsPerView] = useState(getCardsPerView());
@@ -89,6 +88,15 @@ const InfiniteSlider = ({
 
   return (
     <div className="bg-[#E0E0E0E0] py-3 sm:py-5">
+      <div className="flex justify-between px-2 sm:px-30 w-full">
+        <div></div>
+        <Link
+          href="/ka/allProject"
+          className="px-[10px] border-black border-b rounded-[10px] h-[40px] text-[11px] text-[12px] text-black lg:text-[16px] cursor-pointer"
+        >
+          show more
+        </Link>
+      </div>
       <div className="mx-auto px-2 sm:px-4 py-4 sm:py-8 w-full max-w-[1440px]">
         <div className="mx-auto max-w-7xl">
           <div
