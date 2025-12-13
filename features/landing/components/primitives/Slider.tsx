@@ -1,23 +1,23 @@
-'use client';
+"use client";
 
-import { motion, useMotionValue, useAnimationFrame } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useQuery } from '@tanstack/react-query';
-import { ProjectApi } from 'features/landing/api/landingApi';
-import { useLocale } from 'next-intl';
+import { motion, useMotionValue, useAnimationFrame } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { useQuery } from "@tanstack/react-query";
+import { ProjectApi } from "features/landing/api/landingApi";
+import { useLocale } from "next-intl";
 
 type InfiniteSliderProps = {
   title?: string;
-  direction?: 'left' | 'right';
+  direction?: "left" | "right";
   speed?: number;
   enableLinks?: boolean;
 };
 
 const InfiniteSlider = ({
   title,
-  direction = 'left',
+  direction = "left",
   speed = 50,
   enableLinks = false,
 }: InfiniteSliderProps) => {
@@ -27,7 +27,7 @@ const InfiniteSlider = ({
   const [isPaused, setIsPaused] = useState(false);
 
   const { data } = useQuery({
-    queryKey: ['project'],
+    queryKey: ["project"],
     queryFn: ProjectApi,
   });
 
@@ -35,7 +35,7 @@ const InfiniteSlider = ({
   const sliderCards = [...projects, ...projects];
 
   const getCardsPerView = () => {
-    if (typeof window === 'undefined') return 2;
+    if (typeof window === "undefined") return 2;
     if (window.innerWidth < 640) return 1;
     if (window.innerWidth < 1024) return 2;
     return 2;
@@ -54,8 +54,8 @@ const InfiniteSlider = ({
     };
 
     updateWidth();
-    window.addEventListener('resize', updateWidth);
-    return () => window.removeEventListener('resize', updateWidth);
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
   }, []);
 
   useAnimationFrame((t, delta) => {
@@ -64,7 +64,7 @@ const InfiniteSlider = ({
     const moveBy = (delta / 1000) * speed;
     let newX = x.get();
 
-    if (direction === 'left') {
+    if (direction === "left") {
       newX -= moveBy;
       if (newX <= -singleSetWidth) newX += singleSetWidth;
     } else {
@@ -76,7 +76,7 @@ const InfiniteSlider = ({
   });
 
   useEffect(() => {
-    if (direction === 'right' && singleSetWidth > 0) {
+    if (direction === "right" && singleSetWidth > 0) {
       x.set(-singleSetWidth);
     }
   }, [direction, singleSetWidth, x]);
@@ -92,7 +92,7 @@ const InfiniteSlider = ({
         <div></div>
         <Link
           href="/ka/allProject"
-          className="px-[10px] border-black border-b rounded-[10px] h-[40px] text-[11px] text-[12px] text-black lg:text-[16px] cursor-pointer"
+          className="px-[10px] flex items-center border-black border rounded-[10px] h-[40px] text-[11px] text-[12px] text-black lg:text-[16px] cursor-pointer"
         >
           show more
         </Link>
