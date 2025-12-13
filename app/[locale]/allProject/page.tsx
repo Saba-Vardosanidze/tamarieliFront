@@ -1,13 +1,13 @@
-'use client';
-import { ProjectApi } from '@features/landing/api/landingApi';
-import { useQuery } from '@tanstack/react-query';
-import { useLocale } from 'next-intl';
-import Image from 'next/image';
-import Link from 'next/link';
+"use client";
+import { ProjectApi } from "@features/landing/api/landingApi";
+import { useQuery } from "@tanstack/react-query";
+import { useLocale } from "next-intl";
+import Image from "next/image";
+import Link from "next/link";
 
 const AllProject = () => {
   const { data, isLoading, isError } = useQuery({
-    queryKey: ['project'],
+    queryKey: ["project"],
     queryFn: ProjectApi,
   });
   const locale = useLocale();
@@ -31,7 +31,7 @@ const AllProject = () => {
 
   return (
     <div className="bg-slate-50 min-h-screen">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 max-w-7xl">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 max-w-[1440px] w-full  ">
         <div className="mb-12">
           <h1 className="mb-2 font-bold text-slate-900 text-4xl sm:text-5xl">
             Projects
