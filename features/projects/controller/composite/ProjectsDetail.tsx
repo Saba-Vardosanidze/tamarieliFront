@@ -90,10 +90,10 @@ export default function ProjectsDetail({ id }: Props) {
 
       <div className="mx-auto p-6 w-full max-w-[1200px]">
         <div className="flex flex-col gap-8 bg-white shadow-lg p-6 rounded-xl">
-          <p className="font-black text-[12px] text-black">
+          <p className="font-black text-[13px] text-black">
             {t("description")}
           </p>
-          <p className="text-gray-800 text-[11px] leading-relaxed">
+          <p className="text-gray-800 text-[12px] leading-relaxed">
             {data.projectDescription[locale || "en"]}
           </p>
           <div className="flex flex-wrap gap-[20px] w-full">

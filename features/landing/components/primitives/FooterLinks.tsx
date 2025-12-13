@@ -13,17 +13,17 @@ const FooterLinks = ({ contactUs, links }: FooterLinksProps) => {
         >
           <a
             href={`tel:${link.tel}`}
-            className="block font-light text-[16px] sm:text-[18px] lg:text-[22px] hover:text-gray-700 transition-colors"
+            className="block font-light text-[16px] sm:text-[18px] lg:text-[11px] hover:text-gray-700 transition-colors"
           >
             {link.tel}
           </a>
           <a
             href={`mailto:${link.mailto}`}
-            className="block font-light text-[16px] sm:text-[18px] lg:text-[22px] hover:text-gray-700 transition-colors"
+            className="block font-light text-[16px] sm:text-[18px] lg:text-[11px] hover:text-gray-700 transition-colors"
           >
             {link.mailto}
           </a>
-          <p className="font-light text-[16px] sm:text-[18px] lg:text-[22px]">
+          <p className="font-light text-[16px] sm:text-[18px] lg:text-[11px]">
             {link.address}
           </p>
         </div>
