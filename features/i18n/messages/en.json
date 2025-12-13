@@ -140,5 +140,9 @@
     "foundBooks": "Found  books",
     "book": "Book",
     "noBooks": "No books found with the selected filters"
+  },
+  "SeeAllProjects": {
+    "Projects": "Projects",
+    "work": "Explore our latest work"
   }
 }

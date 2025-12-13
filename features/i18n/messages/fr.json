@@ -139,5 +139,9 @@
     "foundBooks": "{{count}} livres trouvés",
     "book": "Livre",
     "noBooks": "Aucun livre trouvé avec les filtres sélectionnés"
+  },
+  "SeeAllProjects": {
+    "Projects": "Projets",
+    "work": "Découvrez nos travaux récents"
   }
 }

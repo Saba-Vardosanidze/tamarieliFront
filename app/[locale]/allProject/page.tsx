@@ -1,11 +1,13 @@
 "use client";
 import { ProjectApi } from "@features/landing/api/landingApi";
 import { useQuery } from "@tanstack/react-query";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
 const AllProject = () => {
+  const t = useTranslations("SeeAllProjects");
+
   const { data, isLoading, isError } = useQuery({
     queryKey: ["project"],
     queryFn: ProjectApi,
@@ -34,9 +36,9 @@ const AllProject = () => {
       <div className="mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 max-w-[1440px] w-full  ">
         <div className="mb-12">
           <h1 className="mb-2 font-bold text-slate-900 text-4xl sm:text-5xl">
-            Projects
+            {t("Projects")}
           </h1>
-          <p className="text-slate-600 text-lg">Explore our latest work</p>
+          <p className="text-slate-600 text-lg">{t("work")}</p>
         </div>
 
         <div className="gap-8 grid grid-cols-1 md:grid-cols-2">
