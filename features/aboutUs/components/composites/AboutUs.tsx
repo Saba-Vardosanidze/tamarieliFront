@@ -10,7 +10,7 @@ import Targets from "../primitives/Targets";
 const AboutUs = () => {
   return (
     <div
-      className="w-full flex flex-col gap-[100px] bg-[linear-gradient(181deg,rgba(241,220,207,1)_0%,rgba(243,235,224,0)_100%)]
+      className="w-full flex flex-col gap-[100px]
  mx-auto   "
     >
       <TamarieliDesc />
