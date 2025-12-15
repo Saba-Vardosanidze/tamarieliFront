@@ -12,7 +12,7 @@
     "culturalExchange": "Fruitful cultural interaction: Creative collaboration that strengthens understanding between cultures."
   },
   "DigitalLibrary": {
-    "title": "Digital Library 'Tamarieli'",
+    "title": "Digital Library 'Ciblus'",
     "subtitle": "The global face of Georgian culture and literature",
     "point1": "The 'Tamarieli' Digital Library is being created to preserve, protect, and make accessible the treasures of Georgian culture and literature — in a modern digital format.",
     "point2": "Our mission is for the Georgian word to become a bridge between Georgia and the world. The project aims to preserve national memory, promote Georgian literature globally, create educational resources, and strengthen cultural diplomacy.",
@@ -144,5 +144,18 @@
   "SeeAllProjects": {
     "Projects": "Projects",
     "work": "Explore our latest work"
+  },
+  "ThinCreateInspire": {
+    "title": "THINK, CREATE, INSPIRE",
+    "point1": "Innovative projects",
+    "point2": "Get our support",
+    "point3": "Association 'Tamarieli' is waiting for your innovative projects in the fields of culture, education, and digital development.",
+    "point4": "Project authors will have the opportunity to receive co-funding, mentorship support, and project promotion. Our goal is to support initiatives that serve the dissemination of Georgian culture, literature, and knowledge with a modern innovative vision."
+  },
+  "VoicePlatform": {
+    "title": "Voice+",
+    "description1": "Association 'Tamarieli' and the unified platform of the Georgian diaspora 'Earthoba' serve to strengthen the Georgian diaspora worldwide, preserve cultural identity, and support Georgia's Euro-integration processes.",
+    "description2": "Our joint vision is based on media as an effective instrument of freedom of speech, diplomacy, cultural dialogue, and public development, aiming to present Georgia on the international stage.",
+    "description3": "Association 'Tamarieli' offers partners an ethical and neutral media platform, a wide international audience, joint campaigns, thematic content, participation in events, and access to reliable sources."
   }
 }

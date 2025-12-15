@@ -8,7 +8,10 @@ const EarthobaPlatform = () => {
   const t = useTranslations("EarthobaPlatform");
 
   return (
-    <div className="flex justify-center mx-auto w-full px-4 sm:px-6 lg:px-8">
+    <div
+      className="flex justify-center md:mx-auto w-full lg:min-h-[700px] md:min-h-[500px] min-h-auto  bg-[url('/images/headerImages/png/about-tamarieli.jpeg')]
+        bg-cover bg-center bg-no-repeat"
+    >
       <div className="flex flex-col lg:flex-row justify-between py-16 sm:py-20 lg:py-[100px] w-full max-w-[1440px] gap-8 lg:gap-12 py-[100px]">
         {/* LEFT DECORATIVE IMAGES – Hidden on mobile, stacked on tablet */}
         {/* <div className="hidden lg:flex flex-col justify-between min-h-[600px] lg:min-h-[700px] flex-shrink-0">

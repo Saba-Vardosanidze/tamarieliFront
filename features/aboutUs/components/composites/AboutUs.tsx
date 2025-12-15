@@ -6,6 +6,7 @@ import Mission from "../primitives/Mission";
 import SocialResponsibility from "../primitives/SocialResponsibility";
 import TamarieliDesc from "../primitives/TamarieliDesc";
 import Targets from "../primitives/Targets";
+import ThinkInspireCreate from "../primitives/ThinkCreateInspire";
 
 const AboutUs = () => {
   return (
@@ -21,6 +22,7 @@ const AboutUs = () => {
       <DigitalLibrary />
       <InovateProjects />
       <EarthobaPlatform />
+      <ThinkInspireCreate />
     </div>
   );
 };

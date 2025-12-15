@@ -8,7 +8,13 @@ const SocialResponsibility = () => {
   const t = useTranslations("SocialResponsibility");
 
   return (
-    <div className="flex justify-center mx-auto w-full lg:min-h-[700px] md:min-h-[500px] min-h-auto">
+    <div
+      className=" relative flex justify-center mx-auto
+        w-full
+        lg:min-h-[700px] md:min-h-[500px] min-h-[400px]
+        bg-[url('/images/headerImages/png/about-tamarieli.jpeg')]
+        bg-cover bg-center bg-no-repeat"
+    >
       <div className="flex lg:flex-row flex-col justify-between items-center lg:items-stretch w-full max-w-[1440px] lg:px-0 md:px-6 px-4">
         {/*   
         <div className="lg:flex hidden flex-col justify-between lg:min-h-[700px]">
