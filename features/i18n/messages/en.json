@@ -1,6 +1,6 @@
 {
   "HeroSection": {
-    "welcomeText": "Welcome to the Tamarieli Association",
+    "welcomeText": "Welcome to the “Tamarieli” Association and platform “Earthoba”",
     "inspiration": "Inspiration: The Golden Age of Queen Tamar",
     "identity": "Identity: Roots and Heritage"
   },
@@ -154,8 +154,8 @@
   },
   "VoicePlatform": {
     "title": "Voice+",
-    "description1": "Association 'Tamarieli' and the unified platform of the Georgian diaspora 'Earthoba' serve to strengthen the Georgian diaspora worldwide, preserve cultural identity, and support Georgia's Euro-integration processes.",
-    "description2": "Our joint vision is based on media as an effective instrument of freedom of speech, diplomacy, cultural dialogue, and public development, aiming to present Georgia on the international stage.",
-    "description3": "Association 'Tamarieli' offers partners an ethical and neutral media platform, a wide international audience, joint campaigns, thematic content, participation in events, and access to reliable sources."
+    "point1": "Association 'Tamarieli' and the unified platform of the Georgian diaspora 'Earthoba' serve to strengthen the Georgian diaspora worldwide, preserve cultural identity, and support Georgia's Euro-integration processes.",
+    "point2": "Our joint vision is based on media as an effective instrument of freedom of speech, diplomacy, cultural dialogue, and public development, aiming to present Georgia on the international stage.",
+    "point3": "Association 'Tamarieli' offers partners an ethical and neutral media platform, a wide international audience, joint campaigns, thematic content, participation in events, and access to reliable sources."
   }
 }

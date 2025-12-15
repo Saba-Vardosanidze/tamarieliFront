@@ -7,6 +7,7 @@ import SocialResponsibility from "../primitives/SocialResponsibility";
 import TamarieliDesc from "../primitives/TamarieliDesc";
 import Targets from "../primitives/Targets";
 import ThinkInspireCreate from "../primitives/ThinkCreateInspire";
+import Voice from "../primitives/Voice";
 
 const AboutUs = () => {
   return (
@@ -23,6 +24,7 @@ const AboutUs = () => {
       <InovateProjects />
       <EarthobaPlatform />
       <ThinkInspireCreate />
+      <Voice />
     </div>
   );
 };

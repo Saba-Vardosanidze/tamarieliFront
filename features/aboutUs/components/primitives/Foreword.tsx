@@ -7,7 +7,7 @@ const Foreword = () => {
 
   return (
     <div
-      className="flex justify-center md:mx-auto w-full lg:min-h-[700px] md:min-h-[500px] min-h-auto  bg-[url('/images/headerImages/png/about-tamarieli.jpeg')]
+      className="flex justify-center md:mx-auto w-full lg:min-h-[700px] md:min-h-[500px] min-h-auto  bg-[url('/images/headerImages/png/about-basic-bg.png')]
         bg-cover bg-center bg-no-repeat"
     >
       <div className="flex lg:flex-row flex-col justify-between items-center lg:items-stretch lg:py-5 md:py-4 py-3 w-full max-w-[1440px] lg:px-0 md:px-6 px-4">
