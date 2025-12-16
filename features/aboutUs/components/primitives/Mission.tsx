@@ -6,7 +6,7 @@ const Mission = () => {
   const t = useTranslations("Mission");
 
   return (
-    <div className="flex justify-center mx-auto w-full lg:min-h-[700px] md:min-h-[500px] min-h-auto">
+    <div className="flex justify-center mx-auto w-full lg:min-h-[1000px] md:min-h-[500px] min-h-auto">
       <div
         className=" relative flex justify-center mx-auto
         w-full
@@ -19,7 +19,7 @@ const Mission = () => {
             {t("title")}
           </h3>
 
-          <ul className="flex flex-col lg:gap-6 md:gap-4 gap-3 text-[#7B3F00] lg:text-[24px] md:text-[20px] sm:text-[18px] text-[16px] list-disc list-inside">
+          <ul className="flex flex-col lg:gap-6 md:gap-4 gap-3 text-[#7B3F00] lg:text-[34px] md:text-[20px] sm:text-[18px] text-[16px] list-disc list-inside">
             <li>{t("point1")}</li>
             <li>{t("point2")}</li>
             <li>{t("point3")}</li>

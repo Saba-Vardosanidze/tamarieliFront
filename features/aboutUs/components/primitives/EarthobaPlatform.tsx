@@ -9,13 +9,36 @@ const EarthobaPlatform = () => {
 
   return (
     <div
-      className="flex justify-center md:mx-auto w-full lg:min-h-[700px] md:min-h-[500px] min-h-auto  bg-[url('/images/headerImages/png/about-basic-bg.png')]
+      className=" relative flex justify-center md:mx-auto w-full lg:min-h-[900px] md:min-h-[500px]   bg-[url('/images/headerImages/png/about-basic-bg.png')]
         bg-cover bg-center bg-no-repeat"
     >
+      <div
+        className="
+    absolute
+   right-4 top-25
+    lg:right-[100px] lg:top-[50px]
+  "
+      >
+        <Image
+          src="/images/headerImages/png/earthoba.png"
+          alt="logo"
+          width={150}
+          height={150}
+          className="
+      w-[70px] h-[70px]
+      lg:w-[150px] lg:h-[150px]
+    "
+        />
+      </div>
+
       <div className="flex flex-col lg:flex-row justify-between py-16 sm:py-20 lg:py-[100px] w-full max-w-[1440px] gap-8 lg:gap-12 py-[100px]">
         <div className="flex flex-col justify-center gap-6 sm:gap-7 text-center w-full py-[40px]">
-          <h3 className="font-bold text-[#7B3F00] text-2xl sm:text-3xl lg:text-[32px] leading-tight">
+          <h3 className="font-bold text-[#7B3F00] text-2xl sm:text-3xl lg:text-[32px] leading-tight flex flex-col ">
             {t("title")}
+          </h3>
+          <h3 className="font-bold text-[#7B3F00] text-2xl sm:text-3xl lg:text-[32px] leading-tight flex flex-col ">
+            {" "}
+            {t("title2")}
           </h3>
 
           <ul className="flex flex-col gap-4 sm:gap-5 lg:gap-6 text-[#7B3F00] text-lg sm:text-xl lg:text-[24px] list-disc list-inside px-4 sm:px-6">
