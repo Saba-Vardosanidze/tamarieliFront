@@ -1,6 +1,6 @@
 {
   "HeroSection": {
-    "welcomeText": "Bienvenue à l'association Tamarieli",
+    "welcomeText": "Bienvenue à l'Association Tamarieli  “Tamarieli” et à la Plateforme  “Earthoba”",
     "inspiration": "Inspiration : l'âge d'or de la reine Tamar",
     "identity": "Identité : Racines et Héritage"
   },
@@ -13,7 +13,7 @@
   },
 
   "DigitalLibrary": {
-    "title": "Bibliothèque numérique 'Tamarieli'",
+    "title": "Bibliothèque numérique 'Ciblus'",
     "subtitle": "Le visage mondial de la culture et de la littérature géorgiennes",
     "point1": "La bibliothèque numérique 'Tamarieli' est créée pour préserver, protéger et rendre accessibles les trésors de la culture et de la littérature géorgiennes — dans un format numérique moderne.",
     "point2": "Notre mission est que la parole géorgienne devienne un pont entre la Géorgie et le monde. Le projet vise à préserver la mémoire nationale, à promouvoir la littérature géorgienne à l'échelle mondiale, à créer des ressources éducatives et à renforcer la diplomatie culturelle.",
@@ -139,5 +139,23 @@
     "foundBooks": "{{count}} livres trouvés",
     "book": "Livre",
     "noBooks": "Aucun livre trouvé avec les filtres sélectionnés"
+  },
+  "SeeAllProjects": {
+    "Projects": "Projets",
+    "work": "Découvrez nos travaux récents"
+  },
+
+  "ThinCreateInspire": {
+    "title": "PENSE, CRÉE, INSPIRE",
+    "point1": "Projets innovants",
+    "point2": "Recevez notre soutien",
+    "point3": "L'association 'Tamarieli' attend vos projets innovants dans le domaine de la culture, de l'éducation et du développement numérique.",
+    "point4": "Les auteurs de projets auront la possibilité de recevoir un cofinancement, un accompagnement mentorat et la promotion de leur projet. Notre objectif est de soutenir les initiatives qui servent la diffusion de la culture, de la littérature et du savoir géorgiens avec une vision innovante et contemporaine."
+  },
+  "VoicePlatform": {
+    "title": "Voix+",
+    "point1": "L'association 'Tamarieli' et la plateforme unifiée de la diaspora géorgienne 'Earthoba' servent à renforcer la diaspora géorgienne dans le monde, à préserver l'identité culturelle et à soutenir les processus d'euro-intégration de la Géorgie.",
+    "point2": "Notre vision commune repose sur les médias comme instrument efficace de la liberté d'expression, de la diplomatie, du dialogue culturel et du développement public, visant à présenter la Géorgie sur la scène internationale.",
+    "point3": "L'association 'Tamarieli' offre à ses partenaires une plateforme médiatique éthique et neutre, un large public international, des campagnes conjointes, des contenus thématiques, la participation à des événements et l'accès à des sources fiables."
   }
 }

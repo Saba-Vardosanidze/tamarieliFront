@@ -1,19 +1,19 @@
-'use client';
+"use client";
 
-import { useQuery } from '@tanstack/react-query';
-import { ProjectById } from 'features/landing/api/landingApi';
-import { Buttons } from 'features/projects/data/projectData';
-import { useLocale, useTranslations } from 'next-intl';
-import Image from 'next/image';
-import Link from 'next/link';
-import { usePathname, useSearchParams, useRouter } from 'next/navigation';
+import { useQuery } from "@tanstack/react-query";
+import { ProjectById } from "features/landing/api/landingApi";
+import { Buttons } from "features/projects/data/projectData";
+import { useLocale, useTranslations } from "next-intl";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import {
   FaFilePdf,
   FaFileWord,
   FaFacebook,
   FaInstagram,
   FaExternalLinkAlt,
-} from 'react-icons/fa';
+} from "react-icons/fa";
 
 type Props = {
   id: string;
@@ -21,30 +21,30 @@ type Props = {
 
 export default function ProjectsDetail({ id }: Props) {
   const locale = useLocale();
-  const t = useTranslations('ProjectsDetail');
+  const t = useTranslations("ProjectsDetail");
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
-  const type = searchParams.get('type') || '';
+  const type = searchParams.get("type") || "";
   const { data, isLoading, isError } = useQuery({
-    queryKey: ['project', id, type],
+    queryKey: ["project", id, type],
     queryFn: () => ProjectById(id, type),
   });
   const handleTypeChange = (type: string) => {
     const params = new URLSearchParams(searchParams.toString());
-    params.set('type', type);
+    params.set("type", type);
     router.push(`${pathname}?${params.toString()}`);
   };
   if (isLoading)
-    return <p className="mt-10 text-gray-500 text-center">{t('loading')}</p>;
+    return <p className="mt-10 text-gray-500 text-center">{t("loading")}</p>;
   if (isError)
-    return <p className="mt-10 text-red-500 text-center">{t('error')}</p>;
+    return <p className="mt-10 text-red-500 text-center">{t("error")}</p>;
 
   const statusStyles: Record<string, string> = {
-    TODO: 'bg-yellow-100 text-yellow-800 border-b border-yellow-400',
-    INPROGRESS: 'bg-blue-100 text-blue-800 border-b border-blue-400',
-    DONE: 'bg-green-100 text-green-800 border-b border-green-400',
-    ONGOING: 'bg-blue-100 text-blue-800 border-b border-blue-400',
+    TODO: "bg-yellow-100 text-yellow-800 border-b border-yellow-400",
+    INPROGRESS: "bg-blue-100 text-blue-800 border-b border-blue-400",
+    DONE: "bg-green-100 text-green-800 border-b border-green-400",
+    ONGOING: "bg-blue-100 text-blue-800 border-b border-blue-400",
   };
 
   return (
@@ -54,30 +54,30 @@ export default function ProjectsDetail({ id }: Props) {
           <div className="relative flex-shrink-0 rounded-lg w-full lg:w-1/2 h-[400px] overflow-hidden">
             <Image
               src={data.projectPicture}
-              alt={data.projectName[locale || 'en']}
+              alt={data.projectName[locale || "en"]}
               fill
               className="object-cover"
             />
           </div>
           <div className="flex flex-col gap-6 w-full lg:w-1/2">
             <p className="font-medium text-[18px] text-gray-500">
-              {t('projectName')}
+              {t("projectName")}
               <span className="font-black text-black">
-                {data.projectName[locale || 'en']}
+                {data.projectName[locale || "en"]}
               </span>
             </p>
             <div className="flex items-center gap-3">
-              <span className="font-medium text-gray-500">{t('status')}</span>
+              <span className="font-medium text-gray-500">{t("status")}</span>
               <span
                 className={`px-3 py-1 rounded-full font-semibold text-sm ${
-                  statusStyles[data.projectType] || ''
+                  statusStyles[data.projectType] || ""
                 }`}
               >
                 {data.projectType}
               </span>
             </div>
             <p className="font-medium text-[18px] text-gray-500">
-              {t('projectCreator')}
+              {t("projectCreator")}
               {data.projectCreator.map((creator: string, i: number) => (
                 <span key={i} className="mr-1 text-black">
                   {creator}
@@ -90,11 +90,11 @@ export default function ProjectsDetail({ id }: Props) {
 
       <div className="mx-auto p-6 w-full max-w-[1200px]">
         <div className="flex flex-col gap-8 bg-white shadow-lg p-6 rounded-xl">
-          <p className="font-black text-[24px] text-black">
-            {t('description')}
+          <p className="font-black text-[13px] text-black">
+            {t("description")}
           </p>
-          <p className="text-gray-800 text-lg leading-relaxed">
-            {data.projectDescription[locale || 'en']}
+          <p className="text-gray-800 text-[12px] leading-relaxed">
+            {data.projectDescription[locale || "en"]}
           </p>
           <div className="flex flex-wrap gap-[20px] w-full">
             {data.pdfLink && (
@@ -149,13 +149,13 @@ export default function ProjectsDetail({ id }: Props) {
         </div>
       </div>
       {isLoading ? (
-        <p className="mt-10 text-gray-500 text-center">{t('loading')}</p>
+        <p className="mt-10 text-gray-500 text-center">{t("loading")}</p>
       ) : (
         <div className="space-y-[50px] mx-auto mt-10 p-6 w-full max-w-[1200px]">
           <div className="flex lg:flex-row flex-col justify-between w-full">
             <p className="mb-6 font-black text-[24px] text-black">
-              <span>{data.projectName['en']} </span>
-              {t('project')}
+              <span>{data.projectName["en"]} </span>
+              {t("project")}
             </p>
             <div className="flex gap-[10px]">
               {Buttons.map((button) => (
@@ -167,12 +167,12 @@ export default function ProjectsDetail({ id }: Props) {
                   {button.name}
                 </button>
               ))}
-              {data._id === '690cc1799a4451b6543a13e3' && (
+              {data._id === "690cc1799a4451b6543a13e3" && (
                 <Link
-                  href={`/${locale || 'en'}/books`}
+                  href={`/${locale || "en"}/books`}
                   className="flex justify-center items-center bg-white px-[10px] border-black border-b rounded-[10px] h-[40px] text-[11px] text-black lg:text-[16px]"
                 >
-                  {t('digitalLibrary')}
+                  {t("digitalLibrary")}
                 </Link>
               )}
             </div>
@@ -187,7 +187,7 @@ export default function ProjectsDetail({ id }: Props) {
                   <div className="relative rounded-lg w-full h-48 overflow-hidden">
                     <Image
                       src={mini.projectPicture}
-                      alt={mini.projectName[locale || 'en']}
+                      alt={mini.projectName[locale || "en"]}
                       fill
                       className="object-cover"
                     />
@@ -196,14 +196,14 @@ export default function ProjectsDetail({ id }: Props) {
                   <div className="flex flex-col justify-between min-h-[230px]">
                     <div className="flex flex-col gap-[5px]">
                       <p className="font-bold text-black text-md">
-                        {mini.projectName[locale || 'en']}
+                        {mini.projectName[locale || "en"]}
                       </p>
                       <p className="text-gray-700 text-sm">
                         {(() => {
                           const desc =
-                            mini.projectDescription[locale || 'en'] || '';
+                            mini.projectDescription[locale || "en"] || "";
                           return desc.length > 150
-                            ? desc.slice(0, 150) + '...'
+                            ? desc.slice(0, 150) + "..."
                             : desc;
                         })()}
                       </p>
@@ -211,7 +211,7 @@ export default function ProjectsDetail({ id }: Props) {
                     <div className="flex justify-between items-center">
                       <span
                         className={`self-start px-3 py-1 rounded-full font-semibold text-sm ${
-                          statusStyles[mini.projectType] || ''
+                          statusStyles[mini.projectType] || ""
                         }`}
                       >
                         {mini.projectType}
@@ -220,7 +220,7 @@ export default function ProjectsDetail({ id }: Props) {
                         href={`/${locale}/miniprojects/${mini._id}`}
                         className="text-[14px] text-black cursor-pointer"
                       >
-                        {t('views')}
+                        {t("views")}
                       </Link>
                     </div>
                   </div>

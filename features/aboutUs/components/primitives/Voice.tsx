@@ -1,17 +1,16 @@
 "use client";
 
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 
-const Targets = () => {
-  const t = useTranslations("Targets");
+const Voice = () => {
+  const t = useTranslations("VoicePlatform");
 
   return (
     <div
-      className=" relative flex justify-center mx-auto
+      className="relative flex justify-center mx-auto
         w-full
         lg:min-h-[700px] md:min-h-[500px] min-h-[400px]
-        bg-[url('/images/headerImages/png/about-basic-bg.png')]
+        bg-[url('/images/headerImages/png/about-media.png')]
         bg-cover bg-center bg-no-repeat"
     >
       <div className="flex lg:flex-row flex-col justify-between items-center lg:items-stretch w-full max-w-[1440px] lg:px-0 md:px-6 px-4">
@@ -24,8 +23,6 @@ const Targets = () => {
             <li>{t("point1")}</li>
             <li>{t("point2")}</li>
             <li>{t("point3")}</li>
-            <li>{t("point4")}</li>
-            <li>{t("point5")}</li>
           </ul>
         </div>
       </div>
@@ -33,4 +30,4 @@ const Targets = () => {
   );
 };
 
-export default Targets;
+export default Voice;
