@@ -19,26 +19,8 @@ const InovateProjects = () => {
         bg-cover bg-center bg-no-repeat"
     >
       <div className="flex lg:flex-row flex-col justify-between items-center lg:items-stretch w-full max-w-[1440px] lg:px-0 md:px-6 px-4">
-        {/*  
-        <div className="lg:flex hidden flex-col justify-between lg:min-h-[700px]">
-          <Image
-            src={aboutUs}
-            width={300}
-            height={300}
-            alt="Decorative element"
-            className="rotate-270"
-          />
-          <Image
-            src={aboutUs}
-            width={300}
-            height={300}
-            alt="Decorative element"
-            className="rotate-180"
-          />
-        </div> */}
-
         <div className="flex flex-col justify-center items-center lg:gap-7 md:gap-5 gap-4 mx-auto lg:px-4 md:px-3 px-2 lg:py-[20px] md:py-8 py-6 w-full text-center">
-          <h3 className="font-bold text-[#7B3F00] lg:text-[32px] md:text-[28px] sm:text-[24px] text-[20px]">
+          <h3 className="font-bold text-[#7B3F00] lg:text-[38px] md:text-[28px] sm:text-[24px] text-[20px]">
             {t("title")}
           </h3>
 
@@ -66,34 +48,16 @@ const InovateProjects = () => {
             />
           </div>
 
-          <p className="font-[600] text-[#7B3F00] lg:text-[22px] md:text-[20px] sm:text-[18px] text-[16px]">
+          <p className="font-[600] text-[#7B3F00] lg:text-[34px] md:text-[20px] sm:text-[18px] text-[16px]">
             {t("support")}
           </p>
 
-          <ul className="flex flex-col lg:gap-6 md:gap-4 gap-3 text-[#7B3F00] lg:text-[24px] md:text-[20px] sm:text-[18px] text-[16px] list-disc list-inside">
+          <ul className="flex flex-col lg:gap-6 md:gap-4 gap-3 text-[#7B3F00] lg:text-[34px] md:text-[20px] sm:text-[18px] text-[16px] list-disc list-inside">
             <li>{t("point1")}</li>
             <li>{t("point2")}</li>
             <li>{t("point3")}</li>
           </ul>
         </div>
-
-        {/*   
-        <div className="lg:flex hidden flex-col justify-between lg:min-h-[700px]">
-          <Image
-            src={aboutUs}
-            width={300}
-            height={200}
-            alt="Decorative element"
-            className="rotate-0"
-          />
-          <Image
-            src={aboutUs}
-            width={300}
-            height={200}
-            alt="Decorative element"
-            className="rotate-90"
-          />
-        </div> */}
       </div>
     </div>
   );

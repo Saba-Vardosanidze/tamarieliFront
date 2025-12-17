@@ -1,28 +1,28 @@
-'use client';
+"use client";
 
-import { HeaderData } from 'features/landing/data/landingData';
-import Image from 'next/image';
-import Link from 'next/link';
-import BurgerMenu from './BurgerMenu';
-import BurgerMenuIcon from './BurgermenuIcon';
-import { useState } from 'react';
-import LocaleSwitcher from '@features/i18n/components/LocaleSwitcher';
-import { useLocale, useTranslations } from 'next-intl';
-import SiteLogo from '../../../../public/Images/headerImages/png/siteLogoa.png';
+import { HeaderData } from "features/landing/data/landingData";
+import Image from "next/image";
+import Link from "next/link";
+import BurgerMenu from "./BurgerMenu";
+import BurgerMenuIcon from "./BurgermenuIcon";
+import { useState } from "react";
+import LocaleSwitcher from "@features/i18n/components/LocaleSwitcher";
+import { useLocale, useTranslations } from "next-intl";
+import SiteLogo from "../../../../public/Images/headerImages/png/siteLogoa.png";
 
 const Header = () => {
   const locale = useLocale();
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const t = useTranslations('Header');
+  const t = useTranslations("Header");
 
   return (
     <div className="flex justify-center bg-[#E0E0E0] w-full">
       <header className="flex flex-col justify-center items-center w-full max-w-[1440px]">
         <div className="z-[201] relative flex bg-[#E0E0E0] px-5 border-[lightgrey] border-b w-full">
           <div className="flex justify-between py-2.5 w-full">
-            <Link href={'/'}>
+            <Link href={"/"}>
               <Image
-                src={SiteLogo}
+                src="/images/headerImages/png/tamarieliLogo.png"
                 alt="logo"
                 width={50}
                 height={50}
@@ -36,7 +36,7 @@ const Header = () => {
                     key={eachElement.id}
                     className="flex justify-center items-center gap-4"
                   >
-                    <Link href={`/${locale || '/en'}/${eachElement.href}`}>
+                    <Link href={`/${locale || "/en"}/${eachElement.href}`}>
                       <ul className="font-[600] text-[#1a1b1f] text-[14px] hover:text-[#606371] cursor-pointer">
                         {t(eachElement.title.toLowerCase())}
                       </ul>
