@@ -17,8 +17,8 @@ const DigitalLibrary = () => {
         className="
    absolute
           lg:block
-         right-0 top-[80px]
-          lg:right-0 lg:top-[150px]
+         right-0 top-20
+          lg:right-0 lg:top-0
   "
       >
         <Image
@@ -29,7 +29,7 @@ const DigitalLibrary = () => {
           className="
   
         w-[70px] h-[70px]
-            lg:w-[150px] lg:h-[150px]
+            lg:w-[100px] lg:h-[100px]
     "
         />
       </div>
