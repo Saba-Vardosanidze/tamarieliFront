@@ -39,12 +39,12 @@ const DigitalLibrary = () => {
             <h3 className="font-bold text-[#7B3F00] lg:text-[32px] md:text-[28px] sm:text-[24px] text-[20px]">
               {t("title")}
             </h3>
-            <p className="font-[500] text-[#7B3F00] lg:text-[28px] md:text-[24px] sm:text-[20px] text-[18px]">
+            <p className="font-bold text-[#7B3F00] lg:text-[28px] md:text-[24px] sm:text-[20px] text-[18px]">
               {t("subtitle")}
             </p>
           </div>
 
-          <ul className="flex flex-col lg:gap-6 md:gap-4 gap-3 text-[#7B3F00] lg:text-[24px] md:text-[20px] sm:text-[18px] text-[16px]">
+          <ul className="flex flex-col lg:gap-6 md:gap-4 gap-3 text-[#7B3F00] lg:text-[34px] md:text-[20px] sm:text-[18px] text-[16px]">
             <li>{t("point1")}</li>
             <li>{t("point2")}</li>
             <li>{t("point3")}</li>

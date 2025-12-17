@@ -42,7 +42,7 @@ const EarthobaPlatform = () => {
             {t("title2")}
           </h3>
 
-          <ul className="flex flex-col gap-4 sm:gap-5 lg:gap-6 text-[#7B3F00] text-lg sm:text-xl lg:text-[34px] list-disc list-inside px-4 sm:px-6 font-bold">
+          <ul className="flex flex-col gap-4 sm:gap-5 lg:gap-6 text-[#7B3F00] text-lg sm:text-xl lg:text-[34px] list-disc list-inside px-4 sm:px-6 ">
             <li>{t("point1")}</li>
             <li>{t("point2")}</li>
             <li>{t("point3")}</li>
@@ -54,7 +54,7 @@ const EarthobaPlatform = () => {
               <h4 className="mb-3 sm:mb-4 font-bold text-[#7B3F00] text-xl sm:text-2xl lg:text-[38px]">
                 {t("mainDirectionsTitle")}
               </h4>
-              <ul className="text-[#7B3F00] lg:text-[34px] md:text-[24px] sm:text-[20px] text-[18px] list-disc list-inside font-bold">
+              <ul className="text-[#7B3F00] lg:text-[34px] md:text-[24px] sm:text-[20px] text-[18px] list-disc list-inside ">
                 <li>{t("direction1")}</li>
                 <li>{t("direction2")}</li>
                 <li>{t("direction3")}</li>
@@ -69,7 +69,7 @@ const EarthobaPlatform = () => {
               <h4 className="mb-3 sm:mb-4 font-bold text-[#7B3F00] text-xl sm:text-2xl lg:text-[34px]">
                 {t("valuesTitle")}
               </h4>
-              <p className="text-[#7B3F00] text-base sm:text-lg lg:text-[34px] leading-relaxed font-bold">
+              <p className="text-[#7B3F00] text-base sm:text-lg lg:text-[34px] leading-relaxed ">
                 {t("valuesDescription")}
               </p>
             </div>
