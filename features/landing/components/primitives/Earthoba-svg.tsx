@@ -1,17 +1,16 @@
 import Image from "next/image";
 
-const FirstImage = () => {
+const SecondtImage = () => {
   return (
-    <div className="relative w-[200px] h-[200px]">
+    <div className="relative  w-[200px] h-[200px]">
       <Image
-        src="/images/headerImages/png/siteLogo.png"
+        src="/images/headerImages/png/earthoba.png"
         alt="თამარიელის ლოგო"
         width={250}
         height={250}
-        className="absolute inset-0 object-contain p-10"
+        className="absolute inset-0 object-contain p-10 "
       />
 
-      {/* Curved text BELOW logo */}
       <svg
         viewBox="0 0 300 300"
         className="absolute inset-0 pointer-events-none"
@@ -29,7 +28,7 @@ const FirstImage = () => {
           transform="translate(-20, 80)"
         >
           <textPath href="#bottomArc" startOffset="50%" textAnchor="middle">
-            ასოციაცია თამარიელი
+            პლატფორმა EARTHOBA
           </textPath>
         </text>
       </svg>
@@ -37,4 +36,4 @@ const FirstImage = () => {
   );
 };
 
-export default FirstImage;
+export default SecondtImage;
