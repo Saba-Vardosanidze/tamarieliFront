@@ -49,7 +49,7 @@ const EarthobaPlatform = () => {
             <li>{t("point4")}</li>
           </ul>
 
-          <div className="flex flex-col md:flex-row gap-8 lg:gap-10 w-full mt-6 sm:mt-8">
+          <div className="flex flex-col md:flex-row gap-8 px-4 lg:gap-10 w-full mt-6 sm:mt-8 md:px-4">
             <div className="flex-1 text-left">
               <h4 className="text-[#000000] lg:text-[44px] md:text-[24px] sm:text-[20px] text-[18px] list-disc list-inside font-bold">
                 {t("mainDirectionsTitle")}
