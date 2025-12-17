@@ -167,5 +167,12 @@
   },
   "SeeAllBtn": {
     "text": "ნახე სრულად"
+  },
+  "hello": {
+    "sayHello": "მოგესალმებათ"
+  },
+  "earthoba": { "platform": "პლატფორმა EARTHOBA" },
+  "asociation": {
+    "tamarieli": " ასოციაცია თამარიელი"
   }
 }

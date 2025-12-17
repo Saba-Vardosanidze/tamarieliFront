@@ -32,10 +32,16 @@ const Form = () => {
   return (
     <div className="flex flex-wrap justify-center items-center bg-[#E0E0E0] mx-auto w-full min-h-[500px] lg:min-h-[700px]">
       <div className="flex flex-col gap-5 mx-auto px-4 sm:px-6 md:px-8 lg:px-10 w-full max-w-[1440px]">
-        <div>
-          <h3 className="text-[#000000] text-[30px]">{t("title1")}</h3>
-          <h3 className="text-[#000000] text-[30px]">{t("title2")}</h3>
-          <p className="text-[#1a1b1f]">{t("description")}</p>
+        <div className="mb-4">
+          <h3 className="text-[#000000] text-[20px] font-bold">
+            {t("title1")}
+          </h3>
+          <h3 className="text-[#000000] text-[16px] font-bold">
+            {t("title2")}
+          </h3>
+          <p className="text-[#000000] text-[16px] font-bold">
+            {t("description")}
+          </p>
         </div>
         <form
           onSubmit={handleSubmit(submitForm)}
@@ -79,7 +85,7 @@ const Form = () => {
             <p className="text-red-500 text-sm">{errors.message.message}</p>
           )}
           <button
-            className="flex justify-center border text-[#000000] bg-transparent px-2 py-3 w-[109px] cursor-pointer hover:bg-[#000000] hover:text-[#ffffff] duration-300"
+            className="flex justify-center  text-[#000000] border-none  px-2 py-3 w-[109px] cursor-pointer  lg:bg-[rgba(191,219,254,0.9)]  bg-[rgba(191,219,254,0.9)] hover:text-[#ffffff] duration-300 rounded-[8px] "
             type="submit"
           >
             {isPending ? t("submitting") : t("submit")}
