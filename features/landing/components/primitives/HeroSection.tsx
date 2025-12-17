@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import tamarieli from "../../../../public/Images/headerImages/png/heroSection.webp";
 import Image from "next/image";
+import FirstImage from "./Tamarieli-svg";
 
 const HeroSection = async () => {
   const t = await getTranslations("HeroSection");
@@ -13,9 +14,9 @@ const HeroSection = async () => {
       <div
         className="absolute
        
-          right-[50px] top-[150px] flex"
+          lg:right-[200px] lg:top-[150px] flex top-[150px] right-0"
       >
-        <Image
+        {/* <Image
           src="/images/headerImages/png/siteLogo.png"
           alt="logo"
           width={150}
@@ -24,7 +25,10 @@ const HeroSection = async () => {
                   w-[100px] h-[100px]
                   lg:w-[150px] lg:h-[150px]
                 "
-        />
+        /> */}
+
+        <FirstImage />
+
         <Image
           src="/images/headerImages/png/earthoba.png"
           alt="logo"
