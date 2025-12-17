@@ -93,7 +93,7 @@ const InfiniteSlider = ({
         <div></div>
         <Link
           href="/ka/allProject"
-          className="px-[10px] flex items-center border-black border rounded-[10px] h-[40px] text-[11px] text-[12px] text-black lg:text-[16px] cursor-pointer hover:bg-[#000000] hover:text-[#ffffff] duration-300  "
+          className=" py-4 px-4 flex items-center border-black border rounded-[10px] h-[40px] text-[11px] text-black border-none lg:text-[16px] cursor-pointer lg:bg-[rgba(191,219,254,0.9)] hover:text-[#ffffff] duration-300  "
         >
           {t("text")}
         </Link>
