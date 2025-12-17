@@ -15,8 +15,11 @@ const EarthobaPlatform = () => {
       <div
         className="
     absolute
+
+    hidden
+    lg:block
    right-4 top-25
-    lg:right-[100px] lg:top-[50px]
+    lg:right-[50px] lg:top-[50px]
   "
       >
         <Image
