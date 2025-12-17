@@ -85,7 +85,7 @@ const Form = () => {
             <p className="text-red-500 text-sm">{errors.message.message}</p>
           )}
           <button
-            className="flex justify-center  text-[#000000] border-none  px-2 py-3 w-[109px] cursor-pointer  lg:bg-[rgba(191,219,254,0.9)] hover:text-[#ffffff] duration-300 rounded-[8px] "
+            className="flex justify-center  text-[#000000] border-none  px-2 py-3 w-[109px] cursor-pointer  lg:bg-[rgba(191,219,254,0.9)]  bg-[rgba(191,219,254,0.9)] hover:text-[#ffffff] duration-300 rounded-[8px] "
             type="submit"
           >
             {isPending ? t("submitting") : t("submit")}

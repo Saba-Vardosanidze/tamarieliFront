@@ -1,6 +1,9 @@
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 
-const FirstImage = () => {
+const FirstImage = async () => {
+  const t = await getTranslations("asociation");
+
   return (
     <div className="relative w-[200px] h-[200px]">
       <Image
@@ -29,7 +32,7 @@ const FirstImage = () => {
           transform="translate(-20, 80)"
         >
           <textPath href="#bottomArc" startOffset="50%" textAnchor="middle">
-            ასოციაცია თამარიელი
+            {t("tamarieli")}
           </textPath>
         </text>
       </svg>

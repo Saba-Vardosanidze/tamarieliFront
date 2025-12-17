@@ -3,7 +3,7 @@ import FirstImage from "./Tamarieli-svg";
 import SecondtImage from "./Earthoba-svg";
 
 const HeroSection = async () => {
-  const t = await getTranslations("HeroSection");
+  const t = await getTranslations("hello");
 
   return (
     <div
@@ -11,7 +11,7 @@ const HeroSection = async () => {
         relative
         w-full
         bg-white
-        bg-[url('/images/headerImages/png/new-hero-banner.jpeg')]
+        bg-[url('/images/headerImages/png/image.png')]
         bg-cover
         bg-center
         bg-no-repeat
@@ -52,7 +52,7 @@ const HeroSection = async () => {
           
         "
       >
-        <p className="text-[#000000] font-bold text-[16px]">მოგესალმებათ</p>
+        <p className="text-[#000000] font-bold text-[26px]">{t("sayHello")}</p>
       </div>
     </div>
   );

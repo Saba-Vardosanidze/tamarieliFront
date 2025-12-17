@@ -161,5 +161,12 @@
   },
   "SeeAllBtn": {
     "text": "Show more"
+  },
+  "hello": {
+    "sayHello": "Welcome"
+  },
+  "earthoba": { "platform": "Platform EARTHOBA" },
+  "asociation": {
+    "tamarieli": " associationn TAMARIELI"
   }
 }

@@ -1,6 +1,9 @@
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 
-const SecondtImage = () => {
+const SecondtImage = async () => {
+  const t = await getTranslations("earthoba");
+
   return (
     <div className="relative  w-[200px] h-[200px]">
       <Image
@@ -28,7 +31,7 @@ const SecondtImage = () => {
           transform="translate(-20, 80)"
         >
           <textPath href="#bottomArc" startOffset="50%" textAnchor="middle">
-            პლატფორმა EARTHOBA
+            {t("platform")}
           </textPath>
         </text>
       </svg>
