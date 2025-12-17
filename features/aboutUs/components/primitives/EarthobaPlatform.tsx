@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import aboutUsSvg from "../../../../public/Images/headerImages/svg/aboutUsSvg.svg";
 
 const EarthobaPlatform = () => {
   const t = useTranslations("EarthobaPlatform");

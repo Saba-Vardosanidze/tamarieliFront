@@ -18,13 +18,13 @@ const TamarieliDesc = () => {
     >
       <div
         className="
-    absolute
-    hidden
-    lg:block
-  justify-center
-    right-4 top-20
-    lg:right-[100px] lg:top-[50px]
-  "
+          absolute
+      
+          hidden
+          lg:block
+         right-4 top-25
+          lg:right-[50px] lg:top-[50px]
+        "
       >
         <Image
           src="/images/headerImages/png/tamarieliLogo.png"
@@ -32,9 +32,9 @@ const TamarieliDesc = () => {
           width={150}
           height={150}
           className="
-      w-[50px] h-[50px]
-      lg:w-[150px] lg:h-[150px]
-    "
+            w-[70px] h-[70px]
+            lg:w-[150px] lg:h-[150px]
+          "
         />
       </div>
 
