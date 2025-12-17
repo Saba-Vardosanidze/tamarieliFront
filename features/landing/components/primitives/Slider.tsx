@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
 import { ProjectApi } from "features/landing/api/landingApi";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 type InfiniteSliderProps = {
   title?: string;
@@ -25,6 +25,7 @@ const InfiniteSlider = ({
   const [containerWidth, setContainerWidth] = useState(0);
   const x = useMotionValue(0);
   const [isPaused, setIsPaused] = useState(false);
+  const t = useTranslations("SeeAllBtn");
 
   const { data } = useQuery({
     queryKey: ["project"],
@@ -92,9 +93,9 @@ const InfiniteSlider = ({
         <div></div>
         <Link
           href="/ka/allProject"
-          className="px-[10px] flex items-center border-black border rounded-[10px] h-[40px] text-[11px] text-[12px] text-black lg:text-[16px] cursor-pointer"
+          className="px-[10px] flex items-center border-black border rounded-[10px] h-[40px] text-[11px] text-[12px] text-black lg:text-[16px] cursor-pointer hover:bg-[#000000] hover:text-[#ffffff] duration-300  "
         >
-          show more
+          {t("text")}
         </Link>
       </div>
       <div className="mx-auto px-2 sm:px-4 py-4 sm:py-8 w-full max-w-[1440px]">
