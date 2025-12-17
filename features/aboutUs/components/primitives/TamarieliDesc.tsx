@@ -19,7 +19,6 @@ const TamarieliDesc = () => {
       <div
         className="
           absolute
-      
           lg:block
          right-4 top-0
           lg:right-[50px] lg:top-[150px]
