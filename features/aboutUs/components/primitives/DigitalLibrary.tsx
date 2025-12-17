@@ -9,17 +9,16 @@ const DigitalLibrary = () => {
     <div
       className=" relative flex justify-center mx-auto
         w-full
-        lg:min-h-[700px] md:min-h-[500px] min-h-[400px]
+        lg:min-h-[1370px] md:min-h-[500px] min-h-[400px]
       bg-[url('/images/headerImages/png/about-basic-bg.png')]
         bg-cover bg-center bg-no-repeat"
     >
       <div
         className="
-    absolute
-    hidden
-    lg:block
-    right-4 top-2
-    lg:right-[50px] lg:top-[20px]
+   absolute
+          lg:block
+         right-0 top-0
+          lg:right-[50px] lg:top-[150px]
   "
       >
         <Image
@@ -29,7 +28,8 @@ const DigitalLibrary = () => {
           height={150}
           className="
   
-      lg:w-[100px] lg:h-[100px]
+        w-[70px] h-[70px]
+            lg:w-[150px] lg:h-[150px]
     "
         />
       </div>

@@ -11,8 +11,8 @@ const TamarieliDesc = () => {
       className="
         relative flex justify-center items-center mx-auto
         w-full
-        lg:min-h-[900px] md:min-h-[500px] min-h-[400px]
-        bg-[url('/images/headerImages/png/about-basic-bg.png')]
+        lg:min-h-[1320px] md:min-h-[500px] min-h-[400px]
+        bg-[url('/images/headerImages/png/about-us-tamarieli.png')]
         bg-cover bg-center bg-no-repeat
       "
     >
@@ -20,10 +20,9 @@ const TamarieliDesc = () => {
         className="
           absolute
       
-          hidden
           lg:block
-         right-4 top-25
-          lg:right-[50px] lg:top-[50px]
+         right-4 top-0
+          lg:right-[50px] lg:top-[150px]
         "
       >
         <Image
@@ -42,16 +41,16 @@ const TamarieliDesc = () => {
 
       <div className="relative z-10 flex lg:flex-row flex-col justify-between items-center lg:items-stretch w-full max-w-[1440px] lg:px-0 md:px-6 px-4">
         <div className="flex flex-col justify-center items-center lg:gap-7 md:gap-5 gap-4 mx-auto lg:px-4 md:px-3 px-2 w-full text-center">
-          <h3 className="font-bold text-[#7B3F00] lg:text-[38px] md:text-[28px] sm:text-[24px] text-[38px]">
+          <h3 className="font-bold text-[#000000] lg:text-[56px] md:text-[28px] sm:text-[24px] text-[38px]">
             {t("title")}
           </h3>
 
-          <ul className="text-[#7B3F00] lg:text-[34px] md:text-[24px] sm:text-[20px] text-[18px] list-disc list-inside">
+          <ul className="text-[#000000] lg:text-[44px] md:text-[24px] sm:text-[20px] text-[18px] list-disc list-inside">
             <li>{t("list.inspiration")}</li>
             <li>{t("list.identity")}</li>
           </ul>
 
-          <p className="lg:mt-5 md:mt-4 mt-3 max-w-[900px] text-[#7B3F00] lg:text-[34px] md:text-[24px] sm:text-[20px] text-[18px] lg:leading-normal md:leading-relaxed leading-relaxed">
+          <p className="lg:mt-5 md:mt-4 mt-3 max-w-[900px] text-[#000000] lg:text-[44px] md:text-[24px] sm:text-[20px] text-[18px] lg:leading-normal md:leading-relaxed leading-relaxed">
             {t("paragraph")}
           </p>
         </div>

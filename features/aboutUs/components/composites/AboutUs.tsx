@@ -1,7 +1,6 @@
 import DigitalLibrary from "../primitives/DigitalLibrary";
 import EarthobaPlatform from "../primitives/EarthobaPlatform";
 import Foreword from "../primitives/Foreword";
-import InovateProjects from "../primitives/InovateProjects";
 import Mission from "../primitives/Mission";
 import SocialResponsibility from "../primitives/SocialResponsibility";
 import TamarieliDesc from "../primitives/TamarieliDesc";
@@ -21,7 +20,7 @@ const AboutUs = () => {
       <Targets />
       <SocialResponsibility />
       <DigitalLibrary />
-      <InovateProjects />
+      {/* <InovateProjects /> */}
       <EarthobaPlatform />
       <ThinkInspireCreate />
       <Voice />
