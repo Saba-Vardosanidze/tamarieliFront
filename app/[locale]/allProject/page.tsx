@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { ProjectApi } from "@features/landing/api/landingApi";
-import { useQuery } from "@tanstack/react-query";
-import { useLocale, useTranslations } from "next-intl";
-import Image from "next/image";
-import Link from "next/link";
+import { ProjectApi } from '@features/landing/api/landingApi';
+import { useQuery } from '@tanstack/react-query';
+import { useLocale, useTranslations } from 'next-intl';
+import Image from 'next/image';
+import Link from 'next/link';
 
-type Locale = "ka" | "en" | "ru";
+type Locale = 'ka' | 'en' | 'ru';
 
 type Project = {
   _id: string;
@@ -20,11 +20,11 @@ type Project = {
 };
 
 const AllProject = () => {
-  const t = useTranslations("SeeAllProjects");
+  const t = useTranslations('SeeAllProjects');
   const locale = useLocale() as Locale;
 
   const { data, isLoading, isError } = useQuery<Project[]>({
-    queryKey: ["project"],
+    queryKey: ['project'],
     queryFn: ProjectApi,
   });
 
@@ -48,16 +48,16 @@ const AllProject = () => {
 
   return (
     <div className="bg-slate-50 min-h-screen">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 max-w-[1440px] w-full">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 w-full max-w-[1440px]">
         <div className="mb-12">
           <h1 className="mb-2 font-bold text-slate-900 text-4xl sm:text-5xl">
-            {t("Projects")}
+            {t('Projects')}
           </h1>
-          <p className="text-slate-600 text-lg">{t("work")}</p>
+          <p className="text-slate-600 text-lg">{t('work')}</p>
         </div>
 
         <div className="gap-8 grid grid-cols-1 md:grid-cols-2">
-          {projects.map((card) => {
+          {projects?.map((card: any) => {
             const title = card.projectName[locale] ?? card.projectName.en;
 
             return (
@@ -72,7 +72,7 @@ const AllProject = () => {
                       src={card.projectPicture}
                       alt={title}
                       fill
-                      className="object-cover group-hover:opacity-90 transition-opacity duration-300"
+                      className="group-hover:opacity-90 object-cover transition-opacity duration-300"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>
