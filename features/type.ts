@@ -34,3 +34,52 @@ export type ParamsProps = {
     id: string;
   };
 };
+
+export interface LocalizedText {
+  ka: string;
+  en: string;
+  fr: string;
+}
+
+export interface MiniProject {
+  _id: string;
+  parentProject: string;
+
+  projectName: LocalizedText;
+  projectDescription: LocalizedText;
+
+  projectCreator: string[];
+  projectType: 'INPROGRESS' | 'ONGOING' | 'COMPLETED';
+
+  projectPicture: string;
+
+  createdAt: string;
+  updatedAt: string;
+
+  pdfLink: string;
+  wordLink: string;
+
+  __v: number;
+}
+
+export type Project = {
+  _id: string;
+
+  projectName: LocalizedText;
+  projectDescription: LocalizedText;
+
+  projectCreator: string[];
+  projectType: 'ONGOING' | 'INPROGRESS' | 'COMPLETED';
+
+  projectPicture: string;
+
+  createdAt: string;
+  updatedAt: string;
+
+  pdfLink: string;
+  wordLink: string;
+
+  miniProjects: MiniProject[];
+
+  __v: number;
+};

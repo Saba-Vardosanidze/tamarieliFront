@@ -1,34 +1,26 @@
 'use client';
 
-import { ProjectApi } from '@features/landing/api/landingApi';
 import { useQuery } from '@tanstack/react-query';
 import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 
-type Locale = 'ka' | 'en' | 'ru';
-
-type Project = {
-  _id: string;
-  projectPicture: string;
-  projectType: string;
-  projectName: {
-    ka: string;
-    en: string;
-    ru?: string;
-  };
-};
+import { ProjectApi } from '@features/landing/api/landingApi';
+import { Locale } from '@features/i18n/routing';
+import { Project } from '@features/type';
 
 const AllProject = () => {
   const t = useTranslations('SeeAllProjects');
   const locale = useLocale() as Locale;
 
-  const { data, isLoading, isError } = useQuery<Project[]>({
-    queryKey: ['project'],
+  const {
+    data: projects = [],
+    isLoading,
+    isError,
+  } = useQuery<Project[]>({
+    queryKey: ['projects'],
     queryFn: ProjectApi,
   });
-
-  const projects: Project[] = data ?? [];
 
   if (isLoading) {
     return (
@@ -47,7 +39,7 @@ const AllProject = () => {
   }
 
   return (
-    <div className="bg-slate-50 min-h-screen">
+    <div className="min-h-screen">
       <div className="mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 w-full max-w-[1440px]">
         <div className="mb-12">
           <h1 className="mb-2 font-bold text-slate-900 text-4xl sm:text-5xl">
@@ -57,19 +49,19 @@ const AllProject = () => {
         </div>
 
         <div className="gap-8 grid grid-cols-1 md:grid-cols-2">
-          {projects?.map((card: any) => {
-            const title = card.projectName[locale] ?? card.projectName.en;
+          {projects.map((project) => {
+            const title = project.projectName[locale] ?? project.projectName.en;
 
             return (
               <Link
-                key={card._id}
-                href={`/${locale}/projects/${card._id}`}
+                key={project._id}
+                href={`/${locale}/projects/${project._id}`}
                 className="group block"
               >
                 <article className="bg-white shadow-md hover:shadow-xl rounded-xl overflow-hidden transition-shadow duration-300">
                   <div className="relative h-[280px] sm:h-[320px] overflow-hidden">
                     <Image
-                      src={card.projectPicture}
+                      src={project.projectPicture}
                       alt={title}
                       fill
                       className="group-hover:opacity-90 object-cover transition-opacity duration-300"
@@ -80,7 +72,7 @@ const AllProject = () => {
                   <div className="p-6">
                     <div className="mb-3">
                       <span className="inline-block bg-blue-100 px-3 py-1 rounded-md font-medium text-blue-700 text-sm">
-                        {card.projectType}
+                        {project.projectType}
                       </span>
                     </div>
 
