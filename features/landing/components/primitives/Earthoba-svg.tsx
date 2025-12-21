@@ -1,17 +1,17 @@
-import { getTranslations } from "next-intl/server";
-import Image from "next/image";
+import { getTranslations } from 'next-intl/server';
+import Image from 'next/image';
 
 const SecondtImage = async () => {
-  const t = await getTranslations("earthoba");
+  const t = await getTranslations('earthoba');
 
   return (
-    <div className="relative  w-[200px] h-[200px]">
+    <div className="relative w-[200px] h-[200px]">
       <Image
-        src="/images/headerImages/png/earthoba.png"
+        src="/Images/headerImages/png/earthoba.png"
         alt="თამარიელის ლოგო"
         width={250}
         height={250}
-        className="absolute inset-0 object-contain p-10 "
+        className="absolute inset-0 p-10 object-contain"
       />
 
       <svg
@@ -31,7 +31,7 @@ const SecondtImage = async () => {
           transform="translate(-20, 80)"
         >
           <textPath href="#bottomArc" startOffset="50%" textAnchor="middle">
-            {t("platform")}
+            {t('platform')}
           </textPath>
         </text>
       </svg>

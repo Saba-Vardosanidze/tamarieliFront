@@ -1,17 +1,17 @@
-import { getTranslations } from "next-intl/server";
-import Image from "next/image";
+import { getTranslations } from 'next-intl/server';
+import Image from 'next/image';
 
 const FirstImage = async () => {
-  const t = await getTranslations("asociation");
+  const t = await getTranslations('asociation');
 
   return (
     <div className="relative w-[200px] h-[200px]">
       <Image
-        src="/images/headerImages/png/siteLogo.png"
+        src="/Images/headerImages/png/siteLogo.png"
         alt="თამარიელის ლოგო"
         width={250}
         height={250}
-        className="absolute inset-0 object-contain p-10"
+        className="absolute inset-0 p-10 object-contain"
       />
 
       {/* Curved text BELOW logo */}
@@ -32,7 +32,7 @@ const FirstImage = async () => {
           transform="translate(-20, 80)"
         >
           <textPath href="#bottomArc" startOffset="50%" textAnchor="middle">
-            {t("tamarieli")}
+            {t('tamarieli')}
           </textPath>
         </text>
       </svg>
