@@ -15,10 +15,10 @@ const Gallery = () => {
     >
       <div
         className="
-   absolute
+      absolute
           lg:block
-         right-0 top-20
-          lg:right-0 lg:top-0
+         right-4 top-5
+          lg:right-[50px] lg:top-0
   "
       >
         <Image
