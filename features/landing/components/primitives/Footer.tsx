@@ -1,17 +1,17 @@
-"use client";
+'use client';
 
-import { FooterItems } from "features/landing/data/landingData";
-import Image from "next/image";
-import FooterLinks from "./FooterLinks";
-import SocialIcons from "./FooterSocmediaLinks";
-import bgRemoved from "../../../../public/Images/headerImages/png/bgremoved.png";
-import line from "../../../../public/Images/headerImages/svg/Line.svg";
+import { FooterItems } from 'features/landing/data/landingData';
+import Image from 'next/image';
+import FooterLinks from './FooterLinks';
+import SocialIcons from './FooterSocmediaLinks';
+import bgRemoved from '../../../../public/Images/headerImages/png/bgremoved.png';
+import line from '../../../../public/Images/headerImages/svg/Line.svg';
 
 const Footer = () => {
   return (
     <footer className="flex flex-col justify-center md:justify-center items-center bg-[#E0E0E0] mx-auto mt-[90px] py-6 sm:py-8 md:py-10 lg:py-12 w-full">
       <div className="flex lg:flex-row flex-col justify-between gap-8 lg:gap-0 px-4 sm:px-6 md:px-8 lg:px-10 w-full max-w-[1280px]">
-        <div className="flex flex-col w-full lg:w-auto justify-center">
+        <div className="flex flex-col justify-center w-full lg:w-auto">
           {FooterItems.map((item, index) => (
             <FooterLinks
               key={index}
