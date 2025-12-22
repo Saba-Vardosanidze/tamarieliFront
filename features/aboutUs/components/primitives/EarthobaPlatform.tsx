@@ -35,10 +35,10 @@ const EarthobaPlatform = () => {
 
       <div className="flex flex-col lg:flex-row justify-between py-16 sm:py-20 lg:py-[100px] w-full max-w-[1440px] gap-8 lg:gap-12 py-[100px]">
         <div className="flex flex-col justify-center gap-6 sm:gap-7 text-center w-full py-[40px]">
-          <h3 className="font-bold text-[#000000] lg:text-[20px] md:text-[28px] sm:text-[24px] text-[38px] ">
+          <h3 className="font-bold text-[#000000] lg:text-[20px] md:text-[15px] sm:text-[15px] text-[15px] ">
             {t("title")}
           </h3>
-          <h3 className="font-bold text-[#000000] lg:text-[20px] md:text-[28px] sm:text-[24px] text-[38px] ">
+          <h3 className="font-bold text-[#000000] lg:text-[20px] md:text-[15px] sm:text-[15px] text-[15px] ">
             {t("title2")}
           </h3>
 
@@ -54,7 +54,7 @@ const EarthobaPlatform = () => {
               <h4 className="text-[#000000] lg:text-[20px] md:text-[24px] sm:text-[20px] text-[18px] list-disc list-inside font-bold">
                 {t("mainDirectionsTitle")}
               </h4>
-              <ul className="text-[#000000] lg:text-[18px] md:text-[24px] sm:text-[20px] text-[18px] list-disc list-inside">
+              <ul className="text-[#000000] lg:text-[18px] md:text-[15px] sm:text-[15px] text-[15px] list-disc list-inside">
                 <li>{t("direction1")}</li>
                 <li>{t("direction2")}</li>
                 <li>{t("direction3")}</li>

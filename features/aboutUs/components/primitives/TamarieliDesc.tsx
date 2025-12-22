@@ -22,7 +22,7 @@ const TamarieliDesc = () => {
 
       <div className="z-[9] relative flex lg:flex-row flex-col justify-between items-center lg:items-stretch px-4 md:px-6 lg:px-0 w-full max-w-[1440px]">
         <div className="flex flex-col justify-center items-center gap-4 md:gap-5 lg:gap-7 mx-auto px-2 md:px-3 lg:px-4 w-full text-center">
-          <h3 className="font-bold text-[#000000] text-[38px] sm:text-[24px] md:text-[28px] lg:text-[20px]">
+          <h3 className="font-bold text-[#000000] text-[15px] sm:text-[15px] md:text-[15px] lg:text-[20px]">
             {t("title")}
           </h3>
 

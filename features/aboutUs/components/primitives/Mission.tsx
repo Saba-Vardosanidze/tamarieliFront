@@ -13,7 +13,7 @@ const Mission = () => {
         bg-cover bg-center bg-no-repeat"
     >
       <div className="flex flex-col justify-center items-center w-full max-w-[1440px] px-4 py-6 md:py-8 lg:py-0 text-center ">
-        <h3 className="font-bold text-[#000000] text-[38px] sm:text-[24px] md:text-[28px] lg:text-[20px] mb-6">
+        <h3 className="font-bold text-[#000000] text-[15px] sm:text-[15px] md:text-[15px] lg:text-[20px] mb-6">
           {t("title")}
         </h3>
 
