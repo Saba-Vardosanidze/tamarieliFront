@@ -2,8 +2,8 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
-const DigitalLibrary = () => {
-  const t = useTranslations("DigitalLibrary");
+const Music = () => {
+  const t = useTranslations("music");
 
   return (
     <div
@@ -15,14 +15,14 @@ const DigitalLibrary = () => {
     >
       <div
         className="
-   absolute
+     absolute
           lg:block
          right-0 top-0
-          lg:right-0 lg:top-0
+          lg:right-[50px] lg:top-[150px]
   "
       >
         <Image
-          src="/images/headerImages/png/ciblus.png"
+          src="/images/headerImages/png/music.png"
           alt="logo"
           width={150}
           height={150}
@@ -39,21 +39,18 @@ const DigitalLibrary = () => {
             <h3 className="font-bold text-[#000000] lg:text-[20px] md:text-[15px] sm:text-[15px] text-[15px]">
               {t("title")}
             </h3>
-            <p className="font-bold text-[#000000] lg:text-[20px] md:text-[15px] sm:text-[15px] text-[15px]">
-              {t("subtitle")}
-            </p>
           </div>
 
-          <ul className="text-[#000000] lg:text-[18px] md:text-[24px] sm:text-[20px] text-[18px] ">
-            <li>{t("point1")}</li>
-            <li>{t("point2")}</li>
-            <li>{t("point3")}</li>
-            <li>{t("point4")}</li>
-          </ul>
+          <p className="text-[#000000] lg:text-[18px] md:text-[24px] sm:text-[20px] text-[18px] ">
+            {t("desc1")}
+          </p>
+          <p className="text-[#000000] lg:text-[18px] md:text-[24px] sm:text-[20px] text-[18px] ">
+            {t("desc2")}
+          </p>
         </div>
       </div>
     </div>
   );
 };
 
-export default DigitalLibrary;
+export default Music;

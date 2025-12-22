@@ -1,7 +1,7 @@
-import { FootData } from 'features/landing/data/landingData';
-import { SocialLink } from 'features/type';
-import Image from 'next/image';
-import Link from 'next/link';
+import { FootData } from "features/landing/data/landingData";
+import { SocialLink } from "features/type";
+import Image from "next/image";
+import Link from "next/link";
 
 const SocialIcons = () => {
   return (
@@ -10,7 +10,7 @@ const SocialIcons = () => {
         <Link
           key={eachElement.id}
           href={eachElement.href}
-          className="flex justify-center items-center bg-[#DACDBEB2] w-[32px] h-[32px]"
+          className="flex justify-center items-center "
         >
           <Image
             src={eachElement.img}

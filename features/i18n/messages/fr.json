@@ -168,5 +168,14 @@
   "earthoba": { "platform": "Plate-forme EARTHOBA" },
   "asociation": {
     "tamarieli": " Associationn TAMARIELI"
+  },
+  "gallery": {
+    "title": "GALLERY | ART SPACE GALLERY | ART SPACE",
+    "desc": "Gallery Art Space est une plateforme culturelle contemporaine, ouverte et inclusive, qui réunit l’art traditionnel et l’art contemporain dans un environnement innovant, fondé sur le dialogue. Cet espace a pour vocation de soutenir les artistes, de stimuler les processus créatifs et de renforcer la coopération interculturelle aux niveaux local, européen et international. Gallery Art Space est un lieu de rencontre pour les idées, l’expérimentation et la diplomatie culturelle — où l’art devient un langage de communication, de compréhension mutuelle et de valeurs partagées. Think. Create. Inspire. Penser. Créer. Inspirer. Gallery Art Space est un lieu de rencontre pour les idées, Gallery Art Space est un lieu de rencontre pour les idées, l’expérimentation et la diplomatie culturelle — où l’art devient l’expérimentation et la diplomatie culturelle — où l’art devient un langage de communication, de compréhension mutuelle et un langage de communication, de compréhension mutuelle et de valeurs partagées. de valeurs partagées. Think. Create. Inspire. Think. Create. Inspire"
+  },
+  "music": {
+    "title": "MUSIC SONUS | MUSIC PLATFORM",
+    "desc1": "Music Sonus est une plateforme musicale contemporaine, raffinée et inclusive, qui réunit des genres musicaux variés au sein d’un même espace. La plateforme a pour mission de soutenir les artistes et de favoriser la découverte de nouvelles musiques dans un environnement numérique moderne.",
+    "desc2": "Music Sonus se définit comme un espace où la musique — en tant que son, énergie et émotion — devient une force de connexion et de lien entre les individus. Where Music Becomes Pure Sound. Là où la musique devient son pur."
   }
 }
