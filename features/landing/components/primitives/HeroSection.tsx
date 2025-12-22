@@ -16,9 +16,7 @@ const HeroSection = async () => {
         flex justify-center
       "
     >
-      {/* MAIN WRAPPER */}
       <div className="relative w-full max-w-[1440px] h-full">
-        {/* IMAGES BLOCK */}
         <div
           className="
             absolute
@@ -33,7 +31,6 @@ const HeroSection = async () => {
           <SecondtImage />
         </div>
 
-        {/* TEXT */}
         <div
           className="
             absolute
