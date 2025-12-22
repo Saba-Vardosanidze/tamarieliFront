@@ -1,6 +1,7 @@
 import DigitalLibrary from "../primitives/DigitalLibrary";
 import EarthobaPlatform from "../primitives/EarthobaPlatform";
 import Foreword from "../primitives/Foreword";
+import Gallery from "../primitives/Galery";
 import Mission from "../primitives/Mission";
 import SocialResponsibility from "../primitives/SocialResponsibility";
 import TamarieliDesc from "../primitives/TamarieliDesc";
@@ -24,6 +25,7 @@ const AboutUs = () => {
       <EarthobaPlatform />
       <ThinkInspireCreate />
       <Voice />
+      <Gallery />
     </div>
   );
 };
