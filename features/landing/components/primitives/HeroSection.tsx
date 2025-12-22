@@ -6,7 +6,7 @@ const HeroSection = async () => {
   const t = await getTranslations('hello');
 
   return (
-    <div className="relative bg-[url('/images/headerImages/png/image.png')] bg-white bg-cover bg-no-repeat bg-center w-full min-h-[300px] md:min-h-[300px] lg:min-h-[500px]">
+    <div className="relative bg-[url('/Images/headerImages/png/image.png')] bg-white bg-cover bg-no-repeat bg-center w-full min-h-[300px] md:min-h-[300px] lg:min-h-[500px]">
       <div className="top-[50px] lg:top-[100px] right-0 lg:right-[200px] absolute flex scale-75 md:scale-90 lg:scale-100">
         <FirstImage />
         <SecondtImage />

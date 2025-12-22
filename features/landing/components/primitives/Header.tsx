@@ -21,7 +21,7 @@ const Header = () => {
           <div className="flex justify-between py-2.5 w-full">
             <Link href={'/'}>
               <Image
-                src="/images/headerImages/png/tamarieliLogo.png"
+                src="/Images/headerImages/png/tamarieliLogo.png"
                 alt="logo"
                 width={50}
                 height={50}
