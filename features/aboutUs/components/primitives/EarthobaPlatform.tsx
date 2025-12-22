@@ -22,7 +22,7 @@ const EarthobaPlatform = () => {
   "
       >
         <Image
-          src="/images/headerImages/png/earthoba.png"
+          src="/Images/headerImages/png/earthoba.png"
           alt="logo"
           width={150}
           height={150}

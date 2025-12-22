@@ -21,7 +21,7 @@ const Voice = () => {
         "
       >
         <Image
-          src="/images/headerImages/png/voice-removebg.png"
+          src="/Images/headerImages/png/voice-removebg.png"
           alt="logo"
           width={150}
           height={150}

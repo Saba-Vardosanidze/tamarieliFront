@@ -22,7 +22,7 @@ const Gallery = () => {
   "
       >
         <Image
-          src="/images/headerImages/png/gallery.png"
+          src="/Images/headerImages/png/gallery.png"
           alt="logo"
           width={150}
           height={150}

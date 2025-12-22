@@ -22,7 +22,7 @@ const DigitalLibrary = () => {
   "
       >
         <Image
-          src="/images/headerImages/png/ciblus.png"
+          src="/Images/headerImages/png/ciblus.png"
           alt="logo"
           width={150}
           height={150}

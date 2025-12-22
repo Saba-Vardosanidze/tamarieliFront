@@ -22,7 +22,7 @@ const Music = () => {
   "
       >
         <Image
-          src="/images/headerImages/png/music.png"
+          src="/Images/headerImages/png/music.png"
           alt="logo"
           width={150}
           height={150}

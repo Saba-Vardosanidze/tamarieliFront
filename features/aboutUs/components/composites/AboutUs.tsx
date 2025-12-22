@@ -22,7 +22,6 @@ const AboutUs = () => {
       <Targets />
       <SocialResponsibility />
       <DigitalLibrary />
-      {/* <InovateProjects /> */}
       <EarthobaPlatform />
       <ThinkInspireCreate />
       <Voice />

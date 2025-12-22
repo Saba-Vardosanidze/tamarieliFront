@@ -21,7 +21,7 @@ const ThinkInspireCreate = () => {
         "
       >
         <Image
-          src="/images/headerImages/png/think-create-inspire-removebg.png"
+          src="/Images/headerImages/png/think-create-inspire-removebg.png"
           alt="logo"
           width={150}
           height={150}
