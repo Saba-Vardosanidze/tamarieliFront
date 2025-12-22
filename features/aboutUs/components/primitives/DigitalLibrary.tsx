@@ -18,7 +18,7 @@ const DigitalLibrary = () => {
    absolute
           lg:block
          right-0 top-0
-          lg:right-0 lg:top-0
+          lg:right-20 lg:top-50
   "
       >
         <Image
