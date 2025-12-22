@@ -93,7 +93,7 @@ export const FootData: FooterDataProps[] = [
       {
         id: 3,
         href: "https://www.youtube.com/@KekelaMaro",
-        img: "/Images/headerImages/svg/newYoutube.svg",
+        img: "/Images/headerImages/svg/newyoutube.svg",
         alt: "YouTube",
         width: 20,
         height: 20,
