@@ -10,7 +10,7 @@ const DigitalLibrary = () => {
       className=" relative flex justify-center mx-auto
         w-full
          lg:min-h-[1000px] md:min-h-[500px] min-h-[400px]
-        bg-[url('/images/headerImages/png/newAboutUsBg.jpeg')]
+        bg-[url('/Images/headerImages/png/newAboutUsBg.jpeg')]
         bg-cover bg-center bg-no-repeat"
     >
       <div
