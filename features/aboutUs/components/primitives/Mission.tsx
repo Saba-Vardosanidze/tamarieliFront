@@ -9,7 +9,7 @@ const Mission = () => {
     <div
       className="flex justify-center items-center w-full
         min-h-[400px] md:min-h-[500px] lg:min-h-[1000px]
-        bg-[url('/images/headerImages/png/newAboutUsBg.jpeg')]
+        bg-[url('/Images/headerImages/png/newAboutUsBg.jpeg')]
         bg-cover bg-center bg-no-repeat"
     >
       <div className="flex flex-col justify-center items-center w-full max-w-[1440px] px-4 py-6 md:py-8 lg:py-0 text-center ">

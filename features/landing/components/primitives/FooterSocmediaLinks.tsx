@@ -12,12 +12,14 @@ const SocialIcons = () => {
           href={eachElement.href}
           className="flex justify-center items-center "
         >
-          <Image
-            src={eachElement.img}
-            width={eachElement.width}
-            height={eachElement.height}
-            alt={eachElement.alt}
-          />
+          <div className="w-[50px] h-[45px] bg-[#DACDBE] flex justify-center rounded-[8px] items-center">
+            <Image
+              src={eachElement.img}
+              width={eachElement.width}
+              height={eachElement.height}
+              alt={eachElement.alt}
+            />
+          </div>
         </Link>
       ))}
     </div>
