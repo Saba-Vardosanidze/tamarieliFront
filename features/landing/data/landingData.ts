@@ -1,7 +1,6 @@
 import { FooterDataProps } from "features/type";
 import georgiaFlag from "../../../public/Images/headerImages/svg/georgia-flag-icon.svg";
 import UnitedKingdomFlag from "../../../public/Images/headerImages/svg/United Kingdom.svg";
-import youtube from "../../../public/Images/headerImages/svg/newYoutube.svg";
 // import x from "../../../public/Images/headerImages/svg/xicon.png";
 // import facebook from "../../../public/Images/headerImages/svg/facebook-logo-facebook-icon-transparent-free-png.webp";
 // import instagram from "../../../public/Images/headerImages/svg/instagram.png";
@@ -90,14 +89,7 @@ export const FootData: FooterDataProps[] = [
         width: 20,
         height: 20,
       },
-      {
-        id: 3,
-        href: "https://www.youtube.com/@KekelaMaro",
-        img: "/Images/headerImages/svg/newYoutube.svg",
-        alt: "YouTube",
-        width: 20,
-        height: 20,
-      },
+
       {
         id: 4,
         href: "https://x.com/TAMARIELI169247",
