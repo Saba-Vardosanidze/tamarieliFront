@@ -38,13 +38,13 @@ const Paypal = () => {
       <div className="w-full max-w-[1440px]">
         <div className="flex lg:flex-row flex-col justify-between items-center gap-16 lg:gap-20">
           <div className="flex flex-col gap-8 order-2 lg:order-1 w-full lg:w-[500px]">
-            <h2 className="font-medium text-[21px] text-gray-900 text-center">
+            <h2 className="font-bold text-[16px] sm:text-[18px] lg:text-[11px] text-gray-900 text-center">
               {t("title")}
             </h2>
 
             <div className="flex flex-col items-center gap-6 w-full">
               <div className="flex flex-col gap-4 bg-white shadow-md p-8 rounded-xl w-full">
-                <p className="font-medium text-gray-700 text-sm text-center">
+                <p className="font-medium text-gray-700 text-[16px] sm:text-[18px] lg:text-[11px] text-center">
                   {t("bankTransferTitle")}
                 </p>
 
@@ -52,7 +52,7 @@ const Paypal = () => {
                   onClick={handleCopy2}
                   className="flex items-center gap-4 hover:bg-gray-50 p-4 border border-gray-200 rounded-lg transition-colors cursor-pointer"
                 >
-                  <p className="flex-1 font-mono text-[14px] text-gray-900 md:text-lg text-center">
+                  <p className="flex-1 font-mono text-[16px] sm:text-[18px] lg:text-[11px] text-gray-900 md:text-lg text-center">
                     {textToCopy}
                   </p>
 
@@ -64,7 +64,7 @@ const Paypal = () => {
                 </div>
 
                 {copied && (
-                  <p className="font-medium text-green-600 text-sm text-center">
+                  <p className="font-medium text-green-600 text-[16px] sm:text-[18px] lg:text-[11px] text-center">
                     {t("copied")}
                   </p>
                 )}
@@ -72,14 +72,14 @@ const Paypal = () => {
 
               <div className="flex items-center gap-4 my-2 w-full">
                 <div className="flex-1 border-gray-500 border-t"></div>
-                <span className="font-medium text-gray-700 text-sm">
+                <span className="font-medium text-gray-700 text-[16px] sm:text-[18px] lg:text-[11px]">
                   {t("or")}
                 </span>
                 <div className="flex-1 border-gray-500 border-t"></div>
               </div>
 
               <div className="flex flex-col gap-4 bg-white shadow-md p-8 rounded-xl w-full">
-                <p className="font-medium text-gray-700 text-sm text-center">
+                <p className="font-medium text-gray-700 text-[16px] sm:text-[18px] lg:text-[11px] text-center">
                   {t("paypalTransferTitle")}
                 </p>
 
@@ -87,7 +87,7 @@ const Paypal = () => {
                   onClick={handleCopy}
                   className="flex items-center gap-4 hover:bg-gray-50 p-4 border border-gray-200 rounded-lg transition-colors cursor-pointer"
                 >
-                  <p className="flex-1 font-mono text-[14px] text-gray-900 md:text-lg text-center">
+                  <p className="flex-1 font-mono text-[16px] sm:text-[18px] lg:text-[11px] text-gray-900 md:text-lg text-center">
                     {textToCopy2}
                   </p>
 
@@ -108,13 +108,13 @@ const Paypal = () => {
                     width={50}
                     height={50}
                   />
-                  <span className="font-semibold text-white text-lg md:text-xl">
+                  <span className="font-semibold text-white text-[16px] sm:text-[18px] lg:text-[11px]">
                     Paypal
                   </span>
                 </Link>
 
                 {copied && (
-                  <p className="font-medium text-green-600 text-sm text-center">
+                  <p className="font-medium text-green-600 text-[16px] sm:text-[18px] lg:text-[11px] text-center">
                     {t("copied")}
                   </p>
                 )}
