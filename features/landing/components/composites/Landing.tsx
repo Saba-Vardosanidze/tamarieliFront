@@ -1,6 +1,7 @@
 import Form from "../primitives/Form";
 
 import HeroSection from "../primitives/HeroSection";
+import Paypal from "../primitives/Paypal";
 import InfiniteSlider from "../primitives/Slider";
 
 const Landing = () => {
@@ -9,6 +10,7 @@ const Landing = () => {
       <HeroSection />
       <InfiniteSlider title="პროექტები" direction="right" speed={70} />
       <Form />
+      <Paypal />
     </div>
   );
 };
