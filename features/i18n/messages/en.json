@@ -177,5 +177,12 @@
     "title": "MUSIC SONUS | MUSIC PLATFORM",
     "desc1": "Music Sonus is a contemporary, refined, and inclusive music platform that brings together diverse musical genres within a single space.The platform is dedicated to supporting artists and enabling the discovery of new music in a modern digital environment.",
     "desc2": "Music Sonus represents a space where music — as sound, energy, and emotion — becomes a unifying force that connects people through a shared auditory experience.Where Music Becomes Pure Sound."
+  },
+  "paypalTexts": {
+    "title": "Your support is very important to us",
+    "bankTransferTitle": "Bank Transfer (IBAN)",
+    "paypalTransferTitle": "PayPal Transfer",
+    "copied": "Copied",
+    "or": "or"
   }
 }
