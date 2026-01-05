@@ -9,25 +9,29 @@ import { useTranslations } from "next-intl";
 const Paypal = () => {
   const t = useTranslations("paypalTexts");
 
-  const [copied, setCopied] = useState(false);
-  const textToCopy = "FR76 1027 8010 8800 0226 3180 179";
-  const textToCopy2 = "tamarielitamarieli@gmail.com";
+  const [copiedBank, setCopiedBank] = useState(false);
+  const [copiedPaypal, setCopiedPaypal] = useState(false);
 
-  const handleCopy = async () => {
+  const textToCopyBank = "FR76 1027 8010 8800 0226 3180 179";
+  const textToCopyPaypal = "tamarielitamarieli@gmail.com";
+
+  const handleCopyBank = async () => {
     try {
-      await navigator.clipboard.writeText(textToCopy);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      await navigator.clipboard.writeText(textToCopyBank);
+      setCopiedBank(true);
+      setCopiedPaypal(false);
+      setTimeout(() => setCopiedBank(false), 2000);
     } catch (err) {
       console.error("Failed to copy:", err);
     }
   };
 
-  const handleCopy2 = async () => {
+  const handleCopyPaypal = async () => {
     try {
-      await navigator.clipboard.writeText(textToCopy2);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      await navigator.clipboard.writeText(textToCopyPaypal);
+      setCopiedPaypal(true);
+      setCopiedBank(false);
+      setTimeout(() => setCopiedPaypal(false), 2000);
     } catch (err) {
       console.error("Failed to copy:", err);
     }
@@ -49,21 +53,21 @@ const Paypal = () => {
                 </p>
 
                 <div
-                  onClick={handleCopy2}
+                  onClick={handleCopyBank}
                   className="flex items-center gap-4 hover:bg-gray-50 p-4 border border-gray-200 rounded-lg transition-colors cursor-pointer"
                 >
                   <p className="flex-1 font-mono text-[16px] sm:text-[18px] lg:text-[11px] text-gray-900 md:text-lg text-center">
-                    {textToCopy}
+                    {textToCopyBank}
                   </p>
 
-                  {copied ? (
+                  {copiedBank ? (
                     <Check className="flex-shrink-0 w-5 h-5 text-green-600" />
                   ) : (
                     <Copy className="flex-shrink-0 w-5 h-5 text-gray-400" />
                   )}
                 </div>
 
-                {copied && (
+                {copiedBank && (
                   <p className="font-medium text-green-600 text-[16px] sm:text-[18px] lg:text-[11px] text-center">
                     {t("copied")}
                   </p>
@@ -84,14 +88,14 @@ const Paypal = () => {
                 </p>
 
                 <div
-                  onClick={handleCopy}
+                  onClick={handleCopyPaypal}
                   className="flex items-center gap-4 hover:bg-gray-50 p-4 border border-gray-200 rounded-lg transition-colors cursor-pointer"
                 >
                   <p className="flex-1 font-mono text-[16px] sm:text-[18px] lg:text-[11px] text-gray-900 md:text-lg text-center">
-                    {textToCopy2}
+                    {textToCopyPaypal}
                   </p>
 
-                  {copied ? (
+                  {copiedPaypal ? (
                     <Check className="flex-shrink-0 w-5 h-5 text-green-600" />
                   ) : (
                     <Copy className="flex-shrink-0 w-5 h-5 text-gray-400" />
@@ -113,7 +117,7 @@ const Paypal = () => {
                   </span>
                 </Link>
 
-                {copied && (
+                {copiedPaypal && (
                   <p className="font-medium text-green-600 text-[16px] sm:text-[18px] lg:text-[11px] text-center">
                     {t("copied")}
                   </p>
