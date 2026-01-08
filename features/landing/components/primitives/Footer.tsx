@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { FooterItems } from 'features/landing/data/landingData';
-import Image from 'next/image';
-import FooterLinks from './FooterLinks';
-import SocialIcons from './FooterSocmediaLinks';
-import bgRemoved from '../../../../public/Images/headerImages/png/bgremoved.png';
-import line from '../../../../public/Images/headerImages/svg/Line.svg';
+import { FooterItems } from "features/landing/data/landingData";
+import Image from "next/image";
+import FooterLinks from "./FooterLinks";
+import SocialIcons from "./FooterSocmediaLinks";
+import bgRemoved from "../../../../public/Images/headerImages/png/bgremoved.png";
+import line from "../../../../public/Images/headerImages/svg/Line.svg";
 
 const Footer = () => {
   return (
@@ -23,7 +23,7 @@ const Footer = () => {
         </div>
         <div className="flex lg:justify-end w-full lg:w-[522px] h-auto lg:h-[325px]">
           <Image
-            src={bgRemoved}
+            src="/Images/headerImages/png/new-hero.jpeg"
             width={500}
             height={300}
             alt="footerImage"
