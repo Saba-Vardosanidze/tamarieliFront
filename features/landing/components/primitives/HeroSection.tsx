@@ -8,7 +8,7 @@ const HeroSection = async () => {
   return (
     <div
       className="
-    w-full
+     w-full mx-auto
     bg-[url('/Images/headerImages/png/new-hero.jpeg')]
     bg-no-repeat
     bg-center
