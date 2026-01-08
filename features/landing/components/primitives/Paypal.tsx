@@ -40,7 +40,7 @@ const Paypal = () => {
   return (
     <div className="flex justify-center items-center bg-[#E0E0E0] px-6 py-20 w-full min-h-[600px]">
       <div className="w-full max-w-[1440px]">
-        <div className="flex lg:flex-row flex-col justify-between items-center gap-16 lg:gap-20">
+        <div className="flex lg:flex-row flex-col justify-between items-center gap-16 lg:gap-20 px-4 sm:px-6 md:px-8 lg:px-10">
           <div className="flex flex-col gap-8 order-2 lg:order-1 w-full lg:w-[500px]">
             <h2 className="font-bold text-[16px] sm:text-[18px] lg:text-[11px] text-gray-900 text-center">
               {t("title")}
