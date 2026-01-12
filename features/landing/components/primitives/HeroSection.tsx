@@ -1,20 +1,10 @@
-import { getTranslations } from "next-intl/server";
-import FirstImage from "./Tamarieli-svg";
-import SecondtImage from "./Earthoba-svg";
+import banner from '../../../../public/Images/headerImages/png/realHero.webp';
 
-const HeroSection = async () => {
-  const t = await getTranslations("hello");
-
+const HeroSection = () => {
   return (
     <div
-      className="
-     w-full mx-auto
-    bg-[url('/Images/headerImages/png/new-hero.jpeg')]
-    bg-no-repeat
-    bg-center
-    bg-[length:100%_auto]
-    aspect-[19/9]
-  "
+      className="flex justify-center items-center bg-[length:100%_100%] bg-no-repeat bg-center w-full h-[523px] lg:h-[904px]"
+      style={{ backgroundImage: `url(${banner.src})` }}
     ></div>
   );
 };
