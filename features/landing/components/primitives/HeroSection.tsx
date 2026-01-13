@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 const HeroSection = () => {
   return (
-    <section className="relative flex items-center bg-[#fcfcfc] py-12 lg:py-0 w-full min-h-screen lg:min-h-[850px] overflow-hidden">
+    <section className="relative flex items-center bg-[#f4f7fa] py-12 lg:py-0 w-full min-h-screen lg:min-h-[850px] overflow-hidden">
       <div className="mx-auto px-5 sm:px-12 lg:px-20 w-full max-w-[1440px]">
         <div className="flex lg:flex-row flex-col items-center gap-12 lg:gap-20">
           <div className="z-10 flex-1 order-2 lg:order-1 lg:text-left text-center">

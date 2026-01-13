@@ -1,8 +1,8 @@
-import Form from "../primitives/Form";
+import Form from '../primitives/Form';
 
-import HeroSection from "../primitives/HeroSection";
-import Paypal from "../primitives/Paypal";
-import InfiniteSlider from "../primitives/Slider";
+import HeroSection from '../primitives/HeroSection';
+import Paypal from '../primitives/Paypal';
+import InfiniteSlider from '../primitives/Slider';
 
 const Landing = () => {
   return (
