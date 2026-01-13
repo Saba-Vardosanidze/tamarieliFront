@@ -1,4 +1,5 @@
 'use client';
+
 import { HeaderData } from 'features/landing/data/landingData';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -14,48 +15,67 @@ const Header = () => {
   const t = useTranslations('Header');
 
   return (
-    <div className="flex justify-center bg-gradient-to-b from-white to-gray-50 shadow-sm w-full">
-      <header className="flex flex-col justify-center items-center w-full max-w-[1440px]">
-        <div className="z-[201] relative flex bg-white/80 backdrop-blur-md px-5 border-gray-200 border-b w-full">
-          <div className="flex justify-between py-4 w-full">
-            <Link href={'/'} className="group">
-              <div className="relative rounded-lg overflow-hidden group-hover:scale-105 transition-transform duration-300">
-                <Image
-                  src="/Images/headerImages/png/tamarieliLogo.png"
-                  alt="logo"
-                  width={50}
-                  height={50}
-                  className="group-hover:opacity-90 transition-opacity duration-300 cursor-pointer"
-                />
-              </div>
-            </Link>
+    <div className="relative bg-[#fcfcfc] w-full">
+      <header className="mx-auto px-6 sm:px-12 lg:px-20 w-full max-w-[1440px]">
+        <div className="flex justify-between items-center h-[80px] sm:h-[100px]">
+          <Link href={'/'} className="group">
+            <div className="relative group-hover:scale-105 transition-transform duration-300">
+              <Image
+                src="/Images/headerImages/png/tamarieliLogo.png"
+                alt="logo"
+                width={56}
+                height={56}
+                className="sm:w-[64px] sm:h-[64px] object-contain"
+                priority
+              />
+            </div>
+          </Link>
 
-            <div className="hidden lg:flex justify-between items-center gap-8 min-h-[30px]">
-              <nav className="flex justify-center items-center gap-8">
-                {HeaderData.map((eachElement) => (
-                  <div key={eachElement.id} className="group relative">
-                    <Link href={`/${locale || '/en'}/${eachElement.href}`}>
-                      <span className="relative font-semibold text-gray-800 hover:text-blue-600 text-sm tracking-wide transition-colors duration-300 cursor-pointer">
-                        {t(eachElement.title.toLowerCase())}
-                        <span className="bottom-0 left-0 absolute bg-blue-600 w-0 group-hover:w-full h-0.5 transition-all duration-300"></span>
-                      </span>
-                    </Link>
-                  </div>
-                ))}
-              </nav>
+          <div className="hidden lg:flex items-center gap-10">
+            <nav className="flex items-center gap-8">
+              {HeaderData.map((eachElement) => (
+                <Link
+                  key={eachElement.id}
+                  href={`/${locale || 'en'}/${eachElement.href}`}
+                  className="group relative py-2"
+                >
+                  <span className="font-bold text-[13px] text-gray-700 group-hover:text-blue-600 uppercase tracking-widest transition-colors duration-300">
+                    {t(eachElement.title.toLowerCase())}
+                  </span>
+                  <span className="bottom-0 left-0 absolute bg-blue-600 w-0 group-hover:w-full h-[2px] transition-all duration-300 ease-in-out" />
+                </Link>
+              ))}
+            </nav>
 
-              <div className="pl-4 border-gray-200 border-l">
+            <div className="flex items-center gap-6 pl-8 border-gray-200 border-l">
+              <div className="hover:opacity-80 transition-opacity">
                 <LocaleSwitcher />
               </div>
+              <Link
+                href={`/${locale}/contact`}
+                className="bg-gray-900 hover:bg-blue-600 shadow-sm px-7 py-3 rounded-full font-bold text-[11px] text-white uppercase tracking-[0.1em] active:scale-95 transition-all"
+              >
+                Get in Touch
+              </Link>
             </div>
+          </div>
 
-            <div className="lg:hidden flex items-center">
+          <div className="lg:hidden flex items-center gap-4">
+            <div className="hidden sm:block">
+              <LocaleSwitcher />
+            </div>
+            <div className="bg-gray-100/50 p-2 rounded-xl">
               <BurgerMenuIcon isOpen={isOpen} setIsOpen={setIsOpen} />
             </div>
           </div>
         </div>
-        <BurgerMenu isOpen={isOpen} setIsOpen={setIsOpen} />
       </header>
+
+      <div className="relative w-full h-[1px]">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-200 to-transparent opacity-60" />
+      </div>
+
+      <BurgerMenu isOpen={isOpen} setIsOpen={setIsOpen} />
     </div>
   );
 };
