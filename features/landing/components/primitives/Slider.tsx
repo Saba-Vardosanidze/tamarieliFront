@@ -19,13 +19,14 @@ const InfiniteSlider = ({
   title,
   direction = 'left',
   speed = 50,
-  enableLinks = false,
+  enableLinks = true,
 }: InfiniteSliderProps) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [containerWidth, setContainerWidth] = useState(0);
   const x = useMotionValue(0);
   const [isPaused, setIsPaused] = useState(false);
   const t = useTranslations('SeeAllBtn');
+  const locale = useLocale();
 
   const { data } = useQuery({
     queryKey: ['project'],
@@ -53,7 +54,6 @@ const InfiniteSlider = ({
         setCardsPerView(getCardsPerView());
       }
     };
-
     updateWidth();
     window.addEventListener('resize', updateWidth);
     return () => window.removeEventListener('resize', updateWidth);
@@ -61,10 +61,8 @@ const InfiniteSlider = ({
 
   useAnimationFrame((t, delta) => {
     if (isPaused || singleSetWidth === 0) return;
-
     const moveBy = (delta / 1000) * speed;
     let newX = x.get();
-
     if (direction === 'left') {
       newX -= moveBy;
       if (newX <= -singleSetWidth) newX += singleSetWidth;
@@ -72,7 +70,6 @@ const InfiniteSlider = ({
       newX += moveBy;
       if (newX >= 0) newX -= singleSetWidth;
     }
-
     x.set(newX);
   });
 
@@ -85,10 +82,9 @@ const InfiniteSlider = ({
   const handleMouseEnter = () => setIsPaused(true);
   const handleMouseLeave = () => setIsPaused(false);
 
-  const locale = useLocale();
-
   return (
     <div id="project" className="bg-[#f4f7fa] py-10 sm:py-20 overflow-hidden">
+      {/* Header Section */}
       <div className="flex justify-between items-center sm:items-end mx-auto mb-6 sm:mb-10 px-5 sm:px-12 lg:px-20 w-full max-w-[1440px]">
         <div>
           <h2 className="font-bold text-gray-900 text-2xl sm:text-4xl tracking-tight">
@@ -99,7 +95,7 @@ const InfiniteSlider = ({
 
         <Link
           href={`/${locale}/allProject`}
-          className="group flex items-center gap-1.5 bg-white shadow-sm px-4 sm:px-6 py-2 sm:py-2.5 border border-gray-200 rounded-full transition-all"
+          className="group flex items-center gap-1.5 bg-white hover:bg-gray-50 shadow-sm px-4 sm:px-6 py-2 sm:py-2.5 border border-gray-200 rounded-full transition-all"
         >
           <span className="font-semibold text-gray-700 text-xs sm:text-sm">
             {t('text')}
@@ -131,69 +127,65 @@ const InfiniteSlider = ({
         >
           <motion.div
             className="flex"
-            style={{
-              x,
-              width: `${cardWidth * sliderCards.length}px`,
-            }}
+            style={{ x, width: `${cardWidth * sliderCards.length}px` }}
           >
             {sliderCards.map((card, index) => {
-              const content = (
-                <div
-                  className="flex-shrink-0 px-2 sm:px-4"
-                  style={{ width: `${cardWidth}px` }}
-                >
-                  <div className="group relative bg-gray-200 rounded-[1.5rem] sm:rounded-[2rem] h-[320px] sm:h-[450px] overflow-hidden">
-                    <div className="relative w-full h-full">
-                      <Image
-                        src={card.projectPicture}
-                        alt={card.projectName[locale]}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-1000"
-                        sizes="(max-width: 640px) 100vw, 50vw"
-                        priority={index < 3}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
-
-                      <div className="top-4 sm:top-6 left-4 sm:left-6 absolute">
-                        <span className="bg-white/20 backdrop-blur-md px-3 py-1 border border-white/30 rounded-full font-medium text-[10px] text-white sm:text-xs uppercase tracking-wider">
-                          {card.projectType}
-                        </span>
-                      </div>
+              const cardContent = (
+                <div className="group relative bg-gray-200 rounded-[1.5rem] sm:rounded-[2rem] h-[320px] sm:h-[450px] overflow-hidden transition-all duration-500">
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={card.projectPicture}
+                      alt={card.projectName[locale] || ''}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-1000"
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                      priority={index < 3}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+                    <div className="top-4 sm:top-6 left-4 sm:left-6 absolute">
+                      <span className="bg-white/20 backdrop-blur-md px-3 py-1 border border-white/30 rounded-full font-medium text-[10px] text-white sm:text-xs uppercase tracking-wider">
+                        {card.projectType}
+                      </span>
                     </div>
-
-                    <div className="right-0 bottom-0 left-0 absolute p-5 sm:p-10 text-white">
-                      <h3 className="mb-2 sm:mb-4 font-bold text-xl sm:text-4xl line-clamp-2 leading-snug tracking-tight">
-                        {card.projectName[locale]}
-                      </h3>
-
-                      <div className="hidden sm:flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0 duration-500">
-                        <span className="font-medium text-blue-400 text-sm">
-                          ნახვა
-                        </span>
-                        <div className="bg-blue-400 w-8 h-[1px]"></div>
-                      </div>
+                  </div>
+                  <div className="right-0 bottom-0 left-0 absolute p-5 sm:p-10 text-white">
+                    <h3 className="mb-2 sm:mb-4 font-bold text-xl sm:text-4xl line-clamp-2 leading-snug tracking-tight">
+                      {card.projectName[locale]}
+                    </h3>
+                    <div className="hidden sm:flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0 duration-500">
+                      <span className="font-medium text-blue-400 text-sm">
+                        ნახვა
+                      </span>
+                      <div className="bg-blue-400 w-8 h-[1px]"></div>
                     </div>
                   </div>
                 </div>
               );
 
-              return enableLinks ? (
-                <Link
-                  href={`/${locale}/projects/${card._id}`}
+              return (
+                <div
                   key={`${card._id}-${index}`}
-                  className="block"
+                  className="flex-shrink-0 px-2 sm:px-4"
+                  style={{ width: `${cardWidth}px` }}
                 >
-                  {content}
-                </Link>
-              ) : (
-                <div key={`${card._id}-${index}`}>{content}</div>
+                  {enableLinks ? (
+                    <Link
+                      href={`/${locale}/projects/${card._id}`}
+                      className="block"
+                    >
+                      {cardContent}
+                    </Link>
+                  ) : (
+                    cardContent
+                  )}
+                </div>
               );
             })}
           </motion.div>
         </div>
 
-        <div className="hidden sm:block top-0 bottom-0 left-0 z-10 absolute bg-gradient-to-r from-[#fcfcfc] to-transparent w-20 pointer-events-none" />
-        <div className="hidden sm:block top-0 right-0 bottom-0 z-10 absolute bg-gradient-to-l from-[#fcfcfc] to-transparent w-20 pointer-events-none" />
+        <div className="hidden sm:block top-0 bottom-0 left-0 z-10 absolute bg-gradient-to-r from-[#f4f7fa] to-transparent w-20 pointer-events-none" />
+        <div className="hidden sm:block top-0 right-0 bottom-0 z-10 absolute bg-gradient-to-l from-[#f4f7fa] to-transparent w-20 pointer-events-none" />
       </div>
     </div>
   );

@@ -4,10 +4,11 @@ import Image from 'next/image';
 import banner from '../../../../public/Images/headerImages/png/realHero.webp';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 const HeroSection = () => {
   const locale = useLocale();
+  const t = useTranslations('hero');
 
   return (
     <section className="relative flex items-center bg-[#f4f7fa] py-12 lg:py-0 w-full min-h-screen lg:min-h-[850px] overflow-hidden">
@@ -21,25 +22,25 @@ const HeroSection = () => {
               className="space-y-6 sm:space-y-8"
             >
               <h1 className="flex gap-[3px] font-extrabold text-gray-900 lg:text-[33px] text-4xl sm:text-6xl leading-[1.2] lg:leading-[1.1] tracking-tighter">
-                Association <br className="hidden sm:block" />
-                <span className="text-blue-600">Tamarieli & Earthoba</span>
+                {t('titleLine1')}
+                <br className="hidden sm:block" />
+                <span className="text-blue-600">{t('titleHighlight')}</span>
               </h1>
 
               <p className="mx-auto lg:mx-0 max-w-lg text-gray-500 text-lg sm:text-xl leading-relaxed">
-                ჩვენ ვქმნით პროექტებს, რომლებიც აერთიანებს ინოვაციას, ხარისხს და
-                დახვეწილ დიზაინს.
+                {t('description')}
               </p>
 
               <div className="flex sm:flex-row flex-col justify-center lg:justify-start gap-4 pt-4">
-                <Link href={'#project'}>
+                <Link href="#project">
                   <button className="bg-blue-600 hover:bg-blue-700 shadow-blue-200 shadow-lg px-8 py-4 rounded-full font-bold text-white text-base active:scale-95 transition-all cursor-pointer">
-                    დაათვალიერე პროექტები
+                    {t('projects')}
                   </button>
                 </Link>
 
-                <Link href={`/${locale || 'en'}/aboutUs`}>
+                <Link href={`/${locale}/aboutUs`}>
                   <button className="hover:bg-white hover:shadow-md px-8 py-4 border border-gray-200 rounded-full font-bold text-gray-700 text-base transition-all cursor-pointer">
-                    ჩვენს შესახებ
+                    {t('about')}
                   </button>
                 </Link>
               </div>

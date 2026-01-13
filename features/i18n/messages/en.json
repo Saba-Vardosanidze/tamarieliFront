@@ -184,5 +184,12 @@
     "paypalTransferTitle": "PayPal Transfer",
     "copied": "Copied",
     "or": "or"
+  },
+  "hero": {
+    "titleLine1": "Association",
+    "titleHighlight": "Tamarieli & Earthoba",
+    "description": "We create projects that unite innovation, quality and refined design.",
+    "projects": "View Projects",
+    "about": "About Us"
   }
 }
