@@ -192,5 +192,27 @@
     "description": "Nous créons des projets qui allient innovation, qualité et design raffiné.",
     "projects": "Voir les projets",
     "about": "À propos de nous"
+  },
+
+  "cinemaPlatform": {
+    "title": "Plateforme Cinématographique",
+    "name": "Cinema Sonus",
+    "description": "Cinema Sonus est une plateforme cinématographique contemporaine, curatoriale et inclusive, qui réunit le cinéma d’auteur, expérimental et contemporain au sein d’un même espace conceptuel.",
+    "mission": "Notre ambition est de créer un environnement où le cinéma se libère des cadres formels pour devenir vision, recherche et dialogue.",
+    "support": "Cinema Sonus soutient les cinéastes, réalisateurs, scénaristes et conteurs visuels — celles et ceux qui perçoivent le cinéma comme une langue vivante et un processus en constante évolution. La plateforme vise à découvrir, développer et amplifier de nouvelles voix cinématographiques dans la sphère numérique mondiale.",
+    "philosophy": "Pour nous, le cinéma est mouvement, lumière et temps — transformés en une expérience unifiée.",
+    "space": "Cinema Sonus est un espace d’idées, d’expérimentation et de dialogue culturel, où l’image devient langage et le récit devient un pont entre les individus et les cultures.",
+    "tagline": "Là où le cinéma se dissout en vision."
+  },
+
+  "danceEthos": {
+    "title": "DANCE ETHOS",
+    "name": "Dance Ethos",
+    "description": "Dance Ethos est une plateforme chorégraphique contemporaine, curatoriale et inclusive, qui réunit le mouvement traditionnel géorgien, le ballet, la danse contemporaine et la chorégraphie expérimentale au sein d’un même espace conceptuel.",
+    "mission": "La mission de la plateforme est de concevoir le mouvement comme un langage de communication qui dépasse les cadres formels ; de définir le mouvement non seulement comme un geste esthétique, mais comme un mode alternatif de pensée et de perception du monde.",
+    "support": "La plateforme soutient les chorégraphes et les danseurs qui considèrent le corps comme un instrument d’expression conceptuelle, et la chorégraphie comme un processus vivant et en constante évolution.",
+    "philosophy": "Pour nous, la danse est une communication incarnée — rythme et espace — transformée en une expérience unifiée, où le mouvement devient un code culturel et la chorégraphie un récit porteur d’identité.",
+    "space": "Dance Ethos relie le patrimoine chorégraphique géorgien au discours mondial et crée un espace d’expérimentation et de dialogue international.",
+    "tagline": "Là où le mouvement devient identité."
   }
 }
