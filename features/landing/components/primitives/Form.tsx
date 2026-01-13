@@ -32,7 +32,7 @@ const Form = () => {
   };
 
   return (
-    <div className="bg-[#f4f7fa] py-16 lg:py-24 w-full">
+    <div id="contact" className="bg-[#f4f7fa] py-16 lg:py-24 w-full">
       <div className="mx-auto px-6 sm:px-12 lg:px-20 max-w-[1440px]">
         <div className="flex lg:flex-row flex-col gap-12 lg:gap-20">
           <div className="flex-1 space-y-4 max-w-xl">

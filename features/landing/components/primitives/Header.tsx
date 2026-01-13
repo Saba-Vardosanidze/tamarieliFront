@@ -52,10 +52,10 @@ const Header = () => {
                 <LocaleSwitcher />
               </div>
               <Link
-                href={`/${locale}/contact`}
+                href={`#contact`}
                 className="bg-gray-900 hover:bg-blue-600 shadow-sm px-7 py-3 rounded-full font-bold text-[11px] text-white uppercase tracking-[0.1em] active:scale-95 transition-all"
               >
-                Get in Touch
+                contact
               </Link>
             </div>
           </div>
