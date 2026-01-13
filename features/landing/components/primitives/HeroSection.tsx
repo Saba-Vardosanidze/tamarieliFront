@@ -32,13 +32,13 @@ const HeroSection = () => {
 
               <div className="flex sm:flex-row flex-col justify-center lg:justify-start gap-4 pt-4">
                 <Link href={'#project'}>
-                  <button className="bg-blue-600 hover:bg-blue-700 shadow-blue-200 shadow-lg px-8 py-4 rounded-full font-bold text-white text-base active:scale-95 transition-all">
+                  <button className="bg-blue-600 hover:bg-blue-700 shadow-blue-200 shadow-lg px-8 py-4 rounded-full font-bold text-white text-base active:scale-95 transition-all cursor-pointer">
                     დაათვალიერე პროექტები
                   </button>
                 </Link>
 
                 <Link href={`/${locale || 'en'}/aboutUs`}>
-                  <button className="hover:bg-white hover:shadow-md px-8 py-4 border border-gray-200 rounded-full font-bold text-gray-700 text-base transition-all">
+                  <button className="hover:bg-white hover:shadow-md px-8 py-4 border border-gray-200 rounded-full font-bold text-gray-700 text-base transition-all cursor-pointer">
                     ჩვენს შესახებ
                   </button>
                 </Link>
