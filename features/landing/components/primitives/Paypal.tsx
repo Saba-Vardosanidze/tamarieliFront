@@ -1,19 +1,19 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { Copy, Check, Send } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Copy, Check, Send, CreditCard, ExternalLink } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const Paypal = () => {
-  const t = useTranslations("paypalTexts");
+  const t = useTranslations('paypalTexts');
 
   const [copiedBank, setCopiedBank] = useState(false);
   const [copiedPaypal, setCopiedPaypal] = useState(false);
 
-  const textToCopyBank = "FR76 1027 8010 8800 0226 3180 179";
-  const textToCopyPaypal = "tamarielitamarieli@gmail.com";
+  const textToCopyBank = 'FR76 1027 8010 8800 0226 3180 179';
+  const textToCopyPaypal = 'tamarielitamarieli@gmail.com';
 
   const handleCopyBank = async () => {
     try {
@@ -22,7 +22,7 @@ const Paypal = () => {
       setCopiedPaypal(false);
       setTimeout(() => setCopiedBank(false), 2000);
     } catch (err) {
-      console.error("Failed to copy:", err);
+      console.error('Failed to copy:', err);
     }
   };
 
@@ -33,128 +33,144 @@ const Paypal = () => {
       setCopiedBank(false);
       setTimeout(() => setCopiedPaypal(false), 2000);
     } catch (err) {
-      console.error("Failed to copy:", err);
+      console.error('Failed to copy:', err);
     }
   };
 
   return (
-    <div className="flex justify-center items-center bg-[#E0E0E0] px-6 py-20 w-full min-h-[600px]">
-      <div className="w-full max-w-[1440px]">
-        <div className="flex lg:flex-row flex-col justify-between items-center gap-16 lg:gap-20 px-4 sm:px-6 md:px-8 lg:px-10">
-          <div className="flex flex-col gap-8 order-2 lg:order-1 w-full lg:w-[500px]">
-            <h2 className="font-bold text-[16px] sm:text-[18px] lg:text-[11px] text-gray-900 text-center">
-              {t("title")}
-            </h2>
+    <div className="bg-[#f8fafc] px-6 py-16 sm:py-24 w-full min-h-[600px] overflow-hidden">
+      <div className="mx-auto px-6 sm:px-12 lg:px-20 max-w-[1440px]">
+        <div className="flex lg:flex-row flex-col items-center gap-16 lg:gap-24">
+          <div className="flex flex-col gap-6 order-2 lg:order-1 w-full max-w-xl">
+            <div className="space-y-2 mb-4 lg:text-left text-center">
+              <h2 className="font-bold text-gray-900 text-2xl sm:text-3xl tracking-tight">
+                {t('title')}
+              </h2>
+              <div className="bg-blue-600 mx-auto lg:mx-0 rounded-full w-12 h-1.5" />
+            </div>
 
-            <div className="flex flex-col items-center gap-6 w-full">
-              <div className="flex flex-col gap-4 bg-white shadow-md p-8 rounded-xl w-full">
-                <p className="font-medium text-gray-700 text-[16px] sm:text-[18px] lg:text-[11px] text-center">
-                  {t("bankTransferTitle")}
-                </p>
+            <div className="gap-6 grid grid-cols-1">
+              <div className="bg-white shadow-sm hover:shadow-md p-6 sm:p-8 border border-gray-100 rounded-3xl transition-all">
+                <div className="flex items-center gap-3 mb-4 text-gray-700">
+                  <CreditCard className="w-5 h-5 text-blue-600" />
+                  <span className="font-semibold text-sm uppercase tracking-wider">
+                    {t('bankTransferTitle')}
+                  </span>
+                </div>
 
                 <div
                   onClick={handleCopyBank}
-                  className="flex items-center gap-4 hover:bg-gray-50 p-4 border border-gray-200 rounded-lg transition-colors cursor-pointer"
+                  className="group relative flex justify-between items-center bg-gray-50 hover:bg-blue-50/50 p-4 border border-gray-200 hover:border-blue-200 rounded-2xl transition-all cursor-pointer"
                 >
-                  <p className="flex-1 font-mono text-[16px] sm:text-[18px] lg:text-[11px] text-gray-900 md:text-lg text-center">
+                  <code className="flex-1 font-mono text-gray-800 text-sm sm:text-base break-all sm:break-normal">
                     {textToCopyBank}
-                  </p>
-
-                  {copiedBank ? (
-                    <Check className="flex-shrink-0 w-5 h-5 text-green-600" />
-                  ) : (
-                    <Copy className="flex-shrink-0 w-5 h-5 text-gray-400" />
-                  )}
+                  </code>
+                  <div className="ml-4">
+                    {copiedBank ? (
+                      <Check className="w-5 h-5 text-green-600 animate-in zoom-in" />
+                    ) : (
+                      <Copy className="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" />
+                    )}
+                  </div>
                 </div>
-
                 {copiedBank && (
-                  <p className="font-medium text-green-600 text-[16px] sm:text-[18px] lg:text-[11px] text-center">
-                    {t("copied")}
+                  <p className="mt-2 font-medium text-green-600 text-xs animate-pulse">
+                    {t('copied')}
                   </p>
                 )}
               </div>
 
-              <div className="flex items-center gap-4 my-2 w-full">
-                <div className="flex-1 border-gray-500 border-t"></div>
-                <span className="font-medium text-gray-700 text-[16px] sm:text-[18px] lg:text-[11px]">
-                  {t("or")}
+              <div className="relative flex items-center py-2">
+                <div className="flex-grow border-gray-200 border-t"></div>
+                <span className="flex-shrink px-4 font-medium text-gray-400 text-sm italic">
+                  {t('or')}
                 </span>
-                <div className="flex-1 border-gray-500 border-t"></div>
+                <div className="flex-grow border-gray-200 border-t"></div>
               </div>
 
-              <div className="flex flex-col gap-4 bg-white shadow-md p-8 rounded-xl w-full">
-                <p className="font-medium text-gray-700 text-[16px] sm:text-[18px] lg:text-[11px] text-center">
-                  {t("paypalTransferTitle")}
-                </p>
-
-                <div
-                  onClick={handleCopyPaypal}
-                  className="flex items-center gap-4 hover:bg-gray-50 p-4 border border-gray-200 rounded-lg transition-colors cursor-pointer"
-                >
-                  <p className="flex-1 font-mono text-[16px] sm:text-[18px] lg:text-[11px] text-gray-900 md:text-lg text-center">
-                    {textToCopyPaypal}
-                  </p>
-
-                  {copiedPaypal ? (
-                    <Check className="flex-shrink-0 w-5 h-5 text-green-600" />
-                  ) : (
-                    <Copy className="flex-shrink-0 w-5 h-5 text-gray-400" />
-                  )}
-                </div>
-
-                <Link
-                  href="https://www.paypal.com/ge/home"
-                  className="flex justify-center items-center gap-4 bg-[#0070BA] hover:bg-[#005ea6] shadow-md px-8 py-4 rounded-lg w-full transition-colors"
-                >
+              <div className="bg-white shadow-sm hover:shadow-md p-6 sm:p-8 border border-gray-100 rounded-3xl transition-all">
+                <div className="flex items-center gap-3 mb-4 text-gray-700">
                   <Image
                     src="/Images/headerImages/svg/PayPal_Logo.svg"
-                    alt="paypal"
-                    width={50}
-                    height={50}
+                    alt=""
+                    width={18}
+                    height={18}
                   />
-                  <span className="font-semibold text-white text-[16px] sm:text-[18px] lg:text-[11px]">
-                    Paypal
+                  <span className="font-semibold text-sm uppercase tracking-wider">
+                    {t('paypalTransferTitle')}
                   </span>
-                </Link>
+                </div>
 
+                <div className="space-y-4">
+                  <div
+                    onClick={handleCopyPaypal}
+                    className="group flex justify-between items-center bg-gray-50 hover:bg-blue-50/50 p-4 border border-gray-200 hover:border-blue-200 rounded-2xl transition-all cursor-pointer"
+                  >
+                    <span className="flex-1 font-medium text-gray-800 text-sm sm:text-base truncate">
+                      {textToCopyPaypal}
+                    </span>
+                    <div className="ml-4">
+                      {copiedPaypal ? (
+                        <Check className="w-5 h-5 text-green-600 animate-in zoom-in" />
+                      ) : (
+                        <Copy className="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" />
+                      )}
+                    </div>
+                  </div>
+
+                  <Link
+                    href="https://www.paypal.com/ge/home"
+                    target="_blank"
+                    className="flex justify-center items-center gap-2 bg-[#0070BA] hover:bg-[#005ea6] shadow-blue-200/50 shadow-lg px-6 py-4 rounded-2xl w-full font-bold text-white active:scale-[0.98] transition-all"
+                  >
+                    <span className="text-sm">Pay with PayPal</span>
+                    <ExternalLink className="w-4 h-4" />
+                  </Link>
+                </div>
                 {copiedPaypal && (
-                  <p className="font-medium text-green-600 text-[16px] sm:text-[18px] lg:text-[11px] text-center">
-                    {t("copied")}
+                  <p className="mt-2 font-medium text-green-600 text-xs animate-pulse">
+                    {t('copied')}
                   </p>
                 )}
               </div>
             </div>
           </div>
 
-          <div className="flex justify-center items-center gap-8 lg:gap-12 order-1 lg:order-2">
-            <div className="flex justify-center items-center bg-white shadow-lg p-8 rounded-2xl">
-              <Image
-                src="/Images/headerImages/png/tamarieliLogo.png"
-                alt="tamarieli logo"
-                width={120}
-                height={120}
-                className="object-contain"
-              />
-            </div>
-
-            <div className="flex flex-col items-center gap-3">
-              <div className="flex items-center gap-2">
-                <div className="bg-gray-400 rounded-full w-2 h-2"></div>
-                <div className="bg-gray-400 rounded-full w-2 h-2"></div>
-                <div className="bg-gray-400 rounded-full w-2 h-2"></div>
+          <div className="relative flex-1 order-1 lg:order-2 w-full">
+            <div className="relative flex justify-center items-center gap-4 sm:gap-8 lg:gap-10">
+              <div className="bg-white shadow-2xl shadow-gray-200/50 p-6 sm:p-10 rounded-[2.5rem] transition-transform hover:-translate-y-2 duration-500">
+                <Image
+                  src="/Images/headerImages/png/tamarieliLogo.png"
+                  alt="tamarieli logo"
+                  width={100}
+                  height={100}
+                  className="sm:w-[120px] object-contain"
+                />
               </div>
-              <Send className="w-8 h-8 text-gray-600" />
+
+              <div className="flex flex-col items-center gap-4">
+                <div className="flex flex-col gap-2">
+                  <div className="bg-blue-200 rounded-full w-2 h-2 animate-bounce" />
+                  <div className="bg-blue-400 rounded-full w-2 h-2 animate-bounce [animation-delay:0.2s]" />
+                  <div className="bg-blue-600 rounded-full w-2 h-2 animate-bounce [animation-delay:0.4s]" />
+                </div>
+                <div className="bg-blue-50 p-3 rounded-full">
+                  <Send className="w-6 h-6 text-blue-600 -rotate-12" />
+                </div>
+              </div>
+
+              <div className="bg-white shadow-2xl shadow-gray-200/50 p-6 sm:p-10 rounded-[2.5rem] transition-transform hover:-translate-y-2 duration-500">
+                <Image
+                  src="/Images/headerImages/svg/PayPal_Logo.svg"
+                  alt="paypal logo"
+                  width={80}
+                  height={80}
+                  className="sm:w-[100px] object-contain"
+                />
+              </div>
             </div>
 
-            <div className="flex justify-center items-center bg-white shadow-lg p-8 rounded-2xl">
-              <Image
-                src="/Images/headerImages/svg/PayPal_Logo.svg"
-                alt="paypal logo"
-                width={100}
-                height={100}
-                className="object-contain"
-              />
-            </div>
+            <div className="top-1/2 left-1/2 -z-10 absolute bg-blue-100/50 blur-[100px] rounded-full w-[300px] h-[300px] -translate-x-1/2 -translate-y-1/2" />
           </div>
         </div>
       </div>

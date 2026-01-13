@@ -36,7 +36,7 @@ const BurgerMenu = ({ isOpen, setIsOpen }: BurgerMenuIconProps) => {
         {isOpen && (
           <motion.div
             key="burger-menu"
-            className="z-[10] fixed inset-0 flex justify-center bg-[lightgrey] mt-[50px] w-screen overflow-y-auto"
+            className="z-[10000] fixed inset-0 flex justify-center bg-[lightgrey] mt-[100px] w-screen overflow-y-auto"
             initial={{ y: '-100%' }}
             animate={{ y: '0%' }}
             exit={{ y: '-100%' }}
