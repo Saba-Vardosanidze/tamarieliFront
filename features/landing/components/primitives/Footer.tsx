@@ -1,49 +1,70 @@
-"use client";
+'use client';
 
-import { FooterItems } from "features/landing/data/landingData";
-import Image from "next/image";
-import FooterLinks from "./FooterLinks";
-import SocialIcons from "./FooterSocmediaLinks";
-import bgRemoved from "../../../../public/Images/headerImages/png/bgremoved.png";
-import line from "../../../../public/Images/headerImages/svg/Line.svg";
+import { FooterItems } from 'features/landing/data/landingData';
+import Image from 'next/image';
+import FooterLinks from './FooterLinks';
+import SocialIcons from './FooterSocmediaLinks';
+import { useTranslations } from 'next-intl';
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="flex flex-col justify-center md:justify-center items-center bg-[#E0E0E0] mx-auto mt-[90px] py-6 sm:py-8 md:py-10 lg:py-12 w-full">
-      <div className="flex lg:flex-row flex-col justify-between gap-8 lg:gap-0 px-4 sm:px-6 md:px-8 lg:px-10 w-full max-w-[1280px]">
-        <div className="flex flex-col justify-center w-full lg:w-auto">
-          {FooterItems.map((item, index) => (
-            <FooterLinks
-              key={index}
-              contactUs={item.contactUs}
-              links={item.links}
-            />
-          ))}
-          <SocialIcons />
+    <footer className="bg-[#f8fafc] mt-20 sm:mt-32 pt-16 pb-8 border-gray-100 border-t w-full">
+      <div className="mx-auto px-6 sm:px-12 lg:px-20 max-w-[1440px]">
+        <div className="flex lg:flex-row flex-col justify-between items-start gap-12 lg:gap-20">
+          <div className="flex flex-col gap-8 w-full lg:w-auto">
+            <div className="flex flex-col gap-6">
+              {FooterItems.map((item, index) => (
+                <FooterLinks
+                  key={index}
+                  contactUs={item.contactUs}
+                  links={item.links}
+                />
+              ))}
+            </div>
+
+            <div className="pt-4">
+              <SocialIcons />
+            </div>
+          </div>
+
+          <div className="relative w-full lg:w-[450px] xl:w-[500px]">
+            <div className="group relative shadow-2xl shadow-gray-200 rounded-[2rem] overflow-hidden">
+              <Image
+                src="/Images/headerImages/png/new-hero.jpeg"
+                width={600}
+                height={400}
+                alt="Tamarieli Project"
+                className="w-full h-[250px] sm:h-[300px] object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
+            </div>
+
+            <div className="top-1/2 right-0 -z-10 absolute bg-blue-50/50 blur-3xl rounded-full w-64 h-64 -translate-y-1/2" />
+          </div>
         </div>
-        <div className="flex lg:justify-end w-full lg:w-[522px] h-auto lg:h-[325px]">
-          <Image
-            src="/Images/headerImages/png/new-hero.jpeg"
-            width={500}
-            height={300}
-            alt="footerImage"
-            className="w-full max-w-[522px] h-auto object-contain"
-          />
+
+        <div className="mt-16 sm:mt-24 pt-8 border-gray-200/60 border-t">
+          <div className="flex md:flex-row flex-col justify-between items-center gap-4">
+            <p className="font-medium text-gray-500 text-sm text-center tracking-wide">
+              © {currentYear}{' '}
+              <span className="font-bold text-gray-900 tracking-tighter">
+                TAMARIELI
+              </span>
+              . All Rights Reserved
+            </p>
+
+            <div className="flex items-center gap-6 font-medium text-gray-400 text-xs uppercase tracking-widest">
+              <span className="hover:text-blue-600 transition-colors cursor-pointer">
+                Privacy Policy
+              </span>
+              <span className="hover:text-blue-600 transition-colors cursor-pointer">
+                Terms of Service
+              </span>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="flex flex-col items-center gap-4 mt-8 lg:mt-12 px-4 sm:px-6 md:px-8 lg:px-10 w-full">
-        <div className="w-full max-w-[1440px]">
-          <Image
-            src={line}
-            width={1220}
-            height={1}
-            alt="divider"
-            className="w-full"
-          />
-        </div>
-        <p className="font-light text-[#000000B2] text-[14px] sm:text-[16px] lg:text-[18px] text-center">
-          © 2025 TAMARIELI. All Rights Reserved
-        </p>
       </div>
     </footer>
   );
