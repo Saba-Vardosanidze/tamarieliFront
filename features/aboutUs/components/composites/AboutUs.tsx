@@ -1,3 +1,5 @@
+import CinemaSounds from "../primitives/CinemaSounds";
+import DanceEthos from "../primitives/DanceEthnos";
 import DigitalLibrary from "../primitives/DigitalLibrary";
 import EarthobaPlatform from "../primitives/EarthobaPlatform";
 import Foreword from "../primitives/Foreword";
@@ -27,6 +29,8 @@ const AboutUs = () => {
       <Voice />
       <Gallery />
       <Music />
+      <CinemaSounds />
+      <DanceEthos />
     </div>
   );
 };
