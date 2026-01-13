@@ -184,5 +184,27 @@
     "paypalTransferTitle": "PayPal Transfer",
     "copied": "Copied",
     "or": "or"
+  },
+
+  "cinemaPlatform": {
+    "title": "Cinema Platform",
+    "name": "Cinema Sonus",
+    "description": "Cinema Sonus is a contemporary, curated and inclusive film platform that brings together auteur, experimental and contemporary cinema within a single conceptual space.",
+    "mission": "Our aim is to build an environment where cinema is liberated from formal boundaries and becomes vision, inquiry and dialogue.",
+    "support": "Cinema Sonus supports filmmakers, directors, screenwriters and visual storytellers — those who perceive cinema as a living language and an ongoing process. The platform serves to discover, develop and amplify new cinematic voices within the global digital sphere.",
+    "philosophy": "For us, cinema is movement, light and time — transformed into a unified experience.",
+    "space": "Cinema Sonus is a space for ideas, experimentation and cultural dialogue, where the image becomes a language and the narrative becomes a bridge between people and cultures.",
+    "tagline": "Where Cinema Becomes Pure Vision."
+  },
+
+  "danceEthos": {
+    "title": "DANCE ETHOS",
+    "name": "Dance Ethos",
+    "description": "Dance Ethos is a contemporary, curated and inclusive choreographic platform that brings together traditional Georgian movement, ballet, contemporary dance and experimental choreography within a single conceptual space.",
+    "mission": "The platform’s mission is to understand movement as a communicative language that transcends formal boundaries; to define movement not merely as an aesthetic gesture, but as an alternative mode of thought and a way of perceiving the world.",
+    "support": "The platform supports choreographers and dancers who regard the body as an instrument of conceptual expression, and choreography as a living and evolving process.",
+    "philosophy": "For us, dance is embodied communication — rhythm and space — transformed into a unified experience, where movement becomes a cultural code and choreography becomes a narrative of identity.",
+    "space": "Dance Ethos connects Georgian choreographic heritage to global discourse and cultivates a space for experimentation and international dialogue.",
+    "tagline": "Where Movement Becomes Identity."
   }
 }
