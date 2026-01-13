@@ -20,9 +20,9 @@ const HeroSection = () => {
               transition={{ duration: 0.8 }}
               className="space-y-6 sm:space-y-8"
             >
-              <h1 className="font-extrabold text-gray-900 text-4xl sm:text-6xl lg:text-7xl leading-[1.2] lg:leading-[1.1] tracking-tighter">
-                ასოციაცია <br className="hidden sm:block" />
-                <span className="text-blue-600">თამარიელი</span>
+              <h1 className="flex gap-[3px] font-extrabold text-gray-900 lg:text-[33px] text-4xl sm:text-6xl leading-[1.2] lg:leading-[1.1] tracking-tighter">
+                Association <br className="hidden sm:block" />
+                <span className="text-blue-600">Tamarieli & Earthoba</span>
               </h1>
 
               <p className="mx-auto lg:mx-0 max-w-lg text-gray-500 text-lg sm:text-xl leading-relaxed">

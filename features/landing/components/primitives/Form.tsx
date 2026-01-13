@@ -39,7 +39,7 @@ const Form = () => {
             <h3 className="font-semibold text-blue-600 text-sm uppercase tracking-wider">
               {t('title1')}
             </h3>
-            <h2 className="font-bold text-gray-900 text-3xl sm:text-4xl leading-tight tracking-tight">
+            <h2 className="font-bold text-[33px] text-gray-900 leading-tight tracking-tight">
               {t('title2')}
             </h2>
             <p className="max-w-md text-gray-600 text-lg leading-relaxed">
