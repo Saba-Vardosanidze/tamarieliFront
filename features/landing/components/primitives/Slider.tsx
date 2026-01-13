@@ -1,23 +1,23 @@
-"use client";
+'use client';
 
-import { motion, useMotionValue, useAnimationFrame } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { useQuery } from "@tanstack/react-query";
-import { ProjectApi } from "features/landing/api/landingApi";
-import { useLocale, useTranslations } from "next-intl";
+import { motion, useMotionValue, useAnimationFrame } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useQuery } from '@tanstack/react-query';
+import { ProjectApi } from 'features/landing/api/landingApi';
+import { useLocale, useTranslations } from 'next-intl';
 
 type InfiniteSliderProps = {
   title?: string;
-  direction?: "left" | "right";
+  direction?: 'left' | 'right';
   speed?: number;
   enableLinks?: boolean;
 };
 
 const InfiniteSlider = ({
   title,
-  direction = "left",
+  direction = 'left',
   speed = 50,
   enableLinks = false,
 }: InfiniteSliderProps) => {
@@ -25,10 +25,10 @@ const InfiniteSlider = ({
   const [containerWidth, setContainerWidth] = useState(0);
   const x = useMotionValue(0);
   const [isPaused, setIsPaused] = useState(false);
-  const t = useTranslations("SeeAllBtn");
+  const t = useTranslations('SeeAllBtn');
 
   const { data } = useQuery({
-    queryKey: ["project"],
+    queryKey: ['project'],
     queryFn: ProjectApi,
   });
 
@@ -36,7 +36,7 @@ const InfiniteSlider = ({
   const sliderCards = [...projects, ...projects];
 
   const getCardsPerView = () => {
-    if (typeof window === "undefined") return 2;
+    if (typeof window === 'undefined') return 2;
     if (window.innerWidth < 640) return 1;
     if (window.innerWidth < 1024) return 2;
     return 2;
@@ -55,8 +55,8 @@ const InfiniteSlider = ({
     };
 
     updateWidth();
-    window.addEventListener("resize", updateWidth);
-    return () => window.removeEventListener("resize", updateWidth);
+    window.addEventListener('resize', updateWidth);
+    return () => window.removeEventListener('resize', updateWidth);
   }, []);
 
   useAnimationFrame((t, delta) => {
@@ -65,7 +65,7 @@ const InfiniteSlider = ({
     const moveBy = (delta / 1000) * speed;
     let newX = x.get();
 
-    if (direction === "left") {
+    if (direction === 'left') {
       newX -= moveBy;
       if (newX <= -singleSetWidth) newX += singleSetWidth;
     } else {
@@ -77,7 +77,7 @@ const InfiniteSlider = ({
   });
 
   useEffect(() => {
-    if (direction === "right" && singleSetWidth > 0) {
+    if (direction === 'right' && singleSetWidth > 0) {
       x.set(-singleSetWidth);
     }
   }, [direction, singleSetWidth, x]);
@@ -88,21 +88,25 @@ const InfiniteSlider = ({
   const locale = useLocale();
 
   return (
-    <div className="bg-[#E0E0E0E0] py-3 sm:py-5">
-      <div className="flex justify-between px-2 sm:px-30 w-full">
-        <div></div>
+    <div className="bg-gradient-to-b from-gray-50 to-white py-6 sm:py-10">
+      <div className="flex justify-between items-center mx-auto mb-6 px-4 sm:px-8 lg:px-16 w-full max-w-[1440px]">
+        <div className="flex-1"></div>
         <Link
           href="/ka/allProject"
-          className=" py-4 px-4 flex items-center border-black border rounded-[10px] h-[40px] text-[11px] text-black border-none lg:text-[16px] cursor-pointer lg:bg-[rgba(191,219,254,0.9)] hover:text-[#ffffff] duration-300 bg-[rgba(191,219,254,0.9)] "
+          className="group relative flex justify-center items-center bg-gradient-to-r from-blue-200 hover:from-blue-400 via-blue-300 hover:via-blue-500 to-blue-200 hover:to-blue-400 shadow-md hover:shadow-xl px-6 py-3 rounded-xl h-[44px] overflow-hidden font-semibold text-gray-800 text-sm hover:scale-105 transition-all duration-300 cursor-pointer"
         >
-          {t("text")}
+          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform translate-x-[-200%] group-hover:translate-x-[200%] duration-700"></span>
+          <span className="z-10 relative group-hover:text-white transition-colors duration-300">
+            {t('text')}
+          </span>
         </Link>
       </div>
-      <div className="mx-auto px-2 sm:px-4 py-4 sm:py-8 w-full max-w-[1440px]">
+
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 w-full max-w-[1440px]">
         <div className="mx-auto max-w-7xl">
           <div
             ref={containerRef}
-            className="relative overflow-hidden"
+            className="relative rounded-2xl overflow-hidden"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
@@ -119,29 +123,55 @@ const InfiniteSlider = ({
                     className="flex-shrink-0 px-2 sm:px-3"
                     style={{ width: `${cardWidth}px` }}
                   >
-                    <div className="group relative shadow-lg sm:shadow-2xl rounded-lg sm:rounded-xl h-[220px] sm:h-[280px] md:h-[320px] lg:h-[340px] overflow-hidden hover:scale-105 transition-transform cursor-pointer">
+                    <div className="group relative shadow-lg sm:shadow-2xl hover:shadow-blue-500/20 rounded-2xl h-[240px] sm:h-[300px] md:h-[340px] lg:h-[380px] overflow-hidden hover:scale-[1.03] transition-all duration-500 cursor-pointer">
                       <Link href={`/${locale}/projects/${card._id}`}>
-                        <Image
-                          src={card.projectPicture}
-                          alt={card.projectName[locale]}
-                          fill
-                          className="object-center object-cover"
-                          sizes="
-                            (max-width: 640px) 100vw,
-                            (max-width: 1024px) 50vw,
-                            50vw
-                          "
-                          priority={index < 4}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                        <div className="right-0 bottom-0 left-0 absolute p-3 sm:p-4 md:p-5 lg:p-6 text-white">
-                          <h3 className="mb-1.5 sm:mb-2 font-bold text-base sm:text-lg md:text-xl lg:text-2xl line-clamp-2">
+                        <div className="relative w-full h-full">
+                          <Image
+                            src={card.projectPicture}
+                            alt={card.projectName[locale]}
+                            fill
+                            className="object-center object-cover group-hover:scale-110 transition-transform duration-700"
+                            sizes="
+                              (max-width: 640px) 100vw,
+                              (max-width: 1024px) 50vw,
+                              50vw
+                            "
+                            priority={index < 4}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-500" />
+
+                          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 group-hover:from-blue-500/10 to-purple-500/0 group-hover:to-purple-500/10 transition-all duration-500" />
+                        </div>
+
+                        <div className="right-0 bottom-0 left-0 absolute p-4 sm:p-5 md:p-6 lg:p-7 text-white transition-transform translate-y-0 group-hover:translate-y-[-8px] duration-500 transform">
+                          <h3 className="mb-2 sm:mb-3 font-bold group-hover:text-blue-300 text-lg sm:text-xl md:text-2xl lg:text-3xl line-clamp-2 tracking-tight transition-colors duration-300">
                             {card.projectName[locale]}
                           </h3>
 
-                          <span className="inline-block bg-white/20 backdrop-blur-sm px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs sm:text-sm">
-                            {card.projectType}
-                          </span>
+                          <div className="flex items-center gap-2">
+                            <span className="inline-block bg-white/25 group-hover:bg-blue-500/40 backdrop-blur-md px-3 sm:px-4 py-1.5 sm:py-2 border border-white/20 group-hover:border-blue-400/40 rounded-full font-medium text-xs sm:text-sm transition-all duration-300">
+                              {card.projectType}
+                            </span>
+                            <div className="bg-gradient-to-r from-transparent via-blue-400 to-transparent w-0 group-hover:w-12 h-0.5 transition-all duration-500"></div>
+                          </div>
+                        </div>
+
+                        <div className="top-4 right-4 absolute opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                          <div className="bg-white/20 backdrop-blur-md p-2 border border-white/30 rounded-full">
+                            <svg
+                              className="w-5 h-5 text-white"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"
+                              />
+                            </svg>
+                          </div>
                         </div>
                       </Link>
                     </div>
@@ -161,8 +191,8 @@ const InfiniteSlider = ({
               })}
             </motion.div>
 
-            <div className="top-0 bottom-0 left-0 absolute bg-gradient-to-r from-[#E0E0E0E0] to-transparent w-10 sm:w-20 pointer-events-none" />
-            <div className="top-0 right-0 bottom-0 absolute bg-gradient-to-l from-[#E0E0E0E0] to-transparent w-10 sm:w-20 pointer-events-none" />
+            <div className="top-0 bottom-0 left-0 z-10 absolute bg-gradient-to-r from-gray-50 via-gray-50/80 to-transparent w-16 sm:w-24 lg:w-32 pointer-events-none" />
+            <div className="top-0 right-0 bottom-0 z-10 absolute bg-gradient-to-l from-white via-white/80 to-transparent w-16 sm:w-24 lg:w-32 pointer-events-none" />
           </div>
         </div>
       </div>
