@@ -3,8 +3,12 @@
 import Image from 'next/image';
 import banner from '../../../../public/Images/headerImages/png/realHero.webp';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { useLocale } from 'next-intl';
 
 const HeroSection = () => {
+  const locale = useLocale();
+
   return (
     <section className="relative flex items-center bg-[#f4f7fa] py-12 lg:py-0 w-full min-h-screen lg:min-h-[850px] overflow-hidden">
       <div className="mx-auto px-5 sm:px-12 lg:px-20 w-full max-w-[1440px]">
@@ -27,12 +31,17 @@ const HeroSection = () => {
               </p>
 
               <div className="flex sm:flex-row flex-col justify-center lg:justify-start gap-4 pt-4">
-                <button className="bg-blue-600 hover:bg-blue-700 shadow-blue-200 shadow-lg px-8 py-4 rounded-full font-bold text-white text-base active:scale-95 transition-all">
-                  დაათვალიერე პროექტები
-                </button>
-                <button className="hover:bg-white hover:shadow-md px-8 py-4 border border-gray-200 rounded-full font-bold text-gray-700 text-base transition-all">
-                  ჩვენს შესახებ
-                </button>
+                <Link href={'#project'}>
+                  <button className="bg-blue-600 hover:bg-blue-700 shadow-blue-200 shadow-lg px-8 py-4 rounded-full font-bold text-white text-base active:scale-95 transition-all">
+                    დაათვალიერე პროექტები
+                  </button>
+                </Link>
+
+                <Link href={`/${locale || 'en'}/aboutUs`}>
+                  <button className="hover:bg-white hover:shadow-md px-8 py-4 border border-gray-200 rounded-full font-bold text-gray-700 text-base transition-all">
+                    ჩვენს შესახებ
+                  </button>
+                </Link>
               </div>
             </motion.div>
           </div>

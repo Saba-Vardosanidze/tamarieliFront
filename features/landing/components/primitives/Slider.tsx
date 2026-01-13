@@ -88,7 +88,7 @@ const InfiniteSlider = ({
   const locale = useLocale();
 
   return (
-    <div className="bg-[#f4f7fa] py-10 sm:py-20 overflow-hidden">
+    <div id="project" className="bg-[#f4f7fa] py-10 sm:py-20 overflow-hidden">
       <div className="flex justify-between items-center sm:items-end mx-auto mb-6 sm:mb-10 px-5 sm:px-12 lg:px-20 w-full max-w-[1440px]">
         <div>
           <h2 className="font-bold text-gray-900 text-2xl sm:text-4xl tracking-tight">
