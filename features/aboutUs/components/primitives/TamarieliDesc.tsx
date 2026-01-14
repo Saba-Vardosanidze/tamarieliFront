@@ -8,7 +8,6 @@ const TamarieliDesc = () => {
 
   return (
     <section className="relative flex justify-center items-center py-24 lg:py-32 w-full min-h-screen overflow-hidden">
-      {/* მთავარი ფონი */}
       <div className="z-0 absolute inset-0">
         <Image
           src="/Images/headerImages/png/newAboutUsBg.jpeg"
@@ -17,12 +16,10 @@ const TamarieliDesc = () => {
           className="object-cover"
           priority
         />
-        {/* თეთრი ნახევრადგამჭვირვალე ფენა ტექსტის კითხვადობისთვის */}
         <div className="absolute inset-0 bg-white/70 backdrop-blur-[2px]" />
       </div>
 
       <div className="z-10 relative mx-auto px-6 max-w-5xl">
-        {/* ლოგო */}
         <div className="flex justify-center mb-12 lg:mb-16">
           <div className="relative bg-white/50 shadow-sm backdrop-blur-md p-4 border border-white/20 rounded-full">
             <Image
@@ -35,7 +32,6 @@ const TamarieliDesc = () => {
           </div>
         </div>
 
-        {/* კონტენტი */}
         <div className="flex flex-col items-center space-y-10 text-center">
           <div className="space-y-4">
             <h2 className="font-light text-gray-900 text-3xl md:text-5xl uppercase tracking-[0.25em]">
@@ -45,12 +41,10 @@ const TamarieliDesc = () => {
           </div>
 
           <div className="space-y-10 max-w-3xl">
-            {/* პარაგრაფი */}
             <p className="drop-shadow-sm font-light text-gray-800 text-xl md:text-2xl italic leading-relaxed">
               "{t('paragraph')}"
             </p>
 
-            {/* სია */}
             <div className="flex md:flex-row flex-col justify-center items-center gap-6 md:gap-12 pt-8">
               {[t('list.inspiration'), t('list.identity')].map((item, i) => (
                 <div
