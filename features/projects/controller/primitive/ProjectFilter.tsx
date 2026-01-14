@@ -18,25 +18,33 @@ export default function ProjectFilter({
   t,
 }: Props) {
   return (
-    <div className="flex flex-wrap gap-2">
-      {buttons.map((btn) => (
-        <button
-          key={btn.id}
-          onClick={() => onChange(btn.type)}
-          className={`px-5 py-2 rounded-full text-xs font-bold hover:bg-black cursor-pointer duration-200 ease-in-out transition-all  ${
-            activeType === btn.type
-              ? 'bg-black text-white hover:text-white duration-200 ease-in-out transition-all '
-              : 'bg-white text-black border border-[#353434] hover:text-white duration-200 ease-in-out transition-all'
-          }`}
-        >
-          {btn.name}
-        </button>
-      ))}
+    <div className="flex flex-wrap items-center gap-3">
+      {buttons.map((btn) => {
+        const isActive = activeType === btn.type;
+
+        return (
+          <button
+            key={btn.id}
+            onClick={() => onChange(btn.type)}
+            className={`
+              px-6 py-2.5 rounded-full text-xs font-semibold cursor-pointer tracking-wide
+              transition-all duration-300 ease-in-out
+              ${
+                isActive
+                  ? 'bg-zinc-900 text-white shadow-md'
+                  : 'bg-transparent text-zinc-600 border border-zinc-200 hover:border-zinc-900 hover:text-zinc-900'
+              }
+            `}
+          >
+            {btn.name}
+          </button>
+        );
+      })}
 
       {showLibrary && (
         <Link
           href={`/${locale}/books`}
-          className="bg-blue-600 px-5 py-2 rounded-full font-bold text-white text-xs"
+          className="bg-blue-600 hover:bg-blue-700 hover:shadow-lg ml-auto px-6 py-2.5 rounded-full font-semibold text-white text-xs tracking-wide transition-all duration-300"
         >
           {t('digitalLibrary')}
         </Link>
