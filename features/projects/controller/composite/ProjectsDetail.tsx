@@ -6,13 +6,13 @@ import { Buttons } from 'features/projects/data/projectData';
 import { useLocale, useTranslations } from 'next-intl';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 
-import ProjectsSkeleton from '../primitive/ProjectsSkeleton';
 import ProjectBreadcrumb from '../primitive/ProjectBreadcrumb';
 import ProjectHero from '../primitive/ProjectHero';
 import ProjectDescription from '../primitive/ProjectDescription';
 import ProjectResources from '../primitive/ProjectResources';
 import ProjectFilter from '../primitive/ProjectFilter';
 import ProjectMiniProjects from '../primitive/ProjectMiniProjects';
+import { ProjectsSkeleton } from '../primitive/ProjectsSkeleton';
 
 type Props = {
   id: string;
@@ -58,11 +58,11 @@ export default function ProjectsDetail({ id }: Props) {
 
   return (
     <div className="bg-[#f4f7fa] px-6 sm:px-12 lg:px-20 pt-[80px] pb-20 min-h-screen">
-      <div className="mx-auto mb-6 px-6 px-6 sm:px-12 lg:px-20 max-w-[1440px]">
+      <div className="mx-auto mb-6 sm:px-12 lg:px-20 max-w-[1440px]">
         <ProjectBreadcrumb title={data.projectName?.[locale || 'en']} />
       </div>
 
-      <div className="space-y-8 mx-auto px-6 px-6 sm:px-12 lg:px-20 w-full max-w-[1440px]">
+      <div className="space-y-8 mx-auto sm:px-12 lg:px-20 w-full max-w-[1440px]">
         <ProjectHero
           data={data}
           locale={locale}
