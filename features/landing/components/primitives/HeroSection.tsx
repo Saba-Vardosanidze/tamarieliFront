@@ -21,7 +21,7 @@ const HeroSection = () => {
               transition={{ duration: 0.8 }}
               className="space-y-6 sm:space-y-8"
             >
-              <h1 className="flex gap-[3px] font-extrabold text-gray-900 lg:text-[33px] text-4xl sm:text-6xl leading-[1.2] lg:leading-[1.1] tracking-tighter">
+              <h1 className="flex lg:flex-row flex-col gap-[3px] font-extrabold text-gray-900 lg:text-[33px] text-4xl sm:text-6xl leading-[1.2] lg:leading-[1.1] tracking-tighter">
                 {t('titleLine1')}
                 <br className="hidden sm:block" />
                 <span className="text-blue-600">{t('titleHighlight')}</span>

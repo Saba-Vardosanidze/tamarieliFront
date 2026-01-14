@@ -1,52 +1,53 @@
-"use client";
-import Image from "next/image";
-import { useTranslations } from "next-intl";
+'use client';
+
+import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 const Gallery = () => {
-  const t = useTranslations("gallery");
+  const t = useTranslations('gallery');
 
   return (
-    <div
-      className=" relative flex justify-center mx-auto
-        w-full
-         lg:min-h-[1000px] md:min-h-[500px] min-h-[400px]
-        bg-[url('/Images/headerImages/png/newAboutUsBg.jpeg')]
-        bg-cover bg-center bg-no-repeat"
-    >
-      <div
-        className="
-     absolute
-          lg:block
-         right-4 top-15
-          lg:right-[50px] lg:top-[150px]
-  "
-      >
+    <section className="relative flex justify-center items-center py-24 lg:py-32 w-full min-h-screen overflow-hidden">
+      <div className="z-0 absolute inset-0">
         <Image
-          src="/Images/headerImages/png/gallery.png"
-          alt="logo"
-          width={150}
-          height={150}
-          className="
-  
-        w-[70px] h-[70px]
-            lg:w-[100px] lg:h-[100px]
-    "
+          src="/Images/headerImages/png/newAboutUsBg.jpeg"
+          alt="Background"
+          fill
+          className="object-cover"
+          priority
         />
+        <div className="absolute inset-0 bg-white/75 backdrop-blur-[2px]" />
       </div>
-      <div className="flex lg:flex-row flex-col justify-between items-center lg:items-stretch w-full max-w-[1440px] lg:px-0 md:px-6 px-4">
-        <div className="flex flex-col justify-center items-center lg:gap-7 md:gap-5 gap-4 mx-auto lg:px-4 md:px-3 px-2 lg:py-5 md:py-8 py-6 w-full text-center">
-          <div className="flex flex-col lg:gap-3 md:gap-2 gap-2 w-full">
-            <h3 className="font-bold text-[#000000] lg:text-[20px] md:text-[15px] sm:text-[15px] text-[15px]">
-              {t("title")}
-            </h3>
+
+      <div className="z-10 relative mx-auto px-6 max-w-5xl">
+        <div className="flex justify-center mb-12 lg:mb-16">
+          <div className="relative bg-white/50 shadow-sm backdrop-blur-md p-4 border border-white/20 rounded-full">
+            <Image
+              src="/Images/headerImages/png/gallery.png"
+              alt="Gallery Logo"
+              width={180}
+              height={180}
+              className="opacity-100 w-24 lg:w-32 h-auto hover:scale-110 transition-transform duration-500"
+            />
+          </div>
+        </div>
+
+        <div className="flex flex-col items-center space-y-10 text-center">
+          <div className="space-y-4">
+            <h2 className="font-light text-gray-900 text-3xl md:text-5xl uppercase tracking-[0.25em]">
+              {t('title')}
+            </h2>
+            <div className="bg-gray-400 mx-auto w-16 h-px" />
           </div>
 
-          <p className="text-[#000000] lg:text-[18px] md:text-[24px] sm:text-[20px] text-[18px] ">
-            {t("desc")}
-          </p>
+          <div className="max-w-3xl">
+            <p className="font-light text-gray-800 hover:text-black text-xl md:text-2xl italic leading-relaxed tracking-wide transition-colors duration-300">
+              {t('desc')}
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

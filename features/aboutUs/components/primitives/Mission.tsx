@@ -1,33 +1,70 @@
-"use client";
+'use client';
 
-import { useTranslations } from "next-intl";
+import { useTranslations } from 'next-intl';
 
 const Mission = () => {
-  const t = useTranslations("Mission");
+  const t = useTranslations('Mission');
+
+  const points = [
+    'point1',
+    'point2',
+    'point3',
+    'point4',
+    'point5',
+    'point6',
+    'point7',
+  ];
 
   return (
-    <div
-      className="flex justify-center items-center w-full
-        min-h-[400px] md:min-h-[500px] lg:min-h-[1000px]
-        bg-[url('/Images/headerImages/png/newAboutUsBg.jpeg')]
-        bg-cover bg-center bg-no-repeat"
-    >
-      <div className="flex flex-col justify-center items-center w-full max-w-[1440px] px-4 py-6 md:py-8 lg:py-0 text-center ">
-        <h3 className="font-bold text-[#000000] text-[15px] sm:text-[15px] md:text-[15px] lg:text-[20px] mb-6">
-          {t("title")}
-        </h3>
+    <section className="relative flex justify-center items-center w-full min-h-[600px] lg:min-h-[900px] overflow-hidden">
+      <div
+        className="z-0 absolute inset-0 bg-[url('/Images/headerImages/png/newAboutUsBg.jpeg')] bg-cover bg-no-repeat bg-center"
+        aria-hidden="true"
+      />
+      <div className="z-10 absolute inset-0 bg-white/75 backdrop-blur-[2px]" />
 
-        <ul className="list-disc list-inside text-[#000000] text-[18px] sm:text-[20px] md:text-[24px] lg:text-[18px] flex flex-col gap-2">
-          <li>{t("point1")}</li>
-          <li>{t("point2")}</li>
-          <li>{t("point3")}</li>
-          <li>{t("point4")}</li>
-          <li>{t("point5")}</li>
-          <li>{t("point6")}</li>
-          <li>{t("point7")}</li>
-        </ul>
+      <div className="z-20 relative px-6 py-20 w-full max-w-6xl">
+        <div className="flex flex-col items-center">
+          <div className="space-y-4 mb-16 lg:mb-24 text-center">
+            <h3 className="font-light text-gray-900 text-2xl md:text-3xl lg:text-4xl uppercase tracking-[0.4em]">
+              {t('title')}
+            </h3>
+            <div className="bg-gray-400 mx-auto w-20 h-px" />
+          </div>
+
+          <div className="mx-auto w-full max-w-2xl">
+            <ul className="flex flex-col space-y-12">
+              {points.map((pointKey, index) => (
+                <li
+                  key={index}
+                  className="group relative flex flex-col items-center lg:items-start space-y-3"
+                >
+                  {index !== points.length - 1 && (
+                    <div className="hidden lg:block top-8 left-[7px] absolute bg-gray-200 group-hover:bg-gray-400 w-px h-16 transition-colors duration-500" />
+                  )}
+
+                  <div className="flex items-center gap-4">
+                    <div className="flex justify-center items-center bg-white border border-gray-300 group-hover:border-gray-900 rounded-full w-3.5 h-3.5 transition-all duration-300">
+                      <div className="bg-gray-300 group-hover:bg-gray-900 rounded-full w-1.5 h-1.5 transition-all duration-300" />
+                    </div>
+
+                    <span className="font-medium text-[10px] text-gray-400 uppercase tracking-[0.3em]">
+                      Step 0{index + 1}
+                    </span>
+                  </div>
+
+                  <div className="lg:pl-8">
+                    <p className="font-light text-gray-700 group-hover:text-black text-lg md:text-xl lg:text-left text-center leading-relaxed tracking-wide transition-all duration-300">
+                      {t(pointKey)}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

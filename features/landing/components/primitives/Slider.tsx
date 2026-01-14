@@ -2,18 +2,15 @@
 
 import { motion, useMotionValue, useAnimationFrame } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
 import { useQuery } from '@tanstack/react-query';
-import { ProjectApi } from 'features/landing/api/landingApi';
 import { useLocale, useTranslations } from 'next-intl';
 
-type InfiniteSliderProps = {
-  title?: string;
-  direction?: 'left' | 'right';
-  speed?: number;
-  enableLinks?: boolean;
-};
+import { ProjectApi } from 'features/landing/api/landingApi';
+import { SkeletonHeader } from './SkeletonHeader';
+import { SkeletonCard } from './SkeletonCard';
+import { ProjectCard } from './ProjectCard';
+import { InfiniteSliderProps, Project } from '../type';
+import Link from 'next/link';
 
 const InfiniteSlider = ({
   title,
@@ -21,22 +18,23 @@ const InfiniteSlider = ({
   speed = 50,
   enableLinks = true,
 }: InfiniteSliderProps) => {
-  const containerRef = useRef<HTMLDivElement | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [containerWidth, setContainerWidth] = useState(0);
   const x = useMotionValue(0);
   const [isPaused, setIsPaused] = useState(false);
+
   const t = useTranslations('SeeAllBtn');
   const locale = useLocale();
 
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery<Project[]>({
     queryKey: ['project'],
     queryFn: ProjectApi,
   });
 
-  const projects = data || [];
+  const projects = data ?? [];
   const sliderCards = [...projects, ...projects];
 
-  const getCardsPerView = () => {
+  const getCardsPerView = (): number => {
     if (typeof window === 'undefined') return 2;
     if (window.innerWidth < 640) return 1.2;
     if (window.innerWidth < 1024) return 2;
@@ -54,15 +52,18 @@ const InfiniteSlider = ({
         setCardsPerView(getCardsPerView());
       }
     };
+
     updateWidth();
     window.addEventListener('resize', updateWidth);
     return () => window.removeEventListener('resize', updateWidth);
   }, []);
 
-  useAnimationFrame((t, delta) => {
-    if (isPaused || singleSetWidth === 0) return;
+  useAnimationFrame((_, delta) => {
+    if (isPaused || isLoading || singleSetWidth === 0) return;
+
     const moveBy = (delta / 1000) * speed;
     let newX = x.get();
+
     if (direction === 'left') {
       newX -= moveBy;
       if (newX <= -singleSetWidth) newX += singleSetWidth;
@@ -70,6 +71,7 @@ const InfiniteSlider = ({
       newX += moveBy;
       if (newX >= 0) newX -= singleSetWidth;
     }
+
     x.set(newX);
   });
 
@@ -82,9 +84,26 @@ const InfiniteSlider = ({
   const handleMouseEnter = () => setIsPaused(true);
   const handleMouseLeave = () => setIsPaused(false);
 
+  if (isLoading) {
+    return (
+      <div id="project" className="bg-[#f4f7fa] py-10 sm:py-20 overflow-hidden">
+        <SkeletonHeader />
+        <div className="relative w-full">
+          <div ref={containerRef} className="relative">
+            <div className="flex">
+              {Array.from({ length: 6 }).map((_, i) => (
+                <SkeletonCard key={i} cardWidth={cardWidth} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div id="project" className="bg-[#f4f7fa] py-10 sm:py-20 overflow-hidden">
-      {/* Header Section */}
+      {/* Header */}
       <div className="flex justify-between items-center sm:items-end mx-auto mb-6 sm:mb-10 px-5 sm:px-12 lg:px-20 w-full max-w-[1440px]">
         <div>
           <h2 className="font-bold text-gray-900 text-2xl sm:text-4xl tracking-tight">
@@ -129,58 +148,16 @@ const InfiniteSlider = ({
             className="flex"
             style={{ x, width: `${cardWidth * sliderCards.length}px` }}
           >
-            {sliderCards.map((card, index) => {
-              const cardContent = (
-                <div className="group relative bg-gray-200 rounded-[1.5rem] sm:rounded-[2rem] h-[320px] sm:h-[450px] overflow-hidden transition-all duration-500">
-                  <div className="relative w-full h-full">
-                    <Image
-                      src={card.projectPicture}
-                      alt={card.projectName[locale] || ''}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-1000"
-                      sizes="(max-width: 640px) 100vw, 50vw"
-                      priority={index < 3}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
-                    <div className="top-4 sm:top-6 left-4 sm:left-6 absolute">
-                      <span className="bg-white/20 backdrop-blur-md px-3 py-1 border border-white/30 rounded-full font-medium text-[10px] text-white sm:text-xs uppercase tracking-wider">
-                        {card.projectType}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="right-0 bottom-0 left-0 absolute p-5 sm:p-10 text-white">
-                    <h3 className="mb-2 sm:mb-4 font-bold text-xl sm:text-4xl line-clamp-2 leading-snug tracking-tight">
-                      {card.projectName[locale]}
-                    </h3>
-                    <div className="hidden sm:flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0 duration-500">
-                      <span className="font-medium text-blue-400 text-sm">
-                        ნახვა
-                      </span>
-                      <div className="bg-blue-400 w-8 h-[1px]"></div>
-                    </div>
-                  </div>
-                </div>
-              );
-
-              return (
-                <div
-                  key={`${card._id}-${index}`}
-                  className="flex-shrink-0 px-2 sm:px-4"
-                  style={{ width: `${cardWidth}px` }}
-                >
-                  {enableLinks ? (
-                    <Link
-                      href={`/${locale}/projects/${card._id}`}
-                      className="block"
-                    >
-                      {cardContent}
-                    </Link>
-                  ) : (
-                    cardContent
-                  )}
-                </div>
-              );
-            })}
+            {sliderCards.map((project, index) => (
+              <ProjectCard
+                key={`${project._id}-${index}`}
+                project={project}
+                locale={locale}
+                cardWidth={cardWidth}
+                enableLinks={enableLinks}
+                index={index}
+              />
+            ))}
           </motion.div>
         </div>
 
