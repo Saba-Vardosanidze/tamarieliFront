@@ -28,7 +28,7 @@ const InfiniteSlider = ({
   const t = useTranslations('SeeAllBtn');
   const locale = useLocale();
 
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ['project'],
     queryFn: ProjectApi,
   });
@@ -60,7 +60,7 @@ const InfiniteSlider = ({
   }, []);
 
   useAnimationFrame((t, delta) => {
-    if (isPaused || singleSetWidth === 0) return;
+    if (isPaused || isLoading || singleSetWidth === 0) return;
     const moveBy = (delta / 1000) * speed;
     let newX = x.get();
     if (direction === 'left') {
@@ -81,6 +81,53 @@ const InfiniteSlider = ({
 
   const handleMouseEnter = () => setIsPaused(true);
   const handleMouseLeave = () => setIsPaused(false);
+
+  // Skeleton Card
+  const SkeletonCard = () => (
+    <div
+      className="flex-shrink-0 px-2 sm:px-4"
+      style={{ width: `${cardWidth}px` }}
+    >
+      <div className="group relative bg-gray-200 rounded-[1.5rem] sm:rounded-[2rem] h-[320px] sm:h-[450px] overflow-hidden animate-pulse">
+        <div className="bg-gray-300 w-full h-full" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+        <div className="top-4 sm:top-6 left-4 sm:left-6 absolute">
+          <div className="bg-gray-400/40 backdrop-blur-md px-3 py-1 rounded-full w-20 h-6" />
+        </div>
+
+        <div className="right-0 bottom-0 left-0 absolute space-y-4 p-5 sm:p-10">
+          <div className="bg-gray-400/60 rounded w-4/5 h-8 sm:h-12" />
+          <div className="bg-gray-400/40 rounded w-3/5 h-6 sm:h-8" />
+        </div>
+      </div>
+    </div>
+  );
+
+  if (isLoading) {
+    return (
+      <div id="project" className="bg-[#f4f7fa] py-10 sm:py-20 overflow-hidden">
+        {/* Header */}
+        <div className="flex justify-between items-center sm:items-end mx-auto mb-6 sm:mb-10 px-5 sm:px-12 lg:px-20 w-full max-w-[1440px]">
+          <div>
+            <div className="bg-gray-300 rounded w-48 h-10 sm:h-14 animate-pulse" />
+            <div className="bg-gray-300 mt-1.5 rounded-full w-12 h-1.5 animate-pulse" />
+          </div>
+          <div className="bg-gray-300 rounded-full w-32 h-10 sm:h-11 animate-pulse" />
+        </div>
+
+        <div className="relative w-full">
+          <div ref={containerRef} className="relative">
+            <div className="flex">
+              {Array.from({ length: 6 }).map((_, i) => (
+                <SkeletonCard key={i} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div id="project" className="bg-[#f4f7fa] py-10 sm:py-20 overflow-hidden">
