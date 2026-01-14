@@ -46,7 +46,6 @@ export default function ProjectHero({ data, locale, t, statusStyles }: Props) {
               </span>
             </div>
 
-            {/* შემქმნელი */}
             <div className="flex items-start gap-6">
               <span className="pt-1 w-28 font-bold text-zinc-400 text-xs uppercase tracking-widest">
                 {t('projectCreator')}
