@@ -16,7 +16,7 @@ const Header = () => {
 
   return (
     <div className="relative bg-[#fcfcfc] w-full">
-      <header className="z-[10001] relative bg-[#fcfcfc] mx-auto px-6 sm:px-12 lg:px-20 w-full max-w-[1440px] min-h-[100px]">
+      <header className="z-[10003] relative bg-[#fcfcfc] mx-auto px-6 sm:px-12 lg:px-20 w-full max-w-[1440px] min-h-[100px]">
         <div className="flex justify-between items-center h-[80px] sm:h-[100px]">
           <Link href={'/'} className="group">
             <div className="relative group-hover:scale-105 transition-transform duration-300">
