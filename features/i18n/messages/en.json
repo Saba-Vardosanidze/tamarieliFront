@@ -160,7 +160,8 @@
     "point3": "Association 'Tamarieli' offers partners an ethical and neutral media platform, a wide international audience, joint campaigns, thematic content, participation in events, and access to reliable sources."
   },
   "SeeAllBtn": {
-    "text": "Show more"
+    "text": "Show more",
+    "title": "Projects"
   },
   "hello": {
     "sayHello": "Welcome"
