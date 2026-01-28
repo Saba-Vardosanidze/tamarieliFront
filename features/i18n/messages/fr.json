@@ -160,7 +160,8 @@
     "point3": "L'association 'Tamarieli' offre à ses partenaires une plateforme médiatique éthique et neutre, un large public international, des campagnes conjointes, des contenus thématiques, la participation à des événements et l'accès à des sources fiables."
   },
   "SeeAllBtn": {
-    "text": "Voir les détails complets"
+    "text": "Voir les détails complets",
+    "title": "Projets"
   },
   "hello": {
     "sayHello": "BIENVENUE"
@@ -214,5 +215,8 @@
     "philosophy": "Pour nous, la danse est une communication incarnée — rythme et espace — transformée en une expérience unifiée, où le mouvement devient un code culturel et la chorégraphie un récit porteur d’identité.",
     "space": "Dance Ethos relie le patrimoine chorégraphique géorgien au discours mondial et crée un espace d’expérimentation et de dialogue international.",
     "tagline": "Là où le mouvement devient identité."
+  },
+  "See": {
+    "title": "voir"
   }
 }

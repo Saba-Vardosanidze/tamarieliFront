@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
-import { motion, useMotionValue, useAnimationFrame } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
-import { useQuery } from '@tanstack/react-query';
-import { useLocale, useTranslations } from 'next-intl';
+import { motion, useMotionValue, useAnimationFrame } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { useLocale, useTranslations } from "next-intl";
 
-import { ProjectApi } from 'features/landing/api/landingApi';
-import { SkeletonHeader } from './SkeletonHeader';
-import { SkeletonCard } from './SkeletonCard';
-import { ProjectCard } from './ProjectCard';
-import { InfiniteSliderProps, Project } from '../type';
-import Link from 'next/link';
+import { ProjectApi } from "features/landing/api/landingApi";
+import { SkeletonHeader } from "./SkeletonHeader";
+import { SkeletonCard } from "./SkeletonCard";
+import { ProjectCard } from "./ProjectCard";
+import { InfiniteSliderProps, Project } from "../type";
+import Link from "next/link";
 
 const InfiniteSlider = ({
   title,
-  direction = 'left',
+  direction = "left",
   speed = 50,
   enableLinks = true,
 }: InfiniteSliderProps) => {
@@ -23,11 +23,11 @@ const InfiniteSlider = ({
   const x = useMotionValue(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  const t = useTranslations('SeeAllBtn');
+  const t = useTranslations("SeeAllBtn");
   const locale = useLocale();
 
   const { data, isLoading } = useQuery<Project[]>({
-    queryKey: ['project'],
+    queryKey: ["project"],
     queryFn: ProjectApi,
   });
 
@@ -35,7 +35,7 @@ const InfiniteSlider = ({
   const sliderCards = [...projects, ...projects];
 
   const getCardsPerView = (): number => {
-    if (typeof window === 'undefined') return 2;
+    if (typeof window === "undefined") return 2;
     if (window.innerWidth < 640) return 1.2;
     if (window.innerWidth < 1024) return 2;
     return 2;
@@ -54,8 +54,8 @@ const InfiniteSlider = ({
     };
 
     updateWidth();
-    window.addEventListener('resize', updateWidth);
-    return () => window.removeEventListener('resize', updateWidth);
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
   }, []);
 
   useAnimationFrame((_, delta) => {
@@ -64,7 +64,7 @@ const InfiniteSlider = ({
     const moveBy = (delta / 1000) * speed;
     let newX = x.get();
 
-    if (direction === 'left') {
+    if (direction === "left") {
       newX -= moveBy;
       if (newX <= -singleSetWidth) newX += singleSetWidth;
     } else {
@@ -76,7 +76,7 @@ const InfiniteSlider = ({
   });
 
   useEffect(() => {
-    if (direction === 'right' && singleSetWidth > 0) {
+    if (direction === "right" && singleSetWidth > 0) {
       x.set(-singleSetWidth);
     }
   }, [direction, singleSetWidth, x]);
@@ -103,11 +103,10 @@ const InfiniteSlider = ({
 
   return (
     <div id="project" className="bg-[#f4f7fa] py-10 sm:py-20 overflow-hidden">
-      {/* Header */}
       <div className="flex justify-between items-center sm:items-end mx-auto mb-6 sm:mb-10 px-5 sm:px-12 lg:px-20 w-full max-w-[1440px]">
         <div>
           <h2 className="font-bold text-gray-900 text-2xl sm:text-4xl tracking-tight">
-            {title || 'Projects'}
+            {t("title") || "Projects"}
           </h2>
           <div className="bg-blue-600 mt-1.5 rounded-full w-8 sm:w-12 h-1 sm:h-1.5" />
         </div>
@@ -117,7 +116,7 @@ const InfiniteSlider = ({
           className="group flex items-center gap-1.5 bg-white hover:bg-gray-50 shadow-sm px-4 sm:px-6 py-2 sm:py-2.5 border border-gray-200 rounded-full transition-all"
         >
           <span className="font-semibold text-gray-700 text-xs sm:text-sm">
-            {t('text')}
+            {t("text")}
           </span>
           <svg
             className="w-3.5 h-3.5 text-blue-600"
