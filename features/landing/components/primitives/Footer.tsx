@@ -4,7 +4,6 @@ import { FooterItems } from 'features/landing/data/landingData';
 import Image from 'next/image';
 import FooterLinks from './FooterLinks';
 import SocialIcons from './FooterSocmediaLinks';
-import { useTranslations } from 'next-intl';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
