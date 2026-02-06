@@ -38,9 +38,9 @@ const Paypal = () => {
   };
 
   return (
-    <div className="bg-[#f8fafc] px-6 sm:px-12 lg:px-20 py-16 sm:py-24 w-full min-h-[600px] overflow-hidden">
+    <div className="bg-[#f8fafc] py-16 sm:py-24 w-full min-h-[600px] overflow-hidden">
       <div className="mx-auto max-w-[1440px]">
-        <div className="flex xl:flex-row flex-col-reverse items-center gap-16 lg:gap-24">
+        <div className="flex xl:flex-row flex-col-reverse items-center gap-16 lg:gap-24 px-6 sm:px-12 lg:px-20">
           <div className="flex flex-col gap-6 order-1 w-full max-w-xl">
             <div className="space-y-2 mb-4 lg:text-left text-center">
               <h2 className="font-bold text-gray-900 text-2xl sm:text-3xl tracking-tight">
