@@ -111,7 +111,7 @@ const AllProject = () => {
 
                     <div className="flex items-center mt-auto font-bold text-blue-600 text-sm">
                       <span className="mr-2 uppercase tracking-widest">
-                        პროექტის ნახვა
+                        {t('see')}
                       </span>
                       <svg
                         className="w-5 h-5 transition-transform group-hover:translate-x-2 duration-300"
