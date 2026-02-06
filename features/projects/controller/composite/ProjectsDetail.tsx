@@ -80,6 +80,7 @@ export default function ProjectsDetail({ id }: Props) {
             pdf={data.pdfLink}
             fb={data.fbLink}
             site={data.partnerSiteLink}
+            word={data.wordLink}
           />
         </section>
 
