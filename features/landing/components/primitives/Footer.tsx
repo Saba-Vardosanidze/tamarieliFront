@@ -10,8 +10,8 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#f8fafc] mt-20 sm:mt-32 pt-16 pb-8 border-gray-100 border-t w-full">
-      <div className="mx-auto px-6 sm:px-12 lg:px-20 max-w-[1440px]">
+    <footer className="bg-[#f8fafc] mt-20 sm:mt-32 px-6 sm:px-12 lg:px-20 pt-16 pb-8 border-gray-100 border-t w-full">
+      <div className="mx-auto max-w-[1440px]">
         <div className="flex lg:flex-row flex-col justify-between items-start gap-12 lg:gap-20">
           <div className="flex flex-col gap-8 w-full lg:w-auto">
             <div className="flex flex-col gap-6">
