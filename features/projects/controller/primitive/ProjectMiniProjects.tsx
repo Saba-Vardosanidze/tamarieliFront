@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaChevronRight } from 'react-icons/fa';
-
+import defaultProjectPicture from '../../../../public/Images/project/png/photoNotLoaded.webp';
 type Props = {
   items: any[];
   locale: string;
@@ -29,7 +29,7 @@ export default function ProjectMiniProjects({
           <div className="flex flex-col">
             <div className="relative h-56">
               <Image
-                src={mini.projectPicture}
+                src={mini.projectPicture || defaultProjectPicture}
                 alt={mini.projectName[locale]}
                 fill
                 className="object-cover"
