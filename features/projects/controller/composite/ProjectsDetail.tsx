@@ -57,12 +57,12 @@ export default function ProjectsDetail({ id }: Props) {
   }
 
   return (
-    <div className="bg-[#f4f7fa] px-6 sm:px-12 lg:px-20 pt-[80px] pb-20 min-h-screen">
-      <div className="mx-auto mb-6 sm:px-12 lg:px-20 max-w-[1440px]">
+    <div className="space-y-[10px] bg-[#f4f7fa] pt-[80px] pb-20 min-h-screen">
+      <div className="mx-auto px-6 sm:px-12 lg:px-20 max-w-[1440px]">
         <ProjectBreadcrumb title={data.projectName?.[locale || 'en']} />
       </div>
 
-      <div className="space-y-8 mx-auto sm:px-12 lg:px-20 w-full max-w-[1440px]">
+      <div className="space-y-8 mx-auto px-6 sm:px-12 lg:px-20 w-full max-w-[1440px]">
         <ProjectHero
           data={data}
           locale={locale}
