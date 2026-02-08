@@ -11,3 +11,17 @@ export type InfiniteSliderProps = {
   speed?: number;
   enableLinks?: boolean;
 };
+
+export type Pagination = {
+  total: number;
+  page: number;
+  limit: number;
+  totalPages: number;
+  hasNext: boolean;
+  hasPrev: boolean;
+};
+
+export type ProjectsResponse = {
+  data: Project[];
+  pagination?: Pagination;
+};
