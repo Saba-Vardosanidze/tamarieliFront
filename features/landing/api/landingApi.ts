@@ -11,8 +11,8 @@ export const ProjectApi = async () => {
   return res.json();
 };
 
-export const ProjectWithPagination = async () => {
-  const res = await fetch(`${baseUrl}/project?page=1&limit=4`, {
+export const ProjectWithPagination = async (page = 1) => {
+  const res = await fetch(`${baseUrl}/project?page=${page}&limit=4`, {
     cache: 'no-store',
   });
   if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
