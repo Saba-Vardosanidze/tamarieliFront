@@ -5,9 +5,10 @@ import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { ProjectApi } from '@features/landing/api/landingApi';
+import { ProjectWithPagination } from '@features/landing/api/landingApi';
 import { Locale } from '@features/i18n/routing';
 import { Project } from '@features/type';
+import { ProjectsResponse } from '@features/landing/components/type';
 
 const SkeletonCard = () => (
   <div className="bg-slate-50 rounded-2xl h-[450px] animate-pulse">
@@ -24,14 +25,12 @@ const AllProject = () => {
   const t = useTranslations('SeeAllProjects');
   const locale = useLocale() as Locale;
 
-  const {
-    data: projects = [],
-    isLoading,
-    isError,
-  } = useQuery<Project[]>({
+  const { data, isLoading, isError } = useQuery<ProjectsResponse>({
     queryKey: ['projects'],
-    queryFn: ProjectApi,
+    queryFn: ProjectWithPagination,
   });
+
+  const projects = data?.data ?? [];
 
   if (isLoading) {
     return (
