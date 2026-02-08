@@ -5,23 +5,19 @@ import {
   ChevronsLeft,
   ChevronsRight,
 } from 'lucide-react';
-
-interface PaginationProps {
-  currentPage: number;
-  totalPages: number;
-  onPageChange: (page: number) => void;
-}
+import { PaginationProps } from '@features/type';
 
 const Pagination = ({
   currentPage,
   totalPages,
   onPageChange,
+  hasNext,
+  hasPrev,
+  firstPage,
+  lastPage,
 }: PaginationProps) => {
-  const isFirstPage = currentPage === 1;
-  const isLastPage = currentPage === totalPages;
-
   const buttonStyles =
-    'w-10 h-10 rounded-lg transition-all  duration-200 flex items-center justify-center border text-sm font-medium';
+    'w-10 h-10 rounded-lg transition-all duration-200 flex items-center justify-center border text-sm font-medium';
   const disabledStyles =
     'bg-gray-50 text-gray-300 border-gray-200 cursor-not-allowed';
   const navStyles =
@@ -43,17 +39,17 @@ const Pagination = ({
   return (
     <div className="flex justify-center items-center gap-2 my-8 font-sans">
       <button
-        onClick={() => onPageChange(1)}
-        disabled={isFirstPage}
-        className={`${buttonStyles} ${isFirstPage ? disabledStyles : navStyles}`}
+        onClick={() => onPageChange(firstPage)}
+        disabled={!hasPrev}
+        className={`${buttonStyles} ${!hasPrev ? disabledStyles : navStyles}`}
       >
         <ChevronsLeft size={18} strokeWidth={2.5} />
       </button>
 
       <button
         onClick={() => onPageChange(currentPage - 1)}
-        disabled={isFirstPage}
-        className={`${buttonStyles} ${isFirstPage ? disabledStyles : navStyles}`}
+        disabled={!hasPrev}
+        className={`${buttonStyles} ${!hasPrev ? disabledStyles : navStyles}`}
       >
         <ChevronLeft size={18} strokeWidth={2.5} />
       </button>
@@ -78,16 +74,16 @@ const Pagination = ({
 
       <button
         onClick={() => onPageChange(currentPage + 1)}
-        disabled={isLastPage}
-        className={`${buttonStyles} ${isLastPage ? disabledStyles : navStyles}`}
+        disabled={!hasNext}
+        className={`${buttonStyles} ${!hasNext ? disabledStyles : navStyles}`}
       >
         <ChevronRight size={18} strokeWidth={2.5} />
       </button>
 
       <button
-        onClick={() => onPageChange(totalPages)}
-        disabled={isLastPage}
-        className={`${buttonStyles} ${isLastPage ? disabledStyles : navStyles}`}
+        onClick={() => onPageChange(lastPage)}
+        disabled={!hasNext}
+        className={`${buttonStyles} ${!hasNext ? disabledStyles : navStyles}`}
       >
         <ChevronsRight size={18} strokeWidth={2.5} />
       </button>
