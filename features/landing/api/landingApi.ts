@@ -29,16 +29,16 @@ export const ProjectById = async (id: string, type: string) => {
 };
 
 export const getMiniProjectByProjectId = async (
-  id: string
-): Promise<MiniProject[]> => {
-  const res = await fetch(`${baseUrl}/projects/${id}/mini-projects`, {
-    cache: 'no-store',
-  });
-
+  id: string,
+  page: number
+): Promise<MiniProjectResponse> => {
+  const res = await fetch(
+    `${baseUrl}/projects/${id}/mini-projects?page=${page}&limit=3`,
+    { cache: 'no-store' }
+  );
   if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-
   const json: MiniProjectResponse = await res.json();
-  return json.data;
+  return json;
 };
 
 export const MiniProjectById = async (id: string) => {
