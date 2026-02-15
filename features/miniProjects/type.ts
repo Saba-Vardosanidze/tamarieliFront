@@ -6,9 +6,9 @@ export type MiniProject = {
   projectDescription: Record<LocaleKey, string>;
   projectType: 'TODO' | 'INPROGRESS' | 'DONE' | 'ONGOING';
   projectCreator: string[];
-  pdfLink?: string;
-  wordLink?: string;
-  fbLink?: string;
-  igLink?: string;
-  partnerSiteLink?: string;
+  pdfLink: string[];
+  wordLink: string[];
+  fbLink: string[];
+  igLink: string[];
+  partnerSiteLink: string[];
 };
