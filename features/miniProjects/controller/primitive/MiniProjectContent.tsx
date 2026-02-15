@@ -32,45 +32,45 @@ const MiniProjectContent = ({ data, locale, t }: Props) => (
 
       <div className="flex flex-col gap-3">
         {data.pdfLink && (
-          <Link
+          <a
             href={data.pdfLink}
             className="group flex items-center gap-3 hover:bg-red-50 p-3 border border-gray-50 rounded-xl font-bold text-red-600 text-sm transition-all"
           >
             <FaFilePdf size={18} />
             <span>show PDF</span>
-          </Link>
+          </a>
         )}
 
         {data.wordLink && (
-          <Link
+          <a
             href={data.wordLink}
             className="group flex items-center gap-3 hover:bg-blue-50 p-3 border border-gray-50 rounded-xl font-bold text-blue-600 text-sm transition-all"
           >
             <FaFileWord size={18} />
             <span>show WORD</span>
-          </Link>
+          </a>
         )}
 
         {data.fbLink && (
-          <Link
+          <a
             href={data.fbLink}
             target="_blank"
             className="group flex items-center gap-3 hover:bg-blue-50 p-3 border border-gray-50 rounded-xl font-bold text-blue-800 text-sm transition-all"
           >
             <FaFacebook size={18} />
             <span>Open Facebook Page</span>
-          </Link>
+          </a>
         )}
 
         {data.igLink && (
-          <Link
+          <a
             href={data.igLink}
             target="_blank"
             className="group flex items-center gap-3 hover:bg-pink-50 p-3 border border-gray-50 rounded-xl font-bold text-pink-600 text-sm transition-all"
           >
             <FaInstagram size={18} />
             <span>Open Instagram Page</span>
-          </Link>
+          </a>
         )}
 
         {data.partnerSiteLink && (

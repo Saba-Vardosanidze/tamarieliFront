@@ -30,7 +30,7 @@ export default function ProjectResources({ pdf, fb, site, word }: Props) {
           >
             <FaFilePdf size={20} />
             <span className="font-bold text-sm uppercase transition-transform group-hover:translate-x-1">
-              Download PDF {index + 1}
+              show PDF {index + 1}
             </span>
           </Link>
         ))}
@@ -40,11 +40,11 @@ export default function ProjectResources({ pdf, fb, site, word }: Props) {
             key={`pdf-${index}`}
             href={link}
             target="_blank"
-            className="group flex items-center gap-3 hover:bg-red-50 p-3 border border-gray-50 hover:border-red-100 rounded-xl text-blue-600 transition-all"
+            className="group flex items-center gap-3 hover:bg-blue-50 p-3 border border-gray-50 hover:border-blue-100 rounded-xl text-blue-600 transition-all"
           >
             <FaFileWord size={20} />
             <span className="font-bold text-sm uppercase transition-transform group-hover:translate-x-1">
-              Download PDF {index + 1}
+              show WORD {index + 1}
             </span>
           </Link>
         ))}
@@ -58,7 +58,7 @@ export default function ProjectResources({ pdf, fb, site, word }: Props) {
           >
             <FaFacebook size={20} />
             <span className="font-bold text-sm uppercase transition-transform group-hover:translate-x-1">
-              Facebook Page
+              show Page
             </span>
           </Link>
         ))}
