@@ -57,7 +57,7 @@ export default function ProjectsDetail({ id }: Props) {
   }
 
   return (
-    <div className="bg-[#f4f7fa] px-6 sm:px-12 lg:px-20 pt-[80px] pb-20 min-h-screen">
+    <div className="bg-[#f4f7fa] px-6 lg:px-[0px] pt-[80px] pb-20 min-h-screen">
       <div className="mx-auto mb-6 sm:px-12 lg:px-20 max-w-[1440px]">
         <ProjectBreadcrumb title={data.projectName?.[locale || 'en']} />
       </div>
@@ -93,12 +93,7 @@ export default function ProjectsDetail({ id }: Props) {
           t={t}
         />
 
-        <ProjectMiniProjects
-          items={data.miniProjects}
-          locale={locale}
-          t={t}
-          statusStyles={statusStyles}
-        />
+        <ProjectMiniProjects id={id} locale={locale} t={t} />
       </div>
     </div>
   );
