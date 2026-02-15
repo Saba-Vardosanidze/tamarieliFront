@@ -107,5 +107,9 @@ export type MiniProjectResponse = {
     totalPages: number;
     hasNext: boolean;
     hasPrev: boolean;
+    firstPage: number;
+    lastPage: number;
+    first: number;
+    last: number;
   };
 };
