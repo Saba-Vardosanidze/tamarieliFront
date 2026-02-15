@@ -30,10 +30,11 @@ export const ProjectById = async (id: string, type: string) => {
 
 export const getMiniProjectByProjectId = async (
   id: string,
-  page: number
+  page: number,
+  type: string
 ): Promise<MiniProjectResponse> => {
   const res = await fetch(
-    `${baseUrl}/projects/${id}/mini-projects?page=${page}&limit=3`,
+    `${baseUrl}/projects/${id}/mini-projects?page=${page}&limit=3&type=${type}`,
     { cache: 'no-store' }
   );
   if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
