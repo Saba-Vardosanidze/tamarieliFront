@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { FaChevronRight } from 'react-icons/fa';
 import Pagination from './Pagination';
 import { MiniProjectsSkeleton } from './MiniProjectsSkeleton';
+import { useSearchParams } from 'next/navigation';
 
 type Props = {
   id: string;
@@ -18,10 +19,12 @@ type Props = {
 
 export default function ProjectMiniProjects({ id, locale, t }: Props) {
   const [page, setPage] = useState(1);
+  const searchParams = useSearchParams();
+  const type = searchParams.get('type') || '';
 
   const { data, isLoading, isError } = useQuery<MiniProjectResponse>({
-    queryKey: ['project', id, page],
-    queryFn: () => getMiniProjectByProjectId(id, page),
+    queryKey: ['project', id, page, type],
+    queryFn: () => getMiniProjectByProjectId(id, page, type),
   });
 
   const miniProjects = data?.data;
