@@ -93,12 +93,7 @@ export default function ProjectsDetail({ id }: Props) {
           t={t}
         />
 
-        <ProjectMiniProjects
-          items={data.miniProjects}
-          locale={locale}
-          t={t}
-          statusStyles={statusStyles}
-        />
+        <ProjectMiniProjects id={id} locale={locale} t={t} />
       </div>
     </div>
   );

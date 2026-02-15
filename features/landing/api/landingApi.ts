@@ -1,3 +1,4 @@
+import { MiniProject, MiniProjectResponse } from '@features/type';
 import { FormSchemaType } from '../schema/formSchema';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_API_URL;
@@ -25,6 +26,19 @@ export const ProjectById = async (id: string, type: string) => {
   });
   if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
   return res.json();
+};
+
+export const getMiniProjectByProjectId = async (
+  id: string
+): Promise<MiniProject[]> => {
+  const res = await fetch(`${baseUrl}/projects/${id}/mini-projects`, {
+    cache: 'no-store',
+  });
+
+  if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+
+  const json: MiniProjectResponse = await res.json();
+  return json.data;
 };
 
 export const MiniProjectById = async (id: string) => {

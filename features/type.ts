@@ -41,27 +41,6 @@ export interface LocalizedText {
   fr: string;
 }
 
-export interface MiniProject {
-  _id: string;
-  parentProject: string;
-
-  projectName: LocalizedText;
-  projectDescription: LocalizedText;
-
-  projectCreator: string[];
-  projectType: 'INPROGRESS' | 'ONGOING' | 'COMPLETED';
-
-  projectPicture: string;
-
-  createdAt: string;
-  updatedAt: string;
-
-  pdfLink: string;
-  wordLink: string;
-
-  __v: number;
-}
-
 export type Project = {
   _id: string;
 
@@ -92,4 +71,41 @@ export type PaginationProps = {
   hasPrev: boolean;
   firstPage: number;
   lastPage: number;
+};
+
+export type MiniProject = {
+  _id: string;
+  parentProject: string;
+  projectName: {
+    en: string;
+    fr: string;
+    ka: string;
+  };
+  projectDescription: {
+    en: string;
+    fr: string;
+    ka: string;
+  };
+  projectCreator: string[];
+  projectType: 'TODO' | 'INPROGRESS' | 'DONE' | 'ONGOING';
+  projectPicture: string;
+  createdAt: string;
+  updatedAt: string;
+  pdfLink?: string;
+  wordLink?: string;
+  fbLink?: string;
+  igLink?: string;
+  partnerSiteLink?: string;
+};
+
+export type MiniProjectResponse = {
+  data: MiniProject[];
+  pagination: {
+    total: number;
+    page: number;
+    limit: number;
+    totalPages: number;
+    hasNext: boolean;
+    hasPrev: boolean;
+  };
 };
