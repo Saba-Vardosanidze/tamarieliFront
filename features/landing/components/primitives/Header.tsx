@@ -56,7 +56,7 @@ const Header = () => {
                 href={`#contact`}
                 className="bg-gray-900 hover:bg-blue-600 shadow-sm px-7 py-3 rounded-full font-bold text-[11px] text-white uppercase tracking-[0.1em] active:scale-95 transition-all"
               >
-                contact
+                {t("contact")}
               </Link>
             </div>
             <SearchSection />

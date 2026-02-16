@@ -95,7 +95,8 @@
   },
   "Header": {
     "home": "მთავარი",
-    "about": "ჩვენ შესახებ"
+    "about": "ჩვენ შესახებ",
+    "contact": "კონტაქტი"
   },
   "ContactForm": {
     "title1": "შეტყობინება",
@@ -245,5 +246,6 @@
   "CountryList": {
     "searchPlaceholder": "მოძებნე ქვეყანა...",
     "noResults": "ქვეყანა ვერ მოიძებნა"
-  }
+  },
+  "contactBtn": "კონტაქტი"
 }

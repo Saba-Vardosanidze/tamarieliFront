@@ -88,7 +88,8 @@
   },
   "Header": {
     "home": "Home",
-    "about": "About"
+    "about": "About",
+    "contact": "Contact"
   },
 
   "ContactForm": {
@@ -238,5 +239,6 @@
   "CountryList": {
     "searchPlaceholder": "Search country...",
     "noResults": "Country not found"
-  }
+  },
+  "contactBtn": "Contact"
 }
