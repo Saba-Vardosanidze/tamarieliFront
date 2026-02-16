@@ -1,22 +1,24 @@
 import { SlidersHorizontal, Search } from "lucide-react";
 import CountryList from "./FlagsComponent";
 import CategorySelect from "./GenreComponent";
+import { useLocale, useTranslations } from "next-intl";
 
 const SearchFilter = () => {
+  const t = useTranslations("SearchFilter");
   return (
     <div className="w-full flex justify-center items-center mt-4">
       <div className="max-w-[850px] w-full bg-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-none rounded-2xl p-8 flex flex-col gap-8">
         <div className="flex items-center justify-center gap-2 text-gray-800">
           <SlidersHorizontal className="w-5 h-5 text-blue-600" />
           <h2 className="font-bold text-xl font-NotoSansGeorgian tracking-tight">
-            ფილტრაცია
+            {t("title")}
           </h2>
         </div>
 
         <div className="w-full flex flex-wrap items-center justify-center gap-6">
           <div className="flex flex-col items-start">
             <p className="text-[11px] font-bold text-gray-400 uppercase mb-2 tracking-widest px-1">
-              ქვეყანა
+              {t("countryLabel")}
             </p>
             <div className="w-72">
               <CountryList />
@@ -25,7 +27,7 @@ const SearchFilter = () => {
 
           <div className="flex flex-col items-start">
             <p className="text-[11px] font-bold text-gray-400 uppercase mb-2 tracking-widest px-1">
-              სფერო / ჟანრი
+              {t("genreLabel")}
             </p>
             <div className="w-72">
               <CategorySelect />

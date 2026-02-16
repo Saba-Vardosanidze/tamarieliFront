@@ -4,10 +4,13 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, X } from "lucide-react";
 import SearchFilter from "./SearchFilter";
+import { useLocale, useTranslations } from "next-intl";
 
 export default function SearchSection() {
   const [isOpen, setIsOpen] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
+  const locale = useLocale();
+  const t = useTranslations("SearchFilter");
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

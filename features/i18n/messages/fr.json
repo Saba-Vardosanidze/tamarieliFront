@@ -219,5 +219,14 @@
   },
   "See": {
     "title": "voir"
+  },
+  "SearchFilter": {
+    "title": "Filtrage",
+    "countryLabel": "Pays",
+    "genreLabel": "Domaine / Genre",
+    "searchButton": "Rechercher",
+    "placeholder": "Sélectionner...",
+    "noResults": "Aucun résultat trouvé",
+    "searchPlaceholder": "Chercher..."
   }
 }

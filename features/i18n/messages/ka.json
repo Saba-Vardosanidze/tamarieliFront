@@ -225,5 +225,15 @@
   },
   "See": {
     "title": "ნახვა"
+  },
+
+  "SearchFilter": {
+    "title": "ფილტრაცია",
+    "countryLabel": "ქვეყანა",
+    "genreLabel": "სფერო / ჟანრი",
+    "searchButton": "ძებნა",
+    "placeholder": "აირჩიე...",
+    "noResults": "ვერ მოიძებნა",
+    "searchPlaceholder": "ძებნა..."
   }
 }

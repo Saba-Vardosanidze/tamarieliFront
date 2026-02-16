@@ -218,5 +218,15 @@
   },
   "See": {
     "title": "See"
+  },
+
+  "SearchFilter": {
+    "title": "Filtering",
+    "countryLabel": "Country",
+    "genreLabel": "Field / Genre",
+    "searchButton": "Search",
+    "placeholder": "Select...",
+    "noResults": "No results found",
+    "searchPlaceholder": "Search..."
   }
 }
