@@ -1,24 +1,25 @@
-'use client';
+"use client";
 
-import { HeaderData } from 'features/landing/data/landingData';
-import Image from 'next/image';
-import Link from 'next/link';
-import BurgerMenu from './BurgerMenu';
-import BurgerMenuIcon from './BurgermenuIcon';
-import { useState } from 'react';
-import LocaleSwitcher from '@features/i18n/components/LocaleSwitcher';
-import { useLocale, useTranslations } from 'next-intl';
+import { HeaderData } from "features/landing/data/landingData";
+import Image from "next/image";
+import Link from "next/link";
+import BurgerMenu from "./BurgerMenu";
+import BurgerMenuIcon from "./BurgermenuIcon";
+import { useState } from "react";
+import LocaleSwitcher from "@features/i18n/components/LocaleSwitcher";
+import { useLocale, useTranslations } from "next-intl";
+import SearchHeader from "./Search";
 
 const Header = () => {
   const locale = useLocale();
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const t = useTranslations('Header');
+  const t = useTranslations("Header");
 
   return (
     <div className="relative bg-[#fcfcfc] w-full">
       <header className="z-[10003] relative bg-[#fcfcfc] mx-auto px-6 sm:px-12 lg:px-20 w-full max-w-[1440px] min-h-[100px]">
         <div className="flex justify-between items-center h-[80px] sm:h-[100px]">
-          <Link href={'/'} className="group">
+          <Link href={"/"} className="group">
             <div className="relative group-hover:scale-105 transition-transform duration-300">
               <Image
                 src="/Images/headerImages/png/tamarieliLogo.png"
@@ -36,7 +37,7 @@ const Header = () => {
               {HeaderData.map((eachElement) => (
                 <Link
                   key={eachElement.id}
-                  href={`/${locale || 'en'}/${eachElement.href}`}
+                  href={`/${locale || "en"}/${eachElement.href}`}
                   className="group relative py-2"
                 >
                   <span className="font-bold text-[13px] text-gray-700 group-hover:text-blue-600 uppercase tracking-widest transition-colors duration-300">
@@ -58,6 +59,7 @@ const Header = () => {
                 contact
               </Link>
             </div>
+            <SearchHeader />
           </div>
 
           <div className="lg:hidden flex items-center gap-4">
