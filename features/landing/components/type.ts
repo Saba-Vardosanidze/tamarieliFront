@@ -1,3 +1,6 @@
+import { LucideIcon } from "lucide-react";
+import { ReactNode } from "react";
+
 export type Project = {
   _id: string;
   projectName: Record<string, string>;
@@ -7,7 +10,7 @@ export type Project = {
 
 export type InfiniteSliderProps = {
   title?: string;
-  direction?: 'left' | 'right';
+  direction?: "left" | "right";
   speed?: number;
   enableLinks?: boolean;
 };
@@ -25,3 +28,8 @@ export type ProjectsResponse = {
   data: Project[];
   pagination?: Pagination;
 };
+export interface Category {
+  id: number;
+  name: string;
+  icon: LucideIcon;
+}
