@@ -4,7 +4,7 @@ import CategorySelect from "./GenreComponent";
 
 const SearchFilter = () => {
   return (
-    <div className="w-full flex justify-center items-center p-4">
+    <div className="w-full flex justify-center items-center mt-4">
       <div className="max-w-[850px] w-full bg-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-none rounded-2xl p-8 flex flex-col gap-8">
         <div className="flex items-center justify-center gap-2 text-gray-800">
           <SlidersHorizontal className="w-5 h-5 text-blue-600" />
