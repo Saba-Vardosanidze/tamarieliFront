@@ -22,7 +22,6 @@ export default function CountrySelect() {
 
   return (
     <div className="relative w-72 text-black font-sans">
-      {/* მთავარი ღილაკი - Shadow-ით და ბორდერის გარეშე */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex items-center justify-between p-3 bg-white rounded-xl shadow-[0_4px_20px_-5px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.12)] transition-all duration-300 focus:outline-none border-none"
@@ -42,7 +41,6 @@ export default function CountrySelect() {
         />
       </button>
 
-      {/* Dropdown კონტეინერი Framer Motion ანიმაციით */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -52,7 +50,6 @@ export default function CountrySelect() {
             transition={{ duration: 0.2, ease: "easeInOut" }}
             className="absolute z-50 w-full mt-2 bg-white rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.2)] overflow-hidden border-none"
           >
-            {/* საძიებო ველი */}
             <div className="relative p-2 flex items-center">
               <Search className="absolute left-4 w-4 h-4 text-gray-300" />
               <input
@@ -65,7 +62,6 @@ export default function CountrySelect() {
               />
             </div>
 
-            {/* ქვეყნების სია შენი Custom Scrollbar კლასით */}
             <div className="max-h-60 custom-scrollbar pb-2">
               {filteredCountries.length > 0 ? (
                 filteredCountries.map((country) => (
@@ -101,7 +97,6 @@ export default function CountrySelect() {
         )}
       </AnimatePresence>
 
-      {/* Overlay */}
       {isOpen && (
         <div
           className="fixed inset-0 z-40 bg-transparent"
