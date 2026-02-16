@@ -3,8 +3,9 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, X } from "lucide-react";
+import SearchFilter from "./SearchFilter";
 
-export default function Header() {
+export default function SearchSection() {
   const [isOpen, setIsOpen] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
 
@@ -76,6 +77,7 @@ export default function Header() {
                   />
                 </button>
               </div>
+              <SearchFilter />
             </motion.div>
           </>
         )}

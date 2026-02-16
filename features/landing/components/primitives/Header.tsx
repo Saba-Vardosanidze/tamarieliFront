@@ -8,7 +8,7 @@ import BurgerMenuIcon from "./BurgermenuIcon";
 import { useState } from "react";
 import LocaleSwitcher from "@features/i18n/components/LocaleSwitcher";
 import { useLocale, useTranslations } from "next-intl";
-import SearchHeader from "./Search";
+import SearchSection from "./Search";
 
 const Header = () => {
   const locale = useLocale();
@@ -59,7 +59,7 @@ const Header = () => {
                 contact
               </Link>
             </div>
-            <SearchHeader />
+            <SearchSection />
           </div>
 
           <div className="lg:hidden flex items-center gap-4">
