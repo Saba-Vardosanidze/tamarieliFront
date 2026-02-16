@@ -5,9 +5,11 @@ import { ChevronDown, Search, LayoutGrid } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { categories } from "@features/landing/data/landingData";
 import { Category } from "../type";
+import { useTranslations } from "next-intl";
 
 export default function CategorySelect() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const t = useTranslations("CategorySelect");
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(
     null,
   );
@@ -35,7 +37,7 @@ export default function CategorySelect() {
             <>
               <LayoutGrid className="w-5 h-5 text-gray-400" />
               <span className="text-gray-400 text-sm font-NotoSansGeorgian">
-                აირჩიე სფერო
+                {t("placeholder")}
               </span>
             </>
           )}
@@ -60,7 +62,7 @@ export default function CategorySelect() {
               <Search className="absolute left-4 w-4 h-4 text-gray-300" />
               <input
                 type="text"
-                placeholder="ძებნა..."
+                placeholder={t("searchPlaceholder")}
                 className="w-full p-2 pl-9 text-sm bg-gray-50 border-none rounded-lg outline-none focus:ring-0 font-NotoSansGeorgian"
                 autoFocus
                 value={searchTerm}
@@ -103,7 +105,7 @@ export default function CategorySelect() {
                 })
               ) : (
                 <div className="p-8 text-center text-sm text-gray-400 italic font-NotoSansGeorgian">
-                  ვერ მოიძებნა
+                  {t("noResults")}
                 </div>
               )}
             </div>

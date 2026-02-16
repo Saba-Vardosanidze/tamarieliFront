@@ -235,5 +235,11 @@
     "placeholder": "აირჩიე...",
     "noResults": "ვერ მოიძებნა",
     "searchPlaceholder": "ძებნა..."
+  },
+
+  "CategorySelect": {
+    "placeholder": "აირჩიე სფერო",
+    "searchPlaceholder": "ძებნა...",
+    "noResults": "ვერ მოიძებნა"
   }
 }

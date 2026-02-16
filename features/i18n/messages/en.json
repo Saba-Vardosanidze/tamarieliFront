@@ -228,5 +228,11 @@
     "placeholder": "Select...",
     "noResults": "No results found",
     "searchPlaceholder": "Search..."
+  },
+
+  "CategorySelect": {
+    "placeholder": "Select field",
+    "searchPlaceholder": "Search...",
+    "noResults": "No results found"
   }
 }
