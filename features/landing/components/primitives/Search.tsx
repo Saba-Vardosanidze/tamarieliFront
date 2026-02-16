@@ -11,6 +11,7 @@ export default function SearchSection() {
   const searchRef = useRef<HTMLDivElement>(null);
   const locale = useLocale();
   const t = useTranslations("SearchFilter");
+  const l = useTranslations("");
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -66,7 +67,7 @@ export default function SearchSection() {
                 <input
                   autoFocus
                   type="text"
-                  placeholder="Search something..."
+                  placeholder={t("searchPlaceholder")}
                   className="w-full h-14 px-4 outline-none text-lg text-gray-700"
                 />
 
