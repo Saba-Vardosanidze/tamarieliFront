@@ -234,5 +234,9 @@
     "placeholder": "Choisir un domaine",
     "searchPlaceholder": "Chercher...",
     "noResults": "Aucun résultat"
+  },
+  "CountryList": {
+    "searchPlaceholder": "Chercher un pays...",
+    "noResults": "Aucun pays trouvé"
   }
 }

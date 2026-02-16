@@ -5,9 +5,11 @@ import countries from "world-countries";
 import "flag-icons/css/flag-icons.min.css";
 import { ChevronDown, Search } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export default function CountrySelect() {
   const [isOpen, setIsOpen] = useState(false);
+  const t = useTranslations("CountryList");
   const [selectedCountry, setSelectedCountry] = useState({
     name: "Georgia",
     code: "GE",
@@ -54,7 +56,7 @@ export default function CountrySelect() {
               <Search className="absolute left-4 w-4 h-4 text-gray-300" />
               <input
                 type="text"
-                placeholder="Search country..."
+                placeholder={t("searchPlaceholder")}
                 className="w-full p-2 pl-9 text-sm bg-gray-50 border-none rounded-lg outline-none focus:ring-0"
                 autoFocus
                 value={searchTerm}
@@ -89,7 +91,7 @@ export default function CountrySelect() {
                 ))
               ) : (
                 <div className="p-8 text-center text-sm text-gray-400 italic font-NotoSansGeorgian">
-                  ვერ მოიძებნა
+                  {t("noResults")}
                 </div>
               )}
             </div>

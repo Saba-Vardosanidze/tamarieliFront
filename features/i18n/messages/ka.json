@@ -241,5 +241,9 @@
     "placeholder": "აირჩიე სფერო",
     "searchPlaceholder": "ძებნა...",
     "noResults": "ვერ მოიძებნა"
+  },
+  "CountryList": {
+    "searchPlaceholder": "მოძებნე ქვეყანა...",
+    "noResults": "ქვეყანა ვერ მოიძებნა"
   }
 }
