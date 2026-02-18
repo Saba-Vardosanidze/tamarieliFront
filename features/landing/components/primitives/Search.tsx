@@ -9,9 +9,7 @@ import { useLocale, useTranslations } from "next-intl";
 export default function SearchSection() {
   const [isOpen, setIsOpen] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
-  const locale = useLocale();
   const t = useTranslations("SearchFilter");
-  const l = useTranslations("");
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

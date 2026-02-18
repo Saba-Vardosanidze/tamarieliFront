@@ -13,12 +13,12 @@ const SearchedProject = ({
   image,
 }: ProjectCardProps) => {
   return (
-    <div className="w-full flex flex-col  mx-auto ">
-      <p className="text-[11px] font-bold text-gray-400 uppercase mb-3 tracking-widest px-1">
+    <div className="w-full flex flex-col  ">
+      <p className="text-[11px] font-bold text-gray-400  mb-2  px-1">
         მოძებნილი პროექტი
       </p>
 
-      <div className="w-full bg-white rounded-2xl  shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col sm:flex-row hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] transition-all duration-300 group justify-between  px-5 py-5 ">
+      <div className="w-full bg-white rounded-2xl  shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col sm:flex-row hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] transition-all duration-300  justify-between  px-5 py-5 ">
         <div className="relative w-full sm:w-48 h-48 sm:h-32 rounded-xl overflow-hidden object-contain no-repeat ">
           <Image
             src={image || "/api/placeholder/400/320"}
@@ -28,7 +28,7 @@ const SearchedProject = ({
           />
         </div>
 
-        <div className="flex flex-col justify-between  py-1">
+        <div className="flex flex-col justify-between">
           <div>
             <div className="flex justify-between items-center">
               <h3 className="font-bold text-lg text-gray-900 font-NotoSansGeorgian mb-1 group-hover:text-blue-600 transition-colors">
