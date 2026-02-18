@@ -20,10 +20,12 @@ export default function CategorySelect() {
   );
 
   return (
-    <div className="relative w-80 text-black font-sans">
+    // აქ შევცვალე w-80 -> w-full md:w-80
+    <div className="relative w-full md:w-80 text-black font-sans">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between p-3 bg-white rounded-xl shadow-[0_4px_20px_-5px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.12)] transition-all duration-300 focus:outline-none border-none"
+        // დავამატე h-[48px] რომ სხვა ინფუთებს სიმაღლეშიც გაუტოლდეს
+        className="w-full flex items-center justify-between p-3 bg-white rounded-xl shadow-[0_4px_20px_-5px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.12)] transition-all duration-300 focus:outline-none border-none py-3"
       >
         <div className="flex items-center gap-3">
           {selectedCategory ? (

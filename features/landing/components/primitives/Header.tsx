@@ -32,6 +32,7 @@ const Header = () => {
             </div>
           </Link>
 
+          {/* DESKTOP */}
           <div className="hidden lg:flex items-center gap-10">
             <nav className="flex items-center gap-8">
               {HeaderData.map((eachElement) => (
@@ -49,9 +50,7 @@ const Header = () => {
             </nav>
 
             <div className="flex items-center gap-6 pl-8 border-gray-200 border-l">
-              <div className="hover:opacity-80 transition-opacity">
-                <LocaleSwitcher />
-              </div>
+              <LocaleSwitcher />
               <Link
                 href={`#contact`}
                 className="bg-gray-900 hover:bg-blue-600 shadow-sm px-7 py-3 rounded-full font-bold text-[11px] text-white uppercase tracking-[0.1em] active:scale-95 transition-all"
@@ -62,7 +61,9 @@ const Header = () => {
             <SearchSection />
           </div>
 
-          <div className="lg:hidden flex items-center gap-4">
+          {/* MOBILE */}
+          <div className="lg:hidden flex items-center gap-2 sm:gap-4">
+            <SearchSection />
             <div className="hidden sm:block">
               <LocaleSwitcher />
             </div>

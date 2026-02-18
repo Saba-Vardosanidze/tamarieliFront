@@ -23,16 +23,16 @@ export default function CountrySelect() {
     .sort((a, b) => a.name.common.localeCompare(b.name.common));
 
   return (
-    <div className="relative w-72 text-black font-sans">
+    <div className="relative w-full md:w-72 text-black font-sans">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between p-3 bg-white rounded-xl shadow-[0_4px_20px_-5px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.12)] transition-all duration-300 focus:outline-none border-none"
+        className="w-full flex items-center justify-between p-3 py-3 bg-white rounded-xl shadow-[0_4px_20px_-5px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.12)] transition-all duration-300 focus:outline-none border-none"
       >
         <div className="flex items-center gap-3">
           <span
             className={`fi fi-${selectedCountry.code.toLowerCase()} w-6 h-4 rounded-sm shadow-sm`}
           ></span>
-          <span className="font-medium text-gray-700">
+          <span className="font-medium text-gray-700 text-sm">
             {selectedCountry.name}
           </span>
         </div>
