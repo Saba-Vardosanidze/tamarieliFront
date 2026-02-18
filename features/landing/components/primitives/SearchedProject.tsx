@@ -3,60 +3,54 @@
 import Image from "next/image";
 import { MapPin, Tag, ExternalLink } from "lucide-react";
 import Link from "next/link";
-import { ProjectCardProps } from "../type";
 
-const SearchedProject = ({
-  title,
-  description,
-  country,
-  category,
-  image,
-}: ProjectCardProps) => {
+const SearchedProject = () => {
   return (
-    <div className="w-full flex flex-col  ">
-      <p className="text-[11px] font-bold text-gray-400  mb-2  px-1">
+    <div className="w-full  mx-auto">
+      <p className="text-[11px] font-bold text-gray-400 uppercase mb-2 tracking-widest px-1">
         მოძებნილი პროექტი
       </p>
 
-      <div className="w-full bg-white rounded-2xl  shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col sm:flex-row hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] transition-all duration-300  justify-between  px-5 py-5 ">
-        <div className="relative w-full sm:w-48 h-48 sm:h-32 rounded-xl overflow-hidden object-contain no-repeat ">
+      <div className="bg-white rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col sm:flex-row gap-5 hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] transition-all duration-300 p-4 group">
+        <div className="relative w-full sm:w-40 h-40 sm:h-28 rounded-xl overflow-hidden shrink-0">
           <Image
-            src={image || "/api/placeholder/400/320"}
-            alt={title}
+            src="/Images/projects/project1.png"
+            alt="პროექტის დასახელება"
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            className="object-cover transition-transform duration-500"
           />
         </div>
 
-        <div className="flex flex-col justify-between">
-          <div>
-            <div className="flex justify-between items-center">
-              <h3 className="font-bold text-lg text-gray-900 font-NotoSansGeorgian mb-1 group-hover:text-blue-600 transition-colors">
-                {title}
+        <div className="flex flex-col justify-between py-0.5">
+          <div className="flex justify-between items-start gap-2">
+            <div className="overflow-hidden">
+              <h3 className="font-bold text-base text-gray-900 font-NotoSansGeorgian mb-1 line-clamp-1">
+                პროექტის დასახელება
               </h3>
-              <Link
-                href="https://www.facebook.com/"
-                className="text-gray-400 hover:text-blue-600 transition-colors"
-              >
-                <ExternalLink size={18} />
-              </Link>
+              <p className="text-gray-500 text-[13px] line-clamp-2 font-NotoSansGeorgian leading-relaxed">
+                აქ გამოჩნდება პროექტის მოკლე აღწერა, რომელიც მომხმარებელს
+                დაეხმარება ძიების შედეგის გაცნობაში.
+              </p>
             </div>
-            <p className="text-gray-500 text-sm line-clamp-2 mb-3 font-NotoSansGeorgian leading-relaxed">
-              {description}
-            </p>
+            <Link
+              href="#"
+              className="text-gray-400 hover:text-blue-600 transition-colors shrink-0 pt-1"
+            >
+              <ExternalLink size={16} />
+            </Link>
           </div>
 
-          <div className="flex flex-wrap gap-4 mt-auto">
+          <div className="flex flex-wrap gap-4 mt-2">
             <div className="flex items-center gap-1.5">
               <MapPin size={14} className="text-blue-500" />
-              <span className="text-xs font-medium text-gray-600 font-NotoSansGeorgian">
-                {country}
+              <span className="text-[11px] font-medium text-gray-600 font-NotoSansGeorgian">
+                საქართველო
               </span>
             </div>
             <div className="flex items-center gap-1.5">
               <Tag size={14} className="text-blue-500" />
-              <span className="text-xs font-medium text-gray-600 font-NotoSansGeorgian">
-                {category}
+              <span className="text-[11px] font-medium text-gray-600 font-NotoSansGeorgian">
+                ტექნოლოგიები
               </span>
             </div>
           </div>

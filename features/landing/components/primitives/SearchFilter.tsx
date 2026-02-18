@@ -37,13 +37,7 @@ const SearchFilter = () => {
             </div>
           </div>
         </div>
-        <SearchedProject
-          title="პროექტი"
-          description="პროექტის აღწერა"
-          country="საქართველო"
-          category="პროზა"
-          image="/Images/headerImages/png/tamarieliLogo.png"
-        />
+        <SearchedProject />
       </div>
     </div>
   );
