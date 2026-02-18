@@ -4,6 +4,7 @@ import { SlidersHorizontal } from "lucide-react";
 import CountryList from "./FlagsComponent";
 import CategorySelect from "./GenreComponent";
 import { useTranslations } from "next-intl";
+import SearchedProject from "./SearchedProject";
 
 const SearchFilter = () => {
   const t = useTranslations("SearchFilter");
@@ -17,7 +18,7 @@ const SearchFilter = () => {
           </h2>
         </div>
 
-        <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-6">
+        <div className="w-full max-w-[850px] flex flex-col sm:flex-row items-center justify-between gap-4 mx-auto ">
           <div className="flex flex-col items-start w-full sm:w-auto">
             <p className="text-[11px] font-bold text-gray-400 uppercase mb-2 tracking-widest px-1">
               {t("countryLabel")}
@@ -36,6 +37,13 @@ const SearchFilter = () => {
             </div>
           </div>
         </div>
+        <SearchedProject
+          title="პროექტი"
+          description="პროექტის აღწერა"
+          country="საქართველო"
+          category="პროზა"
+          image="/Images/headerImages/png/tamarieliLogo.png"
+        />
       </div>
     </div>
   );

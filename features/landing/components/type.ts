@@ -33,3 +33,10 @@ export interface Category {
   name: string;
   icon: LucideIcon;
 }
+export type ProjectCardProps = {
+  title: string;
+  description: string;
+  country: string;
+  category: string;
+  image: string;
+};
