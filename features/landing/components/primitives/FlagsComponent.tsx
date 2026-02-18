@@ -57,7 +57,7 @@ export default function CountrySelect() {
               <input
                 type="text"
                 placeholder={t("searchPlaceholder")}
-                className="w-full p-2 pl-9 text-sm bg-gray-50 border-none rounded-lg outline-none focus:ring-0"
+                className="w-full p-2 pl-9 text-sm bg-gray-50 border-none rounded-lg outline-none "
                 autoFocus
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -69,7 +69,7 @@ export default function CountrySelect() {
                 filteredCountries.map((country) => (
                   <div
                     key={country.cca2}
-                    className={`flex items-center gap-3 px-4 py-2.5 hover:bg-gray-50 cursor-pointer transition-colors mx-1 rounded-md ${
+                    className={`flex items-center gap-3 px-4 py-2.5 hover:bg-gray-50 cursor-pointer  rounded-md ${
                       selectedCountry.code === country.cca2
                         ? "bg-blue-50/50 text-blue-600 font-medium"
                         : "text-gray-600"
