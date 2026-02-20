@@ -247,5 +247,17 @@
     "searchPlaceholder": "მოძებნე ქვეყანა...",
     "noResults": "ქვეყანა ვერ მოიძებნა"
   },
-  "contactBtn": "კონტაქტი"
+  "contactBtn": "კონტაქტი",
+
+  "Categories": {
+    "placeholder": "აირჩიე კატეგორია",
+    "cultureArt": "კულტურა და ხელოვნება",
+    "literatureLibrary": "ლიტერატურა და ბიბლიოთეკა",
+    "musicSound": "მუსიკა და ხმა",
+    "cinemaVisualArts": "კინო და ვიზუალური ხელოვნება",
+    "danceMovement": "ცეკვა და მოძრაობა",
+    "educationInnovation": "განათლება და ინოვაცია",
+    "diasporaCivicPlatforms": "დიასპორა და სამოქალაქო პლატფორმები",
+    "mediaVoice": "მედია და ხმა"
+  }
 }

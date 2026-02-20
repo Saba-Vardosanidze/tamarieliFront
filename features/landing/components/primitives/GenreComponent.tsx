@@ -16,12 +16,12 @@ type Props = {
 export default function CategorySelect({ value, onChange }: Props) {
   const [isOpen, setIsOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-  const t = useTranslations('CategorySelect');
+  const t = useTranslations('Categories');
 
   const selectedCategory = categories.find((c) => c.value === value) ?? null;
 
   const filteredCategories = categories.filter((c) =>
-    c.name.toLowerCase().includes(searchTerm.toLowerCase())
+    t(c.i18nKey).toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const handleSelect = (cat: Category) => {
@@ -41,7 +41,7 @@ export default function CategorySelect({ value, onChange }: Props) {
             <>
               <selectedCategory.icon className="w-4 h-4 text-blue-500" />
               <span className="font-medium text-gray-700 text-sm">
-                {selectedCategory.name}
+                {t(selectedCategory.i18nKey)}
               </span>
             </>
           ) : (
@@ -73,7 +73,7 @@ export default function CategorySelect({ value, onChange }: Props) {
               <Search className="left-4 absolute w-4 h-4 text-gray-300" />
               <input
                 type="text"
-                placeholder={t('searchPlaceholder')}
+                placeholder={t('placeholder')}
                 className="bg-gray-50 p-2 pl-9 rounded-lg outline-none w-full font-NotoSansGeorgian text-sm"
                 autoFocus
                 value={searchTerm}
@@ -96,10 +96,12 @@ export default function CategorySelect({ value, onChange }: Props) {
                       }`}
                     >
                       <Icon
-                        className={`w-4 h-4 ${isSelected ? 'text-blue-600' : 'text-gray-400'}`}
+                        className={`w-4 h-4 ${
+                          isSelected ? 'text-blue-600' : 'text-gray-400'
+                        }`}
                       />
                       <span className="font-NotoSansGeorgian text-sm">
-                        {cat.name}
+                        {t(cat.i18nKey)}
                       </span>
                     </div>
                   );

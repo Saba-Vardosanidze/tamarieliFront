@@ -31,7 +31,7 @@ export type ProjectsResponse = {
 };
 export interface Category {
   id: number;
-  name: string;
+  i18nKey: string;
   value: ProjectCategory;
   icon: React.ElementType;
 }

@@ -240,5 +240,16 @@
     "searchPlaceholder": "Chercher un pays...",
     "noResults": "Aucun pays trouvé"
   },
-  "contactBtn": "Contact"
+  "contactBtn": "Contact",
+  "Categories": {
+    "placeholder": "Choisir une catégorie",
+    "cultureArt": "Culture et Arts",
+    "literatureLibrary": "Littérature et Bibliothèque",
+    "musicSound": "Musique et Son",
+    "cinemaVisualArts": "Cinéma et Arts Visuels",
+    "danceMovement": "Danse et Mouvement",
+    "educationInnovation": "Éducation et Innovation",
+    "diasporaCivicPlatforms": "Diaspora et Plateformes Civiques",
+    "mediaVoice": "Médias et Voix"
+  }
 }

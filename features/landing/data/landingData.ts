@@ -131,33 +131,33 @@ export const FooterItems = [
     ],
   },
 ];
-export const categories = [
-  { id: 1, name: 'კულტურა და ხელოვნება', value: 'culture-art', icon: Palette },
+export const categories: Category[] = [
+  { id: 1, value: 'culture-art', i18nKey: 'cultureArt', icon: Palette },
   {
     id: 2,
-    name: 'ლიტერატურა და ბიბლიოთეკა',
     value: 'literature-library',
+    i18nKey: 'literatureLibrary',
     icon: BookOpen,
   },
-  { id: 3, name: 'მუსიკა და ხმა', value: 'music-sound', icon: Music },
+  { id: 3, value: 'music-sound', i18nKey: 'musicSound', icon: Music },
   {
     id: 4,
-    name: 'კინო და ვიზუალური ხელოვნება',
     value: 'cinema-visual-arts',
+    i18nKey: 'cinemaVisualArts',
     icon: Film,
   },
-  { id: 5, name: 'ცეკვა და მოძრაობა', value: 'dance-movement', icon: Activity },
+  { id: 5, value: 'dance-movement', i18nKey: 'danceMovement', icon: Activity },
   {
     id: 6,
-    name: 'განათლება და ინოვაცია',
     value: 'education-innovation',
+    i18nKey: 'educationInnovation',
     icon: Lightbulb,
   },
   {
     id: 7,
-    name: 'დიასპორა და სამოქალაქო პლატფორმები',
     value: 'diaspora-civic-platforms',
+    i18nKey: 'diasporaCivicPlatforms',
     icon: Globe,
   },
-  { id: 8, name: 'მედია და ხმა', value: 'media-voice', icon: Megaphone },
+  { id: 8, value: 'media-voice', i18nKey: 'mediaVoice', icon: Megaphone },
 ];
