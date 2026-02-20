@@ -15,12 +15,7 @@ const HeroSection = () => {
       <div className="mx-auto px-5 sm:px-12 lg:px-20 w-full max-w-[1440px]">
         <div className="flex lg:flex-row flex-col items-center gap-12 lg:gap-20">
           <div className="z-10 flex-1 order-2 lg:order-1 lg:text-left text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="space-y-6 sm:space-y-8"
-            >
+            <div className="space-y-6 sm:space-y-8">
               <h1 className="flex lg:flex-row flex-col gap-[3px] font-extrabold text-gray-900 lg:text-[33px] text-4xl sm:text-6xl leading-[1.2] lg:leading-[1.1] tracking-tighter">
                 {t('titleLine1')}
                 <br className="hidden sm:block" />
@@ -44,16 +39,11 @@ const HeroSection = () => {
                   </button>
                 </Link>
               </div>
-            </motion.div>
+            </div>
           </div>
 
           <div className="relative flex-1 order-1 lg:order-2 w-full">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1 }}
-              className="relative mx-auto w-full max-w-[500px] lg:max-w-none aspect-square sm:aspect-video lg:aspect-square"
-            >
+            <div className="relative mx-auto w-full max-w-[500px] lg:max-w-none aspect-square sm:aspect-video lg:aspect-square">
               <div className="z-10 relative shadow-2xl border-4 border-white rounded-[2.5rem] sm:rounded-[4rem] w-full h-full overflow-hidden">
                 <Image
                   src={banner}
@@ -67,7 +57,7 @@ const HeroSection = () => {
 
               <div className="-top-10 -right-10 -z-10 absolute bg-blue-200 opacity-40 blur-3xl rounded-full w-48 sm:w-72 h-48 sm:h-72" />
               <div className="-bottom-10 -left-10 -z-10 absolute bg-purple-200 opacity-40 blur-3xl rounded-full w-48 sm:w-72 h-48 sm:h-72" />
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

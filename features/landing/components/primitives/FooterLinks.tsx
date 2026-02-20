@@ -1,11 +1,8 @@
-import { FooterLinksProps } from "features/type";
+import { FooterLinksProps } from 'features/type';
 
-const FooterLinks = ({ contactUs, links }: FooterLinksProps) => {
+const FooterLinks = ({ links }: FooterLinksProps) => {
   return (
     <div>
-      {/* <p className="mb-6 sm:mb-8 lg:mb-[45px] font-medium text-[#000000] text-[20px] sm:text-[22px] lg:text-[26px]">
-        {contactUs}
-      </p> */}
       {links.map((link, id) => (
         <div
           key={id}
@@ -13,17 +10,17 @@ const FooterLinks = ({ contactUs, links }: FooterLinksProps) => {
         >
           <a
             href={`tel:${link.tel}`}
-            className="block font-light text-[16px] sm:text-[18px] lg:text-[11px] hover:text-gray-700 transition-colors"
+            className="block font-light text-[16px] sm:text-[18px] hover:text-blue-600 transition-colors"
           >
             {link.tel}
           </a>
           <a
             href={`mailto:${link.mailto}`}
-            className="block font-light text-[16px] sm:text-[18px] lg:text-[11px] hover:text-gray-700 transition-colors"
+            className="block font-light text-[16px] sm:text-[18px] hover:text-blue-600 transition-colors"
           >
             {link.mailto}
           </a>
-          <p className="font-light text-[16px] sm:text-[18px] lg:text-[11px]">
+          <p className="font-light text-[16px] sm:text-[18px]">
             {link.address}
           </p>
         </div>
