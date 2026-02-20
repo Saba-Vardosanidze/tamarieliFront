@@ -21,9 +21,14 @@ const SearchFilter = ({ projectName, setIsOpen }: SearchFilterProps) => {
     useState<ProjectCategory | null>(null);
 
   const { data: results, isLoading: loading } = useQuery({
-    queryKey: ['search-projects', projectName],
-    queryFn: () => SearchApi({ projectName }),
-    enabled: !!projectName,
+    queryKey: ['search-projects', projectName, country, projectCategory],
+    queryFn: () =>
+      SearchApi({
+        projectName,
+        country: country ?? undefined,
+        projectCategory: projectCategory ?? undefined,
+      }),
+    enabled: !!projectName || !!country || !!projectCategory,
     staleTime: 1000 * 60,
   });
 
