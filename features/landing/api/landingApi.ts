@@ -1,5 +1,6 @@
 import { MiniProject, MiniProjectResponse } from '@features/type';
 import { FormSchemaType } from '../schema/formSchema';
+import { SearchParams, SearchResponse } from './type';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_API_URL;
 const GoogleFormURL = process.env.NEXT_PUBLIC_REGISTRATION_GOOGLEFORM;
@@ -109,6 +110,24 @@ export const BooksApi = async (filters: BookFilters = {}) => {
 
 export const BookEnamsApi = async () => {
   const res = await fetch(`${baseUrl}/books/enums`, {
+    cache: 'no-store',
+  });
+  if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+  return res.json();
+};
+
+export const SearchApi = async ({
+  projectName,
+  country,
+  projectCategory,
+}: SearchParams): Promise<SearchResponse> => {
+  const params = new URLSearchParams();
+
+  if (projectName) params.append('projectName', projectName);
+  if (country) params.append('country', country);
+  if (projectCategory) params.append('projectCategory', projectCategory);
+
+  const res = await fetch(`${baseUrl}/projects/search?${params.toString()}`, {
     cache: 'no-store',
   });
   if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);

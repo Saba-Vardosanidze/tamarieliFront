@@ -1,6 +1,5 @@
 'use client';
-
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search } from 'lucide-react';
 import SearchFilter from './SearchFilter';
@@ -8,23 +7,18 @@ import { useTranslations } from 'next-intl';
 
 export default function SearchSection() {
   const [isOpen, setIsOpen] = useState(false);
-  const searchRef = useRef<HTMLDivElement>(null);
+  const [projectName, setProjectName] = useState('');
+  const [debouncedName, setDebouncedName] = useState('');
+  const debounceRef = useRef<ReturnType<typeof setTimeout>>(null);
   const t = useTranslations('SearchFilter');
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        searchRef.current &&
-        !searchRef.current.contains(event.target as Node)
-      ) {
-        setIsOpen(false);
-      }
-    };
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [isOpen]);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setProjectName(event.target.value);
+    if (debounceRef.current) clearTimeout(debounceRef.current);
+    debounceRef.current = setTimeout(() => {
+      setDebouncedName(event.target.value);
+    }, 400);
+  };
 
   return (
     <div>
@@ -34,7 +28,6 @@ export default function SearchSection() {
       >
         <Search size={22} className="text-[#000000]" />
       </button>
-
       <AnimatePresence>
         {isOpen && (
           <>
@@ -42,11 +35,10 @@ export default function SearchSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              onClick={() => setIsOpen(false)}
               className="z-[50] fixed inset-0 bg-black/10 backdrop-blur-sm"
             />
-
             <motion.div
-              ref={searchRef}
               initial={{ y: -100, x: '-50%', opacity: 0 }}
               animate={{ y: 20, x: '-50%', opacity: 1 }}
               exit={{ y: -100, x: '-50%', opacity: 0 }}
@@ -57,14 +49,15 @@ export default function SearchSection() {
                 <div className="pl-5 text-gray-400">
                   <Search
                     size={22}
-                    className="text-gray-700 group-hover:text-black"
+                    className="text-gray-700"
                     strokeWidth={2.5}
                   />
                 </div>
-
                 <input
                   autoFocus
                   type="text"
+                  value={projectName}
+                  onChange={handleChange}
                   placeholder={t('searchPlaceholder')}
                   className="px-4 outline-none w-full h-14 text-gray-700 text-lg"
                 />
@@ -75,7 +68,10 @@ export default function SearchSection() {
                 exit={{ y: -100, opacity: 0 }}
                 transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
               >
-                <SearchFilter />
+                <SearchFilter
+                  projectName={debouncedName}
+                  setIsOpen={setIsOpen}
+                />
               </motion.div>
             </motion.div>
           </>
