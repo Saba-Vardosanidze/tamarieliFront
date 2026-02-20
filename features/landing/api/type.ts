@@ -10,7 +10,38 @@ export type ProjectDescription = {
   fr: string;
 };
 
-export type Country = 'georgia' | 'france';
+export type Country =
+  | 'georgia'
+  | 'austria'
+  | 'belgium'
+  | 'bulgaria'
+  | 'croatia'
+  | 'cyprus'
+  | 'czech_republic'
+  | 'denmark'
+  | 'estonia'
+  | 'finland'
+  | 'france'
+  | 'germany'
+  | 'greece'
+  | 'hungary'
+  | 'ireland'
+  | 'italy'
+  | 'latvia'
+  | 'lithuania'
+  | 'luxembourg'
+  | 'malta'
+  | 'netherlands'
+  | 'poland'
+  | 'portugal'
+  | 'romania'
+  | 'slovakia'
+  | 'slovenia'
+  | 'spain'
+  | 'sweden'
+  | 'england'
+  | 'united_states'
+  | 'ukraine';
 
 export type ProjectCategory =
   | 'culture-art'

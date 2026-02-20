@@ -1,7 +1,6 @@
 import { FooterDataProps } from 'features/type';
 import georgiaFlag from '../../../public/Images/headerImages/svg/georgia-flag-icon.svg';
 import UnitedKingdomFlag from '../../../public/Images/headerImages/svg/United Kingdom.svg';
-import { ReactNode } from 'react';
 import {
   Palette,
   BookOpen,
