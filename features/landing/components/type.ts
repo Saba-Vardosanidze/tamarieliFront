@@ -1,3 +1,7 @@
+import { LucideIcon } from 'lucide-react';
+import { ReactNode } from 'react';
+import { ProjectCategory } from '../api/type';
+
 export type Project = {
   _id: string;
   projectName: Record<string, string>;
@@ -24,4 +28,17 @@ export type Pagination = {
 export type ProjectsResponse = {
   data: Project[];
   pagination?: Pagination;
+};
+export interface Category {
+  id: number;
+  i18nKey: string;
+  value: ProjectCategory;
+  icon: React.ElementType;
+}
+export type ProjectCardProps = {
+  title: string;
+  description: string;
+  country: string;
+  category: string;
+  image: string;
 };

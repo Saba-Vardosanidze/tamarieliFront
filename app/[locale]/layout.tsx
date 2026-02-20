@@ -76,14 +76,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#ffffff] custom-scrollbar`}
       >
-        <NextIntlClientProvider>
-          <Header />
-          <div className="min-h-screen">
-            <QueryProvider>{children}</QueryProvider>
-            <Toaster position="top-right" />
-          </div>
-          <Footer />
-        </NextIntlClientProvider>
+        <QueryProvider>
+          <NextIntlClientProvider>
+            <Header />
+
+            <div className="min-h-screen">
+              {children}
+              <Toaster position="top-right" />
+            </div>
+
+            <Footer />
+          </NextIntlClientProvider>
+        </QueryProvider>
       </body>
     </html>
   );

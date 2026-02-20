@@ -94,13 +94,13 @@ const AllProject = () => {
                   href={`/${locale}/projects/${project._id}`}
                   className="group relative"
                 >
-                  <article className="relative flex flex-col bg-white shadow-sm hover:shadow-2xl border border-slate-100 rounded-3xl h-full overflow-hidden transition-all hover:-translate-y-2 duration-500 ease-out transform">
+                  <article className="relative flex flex-col bg-white shadow-sm border border-slate-100 rounded-3xl h-full overflow-hidden transition-all duration-500 ease-out transform">
                     <div className="relative h-[300px] sm:h-[380px] overflow-hidden">
                       <Image
                         src={project.projectPicture}
                         alt={title}
                         fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
+                        className="object-cover"
                         sizes="(max-width: 768px) 100vw, 50vw"
                       />
                     </div>

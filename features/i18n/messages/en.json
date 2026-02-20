@@ -88,7 +88,8 @@
   },
   "Header": {
     "home": "Home",
-    "about": "About"
+    "about": "About",
+    "contact": "Contact"
   },
 
   "ContactForm": {
@@ -218,5 +219,38 @@
   },
   "See": {
     "title": "See"
+  },
+
+  "SearchFilter": {
+    "title": "Filtering",
+    "countryLabel": "Country",
+    "genreLabel": "Field / Genre",
+    "searchButton": "Search",
+    "placeholder": "Select...",
+    "noResults": "No results found",
+    "searchPlaceholder": "Search..."
+  },
+
+  "CategorySelect": {
+    "placeholder": "Select field",
+    "searchPlaceholder": "Search...",
+    "noResults": "No results found"
+  },
+  "CountryList": {
+    "placeholder": "Select a country",
+    "georgia": "Georgia",
+    "france": "France"
+  },
+  "contactBtn": "Contact",
+  "Categories": {
+    "placeholder": "Select a category",
+    "cultureArt": "Culture and Arts",
+    "literatureLibrary": "Literature and Library",
+    "musicSound": "Music and Sound",
+    "cinemaVisualArts": "Cinema and Visual Arts",
+    "danceMovement": "Dance and Movement",
+    "educationInnovation": "Education and Innovation",
+    "diasporaCivicPlatforms": "Diaspora and Civic Platforms",
+    "mediaVoice": "Media and Voice"
   }
 }

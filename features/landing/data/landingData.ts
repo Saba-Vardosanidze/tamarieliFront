@@ -1,6 +1,18 @@
 import { FooterDataProps } from 'features/type';
 import georgiaFlag from '../../../public/Images/headerImages/svg/georgia-flag-icon.svg';
 import UnitedKingdomFlag from '../../../public/Images/headerImages/svg/United Kingdom.svg';
+import { ReactNode } from 'react';
+import {
+  Palette,
+  BookOpen,
+  Music,
+  Film,
+  Activity,
+  Lightbulb,
+  Globe,
+  Megaphone,
+} from 'lucide-react';
+import { Category } from '../components/type';
 
 export const HeaderData = [
   {
@@ -118,4 +130,34 @@ export const FooterItems = [
       },
     ],
   },
+];
+export const categories: Category[] = [
+  { id: 1, value: 'culture-art', i18nKey: 'cultureArt', icon: Palette },
+  {
+    id: 2,
+    value: 'literature-library',
+    i18nKey: 'literatureLibrary',
+    icon: BookOpen,
+  },
+  { id: 3, value: 'music-sound', i18nKey: 'musicSound', icon: Music },
+  {
+    id: 4,
+    value: 'cinema-visual-arts',
+    i18nKey: 'cinemaVisualArts',
+    icon: Film,
+  },
+  { id: 5, value: 'dance-movement', i18nKey: 'danceMovement', icon: Activity },
+  {
+    id: 6,
+    value: 'education-innovation',
+    i18nKey: 'educationInnovation',
+    icon: Lightbulb,
+  },
+  {
+    id: 7,
+    value: 'diaspora-civic-platforms',
+    i18nKey: 'diasporaCivicPlatforms',
+    icon: Globe,
+  },
+  { id: 8, value: 'media-voice', i18nKey: 'mediaVoice', icon: Megaphone },
 ];

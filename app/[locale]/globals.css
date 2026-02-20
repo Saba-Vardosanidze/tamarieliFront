@@ -49,25 +49,22 @@ body {
   }
 
   .custom-scrollbar::-webkit-scrollbar-track {
-    background: #00000030;
   }
 
   .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: #2563eb;
     border-radius: 4px;
+    background: #2563eb;
   }
 
   .custom-scrollbar::-webkit-scrollbar-button:vertical:start:decrement {
     background: url('/assets/images/svg/triangle-up.svg') center center
       no-repeat;
     background-size: contain;
-    background-color: #121318;
   }
 
   .custom-scrollbar::-webkit-scrollbar-button:vertical:end:increment {
     background: url('/assets/images/svg/triangle-down.svg') center center
       no-repeat;
     background-size: contain;
-    background-color: #121318;
   }
 }
