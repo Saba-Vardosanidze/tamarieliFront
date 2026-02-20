@@ -60,7 +60,7 @@ const HeroSection = () => {
                   alt="Hero Banner"
                   fill
                   priority
-                  className="object-cover hover:scale-105 transition-transform duration-1000"
+                  className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
               </div>

@@ -35,7 +35,7 @@ const Footer = () => {
                 width={600}
                 height={400}
                 alt="Tamarieli Project"
-                className="w-full h-[250px] sm:h-[300px] object-cover group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-[250px] sm:h-[300px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
             </div>
