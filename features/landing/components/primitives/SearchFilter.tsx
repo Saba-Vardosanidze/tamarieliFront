@@ -4,9 +4,8 @@ import CountryList from './FlagsComponent';
 import CategorySelect from './GenreComponent';
 import { useTranslations } from 'next-intl';
 import SearchedProject from './SearchedProject';
-import { useEffect, useState } from 'react';
 import { SearchApi } from '@features/landing/api/landingApi';
-import { SearchResponse } from '@features/landing/api/type';
+import { useQuery } from '@tanstack/react-query';
 
 type SearchFilterProps = {
   projectName: string;
@@ -15,27 +14,13 @@ type SearchFilterProps = {
 
 const SearchFilter = ({ projectName, setIsOpen }: SearchFilterProps) => {
   const t = useTranslations('SearchFilter');
-  const [results, setResults] = useState<SearchResponse | null>(null);
-  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    if (!projectName) {
-      setResults(null);
-      return;
-    }
-    const fetchData = async () => {
-      setLoading(true);
-      try {
-        const data = await SearchApi({ projectName });
-        setResults(data);
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchData();
-  }, [projectName]);
+  const { data: results, isLoading: loading } = useQuery({
+    queryKey: ['search-projects', projectName],
+    queryFn: () => SearchApi({ projectName }),
+    enabled: !!projectName,
+    staleTime: 1000 * 60,
+  });
 
   return (
     <div className="flex justify-center items-center mt-4 w-full">

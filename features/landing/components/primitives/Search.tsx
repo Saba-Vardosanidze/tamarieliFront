@@ -36,7 +36,7 @@ export default function SearchSection() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="z-[50] fixed inset-0 bg-black/10 backdrop-blur-sm"
+              className="z-[50] fixed inset-0 bg-black/10 backdrop-blur-sm cursor-pointer"
             />
             <motion.div
               initial={{ y: -100, x: '-50%', opacity: 0 }}
