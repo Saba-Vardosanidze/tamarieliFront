@@ -243,10 +243,6 @@
     "searchPlaceholder": "ძებნა...",
     "noResults": "ვერ მოიძებნა"
   },
-  "CountryList": {
-    "searchPlaceholder": "მოძებნე ქვეყანა...",
-    "noResults": "ქვეყანა ვერ მოიძებნა"
-  },
   "contactBtn": "კონტაქტი",
 
   "Categories": {
@@ -259,5 +255,10 @@
     "educationInnovation": "განათლება და ინოვაცია",
     "diasporaCivicPlatforms": "დიასპორა და სამოქალაქო პლატფორმები",
     "mediaVoice": "მედია და ხმა"
+  },
+  "CountryList": {
+    "placeholder": "აირჩიე ქვეყანა",
+    "georgia": "საქართველო",
+    "france": "საფრანგეთი"
   }
 }

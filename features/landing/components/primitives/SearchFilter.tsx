@@ -7,7 +7,7 @@ import SearchedProject from './SearchedProject';
 import { SearchApi } from '@features/landing/api/landingApi';
 import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
-import { ProjectCategory } from '@features/landing/api/type';
+import { Country, ProjectCategory } from '@features/landing/api/type';
 
 type SearchFilterProps = {
   projectName: string;
@@ -16,6 +16,7 @@ type SearchFilterProps = {
 
 const SearchFilter = ({ projectName, setIsOpen }: SearchFilterProps) => {
   const t = useTranslations('SearchFilter');
+  const [country, setCountry] = useState<Country | null>(null);
   const [projectCategory, setProjectCategory] =
     useState<ProjectCategory | null>(null);
 
@@ -41,7 +42,7 @@ const SearchFilter = ({ projectName, setIsOpen }: SearchFilterProps) => {
               {t('countryLabel')}
             </p>
             <div className="w-full sm:w-72">
-              <CountryList />
+              <CountryList value={country} onChange={setCountry} />
             </div>
           </div>
           <div className="flex flex-col items-start w-full sm:w-auto">

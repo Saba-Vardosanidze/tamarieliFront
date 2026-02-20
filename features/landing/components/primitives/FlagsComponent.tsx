@@ -1,44 +1,64 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import countries from "world-countries";
-import "flag-icons/css/flag-icons.min.css";
-import { ChevronDown, Search } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useState } from 'react';
+import { ChevronDown } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslations } from 'next-intl';
+import 'flag-icons/css/flag-icons.min.css';
+import { Country } from '@features/landing/api/type';
 
-export default function CountrySelect() {
+type CountryOption = {
+  value: Country;
+  name: string;
+  code: string;
+};
+
+const COUNTRIES: CountryOption[] = [
+  { value: 'georgia', name: 'საქართველო', code: 'ge' },
+  { value: 'france', name: 'საფრანგეთი', code: 'fr' },
+];
+
+type Props = {
+  value: Country | null;
+  onChange: (value: Country | null) => void;
+};
+
+export default function CountrySelect({ value, onChange }: Props) {
   const [isOpen, setIsOpen] = useState(false);
-  const t = useTranslations("CountryList");
-  const [selectedCountry, setSelectedCountry] = useState({
-    name: "Georgia",
-    code: "GE",
-  });
-  const [searchTerm, setSearchTerm] = useState("");
+  const t = useTranslations('CountryList');
 
-  const filteredCountries = countries
-    .filter((c) =>
-      c.name.common.toLowerCase().includes(searchTerm.toLowerCase()),
-    )
-    .sort((a, b) => a.name.common.localeCompare(b.name.common));
+  const selectedCountry = COUNTRIES.find((c) => c.value === value) ?? null;
+
+  const handleSelect = (country: CountryOption) => {
+    onChange(selectedCountry?.value === country.value ? null : country.value);
+    setIsOpen(false);
+  };
 
   return (
-    <div className="relative  md:w-72 text-black font-sans">
+    <div className="relative w-full font-sans text-black">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between p-3 py-3 bg-white rounded-xl shadow-[0_4px_20px_-5px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.12)] transition-all duration-300 focus:outline-none border-none"
+        className="flex justify-between items-center bg-white shadow-[0_4px_20px_-5px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.12)] p-3 py-3 border-none rounded-xl focus:outline-none w-full transition-all duration-300"
       >
         <div className="flex items-center gap-3">
-          <span
-            className={`fi fi-${selectedCountry.code.toLowerCase()} w-6 h-4 rounded-sm shadow-sm`}
-          ></span>
-          <span className="font-medium text-gray-700 text-sm">
-            {selectedCountry.name}
-          </span>
+          {selectedCountry ? (
+            <>
+              <span
+                className={`fi fi-${selectedCountry.code} w-6 h-4 rounded-sm shadow-sm`}
+              />
+              <span className="font-NotoSansGeorgian font-medium text-gray-700 text-sm">
+                {t(selectedCountry.value)}
+              </span>
+            </>
+          ) : (
+            <span className="font-NotoSansGeorgian text-gray-400 text-sm">
+              {t('placeholder')}
+            </span>
+          )}
         </div>
         <ChevronDown
           className={`w-4 h-4 text-gray-400 transition-transform duration-300 ${
-            isOpen ? "rotate-180 text-blue-500" : ""
+            isOpen ? 'rotate-180 text-blue-500' : ''
           }`}
         />
       </button>
@@ -49,61 +69,36 @@ export default function CountrySelect() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2, ease: "easeInOut" }}
-            className="absolute z-50 w-full mt-2 bg-white rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.2)] overflow-hidden border-none"
+            transition={{ duration: 0.2, ease: 'easeInOut' }}
+            className="z-50 absolute bg-white shadow-[0_10px_40px_-10px_rgba(0,0,0,0.2)] mt-2 rounded-xl w-full overflow-hidden"
           >
-            <div className="relative p-2 flex items-center">
-              <Search className="absolute left-4 w-4 h-4 text-gray-300" />
-              <input
-                type="text"
-                placeholder={t("searchPlaceholder")}
-                className="w-full p-2 pl-9 text-sm bg-gray-50 border-none rounded-lg outline-none "
-                autoFocus
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-            </div>
-
-            <div className="max-h-60 custom-scrollbar pb-2">
-              {filteredCountries.length > 0 ? (
-                filteredCountries.map((country) => (
-                  <div
-                    key={country.cca2}
-                    className={`flex items-center gap-3 px-4 py-2.5 hover:bg-gray-50 cursor-pointer  rounded-md ${
-                      selectedCountry.code === country.cca2
-                        ? "bg-blue-50/50 text-blue-600 font-medium"
-                        : "text-gray-600"
-                    }`}
-                    onClick={() => {
-                      setSelectedCountry({
-                        name: country.name.common,
-                        code: country.cca2,
-                      });
-                      setIsOpen(false);
-                      setSearchTerm("");
-                    }}
-                  >
-                    <span
-                      className={`fi fi-${country.cca2.toLowerCase()} w-5 h-3.5 shrink-0 rounded-[1px] shadow-xs`}
-                    ></span>
-                    <span className="text-sm">{country.name.common}</span>
-                  </div>
-                ))
-              ) : (
-                <div className="p-8 text-center text-sm text-gray-400 italic font-NotoSansGeorgian">
-                  {t("noResults")}
+            {COUNTRIES.map((country) => {
+              const isSelected = selectedCountry?.value === country.value;
+              return (
+                <div
+                  key={country.value}
+                  onClick={() => handleSelect(country)}
+                  className={`flex items-center gap-3 px-4 py-3 hover:bg-blue-50/50 cursor-pointer transition-colors mx-1 rounded-md ${
+                    isSelected
+                      ? 'bg-blue-50 text-blue-600 font-medium'
+                      : 'text-gray-600'
+                  }`}
+                >
+                  <span
+                    className={`fi fi-${country.code} w-5 h-3.5 rounded-[1px] shadow-xs`}
+                  />
+                  <span className="font-NotoSansGeorgian text-sm">
+                    {t(country.value)}
+                  </span>
                 </div>
-              )}
-            </div>
+              );
+            })}
           </motion.div>
         )}
       </AnimatePresence>
 
       {isOpen && (
-        <div
-          className="fixed inset-0 z-40 bg-transparent"
-          onClick={() => setIsOpen(false)}
-        ></div>
+        <div className="z-40 fixed inset-0" onClick={() => setIsOpen(false)} />
       )}
     </div>
   );

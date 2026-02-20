@@ -237,8 +237,9 @@
     "noResults": "Aucun résultat"
   },
   "CountryList": {
-    "searchPlaceholder": "Chercher un pays...",
-    "noResults": "Aucun pays trouvé"
+    "placeholder": "Choisir un pays",
+    "georgia": "Géorgie",
+    "france": "France"
   },
   "contactBtn": "Contact",
   "Categories": {

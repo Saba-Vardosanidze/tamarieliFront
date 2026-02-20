@@ -237,8 +237,9 @@
     "noResults": "No results found"
   },
   "CountryList": {
-    "searchPlaceholder": "Search country...",
-    "noResults": "Country not found"
+    "placeholder": "Select a country",
+    "georgia": "Georgia",
+    "france": "France"
   },
   "contactBtn": "Contact",
   "Categories": {
