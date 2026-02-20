@@ -1,5 +1,6 @@
 import { LucideIcon } from 'lucide-react';
 import { ReactNode } from 'react';
+import { ProjectCategory } from '../api/type';
 
 export type Project = {
   _id: string;
@@ -31,7 +32,8 @@ export type ProjectsResponse = {
 export interface Category {
   id: number;
   name: string;
-  icon: LucideIcon;
+  value: ProjectCategory;
+  icon: React.ElementType;
 }
 export type ProjectCardProps = {
   title: string;

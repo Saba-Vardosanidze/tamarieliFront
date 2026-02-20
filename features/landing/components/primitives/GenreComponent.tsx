@@ -1,29 +1,40 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { ChevronDown, Search, LayoutGrid } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import { categories } from "@features/landing/data/landingData";
-import { Category } from "../type";
-import { useTranslations } from "next-intl";
+import { useState } from 'react';
+import { ChevronDown, Search, LayoutGrid } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { categories } from '@features/landing/data/landingData';
+import { Category } from '../type';
+import { useTranslations } from 'next-intl';
+import { ProjectCategory } from '@features/landing/api/type';
 
-export default function CategorySelect() {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const t = useTranslations("CategorySelect");
-  const [selectedCategory, setSelectedCategory] = useState<Category | null>(
-    null,
-  );
-  const [searchTerm, setSearchTerm] = useState<string>("");
+type Props = {
+  value: ProjectCategory | null;
+  onChange: (value: ProjectCategory | null) => void;
+};
+
+export default function CategorySelect({ value, onChange }: Props) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+  const t = useTranslations('CategorySelect');
+
+  const selectedCategory = categories.find((c) => c.value === value) ?? null;
 
   const filteredCategories = categories.filter((c) =>
-    c.name.toLowerCase().includes(searchTerm.toLowerCase()),
+    c.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const handleSelect = (cat: Category) => {
+    onChange(selectedCategory?.value === cat.value ? null : cat.value);
+    setIsOpen(false);
+    setSearchTerm('');
+  };
+
   return (
-    <div className="relative w-full  text-black font-sans">
+    <div className="relative w-full font-sans text-black">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between p-3 bg-white rounded-xl shadow-[0_4px_20px_-5px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.12)] transition-all duration-300 focus:outline-none border-none py-3"
+        className="flex justify-between items-center bg-white shadow-[0_4px_20px_-5px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.12)] p-3 py-3 border-none rounded-xl focus:outline-none w-full transition-all duration-300"
       >
         <div className="flex items-center gap-3">
           {selectedCategory ? (
@@ -36,15 +47,15 @@ export default function CategorySelect() {
           ) : (
             <>
               <LayoutGrid className="w-5 h-5 text-gray-400" />
-              <span className="text-gray-400 text-sm font-NotoSansGeorgian">
-                {t("placeholder")}
+              <span className="font-NotoSansGeorgian text-gray-400 text-sm">
+                {t('placeholder')}
               </span>
             </>
           )}
         </div>
         <ChevronDown
           className={`w-4 h-4 text-gray-400 transition-transform duration-300 ${
-            isOpen ? "rotate-180 text-blue-500" : ""
+            isOpen ? 'rotate-180 text-blue-500' : ''
           }`}
         />
       </button>
@@ -55,57 +66,47 @@ export default function CategorySelect() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2, ease: "easeInOut" }}
-            className="absolute z-50 w-full mt-2 bg-white rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.2)] overflow-hidden border-none"
+            transition={{ duration: 0.2, ease: 'easeInOut' }}
+            className="z-50 absolute bg-white shadow-[0_10px_40px_-10px_rgba(0,0,0,0.2)] mt-2 rounded-xl w-full overflow-hidden"
           >
-            <div className="relative p-2 flex items-center">
-              <Search className="absolute left-4 w-4 h-4 text-gray-300" />
+            <div className="relative flex items-center p-2">
+              <Search className="left-4 absolute w-4 h-4 text-gray-300" />
               <input
                 type="text"
-                placeholder={t("searchPlaceholder")}
-                className="w-full p-2 pl-9 text-sm bg-gray-50 border-none rounded-lg outline-none focus:ring-0 font-NotoSansGeorgian"
+                placeholder={t('searchPlaceholder')}
+                className="bg-gray-50 p-2 pl-9 rounded-lg outline-none w-full font-NotoSansGeorgian text-sm"
                 autoFocus
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
-
-            <div className="max-h-64 custom-scrollbar pb-2">
+            <div className="pb-2 max-h-64 custom-scrollbar">
               {filteredCategories.length > 0 ? (
-                filteredCategories.map((cat: Category) => {
+                filteredCategories.map((cat) => {
                   const Icon = cat.icon;
+                  const isSelected = selectedCategory?.id === cat.id;
                   return (
                     <div
                       key={cat.id}
+                      onClick={() => handleSelect(cat)}
                       className={`flex items-center gap-3 px-4 py-3 hover:bg-blue-50/50 cursor-pointer transition-colors mx-1 rounded-md ${
-                        selectedCategory?.id === cat.id
-                          ? "bg-blue-50 text-blue-600 font-medium"
-                          : "text-gray-600"
+                        isSelected
+                          ? 'bg-blue-50 text-blue-600 font-medium'
+                          : 'text-gray-600'
                       }`}
-                      onClick={() => {
-                        setSelectedCategory(cat);
-                        setIsOpen(false);
-                        setSearchTerm("");
-                      }}
                     >
-                      <span
-                        className={`${
-                          selectedCategory?.id === cat.id
-                            ? "text-blue-600"
-                            : "text-gray-400"
-                        }`}
-                      >
-                        <Icon className="w-4 h-4" />
-                      </span>
-                      <span className="text-sm font-NotoSansGeorgian">
+                      <Icon
+                        className={`w-4 h-4 ${isSelected ? 'text-blue-600' : 'text-gray-400'}`}
+                      />
+                      <span className="font-NotoSansGeorgian text-sm">
                         {cat.name}
                       </span>
                     </div>
                   );
                 })
               ) : (
-                <div className="p-8 text-center text-sm text-gray-400 italic font-NotoSansGeorgian">
-                  {t("noResults")}
+                <div className="p-8 font-NotoSansGeorgian text-gray-400 text-sm text-center italic">
+                  {t('noResults')}
                 </div>
               )}
             </div>
@@ -114,10 +115,7 @@ export default function CategorySelect() {
       </AnimatePresence>
 
       {isOpen && (
-        <div
-          className="fixed inset-0 z-40 bg-transparent"
-          onClick={() => setIsOpen(false)}
-        ></div>
+        <div className="z-40 fixed inset-0" onClick={() => setIsOpen(false)} />
       )}
     </div>
   );

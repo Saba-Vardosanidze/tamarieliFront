@@ -6,6 +6,8 @@ import { useTranslations } from 'next-intl';
 import SearchedProject from './SearchedProject';
 import { SearchApi } from '@features/landing/api/landingApi';
 import { useQuery } from '@tanstack/react-query';
+import { useState } from 'react';
+import { ProjectCategory } from '@features/landing/api/type';
 
 type SearchFilterProps = {
   projectName: string;
@@ -14,6 +16,8 @@ type SearchFilterProps = {
 
 const SearchFilter = ({ projectName, setIsOpen }: SearchFilterProps) => {
   const t = useTranslations('SearchFilter');
+  const [projectCategory, setProjectCategory] =
+    useState<ProjectCategory | null>(null);
 
   const { data: results, isLoading: loading } = useQuery({
     queryKey: ['search-projects', projectName],
@@ -45,7 +49,10 @@ const SearchFilter = ({ projectName, setIsOpen }: SearchFilterProps) => {
               {t('genreLabel')}
             </p>
             <div className="w-full sm:w-72">
-              <CategorySelect />
+              <CategorySelect
+                value={projectCategory}
+                onChange={setProjectCategory}
+              />
             </div>
           </div>
         </div>
