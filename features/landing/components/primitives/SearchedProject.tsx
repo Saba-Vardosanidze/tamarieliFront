@@ -2,8 +2,8 @@
 import Image from 'next/image';
 import { ExternalLink } from 'lucide-react';
 import Link from 'next/link';
-import { Project } from '@features/landing/api/type';
-import { Locale, useLocale } from 'next-intl';
+import { Project, ProjectName } from '@features/landing/api/type';
+import { useLocale } from 'next-intl';
 
 type Props = {
   project: Project;
@@ -12,7 +12,7 @@ type Props = {
 };
 
 const SearchedProject = ({ project, pathName, setIsOpen }: Props) => {
-  const locale = useLocale() as Locale;
+  const locale = useLocale() as keyof ProjectName;
 
   return (
     <div className="mx-auto w-full">
@@ -20,7 +20,7 @@ const SearchedProject = ({ project, pathName, setIsOpen }: Props) => {
         <div className="relative rounded-xl w-full sm:w-40 h-40 sm:h-28 overflow-hidden shrink-0">
           <Image
             src={project.projectPicture}
-            alt={project.projectName.ka}
+            alt={project.projectName?.[locale || 'en']}
             fill
             className="object-cover transition-transform duration-500"
           />
@@ -29,10 +29,10 @@ const SearchedProject = ({ project, pathName, setIsOpen }: Props) => {
           <div className="flex justify-between items-start gap-2 w-full">
             <div className="w-full overflow-hidden">
               <h3 className="mb-1 font-NotoSansGeorgian font-bold text-gray-900 text-base line-clamp-1">
-                {project.projectName.ka}
+                {project.projectName?.[locale || 'en']}
               </h3>
               <p className="font-NotoSansGeorgian text-[13px] text-gray-500 line-clamp-2 leading-relaxed">
-                {project.projectDescription.ka}
+                {project.projectDescription?.[locale || 'en']}
               </p>
             </div>
             <Link
