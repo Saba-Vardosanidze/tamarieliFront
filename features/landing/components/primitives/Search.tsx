@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Search, X } from "lucide-react";
-import SearchFilter from "./SearchFilter";
-import { useLocale, useTranslations } from "next-intl";
+import { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Search } from 'lucide-react';
+import SearchFilter from './SearchFilter';
+import { useTranslations } from 'next-intl';
 
 export default function SearchSection() {
   const [isOpen, setIsOpen] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
-  const t = useTranslations("SearchFilter");
+  const t = useTranslations('SearchFilter');
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -21,18 +21,18 @@ export default function SearchSection() {
       }
     };
     if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener('mousedown', handleClickOutside);
     }
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isOpen]);
 
   return (
-    <div className="">
+    <div>
       <button
         onClick={() => setIsOpen(true)}
-        className="p-3 hover:bg-gray-100 rounded-full transition-all cursor-pointer"
+        className="hover:bg-gray-100 p-3 rounded-full transition-all cursor-pointer"
       >
-        <Search size={22} className=" text-[#000000] " />
+        <Search size={22} className="text-[#000000]" />
       </button>
 
       <AnimatePresence>
@@ -42,16 +42,16 @@ export default function SearchSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/10 backdrop-blur-sm z-[50]"
+              className="z-[50] fixed inset-0 bg-black/10 backdrop-blur-sm"
             />
 
             <motion.div
               ref={searchRef}
-              initial={{ y: -100, x: "-50%", opacity: 0 }}
-              animate={{ y: 20, x: "-50%", opacity: 1 }}
-              exit={{ y: -100, x: "-50%", opacity: 0 }}
+              initial={{ y: -100, x: '-50%', opacity: 0 }}
+              animate={{ y: 20, x: '-50%', opacity: 1 }}
+              exit={{ y: -100, x: '-50%', opacity: 0 }}
               transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-              className="fixed top-0 left-1/2 z-[60] w-full max-w-[800px] px-4"
+              className="top-0 left-1/2 z-[60] fixed px-4 w-full max-w-[800px]"
             >
               <div className="relative flex items-center bg-white shadow-2xl border rounded-xl overflow-hidden">
                 <div className="pl-5 text-gray-400">
@@ -65,21 +65,18 @@ export default function SearchSection() {
                 <input
                   autoFocus
                   type="text"
-                  placeholder={t("searchPlaceholder")}
-                  className="w-full h-14 px-4 outline-none text-lg text-gray-700"
+                  placeholder={t('searchPlaceholder')}
+                  className="px-4 outline-none w-full h-14 text-gray-700 text-lg"
                 />
-
-                <button
-                  onClick={() => setIsOpen(false)}
-                  className="pr-5 text-gray-400  transition-colors"
-                >
-                  <X
-                    size={22}
-                    className=" rounded-full transition-all cursor-pointer"
-                  />
-                </button>
               </div>
-              <SearchFilter />
+              <motion.div
+                initial={{ y: -100, opacity: 0 }}
+                animate={{ y: 20, opacity: 1 }}
+                exit={{ y: -100, opacity: 0 }}
+                transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+              >
+                <SearchFilter />
+              </motion.div>
             </motion.div>
           </>
         )}
