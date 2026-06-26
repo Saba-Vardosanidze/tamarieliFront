@@ -1,19 +1,19 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Copy, Check, Send, CreditCard, ExternalLink } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { Copy, Check, Send, CreditCard, ExternalLink } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const Paypal = () => {
-  const t = useTranslations('paypalTexts');
+  const t = useTranslations("paypalTexts");
 
   const [copiedBank, setCopiedBank] = useState(false);
   const [copiedPaypal, setCopiedPaypal] = useState(false);
 
-  const textToCopyBank = 'FR76 1027 8010 8800 0226 3180 179';
-  const textToCopyPaypal = 'tamarielitamarieli@gmail.com';
+  const textToCopyBank = "FR76 1027 8010 8800 0226 3180 179";
+  const textToCopyPaypal = "tamarielitamarieli@gmail.com";
 
   const handleCopyBank = async () => {
     try {
@@ -22,7 +22,7 @@ const Paypal = () => {
       setCopiedPaypal(false);
       setTimeout(() => setCopiedBank(false), 2000);
     } catch (err) {
-      console.error('Failed to copy:', err);
+      console.error("Failed to copy:", err);
     }
   };
 
@@ -33,7 +33,7 @@ const Paypal = () => {
       setCopiedBank(false);
       setTimeout(() => setCopiedPaypal(false), 2000);
     } catch (err) {
-      console.error('Failed to copy:', err);
+      console.error("Failed to copy:", err);
     }
   };
 
@@ -44,7 +44,7 @@ const Paypal = () => {
           <div className="flex flex-col gap-6 order-1 w-full max-w-xl">
             <div className="space-y-2 mb-4 lg:text-left text-center">
               <h2 className="font-bold text-gray-900 text-2xl sm:text-3xl tracking-tight">
-                {t('title')}
+                {t("title")}
               </h2>
               <div className="bg-blue-600 mx-auto lg:mx-0 rounded-full w-12 h-1.5" />
             </div>
@@ -54,7 +54,7 @@ const Paypal = () => {
                 <div className="flex items-center gap-3 mb-4 text-gray-700">
                   <CreditCard className="w-5 h-5 text-blue-600" />
                   <span className="font-semibold text-sm uppercase tracking-wider">
-                    {t('bankTransferTitle')}
+                    {t("bankTransferTitle")}
                   </span>
                 </div>
 
@@ -75,7 +75,7 @@ const Paypal = () => {
                 </div>
                 {copiedBank && (
                   <p className="mt-2 font-medium text-green-600 text-xs animate-pulse">
-                    {t('copied')}
+                    {t("copied")}
                   </p>
                 )}
               </div>
@@ -83,7 +83,7 @@ const Paypal = () => {
               <div className="relative flex items-center py-2">
                 <div className="flex-grow border-gray-200 border-t"></div>
                 <span className="flex-shrink px-4 font-medium text-gray-400 text-sm italic">
-                  {t('or')}
+                  {t("or")}
                 </span>
                 <div className="flex-grow border-gray-200 border-t"></div>
               </div>
@@ -97,7 +97,7 @@ const Paypal = () => {
                     height={18}
                   />
                   <span className="font-semibold text-sm uppercase tracking-wider">
-                    {t('paypalTransferTitle')}
+                    {t("paypalTransferTitle")}
                   </span>
                 </div>
 
@@ -129,7 +129,7 @@ const Paypal = () => {
                 </div>
                 {copiedPaypal && (
                   <p className="mt-2 font-medium text-green-600 text-xs animate-pulse">
-                    {t('copied')}
+                    {t("copied")}
                   </p>
                 )}
               </div>
@@ -140,7 +140,7 @@ const Paypal = () => {
             <div className="relative flex justify-center items-center gap-4 sm:gap-8 lg:gap-10">
               <div className="bg-white shadow-2xl shadow-gray-200/50 p-6 sm:p-10 rounded-[2.5rem] transition-transform hover:-translate-y-2 duration-500">
                 <Image
-                  src="/Images/headerImages/png/tamarieliLogo.png"
+                  src="/Images/headerImages/png/newLogoTamaarieli.png"
                   alt="tamarieli logo"
                   width={100}
                   height={100}
