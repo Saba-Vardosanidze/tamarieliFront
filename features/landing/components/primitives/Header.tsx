@@ -22,7 +22,7 @@ const Header = () => {
           <Link href={"/"} className="group">
             <div className="relative group-hover:scale-105 transition-transform duration-300">
               <Image
-                src="/Images/headerImages/png/tamarieliLogo.png"
+                src="/Images/headerImages/png/newLogoTamaarieli.png"
                 alt="logo"
                 width={56}
                 height={56}
